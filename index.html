@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINEミニアプリ紹介機能開発工数見積書</title>
+    <style>
+        body {
+            font-family: 'Meiryo', 'Yu Gothic', sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background: white;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #333;
+        }
+        
+        .client-info {
+            flex: 1;
+        }
+        
+        .company-info {
+            text-align: right;
+            font-size: 11px;
+            line-height: 1.3;
+        }
+        
+        .estimate-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .total-section {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        .total-amount {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+            margin: 10px 0;
+        }
+        
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 11px;
+        }
+        
+        .summary-table th, .summary-table td {
+            border: 1px solid #333;
+            padding: 6px;
+            text-align: center;
+        }
+        
+        .summary-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        
+        .summary-table td:nth-child(1) {
+            text-align: left;
+            width: 30%;
+        }
+        
+        .summary-table td:nth-child(6) {
+            text-align: left;
+            font-size: 10px;
+        }
+        
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10px;
+        }
+        
+        .detail-table th, .detail-table td {
+            border: 1px solid #333;
+            padding: 4px;
+            text-align: center;
+        }
+        
+        .detail-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+            font-size: 9px;
+        }
+        
+        .detail-table td:nth-child(2) {
+            text-align: left;
+            font-size: 9px;
+        }
+        
+        .detail-table td:nth-child(3) {
+            text-align: left;
+            font-size: 9px;
+        }
+        
+        .detail-table .category-cell {
+            background-color: #f9f9f9;
+            font-weight: bold;
+            text-align: left;
+        }
+        
+        .restrictions {
+            margin: 30px 0;
+            padding: 15px;
+            background-color: #fff3e0;
+            border: 1px solid #ff9800;
+            border-radius: 4px;
+        }
+        
+        .restrictions h3 {
+            color: #d84315;
+            font-size: 14px;
+            margin-top: 0;
+        }
+        
+        .restrictions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .restrictions li {
+            margin: 5px 0;
+            font-size: 11px;
+        }
+        
+        .operations-cost {
+            margin: 30px 0;
+        }
+        
+        .operations-cost h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #1976d2;
+        }
+        
+        .operations-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+        
+        .operations-table th, .operations-table td {
+            border: 1px solid #333;
+            padding: 6px;
+            text-align: center;
+        }
+        
+        .operations-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        
+        .operations-table td:nth-child(1) {
+            text-align: left;
+        }
+        
+        .operations-table td:nth-child(2) {
+            text-align: left;
+        }
+        
+        .operations-table td:nth-child(5) {
+            text-align: left;
+            font-size: 10px;
+        }
+        
+        .schedule {
+            margin: 30px 0;
+        }
+        
+        .schedule h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #388e3c;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+        
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #333;
+            padding: 6px;
+            text-align: center;
+        }
+        
+        .schedule-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        
+        .schedule-table td:nth-child(2) {
+            text-align: left;
+        }
+        
+        .schedule-table td:nth-child(5) {
+            text-align: left;
+            font-size: 10px;
+        }
+        
+        .additional-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 11px;
+        }
+        
+        .additional-table th, .additional-table td {
+            border: 1px solid #333;
+            padding: 6px;
+            text-align: center;
+        }
+        
+        .additional-table th {
+            background-color: #e8f5e8;
+            font-weight: bold;
+        }
+        
+        .additional-table td:nth-child(1) {
+            text-align: left;
+            width: 40%;
+        }
+        
+        .additional-table td:nth-child(4) {
+            text-align: left;
+            font-size: 10px;
+        }
+        
+        .notes {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-left: 4px solid #2196f3;
+            font-size: 11px;
+        }
+        
+        .notes h4 {
+            margin-top: 0;
+            color: #1976d2;
+            font-size: 12px;
+        }
+        
+        @media print {
+            body { padding: 10px; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="client-info">
+            <strong>miyase122様</strong><br>
+            件名：LINEミニアプリ紹介機能開発の工数見積書<br>
+            下記のとおりお見積申し上げます。
+        </div>
+        <div class="company-info">
+            <strong>AMCOLAB Technology Co., ltd</strong><br>
+            8 Pham Hung通、Me Tri区、<br>
+            Nam Tu Liem地区、Ha Noi市、Viet Nam<br>
+            03階 Audiビル<br>
+            TEL: (+84) 986 703 531<br>
+            Mail: quynt@amcolab.vn
+        </div>
+    </div>
+
+    <h2 class="estimate-title">見積書</h2>
+
+    <div class="total-section">
+        <div class="total-amount">合計金額：¥800,000（税抜）</div>
+        <div>有効期限：2025年10月15日</div>
+    </div>
+
+    <table class="summary-table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>項目</th>
+                <th>単価</th>
+                <th>人時</th>
+                <th>金額</th>
+                <th>備考</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>要件定義・モック作成</td>
+                <td>2,000</td>
+                <td>28</td>
+                <td>56,000</td>
+                <td>詳細仕様策定・画面遷移設計</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>UI/UX デザイン制作</td>
+                <td>2,000</td>
+                <td>28</td>
+                <td>56,000</td>
+                <td>LINEミニアプリUI・レスポンシブデザイン</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>開発工数</td>
+                <td>2,000</td>
+                <td>344</td>
+                <td>688,000</td>
+                <td>フロントエンド・バックエンド・LINE連携開発</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>資料作成</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>API仕様書、DB設計書、システム構成図、引き継ぎ資料</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><strong>合計</strong></td>
+                <td></td>
+                <td><strong>400</strong></td>
+                <td><strong>800,000</strong></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="page-break"></div>
+    
+    <h3>システム開発詳細</h3>
+    <table class="detail-table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>大項目</th>
+                <th>中項目</th>
+                <th>機能概要</th>
+                <th>開発工数<br>(50%)</th>
+                <th>管理工数<br>(10%)</th>
+                <th>仕様分析<br>(10%)</th>
+                <th>設計<br>(5%)</th>
+                <th>デプロイ<br>(5%)</th>
+                <th>テスト<br>(15%)</th>
+                <th>受入<br>(5%)</th>
+                <th>合計工数</th>
+                <th>費用(円)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="category-cell">LINE連携</td>
+                <td>LINE認証</td>
+                <td>LINE Login・ユーザー情報取得・友だち状態確認</td>
+                <td>12.0</td>
+                <td>2.4</td>
+                <td>2.4</td>
+                <td>1.2</td>
+                <td>1.2</td>
+                <td>3.6</td>
+                <td>1.2</td>
+                <td>24.0</td>
+                <td>48,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td>LINEメッセージ送信</td>
+                <td>Push API・クーポン配信・通知機能</td>
+                <td>15.0</td>
+                <td>3.0</td>
+                <td>3.0</td>
+                <td>1.5</td>
+                <td>1.5</td>
+                <td>4.5</td>
+                <td>1.5</td>
+                <td>30.0</td>
+                <td>60,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+                <td>友だち追加検知</td>
+                <td>Webhook・友だち追加イベント処理</td>
+                <td>10.0</td>
+                <td>2.0</td>
+                <td>2.0</td>
+                <td>1.0</td>
+                <td>1.0</td>
+                <td>3.0</td>
+                <td>1.0</td>
+                <td>20.0</td>
+                <td>40,000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="category-cell">紹介機能</td>
+                <td>紹介リンク生成</td>
+                <td>ユニークURL生成・トラッキング機能</td>
+                <td>12.5</td>
+                <td>2.5</td>
+                <td>2.5</td>
+                <td>1.25</td>
+                <td>1.25</td>
+                <td>3.75</td>
+                <td>1.25</td>
+                <td>25.0</td>
+                <td>50,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td></td>
+                <td>紹介履歴管理</td>
+                <td>紹介者・被紹介者管理・ステータス追跡</td>
+                <td>15.0</td>
+                <td>3.0</td>
+                <td>3.0</td>
+                <td>1.5</td>
+                <td>1.5</td>
+                <td>4.5</td>
+                <td>1.5</td>
+                <td>30.0</td>
+                <td>60,000</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td></td>
+                <td>紹介共有UI</td>
+                <td>シェアボタン・メッセージテンプレート</td>
+                <td>10.0</td>
+                <td>2.0</td>
+                <td>2.0</td>
+                <td>1.0</td>
+                <td>1.0</td>
+                <td>3.0</td>
+                <td>1.0</td>
+                <td>20.0</td>
+                <td>40,000</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="category-cell">クーポン機能</td>
+                <td>クーポン発行</td>
+                <td>自動発行・バリデーション・有効期限管理</td>
+                <td>17.5</td>
+                <td>3.5</td>
+                <td>3.5</td>
+                <td>1.75</td>
+                <td>1.75</td>
+                <td>5.25</td>
+                <td>1.75</td>
+                <td>35.0</td>
+                <td>70,000</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td></td>
+                <td>クーポン利用制御</td>
+                <td>店舗位置情報・QRコード・利用回数制限</td>
+                <td>20.0</td>
+                <td>4.0</td>
+                <td>4.0</td>
+                <td>2.0</td>
+                <td>2.0</td>
+                <td>6.0</td>
+                <td>2.0</td>
+                <td>40.0</td>
+                <td>80,000</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td></td>
+                <td>不正利用防止</td>
+                <td>重複チェック・IP制限・デバイス認証</td>
+                <td>15.0</td>
+                <td>3.0</td>
+                <td>3.0</td>
+                <td>1.5</td>
+                <td>1.5</td>
+                <td>4.5</td>
+                <td>1.5</td>
+                <td>30.0</td>
+                <td>60,000</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td class="category-cell">管理機能</td>
+                <td>企業管理画面</td>
+                <td>ダッシュボード・統計表示・設定管理</td>
+                <td>17.5</td>
+                <td>3.5</td>
+                <td>3.5</td>
+                <td>1.75</td>
+                <td>1.75</td>
+                <td>5.25</td>
+                <td>1.75</td>
+                <td>35.0</td>
+                <td>70,000</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td></td>
+                <td>クーポン管理</td>
+                <td>作成・編集・配信設定・利用状況確認</td>
+                <td>15.0</td>
+                <td>3.0</td>
+                <td>3.0</td>
+                <td>1.5</td>
+                <td>1.5</td>
+                <td>4.5</td>
+                <td>1.5</td>
+                <td>30.0</td>
+                <td>60,000</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td></td>
+                <td>レポート機能</td>
+                <td>紹介実績・来店分析・効果測定・CSV出力</td>
+                <td>12.5</td>
+                <td>2.5</td>
+                <td>2.5</td>
+                <td>1.25</td>
+                <td>1.25</td>
+                <td>3.75</td>
+                <td>1.25</td>
+                <td>25.0</td>
+                <td>50,000</td>
+            </tr>
+        
+            <tr style="background-color: #f0f0f0; font-weight: bold;">
+                <td></td>
+                <td>合計</td>
+                <td></td>
+                <td></td>
+                <td>172.0</td>
+                <td>34.4</td>
+                <td>34.4</td>
+                <td>17.2</td>
+                <td>17.2</td>
+                <td>51.6</td>
+                <td>17.2</td>
+                <td>344.0</td>
+                <td>688,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>追加オプション機能</h3>
+    <table class="additional-table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>項目</th>
+                <th>人時</th>
+                <th>金額</th>
+                <th>備考</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>SaaS決済連携機能</td>
+                <td>40</td>
+                <td>80,000</td>
+                <td>Stripe・PayPal連携・月額課金・請求書発行</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>手動展開サポート（1件あたり）</td>
+                <td>8</td>
+                <td>16,000</td>
+                <td>企業情報設定・初期データ投入・動作確認・ユーザー説明</td>
+            </tr>
+            <tr style="background-color: #f0f0f0; font-weight: bold;">
+                <td></td>
+                <td>追加オプション合計</td>
+                <td>48</td>
+                <td>96,000</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="restrictions">
+        <h3>🚨 重要な制限事項・前提条件：</h3>
+        <ul>
+            <li><strong>技術構成</strong>：React.js (Next.js) + Node.js + MySQL での構成を想定</li>
+            <li><strong>LINE Developers登録</strong>：お客様にて事前にLINE Developers アカウント・チャンネル作成が必要</li>
+            <li><strong>店舗位置情報</strong>：GPS・位置情報サービス利用にはユーザー許可が必要</li>
+            <li><strong>決済機能なし</strong>：クーポン値引き処理は店舗側で手動対応</li>
+            <li><strong>多言語対応なし</strong>：日本語のみでの提供</li>
+            <li><strong>大量送信制限</strong>：LINE APIの送信制限に準拠（月1000通まで無料）</li>
+            <li><strong>カスタマーサポート</strong>：エンドユーザー向けサポートは含まれません</li>
+            <li><strong>SaaS機能</strong>：初期開発には含まれず、追加オプションとして提供</li>
+        </ul>
+    </div>
+
+    <div class="operations-cost">
+        <h3>月次運用コスト（参考）</h3>
+        <table class="operations-table">
+            <thead>
+                <tr>
+                    <th>項目</th>
+                    <th>スペック</th>
+                    <th>月額（USD）</th>
+                    <th>月額（円）</th>
+                    <th>備考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AWS EC2</td>
+                    <td>t3.small</td>
+                    <td>$20</td>
+                    <td>¥3,000</td>
+                    <td>アプリサーバー・データベース</td>
+                </tr>
+                <tr>
+                    <td>LINE Messaging API</td>
+                    <td>従量課金制</td>
+                    <td>$0-50</td>
+                    <td>¥0-7,500</td>
+                    <td>月1000通まで無料、以降1通0.3円</td>
+                </tr>
+                <tr>
+                    <td>AWS RDS</td>
+                    <td>db.t3.micro</td>
+                    <td>$15</td>
+                    <td>¥2,250</td>
+                    <td>MySQL データベース</td>
+                </tr>
+                <tr>
+                    <td>CloudFront CDN</td>
+                    <td>日本・アジア配信</td>
+                    <td>$5-10</td>
+                    <td>¥750-1,500</td>
+                    <td>画像配信・高速化</td>
+                </tr>
+                <tr>
+                    <td>SSL証明書・ドメイン</td>
+                    <td>独自ドメイン</td>
+                    <td>$10</td>
+                    <td>¥1,500</td>
+                    <td>HTTPS対応・ドメイン維持</td>
+                </tr>
+                <tr style="background-color: #f0f0f0; font-weight: bold;">
+                    <td>合計 (標準)</td>
+                    <td>-</td>
+                    <td>$50-105</td>
+                    <td>¥7,500-16,000</td>
+                    <td>利用量により変動</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="notes">
+            <h4>💡 運用コストについて：</h4>
+            <ul>
+                <li><strong>初期想定</strong>：月間利用者500名、メッセージ配信2000通程度を想定</li>
+                <li><strong>LINE API料金</strong>：メッセージ送信量により大きく変動します</li>
+                <li><strong>スケーリング</strong>：利用者増加時はサーバースペック調整が必要</li>
+                <li><strong>為替レート</strong>：1USD = 150円で計算（変動あり）</li>
+                <li><strong>SaaS展開時</strong>：マルチテナント対応により単価削減可能</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="schedule">
+        <h3>開発スケジュール</h3>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>フェーズ</th>
+                    <th>タスク</th>
+                    <th>期間</th>
+                    <th>開始予定</th>
+                    <th>完了予定</th>
+                    <th>成果物</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>要件定義・UIデザイン</td>
+                    <td>2週間</td>
+                    <td>2025/09/16</td>
+                    <td>2025/09/30</td>
+                    <td>詳細仕様書・UI/UXデザイン・技術設計書</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>システム開発</td>
+                    <td>6週間</td>
+                    <td>2025/10/01</td>
+                    <td>2025/11/15</td>
+                    <td>LINEミニアプリ・管理画面・API開発</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>テスト・リリース準備</td>
+                    <td>1週間</td>
+                    <td>2025/11/16</td>
+                    <td>2025/11/22</td>
+                    <td>動作確認・本番環境構築・リリース</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>ユーザー受入・運用移行</td>
+                    <td>1週間</td>
+                    <td>2025/11/23</td>
+                    <td>2025/11/30</td>
+                    <td>操作説明・運用手順書・保守移行</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="notes">
+            <h4>注意事項：</h4>
+            <ul>
+                <li><strong>開発期間</strong>：合計10週間（約2.5ヶ月）</li>
+                <li><strong>納品後保証</strong>：3ヶ月間無償保証・バグ修正対応</li>
+                <li><strong>SaaS展開</strong>：別途スケジュール・費用が発生</li>
+                <li><strong>LINE審査</strong>：LINE審査期間（1-2週間）は別途必要</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
