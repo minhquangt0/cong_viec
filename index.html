@@ -1,671 +1,245 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>キャスト業務アプリ開発工数見積書</title>
-    <style>
-        @media print {
-            body { margin: 0; }
-            .page-break { page-break-before: always; }
-        }
-        
-        body {
-            font-family: 'MS Gothic', monospace;
-            margin: 20px;
-            background: white;
-            color: black;
-            line-height: 1.4;
-            font-size: 12px;
-        }
-        
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .client-info {
-            flex: 1;
-        }
-        
-        .vendor-info {
-            flex: 1;
-            text-align: right;
-            font-size: 11px;
-        }
-        
-        .title-section {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .title-section h1 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        
-        .title-section h2 {
-            font-size: 24px;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-        
-        .total-section {
-            background: #f8f8f8;
-            padding: 15px;
-            margin: 20px 0;
-            border: 2px solid #333;
-            text-align: center;
-        }
-        
-        .estimation-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        .estimation-table th,
-        .estimation-table td {
-            border: 1px solid #333;
-            padding: 8px;
-            text-align: center;
-        }
-        
-        .estimation-table th {
-            background: #e0e0e0;
-            font-weight: bold;
-        }
-        
-        .estimation-table .item-col {
-            text-align: left;
-            width: 30%;
-        }
-        
-        .estimation-table .remarks-col {
-            text-align: left;
-            width: 25%;
-        }
-        
-        .detail-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 10px;
-        }
-        
-        .detail-table th,
-        .detail-table td {
-            border: 1px solid #333;
-            padding: 4px;
-            text-align: center;
-        }
-        
-        .detail-table th {
-            background: #e0e0e0;
-            font-weight: bold;
-        }
-        
-        .detail-table .item-desc {
-            text-align: left;
-            width: 25%;
-        }
-        
-        .constraints {
-            background: #fff8dc;
-            padding: 15px;
-            margin: 20px 0;
-            border: 1px solid #ddd;
-        }
-        
-        .constraints h3 {
-            color: #e74c3c;
-            margin-top: 0;
-        }
-        
-        .cost-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 11px;
-        }
-        
-        .cost-table th,
-        .cost-table td {
-            border: 1px solid #333;
-            padding: 6px;
-            text-align: center;
-        }
-        
-        .cost-table th {
-            background: #e0e0e0;
-            font-weight: bold;
-        }
-        
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        .schedule-table th,
-        .schedule-table td {
-            border: 1px solid #333;
-            padding: 8px;
-            text-align: center;
-        }
-        
-        .schedule-table th {
-            background: #e0e0e0;
-            font-weight: bold;
-        }
-        
-        .schedule-table .task-col {
-            text-align: left;
-            width: 25%;
-        }
-        
-        .schedule-table .deliverable-col {
-            text-align: left;
-            width: 35%;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sales Report — IT Market (Japan) — Tuần 3 tháng 9</title>
+  <style>
+    :root{
+      --bg:#f8fafc;           /* page background */
+      --card:#ffffff;         /* card background */
+      --muted:#64748b;        /* secondary text */
+      --text:#1e293b;         /* primary text */
+      --brand:#2563eb;        /* accent */
+      --brand-2:#16a34a;      /* secondary accent */
+      --danger:#dc2626;
+      --warn:#d97706;
+      --ok:#059669;
+      --chip:#f1f5f9;
+      --border:#e2e8f0;
+      --shadow: 0 4px 12px rgba(0,0,0,.08);
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    .container{ max-width:1080px; margin:40px auto; padding:0 20px; }
+
+    /* Header */
+    .header{ display:grid; grid-template-columns: 1fr auto; gap:16px; align-items:center; }
+    .title{ font-size: clamp(26px, 3vw, 34px); line-height:1.2; margin:0; font-weight:800; }
+    .subtitle{ margin-top:6px; color:var(--muted); font-size:14px; }
+
+    .badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:#f8fafc; box-shadow: var(--shadow);
+    }
+    .badge svg{ width:18px; height:18px; }
+
+    /* Card grid */
+    .grid{ display:grid; gap:16px; grid-template-columns: repeat(12, 1fr); margin-top:24px; }
+    .card{ grid-column: span 12; background:var(--card); border:1px solid var(--border); border-radius:20px; padding:18px 20px; box-shadow: var(--shadow); }
+    .card h3{ margin:0 0 10px; font-size:16px; font-weight:700; color:var(--text); letter-spacing:.2px; }
+
+    /* KPI cards */
+    .kpi{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .kpi .value{ font-weight:800; font-size: clamp(22px, 3vw, 28px); }
+    .kpi .delta{ font-size:12px; color:var(--muted); }
+
+    .kpi-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
+    .kpi-card{ background: #f1f5f9; border:1px solid var(--border); border-radius:16px; padding:14px; }
+
+    .muted{ color:var(--muted); }
+
+    /* Chips */
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .chip{ background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--text); }
+
+    /* Two columns */
+    .col-6{ grid-column: span 6; }
+
+    /* Lists & table */
+    .list{ margin:10px 0 0 0; padding:0 0 0 18px; }
+    .list li{ margin:8px 0; }
+
+    table{ width:100%; border-collapse:collapse; margin-top:8px; font-size:14px; }
+    th, td{ padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
+    th{ color:var(--text); font-weight:700; }
+
+    /* Progress */
+    .progress-wrap{ margin-top:8px; }
+    .progress{ height:10px; border-radius:999px; background:#e2e8f0; position:relative; overflow:hidden; }
+    .progress > i{ position:absolute; inset:0; width:0%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); border-radius:inherit; }
+    .progress-label{ display:flex; justify-content:space-between; color:var(--muted); font-size:12px; margin-bottom:6px; }
+
+    /* Notes */
+    .note{ margin-top:6px; font-size:13px; color:var(--muted); }
+    .callout{ border-left:3px solid var(--brand); padding:10px 12px; background:#f8fafc; border-radius:10px; }
+
+    /* Footer */
+    footer{ color:var(--muted); font-size:12px; text-align:center; margin:28px 0 16px; }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
+      .col-6{ grid-column: span 12; }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Header -->
     <div class="header">
-        <div class="client-info">
-            <p><strong>件名：キャスト向け会員制Web業務アプリ開発の工数見積書</strong></p>
-            <p>下記のとおりお見積申し上げます。</p>
+      <div>
+        <h1 class="title">Sales Report — IT Market (Japan) — Tuần 3 tháng 9</h1>
+        <p class="subtitle">Prepared by: <strong>Đỗ Thị Huyền</strong> • Date: <strong>19/09/2025</strong></p>
+      </div>
+      <div class="badge" title="Japan Market">
+        <!-- flag & sparkles -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" opacity=".35"/><circle cx="12" cy="12" r="5" fill="currentColor"/></svg>
+        <span><strong>Japan</strong> • IT Outsourcing</span>
+      </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <section class="grid" aria-label="KPIs">
+      <div class="card">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="muted">Job apply</div>
+            <div class="kpi"><span class="value">50</span><span class="delta">CW / Lancers / Coconala</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="muted">Phản hồi</div>
+            <div class="kpi"><span class="value">6</span><span class="delta">chủ yếu từ Coconala & Lancers</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="muted">Doanh thu T9 (tới hiện tại)</div>
+            <div class="kpi"><span class="value">¥333,000</span><span class="delta">khách quen</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="muted">Số meeting (tuần 3 / tháng)</div>
+            <div class="kpi"><span class="value">2 </span><span class="delta">chi tiết trao đổi tại cuộc họp</span></div>
+          </div>
         </div>
-        <div class="vendor-info">
-            <p><strong>AMCOLAB Technology Co., ltd</strong></p>
-            <p>8 Pham Hung通、Me Tri区、</p>
-            <p>Nam Tu Liem地区、Ha Noi市、Viet Nam</p>
-            <p>03階 Audiビル</p>
-            <p>TEL: (+84) 986 703 531</p>
-            <p>Mail: quynt@amcolab.vn</p>
+        <div class="chips" style="margin-top:12px">
+          <span class="chip">CrowdWorks</span>
+          <span class="chip">Lancers</span>
+          <span class="chip">Coconala</span>
+          <span class="chip">HP / LP / Data Tools</span>
+          <span class="chip">Design yêu cầu cao</span>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="title-section">
-        <h2>見積書</h2>
-    </div>
+    <!-- Tóm tắt -->
+    <section class="grid" aria-label="Summary">
+      <div class="card col-6">
+        <h3>1) Tóm tắt</h3>
+        <div class="callout">
+          Trong tuần 3 tháng 9, hoạt động tìm kiếm khách hàng diễn ra đều đặn. Tuy nhiên, <strong>chất lượng job phù hợp giảm</strong>, thiên về các dự án <strong>HP/LP quy mô nhỏ</strong> và yêu cầu <strong>thiết kế</strong>. Bên cạnh đó có nhu cầu các <strong>tool trích xuất/phân tích dữ liệu</strong>.
+        </div>
+      </div>
+      <div class="card col-6">
+        <h3>Tiến độ KPI trong tháng</h3>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Meet chất lượng</span><span><b id="meetNow">6</b>/8</span></div>
+          <div class="progress" aria-hidden="true"><i id="meetBar"></i></div>
+          <p class="note">Đã có <strong>2</strong> meet trong tuần này. Mục tiêu: đạt đủ <strong>8</strong> meet chất lượng trong tháng 9.</p>
+        </div>
+        <div class="progress-wrap" style="margin-top:14px">
+          <div class="progress-label"><span>Hợp đồng mới</span><span><b id="dealNow">1</b>/3</span></div>
+          <div class="progress" aria-hidden="true"><i id="dealBar"></i></div>
+          <p class="note">Đã ký <strong>1</strong> hợp đồng. Mục tiêu: có thêm <strong>2</strong> hợp đồng mới trước 30/09.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="total-section">
-        <p><strong>合計金額：¥1,680,000（税抜）</strong></p>
-        <p><strong>有効期限：2025年10月17日</strong></p>
-    </div>
+    <!-- Thực tích -->
+    <section class="grid" aria-label="Performance">
+      <div class="card">
+        <h3>2) Thực tích</h3>
+        <table role="table" aria-label="Sales performance table">
+          <thead>
+            <tr>
+              <th>Chỉ tiêu</th>
+              <th>Giá trị</th>
+              <th>Ghi chú</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tổng job apply</td>
+              <td><strong>50</strong></td>
+              <td>CrowdWorks / Lancers / Coconala</td>
+            </tr>
+            <tr>
+              <td>Số phản hồi</td>
+              <td><strong>6</strong></td>
+              <td>Chủ yếu từ Coconala & Lancers</td>
+            </tr>
+            <tr>
+              <td>Doanh thu tháng 9</td>
+              <td><strong>¥333,000</strong></td>
+              <td>Khách hàng cũ (repeat)</td>
+            </tr>
+            <tr>
+              <td>Số meeting</td>
+              <td><strong>2 / 6</strong></td>
+              <td>Trong tuần 3 có 2, tổng cộng 6 từ đầu tháng</td>
+            </tr>
+            <tr>
+              <td>Số hợp đồng</td>
+              <td><strong>1</strong></td>
+              <td>Đã ký kết</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note"><em>Nhận xét:</em> Trên các nền tảng có nhiều “bên nhận thầu” cạnh tranh giá/đề xuất. Cần tăng hấp dẫn với khách quen: <strong>ưu đãi</strong>, <strong>phản hồi nhanh/chất lượng</strong>, <strong>cam kết tiến độ</strong>.</p>
+      </div>
+    </section>
 
-    <table class="estimation-table">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>項目</th>
-                <th>単価</th>
-                <th>人時</th>
-                <th>金額</th>
-                <th>備考</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td class="item-col">要件定義・モック作成</td>
-                <td>2,000</td>
-                <td>60</td>
-                <td>120,000</td>
-                <td class="remarks-col">詳細仕様策定・画面遷移設計・スマホUI設計</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td class="item-col">UI/UX デザイン制作</td>
-                <td>2,000</td>
-                <td>80</td>
-                <td>160,000</td>
-                <td class="remarks-col">レスポンシブデザイン・キャスト向けスマホ最優先UI</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td class="item-col">開発工数</td>
-                <td>2,000</td>
-                <td>700</td>
-                <td>1,400,000</td>
-                <td class="remarks-col">フロントエンド・バックエンド・セキュリティ実装</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td class="item-col">資料作成</td>
-                <td>2,000</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="remarks-col">API仕様書、DB設計書、ER図、運用マニュアル</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="text-align:right;"><strong>合計</strong></td>
-                <td><strong>1,680,000</strong></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="page-break"></div>
-
-    <h3>システム開発詳細</h3>
-    
-    <table class="detail-table">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>大項目</th>
-                <th>中項目</th>
-                <th>機能概要</th>
-                <th>開発工数<br>(50%)</th>
-                <th>管理工数<br>(10%)</th>
-                <th>仕様分析<br>(10%)</th>
-                <th>設計<br>(5%)</th>
-                <th>デプロイ<br>(5%)</th>
-                <th>テスト<br>(15%)</th>
-                <th>受入<br>(5%)</th>
-                <th>合計工数</th>
-                <th>費用(円)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>認証・権限</td>
-                <td>ログイン機能</td>
-                <td class="item-desc">Cast/Admin権限・行レベルセキュリティ・本人データのみ閲覧</td>
-                <td>20.0</td>
-                <td>4.0</td>
-                <td>4.0</td>
-                <td>2.0</td>
-                <td>2.0</td>
-                <td>6.0</td>
-                <td>2.0</td>
-                <td>40.0</td>
-                <td>80,000</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>シフト管理</td>
-                <td>シフト登録</td>
-                <td class="item-desc">変更申請フロー・公開/非公開設定・承認機能</td>
-                <td>35.0</td>
-                <td>7.0</td>
-                <td>7.0</td>
-                <td>3.5</td>
-                <td>3.5</td>
-                <td>10.5</td>
-                <td>3.5</td>
-                <td>70.0</td>
-                <td>140,000</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>予約管理</td>
-                <td>予約不可ブロック</td>
-                <td class="item-desc">中抜け等・該当時間は予約不可・重複チェック</td>
-                <td>25.0</td>
-                <td>5.0</td>
-                <td>5.0</td>
-                <td>2.5</td>
-                <td>2.5</td>
-                <td>7.5</td>
-                <td>2.5</td>
-                <td>50.0</td>
-                <td>100,000</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>オーダー管理</td>
-                <td>オーダー作成</td>
-                <td class="item-desc">仮予約/確定/キャンセル/貸切・顧客区分・指名区分・明細・合計自動計算</td>
-                <td>50.0</td>
-                <td>10.0</td>
-                <td>10.0</td>
-                <td>5.0</td>
-                <td>5.0</td>
-                <td>15.0</td>
-                <td>5.0</td>
-                <td>100.0</td>
-                <td>200,000</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>オーダー管理</td>
-                <td>状況管理</td>
-                <td class="item-desc">状況ボタン（合流/入室/退室/解散）・リアルタイム更新</td>
-                <td>15.0</td>
-                <td>3.0</td>
-                <td>3.0</td>
-                <td>1.5</td>
-                <td>1.5</td>
-                <td>4.5</td>
-                <td>1.5</td>
-                <td>30.0</td>
-                <td>60,000</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>重複防止</td>
-                <td>時間重複チェック</td>
-                <td class="item-desc">シフト外/ブロック中/既存予約との時間重複は登録不可</td>
-                <td>20.0</td>
-                <td>4.0</td>
-                <td>4.0</td>
-                <td>2.0</td>
-                <td>2.0</td>
-                <td>6.0</td>
-                <td>2.0</td>
-                <td>40.0</td>
-                <td>80,000</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>データ管理</td>
-                <td>オーダーID採番</td>
-                <td class="item-desc">YYYYMMDD-コード-連番・自動採番システム</td>
-                <td>10.0</td>
-                <td>2.0</td>
-                <td>2.0</td>
-                <td>1.0</td>
-                <td>1.0</td>
-                <td>3.0</td>
-                <td>1.0</td>
-                <td>20.0</td>
-                <td>40,000</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>表示・出力</td>
-                <td>一覧表示</td>
-                <td class="item-desc">一覧/日別タイムライン表示・フィルタ・ソート機能</td>
-                <td>30.0</td>
-                <td>6.0</td>
-                <td>6.0</td>
-                <td>3.0</td>
-                <td>3.0</td>
-                <td>9.0</td>
-                <td>3.0</td>
-                <td>60.0</td>
-                <td>120,000</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>表示・出力</td>
-                <td>CSV出力</td>
-                <td class="item-desc">データ抽出・CSV形式・期間指定・項目選択</td>
-                <td>15.0</td>
-                <td>3.0</td>
-                <td>3.0</td>
-                <td>1.5</td>
-                <td>1.5</td>
-                <td>4.5</td>
-                <td>1.5</td>
-                <td>30.0</td>
-                <td>60,000</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>売上集計</td>
-                <td>売上分析</td>
-                <td class="item-desc">確定のみ集計・初指名/本指名本数・個人/全体ダッシュボード</td>
-                <td>40.0</td>
-                <td>8.0</td>
-                <td>8.0</td>
-                <td>4.0</td>
-                <td>4.0</td>
-                <td>12.0</td>
-                <td>4.0</td>
-                <td>80.0</td>
-                <td>160,000</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>現金精算</td>
-                <td>入金精算</td>
-                <td class="item-desc">期間抽出・店落ち計算（式変更可能）・伝票PDF・履歴管理</td>
-                <td>35.0</td>
-                <td>7.0</td>
-                <td>7.0</td>
-                <td>3.5</td>
-                <td>3.5</td>
-                <td>10.5</td>
-                <td>3.5</td>
-                <td>70.0</td>
-                <td>140,000</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>マスタ管理</td>
-                <td>各種マスタ</td>
-                <td class="item-desc">コース/料金/交通費/指名区分/計算式等をUIで編集</td>
-                <td>25.0</td>
-                <td>5.0</td>
-                <td>5.0</td>
-                <td>2.5</td>
-                <td>2.5</td>
-                <td>7.5</td>
-                <td>2.5</td>
-                <td>50.0</td>
-                <td>100,000</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>システム管理</td>
-                <td>監査ログ</td>
-                <td class="item-desc">全操作ログ記録・検索・閲覧機能</td>
-                <td>20.0</td>
-                <td>4.0</td>
-                <td>4.0</td>
-                <td>2.0</td>
-                <td>2.0</td>
-                <td>6.0</td>
-                <td>2.0</td>
-                <td>40.0</td>
-                <td>80,000</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>システム管理</td>
-                <td>バックアップ</td>
-                <td class="item-desc">定期バックアップ・復元機能・データ保護</td>
-                <td>15.0</td>
-                <td>3.0</td>
-                <td>3.0</td>
-                <td>1.5</td>
-                <td>1.5</td>
-                <td>4.5</td>
-                <td>1.5</td>
-                <td>30.0</td>
-                <td>60,000</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>セキュリティ</td>
-                <td>セキュリティ実装</td>
-                <td class="item-desc">HTTPS・パスワードハッシュ・CSRF・XSS対策</td>
-                <td>25.0</td>
-                <td>5.0</td>
-                <td>5.0</td>
-                <td>2.5</td>
-                <td>2.5</td>
-                <td>7.5</td>
-                <td>2.5</td>
-                <td>50.0</td>
-                <td>100,000</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>インフラ</td>
-                <td>環境構築</td>
-                <td class="item-desc">サーバー環境・データベース・SSL設定</td>
-                <td>20.0</td>
-                <td>4.0</td>
-                <td>4.0</td>
-                <td>2.0</td>
-                <td>2.0</td>
-                <td>6.0</td>
-                <td>2.0</td>
-                <td>40.0</td>
-                <td>80,000</td>
-            </tr>
-            <tr style="background: #f0f0f0; font-weight: bold;">
-                <td colspan="4">合計</td>
-                <td>350.0</td>
-                <td>70.0</td>
-                <td>70.0</td>
-                <td>35.0</td>
-                <td>35.0</td>
-                <td>105.0</td>
-                <td>35.0</td>
-                <td>700.0</td>
-                <td>1,400,000</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="constraints">
-        <h3>🚨 重要な制限事項：</h3>
-        <ul>
-            <li><strong>想定技術：</strong> Next.js (TypeScript) + Ruby on Rails + MySQL での構成を想定</li>
-            <li><strong>スマホ最優先：</strong> キャスト側はレスポンシブデザイン、スマホUI最優先</li>
-            <li><strong>決済機能なし：</strong> 料金決済機能は含まれません</li>
-            <li><strong>顧客管理なし：</strong> 顧客情報の詳細管理は含まれません</li>
-            <li><strong>予約システム連携なし：</strong> 外部予約システムとの連携は含まれません</li>
-            <li><strong>負荷テスト・ユーザーテストなし：</strong> パフォーマンステストは含まれません</li>
-            <li><strong>管理画面のデザイン：</strong> シンプルなUI設計とする前提</li>
-            <li><strong>多店舗対応なし：</strong> 単一店舗での運用を想定</li>
+    <!-- Issues & Actions -->
+    <section class="grid" aria-label="Issues and Goals">
+      <div class="card col-6">
+        <h3>3) Vấn đề còn tồn tại</h3>
+        <ul class="list">
+          <li>Chất lượng & số lượng job phù hợp <strong>ít</strong>; đang khảo sát thêm thị trường khác nhưng <strong>chưa tìm được</strong>.</li>
+          <li>Cạnh tranh cao: ngoài <strong>AMCOLAB</strong> còn nhiều đối thủ mạnh.</li>
+          <li>Cần xây dựng hình ảnh ngay từ đầu: <strong>Home Page</strong> công ty, <strong>deck</strong> (PPTX) giới thiệu.</li>
         </ul>
-    </div>
-
-    <div class="page-break"></div>
-
-    <h3>月次運用コスト（参考）</h3>
-    
-    <table class="cost-table">
-        <thead>
-            <tr>
-                <th>項目</th>
-                <th>スペック</th>
-                <th>月額（USD）</th>
-                <th>月額（円）</th>
-                <th>備考</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>AWS EC2</td>
-                <td>t3.medium</td>
-                <td>$50</td>
-                <td>¥7,500</td>
-                <td>サーバー・データベース統合</td>
-            </tr>
-            <tr>
-                <td>データベース</td>
-                <td>RDS MySQL</td>
-                <td>$30</td>
-                <td>¥4,500</td>
-                <td>データベース専用</td>
-            </tr>
-            <tr>
-                <td>ストレージ</td>
-                <td>EBS + S3</td>
-                <td>$20</td>
-                <td>¥3,000</td>
-                <td>ファイル保存・バックアップ</td>
-            </tr>
-            <tr>
-                <td>SSL証明書・ドメイン</td>
-                <td>Let's Encrypt + 独自ドメイン</td>
-                <td>$5</td>
-                <td>¥750</td>
-                <td>HTTPS対応・ドメイン維持</td>
-            </tr>
-            <tr>
-                <td>監視・ログ</td>
-                <td>CloudWatch + 外部監視</td>
-                <td>$15</td>
-                <td>¥2,250</td>
-                <td>システム監視・アラート</td>
-            </tr>
-            <tr style="background: #f0f0f0; font-weight: bold;">
-                <td colspan="2">合計 (標準)</td>
-                <td>$120</td>
-                <td>¥18,000</td>
-                <td>使用量により変動</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div style="background: #e8f4fd; padding: 15px; margin: 20px 0; border: 1px solid #bee5eb;">
-        <h4>💡 運用コストについて：</h4>
-        <ul>
-            <li><strong>初期想定：</strong> 月間利用者数50名程度、1日100オーダー程度を想定</li>
-            <li><strong>スケーリング：</strong> 利用者増加時はサーバースペック調整が必要</li>
-            <li><strong>為替レート：</strong> 1USD = 150円で計算（変動あり）</li>
-            <li><strong>最適化：</strong> 実運用データを基に継続的なコスト最適化を推奨</li>
-            <li><strong>バックアップ：</strong> 自動バックアップと3ヶ月間データ保持を含む</li>
+      </div>
+      <div class="card col-6">
+        <h3>4) Mục tiêu đến 30/09</h3>
+        <ul class="list">
+          <li>✔️ Ký thêm <strong>2 hợp đồng mới</strong>.</li>
+          <li>✔️ Đạt đủ <strong>8</strong> meet chất lượng/tháng.</li>
+          <li>✔️ Duy trì quan hệ tốt với khách hàng hiện hữu.</li>
+          <li>✔️ Chuẩn bị chiến lược & tài liệu thu hút khách mới (HP, PPTX, pricing, SLA).</li>
         </ul>
-    </div>
+      </div>
+    </section>
 
-    <h3>開発スケジュール</h3>
-    
-    <table class="schedule-table">
-        <thead>
-            <tr>
-                <th>フェーズ</th>
-                <th>タスク</th>
-                <th>期間</th>
-                <th>開始予定</th>
-                <th>完了予定</th>
-                <th>成果物</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td class="task-col">要件定義・モックデザイン</td>
-                <td>3週間</td>
-                <td>2025/09/20</td>
-                <td>2025/10/11</td>
-                <td class="deliverable-col">詳細仕様書・UI/UXモックアップ・技術仕様書・ER図</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td class="task-col">システム開発</td>
-                <td>3ヶ月</td>
-                <td>2025/10/12</td>
-                <td>2026/01/12</td>
-                <td class="deliverable-col">完動するシステム・管理画面・ドキュメント・初期マスタ</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td class="task-col">ユーザー受入テスト（UAT）</td>
-                <td>2週間</td>
-                <td>2026/01/13</td>
-                <td>2026/01/27</td>
-                <td class="deliverable-col">テスト完了・運用マニュアル・本番リリース</td>
-            </tr>
-        </tbody>
-    </table>
+    <footer>
+      © 2025 AMCOLAB Technology — Báo cáo phục vụ nội bộ.
+    </footer>
+  </div>
 
-    <div style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffeaa7;">
-        <h4>📋 注意事項：</h4>
-        <ul>
-            <li><strong>開発期間：</strong> フェーズ1-3が主要開発期間（合計4ヶ月）</li>
-            <li><strong>保証期間：</strong> 納品後３ヶ月間無償保証・バグ修正対応</li>
-            <li><strong>体制：</strong> プロジェクトマネージャ1名、フロントエンド2名、バックエンド2名</li>
-            <li><strong>類似実績：</strong> 美容サロン予約管理システム、スタッフ勤怠管理システム等</li>
-            <li><strong>前提・リスク：</strong> 仕様変更時は別途見積、外部API連携時は追加費用発生の可能性</li>
-        </ul>
-    </div>
-
-    <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f8f9fa; border: 1px solid #dee2e6;">
-        <h3>消費税（10%）：¥168,000</h3>
-        <h2><strong>税込合計金額：¥1,848,000</strong></h2>
-    </div>
+  <script>
+    // Simple progress animation for KPIs
+    const meetNow = 6, meetGoal = 8; // từ dữ liệu báo cáo
+    const dealNow = 1, dealGoal = 2;
+    const meetPct = Math.min(100, Math.round(meetNow / meetGoal * 100));
+    const dealPct = Math.min(100, Math.round(dealNow / dealGoal * 100));
+    document.getElementById('meetNow').textContent = meetNow;
+    document.getElementById('dealNow').textContent = dealNow;
+    const animateBar = (el, to) => {
+      let cur = 0; const step = () => { cur += 2; el.style.width = cur + '%'; if(cur < to) requestAnimationFrame(step); }; step();
+    };
+    animateBar(document.getElementById('meetBar'), meetPct);
+    animateBar(document.getElementById('dealBar'), dealPct);
+  </script>
 </body>
 </html>
