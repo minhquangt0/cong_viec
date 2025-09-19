@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sales Report — IT Market (Japan) — Tuần 3 tháng 9</title>
+  <title>Sales Report — IT Market (EU) — Tuần 3 tháng 9</title>
   <style>
     :root{
-      --bg:#f8fafc;           /* page background */
-      --card:#ffffff;         /* card background */
-      --muted:#64748b;        /* secondary text */
-      --text:#1e293b;         /* primary text */
-      --brand:#2563eb;        /* accent */
-      --brand-2:#16a34a;      /* secondary accent */
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --muted:#64748b;
+      --text:#1e293b;
+      --brand:#2563eb;
+      --brand-2:#16a34a;
       --danger:#dc2626;
       --warn:#d97706;
       --ok:#059669;
@@ -34,8 +34,7 @@
     .title{ font-size: clamp(26px, 3vw, 34px); line-height:1.2; margin:0; font-weight:800; }
     .subtitle{ margin-top:6px; color:var(--muted); font-size:14px; }
 
-    .badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:#f8fafc; box-shadow: var(--shadow);
-    }
+    .badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:#f8fafc; box-shadow: var(--shadow); }
     .badge svg{ width:18px; height:18px; }
 
     /* Card grid */
@@ -68,12 +67,6 @@
     th, td{ padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
     th{ color:var(--text); font-weight:700; }
 
-    /* Progress */
-    .progress-wrap{ margin-top:8px; }
-    .progress{ height:10px; border-radius:999px; background:#e2e8f0; position:relative; overflow:hidden; }
-    .progress > i{ position:absolute; inset:0; width:0%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); border-radius:inherit; }
-    .progress-label{ display:flex; justify-content:space-between; color:var(--muted); font-size:12px; margin-bottom:6px; }
-
     /* Notes */
     .note{ margin-top:6px; font-size:13px; color:var(--muted); }
     .callout{ border-left:3px solid var(--brand); padding:10px 12px; background:#f8fafc; border-radius:10px; }
@@ -81,7 +74,6 @@
     /* Footer */
     footer{ color:var(--muted); font-size:12px; text-align:center; margin:28px 0 16px; }
 
-    /* Responsive */
     @media (max-width: 860px){
       .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
       .col-6{ grid-column: span 12; }
@@ -93,13 +85,12 @@
     <!-- Header -->
     <div class="header">
       <div>
-        <h1 class="title">Sales Report — IT Market (Japan) — Tuần 3 tháng 9</h1>
-        <p class="subtitle">Prepared by: <strong>Đỗ Thị Huyền</strong> • Date: <strong>19/09/2025</strong></p>
+        <h1 class="title">Sales Report — IT Market (EU) — Tuần 3 tháng 9</h1>
+        <p class="subtitle">Prepared by: <strong>Trần Thuỳ Linh</strong> • Date: <strong>19/09/2025</strong></p>
       </div>
-      <div class="badge" title="Japan Market">
-        <!-- flag & sparkles -->
+      <div class="badge" title="EU Market">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" opacity=".35"/><circle cx="12" cy="12" r="5" fill="currentColor"/></svg>
-        <span><strong>Japan</strong> • IT Outsourcing</span>
+        <span><strong>EU</strong> • IT Outsourcing</span>
       </div>
     </div>
 
@@ -109,27 +100,27 @@
         <div class="kpi-grid">
           <div class="kpi-card">
             <div class="muted">Job apply</div>
-            <div class="kpi"><span class="value">50</span><span class="delta">CW / Lancers / Coconala</span></div>
+            <div class="kpi"><span class="value">22</span><span class="delta">Peopleperhour, Guru, Upwork</span></div>
           </div>
           <div class="kpi-card">
             <div class="muted">Phản hồi</div>
-            <div class="kpi"><span class="value">7</span><span class="delta">chủ yếu từ Coconala & Lancers</span></div>
+            <div class="kpi"><span class="value">5</span><span class="delta">Chủ yếu từ Peopleperhour</span></div>
           </div>
           <div class="kpi-card">
-            <div class="muted">Doanh thu T9 (tới hiện tại)</div>
-            <div class="kpi"><span class="value">¥333,000</span><span class="delta">khách quen</span></div>
+            <div class="muted">Tổng Email Hubspot</div>
+            <div class="kpi"><span class="value">21</span><span class="delta">Tỷ lệ mở 26.32%</span></div>
           </div>
           <div class="kpi-card">
-            <div class="muted">Số meeting (tuần 3 / tháng)</div>
-            <div class="kpi"><span class="value">2 </span><span class="delta">chi tiết trao đổi tại cuộc họp</span></div>
+            <div class="muted">Doanh thu T9</div>
+            <div class="kpi"><span class="value">0</span><span class="delta">Đến thời điểm hiện tại</span></div>
           </div>
         </div>
         <div class="chips" style="margin-top:12px">
-          <span class="chip">CrowdWorks</span>
-          <span class="chip">Lancers</span>
-          <span class="chip">Coconala</span>
-          <span class="chip">HP / LP / Data Tools</span>
-          <span class="chip">Design yêu cầu cao</span>
+          <span class="chip">Peopleperhour</span>
+          <span class="chip">Guru</span>
+          <span class="chip">Upwork</span>
+          <span class="chip">Hubspot</span>
+          <span class="chip">Job nhỏ</span>
         </div>
       </div>
     </section>
@@ -139,20 +130,7 @@
       <div class="card col-6">
         <h3>1) Tóm tắt</h3>
         <div class="callout">
-          Trong tuần 3 tháng 9, hoạt động tìm kiếm khách hàng diễn ra đều đặn. Tuy nhiên, <strong>chất lượng job phù hợp giảm</strong>, thiên về các dự án <strong>HP/LP quy mô nhỏ</strong> và yêu cầu <strong>thiết kế</strong>. Bên cạnh đó có nhu cầu các <strong>tool trích xuất/phân tích dữ liệu</strong>.
-        </div>
-      </div>
-      <div class="card col-6">
-        <h3>Tiến độ KPI trong tháng</h3>
-        <div class="progress-wrap">
-          <div class="progress-label"><span>Meet chất lượng</span><span><b id="meetNow">6</b>/8</span></div>
-          <div class="progress" aria-hidden="true"><i id="meetBar"></i></div>
-          <p class="note">Đã có <strong>2</strong> meet trong tuần này. Mục tiêu: đạt đủ <strong>8</strong> meet chất lượng trong tháng 9.</p>
-        </div>
-        <div class="progress-wrap" style="margin-top:14px">
-          <div class="progress-label"><span>Hợp đồng mới</span><span><b id="dealNow">1</b>/3</span></div>
-          <div class="progress" aria-hidden="true"><i id="dealBar"></i></div>
-          <p class="note">Đã ký <strong>1</strong> hợp đồng. Mục tiêu: có thêm <strong>2</strong> hợp đồng mới trước 30/09.</p>
+          Trong tuần 3 tháng 9, hoạt động kinh doanh và tìm kiếm khách hàng diễn ra đều đặn. Tuy nhiên, <strong>chất lượng job giảm</strong>, chủ yếu là các job nhỏ và không phù hợp với công ty.
         </div>
       </div>
     </section>
@@ -172,30 +150,32 @@
           <tbody>
             <tr>
               <td>Tổng job apply</td>
-              <td><strong>50</strong></td>
-              <td>CrowdWorks / Lancers / Coconala</td>
+              <td><strong>22</strong></td>
+              <td>Peopleperhour, Guru, Upwork</td>
             </tr>
             <tr>
               <td>Số phản hồi</td>
-              <td><strong>7</strong></td>
-              <td>Chủ yếu từ Coconala & Lancers</td>
+              <td><strong>5</strong></td>
+              <td>Chủ yếu từ Peopleperhour</td>
+            </tr>
+            <tr>
+              <td>Tổng Email Hubspot</td>
+              <td><strong>21</strong></td>
+              <td>Tỷ lệ mở 26.32%</td>
+            </tr>
+            <tr>
+              <td>Doanh thu tháng 9</td>
+              <td><strong>0</strong></td>
+              <td>Đến thời điểm hiện tại</td>
             </tr>
             <tr>
               <td>Số meeting</td>
-              <td><strong>2 / 6</strong></td>
-              <td>Trong tuần 3 có 2, tổng cộng 6 từ đầu tháng</td>
+              <td><strong>0</strong></td>
+              <td>Tuần này chưa có meet</td>
             </tr>
-            <tr>
-              <td>Số hợp đồng</td>
-              <td><strong>1</strong></td>
-              <td>Đã ký kết</td>
-            </tr>
-                          <td>Doanh thu tháng 9</td>
-              <td><strong>¥333,000</strong></td>
-              <td>Khách hàng cũ (repeat)</td>
           </tbody>
         </table>
-        <p class="note"><em>Nhận xét:</em> Trên các nền tảng có nhiều “bên nhận thầu” cạnh tranh giá/đề xuất. Cần tăng hấp dẫn với khách quen: <strong>ưu đãi</strong>, <strong>phản hồi nhanh/chất lượng</strong>, <strong>cam kết tiến độ</strong>.</p>
+        <p class="note"><em>Nhận xét:</em> Lượng job mới trên các nền tảng tuần này ít, một số không phù hợp công ty, chưa hẹn được meeting.</p>
       </div>
     </section>
 
@@ -204,18 +184,17 @@
       <div class="card col-6">
         <h3>3) Vấn đề còn tồn tại</h3>
         <ul class="list">
-          <li>Chất lượng & số lượng job phù hợp <strong>ít</strong>; đang khảo sát thêm thị trường khác nhưng <strong>chưa tìm được</strong>.</li>
-          <li>Cạnh tranh cao: ngoài <strong>AMCOLAB</strong> còn nhiều đối thủ mạnh.</li>
-          <li>Cần xây dựng hình ảnh ngay từ đầu: <strong>Home Page</strong> công ty, <strong>deck</strong> (PPTX) giới thiệu.</li>
+          <li>Chất lượng & số lượng job ít; đang tham khảo mở rộng thị trường khác nhưng chưa tìm được.</li>
+          <li>Cạnh tranh cao: ngoài AMCOLAB còn nhiều đối thủ mạnh.</li>
+          <li>Cần xây dựng hình ảnh từ đầu: <strong>Home Page</strong>, <strong>PPTX giới thiệu công ty</strong>.</li>
         </ul>
       </div>
       <div class="card col-6">
-        <h3>4) Mục tiêu đến 30/09</h3>
+        <h3>4) Mục tiêu</h3>
         <ul class="list">
-          <li>✔️ Ký thêm <strong>2 hợp đồng mới</strong>.</li>
-          <li>✔️ Đạt đủ <strong>8</strong> meet chất lượng/tháng.</li>
-          <li>✔️ Duy trì quan hệ tốt với khách hàng hiện hữu.</li>
-          <li>✔️ Chuẩn bị chiến lược & tài liệu thu hút khách mới (HP, PPTX, pricing, SLA).</li>
+          <li>✔️ Hẹn được meeting với khách hàng tiềm năng trước cuối tháng 9.</li>
+          <li>✔️ Chỉnh sửa Email để tỷ lệ mở tăng lên 50%.</li>
+          <li>✔️ Chuẩn bị chiến lược và tài liệu thu hút khách hàng.</li>
         </ul>
       </div>
     </section>
@@ -224,20 +203,7 @@
       © 2025 AMCOLAB Technology — Báo cáo phục vụ nội bộ.
     </footer>
   </div>
-
-  <script>
-    // Simple progress animation for KPIs
-    const meetNow = 6, meetGoal = 8; // từ dữ liệu báo cáo
-    const dealNow = 1, dealGoal = 2;
-    const meetPct = Math.min(100, Math.round(meetNow / meetGoal * 100));
-    const dealPct = Math.min(100, Math.round(dealNow / dealGoal * 100));
-    document.getElementById('meetNow').textContent = meetNow;
-    document.getElementById('dealNow').textContent = dealNow;
-    const animateBar = (el, to) => {
-      let cur = 0; const step = () => { cur += 2; el.style.width = cur + '%'; if(cur < to) requestAnimationFrame(step); }; step();
-    };
-    animateBar(document.getElementById('meetBar'), meetPct);
-    animateBar(document.getElementById('dealBar'), dealPct);
-  </script>
 </body>
 </html>
+
+
