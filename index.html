@@ -1,205 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sales Report — IT Market (EU) — Tuần 3 tháng 9</title>
+  <title>Sales Report - IT Market (EU) - Tuần 3 tháng 9</title>
   <style>
     :root{
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --muted:#64748b;
-      --text:#1e293b;
-      --brand:#2563eb;
-      --brand-2:#16a34a;
-      --danger:#dc2626;
-      --warn:#d97706;
-      --ok:#059669;
-      --chip:#f1f5f9;
-      --border:#e2e8f0;
-      --shadow: 0 4px 12px rgba(0,0,0,.08);
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --muted:#6b7280;
+      --accent: #2563eb;
+      --accent-2: #06b6d4;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-    }
-    .container{ max-width:1080px; margin:40px auto; padding:0 20px; }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#eef2ff 0%, var(--bg) 100%);color:#0f172a}
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:16px}
+    .logo{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px;box-shadow:0 6px 20px rgba(37,99,235,0.18)}
+    h1{margin:0;font-size:20px}
+    .meta{color:var(--muted);font-size:13px}
 
-    /* Header */
-    .header{ display:grid; grid-template-columns: 1fr auto; gap:16px; align-items:center; }
-    .title{ font-size: clamp(26px, 3vw, 34px); line-height:1.2; margin:0; font-weight:800; }
-    .subtitle{ margin-top:6px; color:var(--muted); font-size:14px; }
+    main{margin-top:22px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 4px 14px rgba(15,23,42,0.06)}
+    .span-4{grid-column:span 4}
+    .span-6{grid-column:span 6}
+    .span-8{grid-column:span 8}
+    .span-12{grid-column:span 12}
 
-    .badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:#f8fafc; box-shadow: var(--shadow); }
-    .badge svg{ width:18px; height:18px; }
+    .kpis{display:flex;flex-direction:column;gap:12px}
+    .kpi{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(37,99,235,0.06),transparent)}
+    .kpi strong{display:block;font-size:22px}
+    .kpi small{color:var(--muted)}
 
-    /* Card grid */
-    .grid{ display:grid; gap:16px; grid-template-columns: repeat(12, 1fr); margin-top:24px; }
-    .card{ grid-column: span 12; background:var(--card); border:1px solid var(--border); border-radius:20px; padding:18px 20px; box-shadow: var(--shadow); }
-    .card h3{ margin:0 0 10px; font-size:16px; font-weight:700; color:var(--text); letter-spacing:.2px; }
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px;text-align:left;border-bottom:1px solid #f1f5f9}
+    th{font-weight:700;color:var(--muted);font-size:13px}
 
-    /* KPI cards */
-    .kpi{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
-    .kpi .value{ font-weight:800; font-size: clamp(22px, 3vw, 28px); }
-    .kpi .delta{ font-size:12px; color:var(--muted); }
+    h3{margin:0 0 12px 0;font-size:16px;border-bottom:1px solid #e5e7eb;padding-bottom:6px}
+    ul.clean{padding-left:18px;margin:10px 0}
+    .notes{color:var(--muted);font-size:14px;white-space:pre-line}
 
-    .kpi-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
-    .kpi-card{ background: #f1f5f9; border:1px solid var(--border); border-radius:16px; padding:14px; }
+    .progress{height:10px;background:#eef2ff;border-radius:999px;overflow:hidden;margin-top:6px}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
 
-    .muted{ color:var(--muted); }
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
 
-    /* Chips */
-    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
-    .chip{ background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--text); }
-
-    /* Two columns */
-    .col-6{ grid-column: span 6; }
-
-    /* Lists & table */
-    .list{ margin:10px 0 0 0; padding:0 0 0 18px; }
-    .list li{ margin:8px 0; }
-
-    table{ width:100%; border-collapse:collapse; margin-top:8px; font-size:14px; }
-    th, td{ padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
-    th{ color:var(--text); font-weight:700; }
-
-    /* Notes */
-    .note{ margin-top:6px; font-size:13px; color:var(--muted); }
-    .callout{ border-left:3px solid var(--brand); padding:10px 12px; background:#f8fafc; border-radius:10px; }
-
-    /* Footer */
-    footer{ color:var(--muted); font-size:12px; text-align:center; margin:28px 0 16px; }
-
-    @media (max-width: 860px){
-      .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
-      .col-6{ grid-column: span 12; }
+    @media (max-width:900px){
+      .span-8,.span-6,.span-4{grid-column:span 12}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
-    <div class="header">
-      <div>
-        <h1 class="title">Sales Report — IT Market (EU) — Tuần 3 tháng 9</h1>
-        <p class="subtitle">Prepared by: <strong>Trần Thuỳ Linh</strong> • Date: <strong>19/09/2025</strong></p>
-      </div>
-      <div class="badge" title="EU Market">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" opacity=".35"/><circle cx="12" cy="12" r="5" fill="currentColor"/></svg>
-        <span><strong>EU</strong> • IT Outsourcing</span>
-      </div>
-    </div>
-
-    <!-- KPI Cards -->
-    <section class="grid" aria-label="KPIs">
-      <div class="card">
-        <div class="kpi-grid">
-          <div class="kpi-card">
-            <div class="muted">Job apply</div>
-            <div class="kpi"><span class="value">22</span><span class="delta">Peopleperhour, Guru, Upwork</span></div>
-          </div>
-          <div class="kpi-card">
-            <div class="muted">Phản hồi</div>
-            <div class="kpi"><span class="value">5</span><span class="delta">Chủ yếu từ Peopleperhour</span></div>
-          </div>
-          <div class="kpi-card">
-            <div class="muted">Tổng Email Hubspot</div>
-            <div class="kpi"><span class="value">21</span><span class="delta">Tỷ lệ mở 31.58%</span></div>
-          </div>
-          <div class="kpi-card">
-            <div class="muted">Doanh thu T9</div>
-            <div class="kpi"><span class="value">0</span><span class="delta">Đến thời điểm hiện tại</span></div>
-          </div>
-        </div>
-        <div class="chips" style="margin-top:12px">
-          <span class="chip">Peopleperhour</span>
-          <span class="chip">Guru</span>
-          <span class="chip">Upwork</span>
-          <span class="chip">Hubspot</span>
-          <span class="chip">Job nhỏ</span>
+    <header>
+      <div class="brand">
+        <div class="logo">SR</div>
+        <div>
+          <h1>Sales Report — IT Market (EU) — Tuần 3 tháng 9</h1>
+          <div class="meta">Prepared by: <strong>Trần Thuỳ Linh</strong> · Date: <strong>19/09/2025</strong></div>
         </div>
       </div>
-    </section>
+      <div style="text-align:right">
+        <div class="meta">Report type: Weekly</div>
+      </div>
+    </header>
 
-    <!-- Tóm tắt -->
-    <section class="grid" aria-label="Summary">
-      <div class="card col-6">
-        <h3>1) Tóm tắt</h3>
-        <div class="callout">
-          Trong tuần 3 tháng 9, hoạt động kinh doanh và tìm kiếm khách hàng diễn ra đều đặn. Tuy nhiên, <strong>chất lượng job giảm</strong>, chủ yếu là các job nhỏ và không phù hợp với công ty.
-        </div>
-      </div>
-    </section>
+    <main>
+      <div class="grid">
+        <section class="card span-8">
+          <h3>1. Tóm tắt</h3>
+          <p class="notes">Trong tuần 3 tháng 9, hoạt động kinh doanh và tìm kiếm khách hàng diễn ra đều đặn. Tuy nhiên, chất lượng job giảm, chủ yếu là các job nhỏ và không phù hợp với công ty.</p>
+          <p class="notes"><em>Nhận xét:</em> Lượng job mới trên các nền tảng tuần này ít, một số không phù hợp công ty, chưa hẹn được meeting.</p>
+        </section>
 
-    <!-- Thực tích -->
-    <section class="grid" aria-label="Performance">
-      <div class="card">
-        <h3>2) Thực tích</h3>
-        <table role="table" aria-label="Sales performance table">
-          <thead>
-            <tr>
-              <th>Chỉ tiêu</th>
-              <th>Giá trị</th>
-              <th>Ghi chú</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Tổng job apply</td>
-              <td><strong>22</strong></td>
-              <td>Peopleperhour, Guru, Upwork</td>
-            </tr>
-            <tr>
-              <td>Số phản hồi</td>
-              <td><strong>5</strong></td>
-              <td>Chủ yếu từ Peopleperhour</td>
-            </tr>
-            <tr>
-              <td>Tổng Email Hubspot</td>
-              <td><strong>21</strong></td>
-              <td>Tỷ lệ mở 31.58%</td>
-            </tr>
-            <tr>
-              <td>Doanh thu tháng 9</td>
-              <td><strong>0</strong></td>
-              <td>Đến thời điểm hiện tại</td>
-            </tr>
-            <tr>
-              <td>Số meeting</td>
-              <td><strong>0</strong></td>
-              <td>Tuần này chưa có meet</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="note"><em>Nhận xét:</em> Lượng job mới trên các nền tảng tuần này ít, một số không phù hợp công ty, chưa hẹn được meeting.</p>
-      </div>
-    </section>
+        <aside class="card span-4">
+          <h3>Key metrics</h3>
+          <div class="kpis">
+            <div class="kpi"><small>Tổng job apply</small><strong>22</strong></div>
+            <div class="kpi"><small>Email thủ công</small><strong>19</strong></div>
+            <div class="kpi"><small>Email Hubspot</small><strong>21</strong></div>
+            <div class="kpi"><small>Contact form</small><strong>23</strong></div>
+          </div>
+          <div style="margin-top:14px">
+            <small class="meta">Tỷ lệ mở</small>
+            <div class="progress"><i style="width:31.58%"></i></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-top:4px"><span>31.58%</span><span class="meta">Goal: 50%</span></div>
+          </div>
+        </aside>
 
-    <!-- Issues & Actions -->
-    <section class="grid" aria-label="Issues and Goals">
-      <div class="card col-6">
-        <h3>3) Vấn đề còn tồn tại</h3>
-        <ul class="list">
-          <li>Số lượng job phù hợp ít, cần tham khảo thêm các thị trường khác.</li>
-          <li>Chưa có kế hoạch truyền thông dài hạn để thu hút khách hàng.</li>
-        </ul>
+        <section class="card span-12">
+          <h3>2. Thực tích</h3>
+          <table>
+            <thead><tr><th>Chỉ số</th><th>Giá trị</th><th>Ghi chú</th></tr></thead>
+            <tbody>
+              <tr><td>Tổng job apply (PPH, Guru)</td><td>22</td><td>Chủ yếu job nhỏ</td></tr>
+              <tr><td>Số phản hồi</td><td>5 (PPH)</td><td>Chưa có meeting ngay</td></tr>
+              <tr><td>Email thủ công</td><td>19</td><td>-</td></tr>
+              <tr><td>Email Hubspot</td><td>21</td><td>-</td></tr>
+              <tr><td>Tỷ lệ mở</td><td>31.58%</td><td>Goal 50%</td></tr>
+              <tr><td>Contact form</td><td>23</td><td>-</td></tr>
+              <tr><td>Doanh thu tháng 9</td><td>0</td><td>Đến hiện tại</td></tr>
+              <tr><td>Số meeting</td><td>0 (1 meeting hẹn T2 tuần 4)</td><td>Dự kiến tuần 4</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="card span-6">
+          <h3>3. Vấn đề còn tồn tại</h3>
+          <ul class="clean">
+            <li>Số lượng job phù hợp ít — cần tham khảo thêm thị trường khác.</li>
+            <li>Chưa có kế hoạch truyền thông dài hạn để thu hút khách hàng.</li>
+          </ul>
+        </section>
+
+        <section class="card span-6">
+          <h3>4. Mục tiêu</h3>
+          <ul class="clean">
+            <li>Hẹn thêm <strong>1 meeting</strong> trước cuối tháng 9.</li>
+            <li>Chỉnh sửa Email để tỷ lệ mở đạt <strong>50%</strong>.</li>
+            <li>Nghiên cứu <strong>LinkedIn</strong> để mở rộng nguồn khách hàng.</li>
+            <li>Đăng bài trên <strong>LinkedIn</strong> công ty.</li>(1 bài/tuần)
+          </ul>
+        </section>
       </div>
-      <div class="card col-6">
-        <h3>4) Mục tiêu</h3>
-        <ul class="list">
-          <li>✔️ Hẹn được meeting với khách hàng tiềm năng trước cuối tháng 9.</li>
-          <li>✔️ Chỉnh sửa Email để tỷ lệ mở tăng lên 50%.</li>
-          <li>✔️ Chuẩn bị chiến lược và tài liệu thu hút khách hàng.</li>
-        </ul>
-      </div>
-    </section>
+    </main>
 
     <footer>
-      © 2025 AMCOLAB Technology — Báo cáo phục vụ nội bộ.
+      Report created on <strong>19/09/2025</strong> · Prepared by <strong>Trần Thuỳ Linh</strong>
     </footer>
   </div>
 </body>
