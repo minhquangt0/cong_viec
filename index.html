@@ -1,177 +1,2366 @@
-<!doctype html>
-<html lang="vi">
+<html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sales Report - IT Market (EU) - Tháng 9/2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#ffffff;
-      --card:#f9fafb;
-      --muted:#4b5563;
-      --accent:#10b981; /* green */
-      --accent-2:#3b82f6; /* blue */
-      --glass: rgba(0,0,0,0.03);
-      --card-radius:14px;
-    }
-    *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
-    body{margin:0;background:var(--bg);color:#111827;padding:32px}
-    .container{max-width:980px;margin:0 auto}
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-    .brand{display:flex;gap:16px;align-items:center}
-    .logo{width:74px;height:74px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
-    .title{line-height:1}
-    h1{margin:0;font-size:20px}
-    .meta{color:var(--muted);font-size:13px}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
-    .card{background:var(--card);border-radius:var(--card-radius);padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-    .kpis{display:flex;gap:12px;flex-wrap:wrap}
-    .kpi{flex:1 1 140px;background:var(--glass);padding:12px;border-radius:10px}
-    .kpi .label{font-size:12px;color:var(--muted)}
-    .kpi .value{font-weight:700;font-size:20px;margin-top:6px}
-    table{width:100%;border-collapse:collapse;margin-top:8px}
-    th,td{padding:10px;border-bottom:1px solid rgba(0,0,0,0.06);text-align:left;font-size:14px}
-    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-    .muted{color:var(--muted);font-size:13px}
-    .progress{background:rgba(0,0,0,0.06);height:12px;border-radius:999px;overflow:hidden}
-    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));}
-    ul{padding-left:18px}
-    .goals{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .badge{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
-    footer{color:var(--muted);font-size:13px;margin-top:18px;text-align:center}
-    @media (max-width:900px){.grid{grid-template-columns:1fr;}.goals{grid-template-columns:1fr}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIæ³¨æ–‡ã‚·ã‚¹ãƒ†ãƒ é–‹ç™ºæ¥­å‹™å§"è¨—å¥'ç´„æ›¸</title>
+    <style>
+        body {
+            font-family: "Noto Sans JP", "Yu Gothic", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .print-button:hover {
+            background: #0056b3;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #333;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 18px;
+            margin: 25px 0 15px 0;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 16px;
+            margin: 20px 0 10px 0;
+            color: #333;
+        }
+        
+        h4 {
+            font-size: 14px;
+            margin: 15px 0 8px 0;
+            color: #333;
+        }
+        
+        .article {
+            margin: 20px 0;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+            color: #333;
+        }
+        
+        .clause {
+            margin: 10px 0 10px 20px;
+        }
+        
+        .sub-clause {
+            margin: 8px 0 8px 30px;
+        }
+        
+        .contract-parties {
+            margin: 30px 0;
+            font-size: 13px;
+        }
+        
+        .signature-section {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .signature-block {
+            text-align: left;
+            flex: 1;
+            margin: 0 20px;
+        }
+        
+        .date {
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        
+        .appendix {
+            margin-top: 40px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+        
+        .appendix h3 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .deliverables {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .deliverables ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .deliverables li {
+            margin: 8px 0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                font-size: 11px;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: none;
+                margin: 0;
+                padding: 20px;
+            }
+            
+            @page {
+                size: A4 portrait;
+                margin: 2cm;
+            }
+            
+            h1 {
+                font-size: 20px;
+                page-break-after: avoid;
+            }
+            
+            h2 {
+                font-size: 16px;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 14px;
+                page-break-after: avoid;
+            }
+            
+            .article {
+                page-break-inside: avoid;
+            }
+            
+            .signature-section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ 印刷</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>システム開発業務委託契約書</h1>
+        </div>
+
+        <div class="contract-parties">
+            <p>株式会社MediaBirth （以下「委託者」という。）と AMCOLAB TECHNOLOGY Co., ltd（以下「受託者」という。）とは、委託者が受託者に委託するシステムの開発に関して、次のとおり契約（以下「本契約」という。）を締結する。</p>
+        </div>
+
+        <h2>第１章　目的及び定義</h2>
+
+        <div class="article">
+            <div class="article-title">第1条（契約の目的）</div>
+            <div class="clause">１　委託者は、本契約の定めるところにより、第3条に定めるシステムの開発業務（以下「本件開発業務」という。）を受託者に委託し、受託者はこれを受託する。</div>
+            <div class="clause">２　委託者は受託者に対し、本契約の定めるところにより、本件業務委託の対価として委託料を支払う。</div>
+            <div class="clause">３　本契約は、本件業務の委託に関する詳細を定めることを目的とする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第2条（定義）</div>
+            <p>本契約で用いる次の各号に掲げる用語の意義は、当該各号に定めるところによる。</p>
+            
+            <div class="clause">① <strong>本件システム</strong><br>
+            本件開発業務に基づいて開発される成果である、下記を含むシステムであって、サーバー、プログラム、データベース類及び関連資料等
+            <div class="sub-clause">1) 別紙機能要件書及び別紙開発システム詳細の記載事項を施したAI注文システム</div>
+            <div class="sub-clause">2) 上記(ア)に関する稼働環境</div>
+            </div>
+
+            <div class="clause">② <strong>本件プログラム</strong><br>
+            本件システムのうちの完動するプログラム部分</div>
+
+            <div class="clause">③ <strong>要件定義書</strong><br>
+            委託者が要求する事項を実現する方法や条件等の分析を行い、本件システムの開発に必要な要件を定義し、かつ本件システムの設計内容を日本語で記載した書類</div>
+
+            <div class="clause">④ <strong>成果物</strong><br>
+            本契約に基づいて作成される別紙成果物目録記載のもの
+            </div>
+        </div>
+
+        <h2>第２章　本件開発業務</h2>
+
+        <div class="article">
+            <div class="article-title">第3条（本件開発業務の内容）</div>
+            <p>本件開発業務の内容は、次のとおりとする。</p>
+            
+            <div class="clause"><strong>１　システム開発設計業務</strong>
+            <div class="sub-clause">① 受託者は、本件システムに関して委託者が要求する事項に基づいて、委託者の業務内容等を精査した上で、その実現方法・条件等の要件の分析と定義を行い、かつ本件システムの機能、実現方法、実現のための条件及びシステムの動作環境等を検討した上で、要件定義書を作成する。言語は日本語とする。</div>
+            </div>
+
+            <div class="clause"><strong>２　システム開発実施業務</strong>
+            <div class="sub-clause">② 受託者は、要件定義書に基づいて本件システムを作成する。</div>
+            <div class="sub-clause">③ 受託者は、本件システムについて、現実の運用に供するために単体テスト・結合テスト・システムテスト・簡易的な運用テストを行う。</div>
+            <div class="sub-clause">④ 受託者は、システム開発実施業務完了後、稼働する環境及びアプリを委託者に提出する。</div>
+            </div>
+
+            <div class="clause"><strong>３　本契約における見積金額は、委託者より提示された概要要件に基づいた暫定的な金額である。要件定義工程において各機能の詳細仕様を精査した結果、当初見積時の前提条件から大きく乖離する場合、受託者は委託者に対し追加見積を提示し、両者協議の上で費用および納期を改定するものとする。</strong></div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第4条（要件定義書の確定）</div>
+            <p>要件定義書の確定手続は次のとおりとする。</p>
+            <div class="clause">① 要件定義書は、委託者による承認によって確定する。</div>
+            <div class="clause">② 委託者は、受託者から要件定義書の納入を受けた日から5営業日以内に当該要件定義書を確認し、承認するか否かを文書で受託者に通知する。受託者は、上記期間内に委託者から要件定義書に関する説明を求められた場合は、委託者の求める方法で速やかに上記確認に必要な説明を行うものとする。</div>
+            <div class="clause">③ 要件定義書の確定後、受託者は当該要件定義書に基づき、必要に応じて見積金額及び納期の修正を提案することができる。当該修正は委託者との協議により合意した上で確定するものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第5条（要件定義書の変更）</div>
+            <div class="clause">１　システム開発実施業務の実施に際し、要件定義書の内容に変更を加える必要が生じた場合、委託者又は受託者は、相手方に対して変更の理由及び内容を示した文書で要件定義書変更の申し入れを行うことができる。この場合、受託者は委託者との要件定義書変更の協議の結果に基づき、新しい要件定義書又はこれに代わる書面を作成するものとする。</div>
+            <div class="clause">２　前項の書面に双方が合意を行うことによって、要件定義書の変更内容が確定されたものとする。</div>
+            <div class="clause">３　本契約に定められた本件システムの機能以外の機能追加を委託者が要望したことによる変更でない限り、開発委託料は増額されないものとする。</div>
+            <div class="clause">４　第2項所定の要件定義書の変更によって、開発委託料、納入期限その他の契約条件に受託者に不利な影響が及ぶ場合、受託者は委託者に対しそれらの変更を求めることができるものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第6条（資料等の提供、管理及び返還）</div>
+            <div class="clause">１　委託者は、受託者に対して原始資料を無償で提供する。</div>
+            <div class="clause">２　受託者が委託者に対し原始資料以外に必要な資料・情報の提供を求めた場合、双方協議の上、委託者は受託者に対してこれを無償で提供する。</div>
+            <div class="clause">３　委託者は、本件システムのテスト・検証に必要な特殊機器・端末機器等（タブレット、特定機種のスマートフォン、POS端末、プリンター、音響機器等）を受託者に提供又は貸与するものとする。当該機器の送料・保険料は委託者の負担とし、受託者は善良なる管理者の注意をもって管理し、テスト完了後速やかに返却するものとする。</div>
+            <div class="clause">４　受託者は、委託者から提供された前各項の資料・情報・機器等（以下「提供資料等」という。）を複製若しくは改変する場合又は第三者に提供する場合は、委託者の書面による事前の承諾のもとに、本件開発業務の遂行に必要な範囲に限り行うものとする。</div>
+            <div class="clause">５　受託者は、提供資料等（その複製物及び改変物を含む。以下本条において同じ。）を善良なる管理者の注意をもって管理するものとし、本件開発業務遂行以外の用途に使用してはならない。また、委託者の書面による事前の承諾なく本件開発業務の作業実施場所から持ち出してはならない。</div>
+            <div class="clause">６　委託者は、受託者の立ち会いの下に、受託者の事務所・作業実施場所等に立ち入り、提供資料等の使用状況及び保管状況を検査することができる。</div>
+            <div class="clause">７　提供資料等が本件業務の遂行上不要となった場合、受託者は、遅滞なく委託者に返還し、又は委託者の指示に従い、安全に消去その他の処分を行い、その旨を証明する書面を委託者に提出しなければならない。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第7条（協議会）</div>
+            <div class="clause">１　委託者及び受託者は、本件開発業務が終了するまでの間、その進捗状況の報告・確認、問題点の協議・解決その他本件開発業務の推進のために必要な事項を協議するため、定期的に協議会を開催する。なお、定期協議会の開催頻度については、毎週1回と定めるものとする。</div>
+            <div class="clause">２　協議会には、委託者・受託者双方が出席するものとする。</div>
+            <div class="clause">３　第1項の定期協議会のほか、委託者及び受託者は必要と認める場合に随時協議会の開催を相手方に求めることができる。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第8条（中間成果物）</div>
+            <div class="clause">１　委託者は、受託者に対し、システム開発実施業務において生じた中間成果物の提示又は報告を随時求めることができる。</div>
+            <div class="clause">２　受託者は、本件開発業務の間、委託者が進捗を確認できるよう、ステージング環境を適宜更新し、委託者がアクセス可能な状態を維持しなければならない。</div>
+            <div class="clause">３　委託者は、当該ステージング環境を通じて、開発中のシステムの動作状況、進捗及び中間成果物を随時確認できるものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第9条（作業実施場所）</div>
+            <div class="clause">１　受託者は、本件業務を受託者の事業所内で遂行するものとする。</div>
+            <div class="clause">２　受託者は、受託者の事業所外で本件業務を遂行する必要があるときは、事前に委託者の文書による承諾を得るものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第10条（納入）</div>
+            <div class="clause">１　受託者は、別紙成果物目録記載の成果物を、下記の納入期限までに委託者の指定する場所に納入する。但し、委託者及び受託者は、別途協議を行い、書面又は電子メールによる合意の上、納入期限を変更できるものとする。また、委託者は、下記マイルストーンの進捗状況に応じ、受託者と誠実に協議を行い、合理的な範囲で納入期限の延長を認めるものとする。</div>
+            
+            <div class="clause">２　受託者は、納入期限に遅延するおそれが生じた場合、遅くとも納入期限の2週間前までに委託者に対し書面又は電子メールにて遅延の可能性、理由及び新たな納入予定日を通知しなければならない。受託者が当該通知を怠り、かつ受託者の責に帰すべき事由により納入が遅延した場合、受託者は委託者に対し、遅延損害金として契約金額の10％を上限とする金額を支払うものとする。</div>
+            <div class="clause">
+            <strong> Phase 1 - 要件定義・ワイヤーフレーム・モック作成</strong><br>   
+            納入期限：2024年10月29日<br>
+            費用：120,000円<br> 
+            </div>
+
+            <div class="clause">
+            <strong> Phase 2 -開発</strong><br>
+            納入期限：2026年1月31日<br>   
+            費用：1,600,000円<br> 
+            </div>
+        <div class="article">
+            <div class="article-title">第11条（危険負担）</div>
+            <div class="clause">成果物（電子データを含む。）に滅失又は毀損が生じた場合、納入前においては受託者が、納入後においては委託者が、それぞれ危険を負担するものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第12条（検収）</div>
+            <div class="clause">１　委託者は、成果物の納入を受けた日から<strong>30日の検査期間内</strong>に、成果物の受入検査を行う。当該受入検査の結果、成果物が要件定義書に合致することが確認されたときは、当該成果物は受入検査に合格したものとし、その旨を記載した検査合格文書を、委託者の責任者が承認の上、受託者に通知するものとする。</div>
+            <div class="clause">２　前項の検査合格をもって、委託者の検収は完了したものとする。</div>
+            <div class="clause">３　第１項による受入検査の結果、成果物が要件定義書に合致しない等の理由により検査不合格であった場合は、受託者は委託者に対し、無償で成果物の再提出をし、再検査を受けなければならない。この場合、当事者双方協議のうえ、再検査の日程その他の必要な事項を定めるものとする。再検査の手続及び成果物の検収については、前２項に準ずるものとする。なお、受託者による再提出準備期間中は検査期間の進行を停止し、再提出がなされた日から検査期間を再起算する。</div>
+            <div class="clause">４　委託者が正当な理由なく、第１項に定める検査期間（又は再検査期間）を経過しても検査合格又は不合格の通知を行わない場合、当該期間の経過日の翌日をもって成果物は検査合格とみなす。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第13条（本番環境へのリリース）</div>
+            <div class="clause">１　委託者は、第12条に定める検収が完了した成果物について、受託者に対し、本番環境への移行作業又は切り替え作業（以下「リリース」という。）を指示することができる。</div>
+            <div class="clause">２　受託者は、委託者の指示に従い、リリースに必要な移行作業又は切り替え作業を実施するものとする。</div>
+            <div class="clause">３　リリースは、委託者と受託者が協議のうえ日程を決定し、文書により確認するものとする。</div>
+            <div class="clause">４　受託者は、リリース完了後、当該システムが本番環境で正常に稼働することを確認し、その結果を委託者に報告するものとする。</div>
+            <div class="clause">５　本契約における「納品完了」とは、第12条に基づく検収合格および本条に基づく本番環境へのリリース完了をもって成立するものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第14条（保証）</div>
+            <div class="clause">１　受託者は、第13条に定める本番環境へのリリース日から起算して<strong>2か月間</strong>（以下「本件保証期間」という。）、受入検査において検出できなかった重大な不具合（例：システムのクラッシュ、主要機能の停止、業務に著しい支障を与える障害）又は実装ミスが納品後に発覚した場合、無償で修正対応を行うものとする。軽微な表示崩れ、改善提案、又は仕様変更を伴う要望は、本件保証の対象外とする。</div>
+            <div class="clause">２　前項の保証は、受託者が納品したソースコードに対し、第三者による変更・修正が一切行われていないことを条件とする。委託者又は第三者がソースコードに何らかの変更・修正を加えた場合、当該変更・修正に起因する不具合については、本件保証の対象外とする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第15条（契約不適合責任）</div>
+            <div class="clause">１　成果物に、本契約の内容との不適合のうち要件定義書への不適合（以下「要件不適合」という。）があったときは、受託者は、その不適合が受託者の責めに帰すべき事由によるものであるかを問わず、委託者の請求により、委託者の選択に従って、当該成果物の無償による修補、代替品の納入若しくは不足分の納入等の方法による履行の追完、代金の全部又は一部の減額若しくは返還その他の必要な措置を講じなければならない。</div>
+            <div class="clause">２　受託者が本契約の内容との要件不適合のある成果物を委託者に引き渡した場合において、委託者が本件保証期間内にその旨を受託者に通知しないときは、委託者は、その不適合を理由として、前項に規定する権利を行使することができない。ただし、受託者が検収の時にその不適合を知っていたとき又は受託者の故意若しくは重過失による不適合であったときは、この限りではない。</div>
+            <div class="clause">３　成果物に、要件不適合以外の本契約の内容との不適合（以下「その他契約不適合」という。）があった場合において、その不適合が受託者の責めに帰すべき事由によるものであるときは、受託者は、委託者の請求により、委託者の選択に従って、当該成果物の無償による修補、代替品の納入若しくは不足分の納入等の方法による履行の追完、代金の全部又は一部の減額若しくは返還その他の必要な措置を講じなければならない。</div>
+            <div class="clause">４　第1項及び第3項に基づく請求は、損害賠償の請求及び解除権の行使を妨げない。</div>
+            <div class="clause">５　本契約における受託者の契約不適合に関する履行の追完義務は、委託者が受託者に対して代金の減額のみを請求することを理由として免れることはない。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第16条（開発委託料等）</div>
+            <div class="clause">１　本件開発業務に係る報酬総額は、金5,965,200円（非課税）とする。受託者は外国法人であるため、日本国内における税務上の義務は原則として発生しない。万一、本契約に関連して日本国内で何らかの税務上の義務が発生した場合、当該税務上の義務は委託者が負担するものとする。</div>
+            <div class="clause">２　支払条件は以下のとおりとする。
+            <div class="sub-clause">（１）各フェーズの開発着手前に、当該フェーズ報酬額の50％を支払う。</div>
+            <div class="sub-clause">（２）各フェーズの開発完了・検収後に、当該フェーズ報酬額の残額50％を支払う。</div>
+            </div>
+            <div class="clause">３　支払方法は、受託者が指定する銀行口座への銀行振込とし、振込手数料は委託者の負担とする。</div>
+            <div class="clause">４　委託者が前項に定める支払期日に遅滞した場合、委託者は受託者に対し、支払期日の翌日から支払完了の日まで、未払金額に対し年率14.6％の遅延損害金を支払うものとする。</div>
+            <div class="clause">５　前各項に定める開発委託料とは別に、以下の費用については委託者の負担とする。
+            <div class="sub-clause">（１）サーバーホスティング費用・クラウドサービス利用料</div>
+            <div class="sub-clause">（２）商用ソフトウェアライセンス費用（第20条第1項で承諾したもの）</div>
+            <div class="sub-clause">（３）外部サービス利用料（API、決済ゲートウェイ、通信サービス等）</div>
+            <div class="sub-clause">（４）ドメイン取得・更新費用、SSL証明書費用</div>
+            <div class="sub-clause">（５）インフラ維持管理に関わる費用</div>
+            <div class="sub-clause">（６）その他システム運用に必要な第三者サービス費用</div>
+            </div>
+            <div class="clause">６　前項の費用は、受託者が委託者に事前に見積を提示し、委託者の承認を得た上で、受託者が立て替えて支払い、後日委託者に請求するものとする。</div>
+        </div>
+
+        <h2>第３章　所有権及び知的財産権等</h2>
+
+        <div class="article">
+            <div class="article-title">第17条（成果物の所有権）</div>
+            <div class="clause">成果物のうち、プログラム本体を除く有体物（例：記録媒体、マニュアル、設計書など）の所有権は、開発委託料の完済時に受託者から委託者へ移転する。プログラム本体については、第18条の定めに従い、その著作権を含む必要な権利が移転するものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第18条（成果物等の著作権）</div>
+            <div class="clause">１　本件プログラムその他の成果物に関する著作権（著作権法第27条及び第28条に定める権利を含む。）は、開発委託料完済と同時に委託者に移転する。また、本件保証期間において作成又は修正された成果物等に関する著作権は、本件保証期間完了と同時に委託者に移転する。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第19条（成果物等の特許権等）</div>
+            <div class="clause">１　本件業務遂行の過程で生じた発明その他の知的財産又はノウハウ等に係る特許権その他の知的財産権（商標権及び実用新案権並びに特許その他の知的財産権を受ける権利を含む。ただし、著作権は除く。）、ノウハウ等に関する権利（以下これらの権利を総称して「特許権等」という。）は、委託者に帰属し、受託者が従前より保有していた本件業務に適用される特許権等は、開発委託料完済と同時に委託者に移転する。なお、かかる受託者から委託者への特許権等移転の対価は、開発委託料に含まれる。</div>
+            <div class="clause">２　委託者及び受託者は、委託者に帰属する特許権等について、必要となる職務発明の承継手続（職務発明規程の整備等の職務発明制度の適切な運用、譲渡手続等）を履践する。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第20条（第三者ソフトウェアの利用）</div>
+            <div class="clause">１　受託者は、本件業務遂行の過程において、システム機能の実現のために、第三者ソフトウェア（フリーソフトウェア及びオープンソースソフトウェアを含む。）を利用するには、委託者の承諾を得なければならない。ただし、MITライセンスその他商用利用に制限のないオープンソースソフトウェアについては、事前承諾を要せず、受託者は利用状況を委託者に報告することで足りるものとする。</div>
+            <div class="clause">２　前項に基づき委託者が第三者ソフトウェアの利用を承諾した場合、受託者は、受託者の費用と責任において、受託者と当該第三者との間で当該第三者ソフトウェアのライセンス契約及び保守契約の締結等、必要な措置を講じる。</div>
+            <div class="clause">３　受託者は、第三者ソフトウェアのライセンス条件遵守、第三者権利不侵害、及び本件目的に照らした性能適合性について、商業的に合理的な範囲で調査し、その結果を委託者に報告するものとする。万一、当該第三者ソフトウェアが契約不適合又は権利侵害の原因となった場合は、受託者の責任と負担において、代替手段の提供、権利処理、修正その他必要な措置を講じなければならない。</div>
+            <div class="clause">４　受託者は、オープンソースソフトウェアを利用する場合、そのライセンス条項に基づき必要な表示・通知・ソースコード提供方法に関する情報を、成果物目録(9)システム引き渡し資料に含めて委託者に提供する。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第21条（第三者の権利侵害）</div>
+            <div class="clause">１　委託者が成果物等に関し第三者から著作権又は特許権等の侵害の申立を受けたときは、速やかに受託者に対し申立の事実及び内容を通知する。</div>
+            <div class="clause">２　前項の申立がなされた場合、受託者は、かかる申立によって委託者が支払うべきとされた損害賠償額（逸失利益に関する損害及び弁護士費用を含むが、これに限られない。）その他委託者が被った損害を賠償する。</div>
+            <div class="clause">３　受託者の帰責事由によって第三者の知的財産権が侵害されたことを理由として、委託者が成果物等を将来に向けて使用できなくなるおそれがある場合、受託者は、受託者の費用負担で、委託者の判断により、権利侵害のない他の成果物等との交換、権利侵害している部分の変更、継続使用のための権利取得、又は損害賠償等の措置を講じる。</div>
+        </div>
+
+        <h2>第４章　一般条項</h2>
+
+        <div class="article">
+            <div class="article-title">第22条（秘密情報）</div>
+            <div class="clause">１　本契約における秘密情報とは、文書、口頭、電磁的記録媒体その他開示の方法及び媒体並びに本契約締結の前後を問わず、委託者及び受託者が相手方から開示される、本件業務に関する商品企画・技術・技能・営業等に関する一切の情報をいう。</div>
+            <div class="clause">２　委託者及び受託者は、事前に相手方の書面による承諾を得ることなく、本契約締結の事実、その内容及び秘密情報を、故意又は過失を問わず、第三者に開示してはならない。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第23条（本業務関係先への直接接触禁止）</div>
+            <div class="clause">１　本条における「本業務関係先」とは、委託者が本件業務を遂行するにあたり取引する会社、団体、個人（委託者が本件業務を受託した発注元およびその関係会社を含む。なお、その範囲については必要に応じて委託者が口頭または書面で受託者に通知する。）をいう。</div>
+            <div class="clause">２　受託者は、本契約の有効期間中および契約終了後2年間、委託者の書面による事前承諾なく、本業務関係先に対し、直接または第三者を介して、営業活動、技術的照会、システムに関する連絡、契約締結その他一切の接触を行ってはならない。</div>
+            <div class="clause">３　受託者は、本業務関係先への連絡や報告が必要な場合、必ず委託者を経由して行うものとする。</div>
+            <div class="clause">４　受託者が本条に違反した場合、受託者は、委託者が当該違反によって被った一切の損害を賠償するとともに、違反時点までに委託者から受託者に支払われた本契約に基づく全金員を無利息で返還するものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第24条（個人情報）</div>
+            <div class="clause">１　受託者は、本件業務に関連して委託者から受託者に開示される個人情報（個人情報保護法第2条1項に定められたものをいう。以下、単に「個人情報」という）について、本契約の趣旨及び個人情報保護法の規定に従って、これを取り扱う。</div>
+            <div class="clause">２　個人情報の内容の訂正、修正、削除等の権利は全て委託者に帰属するものとし、受託者は一切の権利を持たないものとする。</div>
+            <div class="clause">３　受託者は、個人情報の保持ないし開示について、前条第2項の例に倣う。</div>
+            <div class="clause">４　受託者は、次の事項を遵守する。
+            <div class="sub-clause">① 個人情報は本件業務の目的のみに使用する。</div>
+            <div class="sub-clause">② 個人情報を事前に定められた役員及び従業員に限って取り扱わせる。</div>
+            <div class="sub-clause">③ 個人情報の取扱場所を特定し、第三者の個人情報への接触を防止する。</div>
+            <div class="sub-clause">④ 委託者から説明を求められた場合は、個人情報の管理状況を口頭又は書面にて委託者に報告する。</div>
+            </div>
+            <div class="clause">５　受託者は、原則として個人情報の複製・複写を行わず、やむを得ず必要な場合は事前に委託者の書面による同意を得るものとする。ただし、緊急を要する場合は複製・複写後速やかに委託者の書面による同意を得るものとする。また、複製・複写物は本件業務終了後速やかに廃棄又は委託者に返却するものとする。</div>
+            <div class="clause">６　受託者は、事前に委託者の書面による同意を得ることなく、個人情報の取扱業務の再委託を行ってはならない。委託者の書面による同意を得て再委託を行う場合であっても、受託者は、再委託先に本契約における受託者と同等の義務を負わせなければならない。</div>
+            <div class="clause">７　個人情報にかかる受託者の義務に関する本契約の定めは、委託者・受託者間で締結する他契約に優先して適用するものとする。ただし、書面で他契約の条項を優先して適用する旨の合意をした場合は、この限りではない。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第25条（再委託の原則禁止）</div>
+            <div class="clause">１　受託者は、本件業務を第三者に再委託することができない。ただし、事前に委託者の書面による承諾を得た場合はこの限りでない。</div>
+            <div class="clause">２　前項に基づく事前に委託者の書面による承諾を得て本件業務の全部又は一部を第三者に再委託する場合、受託者は、本契約に基づく受託者が負うのと同等の義務を当該第三者に課す。また、受託者は、再委託先の義務の履行について、自ら業務を遂行した場合と同様の責任を負う。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第26条（同一サイトの複製等の禁止）</div>
+            <div class="clause">受託者は、本件システムと実質的に同一のウェブサイト又はシステムを、第三者のために作成し、又は第三者に提供してはならない。ただし、委託者による事前の書面承諾がある場合は、この限りでない。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第27条（契約の解除）</div>
+            <div class="clause">１　委託者及び受託者は、相手方が本契約の各条項に違反したと認めた場合において、相手方に対し相当の期間を定めて催告をしたにもかかわらず当該期間内に是正されないときは、本契約の全部又は一部を解除することができるものとする。</div>
+            <div class="clause">２　委託者及び受託者は、相手方に次の各号の一つに該当する事由が生じたと認めたときは、相手方に対し催告その他の手続きを要せず、直ちに本契約の全部又は一部を解除することができるものとする。
+            <div class="sub-clause">① 本契約に関し、相手方による重大な違反又は背信行為があったとき。</div>
+            <div class="sub-clause">② 債務の全部又は一部の履行が不能であるとき又は相手方がその債務の全部又は一部の履行を拒絶する意思を明確に表示したとき。</div>
+            <div class="sub-clause">③ 支払の停止があった場合、又は仮差押、差押、競売、破産手続開始、民事再生手続開始、会社更生手続開始、特別清算開始の申立があったとき。</div>
+            <div class="sub-clause">④ その他前各号に準ずるような本契約を継続し難い重大な事由又は債権保全を必要とする相当の事由が発生したとき。</div>
+            </div>
+            <div class="clause">３　前各項に基づく本契約を解除した場合、受託者は、既に委託者から受領した金銭のうち、履行が完了していない部分に相当する額を、解除日から10営業日以内に返還しなければならない。</div>
+            <div class="clause">４　受託者の責に帰すべき事由により解除となった場合、受託者は、委託者から既に受領した金銭があるときはこれを全額返還するものとする。</div>
+            <div class="clause">５　第１項及び第２項の解除権の行使は、損害賠償請求を妨げない。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第28条（反社会的勢力の排除）</div>
+            <div class="clause">１　委託者及び受託者は、現在、暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業、総会屋等、社会運動等標榜ゴロ又は特殊知能暴力集団等、その他これらに準ずる者（以下「反社会的勢力」という。）に該当しないこと、及び将来にわたっても該当しないことを表明し、かつ確約する。</div>
+            <div class="clause">２　委託者及び受託者は、自ら又は第三者を利用して暴力的な要求行為、法的な責任を超えた不当な要求行為、取引に関して脅迫的な言動をし又は暴力を用いる行為その他これらに準ずる行為を行わないことを確約する。</div>
+            <div class="clause">３　委託者又は受託者は、相手方が反社会的勢力に該当し、又は前項各号のいずれかに該当する行為をした場合には、相手方に対して何らの催告をすることなく本契約を解除することができる。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第29条（損害賠償）</div>
+            <div class="clause">委託者及び受託者は、本契約の履行に関し、相手方の責に帰すべき事由により損害を被った場合、相手方に対し、相当因果関係の範囲内の損害の賠償を請求することができる。ただし、各当事者の損害賠償責任の上限は、本契約の報酬総額を限度とする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第30条（不可抗力）</div>
+            <div class="clause">天災地変、戦争、暴動、内乱、パンデミック等の伝染病の蔓延、その他不測の事態の発生等、委託者と受託者双方の責に帰することができない事由により、本契約に基づく義務の全部又は一部の履行が遅延又は不可能となったときは、本契約の違反とせず、委託者及び受託者はその責を負わないものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第31条（権利義務譲渡の禁止）</div>
+            <div class="clause">委託者及び受託者は、事前に相手方の書面による承諾を得ることなく、本契約上の地位及び権利義務の全部若しくは一部を、第三者に譲渡し、承継させ、又は担保に供することができないものとする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第32条（分離可能性）</div>
+            <div class="clause">本契約のいずれかの条項の無効又は違法は、他の条項の効力に影響を及ぼさない。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第33条（残存条項）</div>
+            <div class="clause">委託者及び受託者は、本契約の終了後においても、第6条、第10条第3項、第15条、第16条第4項及び第5項、第18条、第19条、第21条乃至第24条、第25条第2項、第26条、第27条第3項乃至第5項並びに第28条乃至第35条の効力が残存することを確認する。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第34条（準拠法・紛争解決）</div>
+            <div class="clause">本契約は日本法を準拠法とする。本契約に関する紛争は、まず両当事者が誠意をもって協議し、解決に努めるものとする。協議開始後30日以内に解決に至らない場合、以下の方法により解決する。</div>
+            <div class="sub-clause">① 委託者の選択により、東京地方裁判所、又はベトナム社会主義共和国の管轄裁判所、若しくはシンガポール国際仲裁センター（SIAC）における仲裁とする。</div>
+            <div class="sub-clause">② 仲裁は、仲裁規則に従い、仲裁地をシンガポール、仲裁言語を日本語又は英語とする。</div>
+            <div class="sub-clause">③ 仲裁判断は最終的かつ両当事者を拘束し、ニューヨーク条約に基づく執行可能とする。</div>
+        </div>
+
+        <div class="article">
+            <div class="article-title">第35条（誠実協議）</div>
+            <div class="clause">本契約に規定しない事項が発生した場合、委託者と受託者が協議の上、誠意をもって解決することとする。</div>
+        </div>
+
+        <div style="margin: 30px 0; text-align: center;">
+            <p>以上、本契約の証として、本契約書データを作成し、委託者及び受託者の双方が電子署名又は電子的同意の方法により締結し、各自その控えを保有するものとする。</p>
+        </div>
+
+        <div class="date">2025年10月15日</div>
+
+        <div class="signature-section">
+            <div class="signature-block">
+                <strong>委託者</strong><br>
+                東京都渋谷区神宮前1-19-13 ドミシール平野303<br>
+                MediaBirth株式会社<br>
+                代表取締役 神原勝彦　㊞
+            </div>
+            
+            <div class="signature-block">
+                <strong>受託者</strong><br>
+                3rd Floor, Audi Building, No. 8 Pham Hung Street,<br>
+                Yen Hoa Ward, Hanoi City, Vietnam<br>
+                AMCOLAB TECHNOLOGY Co., ltd<br>
+                代表取締役　NGUYEN THI QUY　㊞
+            </div>
+        </div>
+
+        <div class="appendix">
+            <h3>別紙　成果物目録</h3>
+            <div class="deliverables">
+                <ol>
+       <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2566">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 11.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 22.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 11.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 11.0px 'Hiragino Sans'; -webkit-text-stroke: #000000; min-height: 17.0px}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Hiragino Sans'; -webkit-text-stroke: #000000; min-height: 17.0px}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 11.0px 'Hiragino Sans'; -webkit-text-stroke: #000000; min-height: 17.0px}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Sans'; -webkit-text-stroke: #000000; min-height: 18.0px}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 10.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 10.0px 'Hiragino Sans'; -webkit-text-stroke: #000000; min-height: 15.0px}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Hiragino Sans'; -webkit-text-stroke: #000000; min-height: 15.0px}
+    p.p21 {margin: 0.0px 0.0px 11.0px 0.0px; font: 11.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    p.p24 {margin: 0.0px 0.0px 11.0px 0.0px; text-align: center; font: 11.0px 'Hiragino Sans'; color: #535353; -webkit-text-stroke: #535353}
+    li.li18 {margin: 0.0px 0.0px 5.0px 0.0px; font: 11.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    li.li23 {margin: 0.0px 0.0px 5.0px 0.0px; font: 12.0px 'Hiragino Sans'; color: #0e0e0e}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 12.0px 'Hiragino Sans'; font-kerning: none; background-color: #ffffff}
+    span.s3 {font-kerning: none; background-color: #ffffff}
+    span.s4 {font: 12.0px 'Hiragino Sans'; -webkit-text-stroke: 0px #000000}
+    span.s5 {font: 14.0px 'Apple Color Emoji'; font-kerning: none; background-color: #fff0d9}
+    span.s6 {font-kerning: none; background-color: #fff0d9}
+    span.s7 {color: #000000; background-color: #fff0d9}
+    span.s8 {font: 12.0px '.SF NS'}
+    span.s9 {font: 12.0px 'Helvetica Neue'}
+    span.Apple-tab-span {white-space:pre}
+    table.t1 {margin: 20.0px 0.0px 20.0px 0.0px; border-collapse: collapse}
+    table.t2 {margin: 15.0px 0.0px 15.0px 0.0px; border-collapse: collapse}
+    table.t3 {border-collapse: collapse}
+    table.t4 {margin: 10.0px 0.0px 0.0px 0.0px; border-collapse: collapse}
+    td.td1 {width: 28.8px; background-color: #ffffff; border-style: solid; border-width: 2.0px 2.0px 2.0px 2.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td2 {width: 209.4px; background-color: #ffffff; border-style: solid; border-width: 2.0px 2.0px 2.0px 2.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td3 {width: 71.7px; background-color: #ffffff; border-style: solid; border-width: 2.0px 2.0px 2.0px 2.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td4 {width: 32.9px; background-color: #ffffff; border-style: solid; border-width: 2.0px 2.0px 2.0px 2.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td5 {width: 80.8px; background-color: #ffffff; border-style: solid; border-width: 2.0px 2.0px 2.0px 2.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td6 {width: 226.5px; background-color: #ffffff; border-style: solid; border-width: 2.0px 2.0px 2.0px 2.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td7 {width: 29.8px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td8 {width: 210.4px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td9 {width: 72.7px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td10 {width: 33.9px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td11 {width: 81.8px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td12 {width: 227.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td13 {width: 346.4px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td14 {width: 33.9px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td15 {width: 81.8px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td16 {width: 227.0px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #262626 #262626 #262626 #262626; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td17 {width: 16.2px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td18 {width: 104.8px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td19 {width: 142.8px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td20 {width: 243.6px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td21 {width: 23.3px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td22 {width: 60.4px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td23 {width: 25.6px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td24 {width: 26.3px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td25 {width: 34.0px; background-color: #f2f2f2; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td26 {width: 648.3px; background-color: #e3f1f6; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td27 {width: 16.2px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td28 {width: 104.8px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td29 {width: 138.8px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 8.0px}
+    td.td30 {width: 25.6px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td31 {width: 26.3px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td32 {width: 34.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td33 {width: 23.3px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td34 {width: 60.4px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td35 {width: 395.2px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td36 {width: 25.6px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td37 {width: 26.3px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td38 {width: 34.0px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td39 {width: 23.3px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td40 {width: 59.9px; background-color: #ffffff; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #535353 #535353 #535353 #535353; padding: 6.0px 4.0px 6.0px 4.0px}
+    td.td41 {width: 169.5px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #000000 #000000 #000000 #000000; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td42 {width: 532.5px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #000000 #000000 #000000 #000000; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td43 {width: 169.5px; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td44 {width: 532.5px; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td45 {width: 197.7px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td46 {width: 227.8px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td47 {width: 127.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td48 {width: 102.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 8.0px 8.0px 8.0px}
+    td.td49 {width: 202.2px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td50 {width: 231.8px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td51 {width: 131.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td52 {width: 106.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td53 {width: 446.5px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 6.0px 6.0px 6.0px 6.0px}
+    td.td54 {width: 106.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 6.0px 6.0px 6.0px 6.0px}
+    ul.ul1 {list-style-type: disc}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">IT</div>
-        <div class="title">
-          <h1>Sales Report — IT Market (EU) — Tháng 9/2025</h1>
-          <div class="meta">Prepared by: <strong>Trần Thuỳ Linh</strong> · Date: <strong>29/09/2025</strong></div>
-        </div>
-      </div>
-      <div style="text-align:right">
-        <div class="badge">Monthly Report</div>
-        <div class="muted" style="margin-top:6px">Trạng thái: <strong>Báo cáo tháng 9</strong></div>
-      </div>
-    </header>
+<h1 style="margin: 0.0px 0.0px 20.0px 0.0px; text-align: center; font: 24.0px 'Hiragino Sans'; -webkit-text-stroke: #000000"><span class="s1"><b>見積書</b></span></h1>
+<p class="p4"><span class="s1">下記のとおりお見積申し上げます。</span></p>
+<p class="p5"><span class="s2">合計金額（非課税）：</span><span class="s3"><b>¥1,600,000</b><b></b></span></p>
+<p class="p7"><span class="s3">有効期限：2025年10月15日</span></p>
+<h2 style="margin: 0.0px 0.0px 13.3px 0.0px; font: 16.0px 'Hiragino Sans'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #262626"><span class="s1"><b>1. 工数概要</b></span></h2>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p9"><span class="s1"><b>No.</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p9"><span class="s1"><b>項目</b></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p9"><span class="s1"><b>単価（円）</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p9"><span class="s1"><b>人時</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p9"><span class="s1"><b>金額（円）</b></span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s1"><b>備考</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">要件定義・仕様策定</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">60</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">120,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">詳細仕様策定・ワイヤーフレーム</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7" style="background-color: #e0e0e0;">
+        <p class="p9"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td8" style="background-color: #e0e0e0;">
+        <p class="p7"><span class="s1">UI/UXデザイン・モック作成</span></p>
+      </td>
+      <td valign="middle" class="td9" style="background-color: #e0e0e0;">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10" style="background-color: #e0e0e0;">
+        <p class="p2"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td11" style="background-color: #e0e0e0;">
+        <p class="p2"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td12" style="background-color: #e0e0e0;">
+        <p class="p7"><span class="s1">対応対象外</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">認証・ログイン機能</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">40</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">80,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">Admin/CSP分離・基本認証</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">4</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">管理者ダッシュボード</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">60</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">120,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">統計表示・RPA状況監視</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">5</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">CSPパートナー管理</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">90</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">180,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">CRUD・LME連携・報酬設定</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">6</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">クリエイター管理</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">90</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">180,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">一覧・詳細・自動マッピング</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">7</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">報酬計算・管理機能</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">110</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">220,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">Backstage連携・計算・為替適用</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">8</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">為替レート設定</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">60,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">月次更新</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">9</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">CSPポータル画面</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">80</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">160,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">専用ダッシュボード・実績表示</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">10</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">レポート・データ出力</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">50</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">100,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">CSV・PDF出力機能</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">11</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">RPA・バックグラウンド処理</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">120</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">240,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">TikTok・LME自動化・スケジューラ</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">12</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">セキュリティ・コンプライアンス</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">70</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">140,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">データ分離・基本暗号化</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td7">
+        <p class="p9"><span class="s1">13</span></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p7"><span class="s1">レスポンシブ対応</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p2"><span class="s1">2,000</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td11">
+        <p class="p2"><span class="s1">60,000</span></p>
+      </td>
+      <td valign="middle" class="td12">
+        <p class="p7"><span class="s1">AWS基本環境・デプロイ</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" valign="middle" class="td13">
+        <p class="p9"><span class="s1"><b>合計</b></span></p>
+      </td>
+      <td valign="middle" class="td14">
+        <p class="p2"><span class="s1"><b>800</b></span></p>
+      </td>
+      <td valign="middle" class="td15">
+        <p class="p2"><span class="s1"><b>1,600,000</b></span></p>
+      </td>
+      <td valign="middle" class="td16">
+        <p class="p10"><span class="s1"><b></b></span><br></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p13"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 13.3px 0.0px; font: 16.0px 'Hiragino Sans'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #262626"><span class="s1"><b>2. システム開発詳細</b></span></h2>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td rowspan="2" valign="middle" class="td17">
+        <p class="p14"><span class="s1"><b>No</b></span></p>
+      </td>
+      <td rowspan="2" valign="middle" class="td18">
+        <p class="p14"><span class="s1"><b>大項目</b></span></p>
+      </td>
+      <td rowspan="2" valign="middle" class="td18">
+        <p class="p14"><span class="s1"><b>中項目</b></span></p>
+      </td>
+      <td rowspan="2" valign="middle" class="td19">
+        <p class="p14"><span class="s1"><b>機能概要</b></span></p>
+      </td>
+      <td colspan="7" valign="middle" class="td20">
+        <p class="p14"><span class="s1"><b>工数内訳（人時）</b></span></p>
+      </td>
+      <td rowspan="2" valign="middle" class="td21">
+        <p class="p14"><span class="s1"><b>合計</b></span></p>
+        <p class="p14"><span class="s1"><b>工数</b></span></p>
+      </td>
+      <td rowspan="2" valign="middle" class="td22">
+        <p class="p14"><span class="s1"><b>費用</b></span></p>
+        <p class="p14"><span class="s1"><b>（円）</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td23">
+        <p class="p14"><span class="s1"><b>開発</b></span></p>
+        <p class="p14"><span class="s1"><b>50%</b></span></p>
+      </td>
+      <td valign="middle" class="td23">
+        <p class="p14"><span class="s1"><b>管理</b></span></p>
+        <p class="p14"><span class="s1"><b>10%</b></span></p>
+      </td>
+      <td valign="middle" class="td23">
+        <p class="p14"><span class="s1"><b>仕様</b></span></p>
+        <p class="p14"><span class="s1"><b>分析</b></span></p>
+        <p class="p14"><span class="s1"><b>10%</b></span></p>
+      </td>
+      <td valign="middle" class="td24">
+        <p class="p14"><span class="s1"><b>設計</b></span></p>
+        <p class="p14"><span class="s1"><b>5%</b></span></p>
+      </td>
+      <td valign="middle" class="td24">
+        <p class="p14"><span class="s1"><b>デプ</b></span></p>
+        <p class="p14"><span class="s1"><b>ロイ</b></span></p>
+        <p class="p14"><span class="s1"><b>5%</b></span></p>
+      </td>
+      <td valign="middle" class="td25">
+        <p class="p14"><span class="s1"><b>テスト</b></span></p>
+        <p class="p14"><span class="s1"><b>15%</b></span></p>
+      </td>
+      <td valign="middle" class="td24">
+        <p class="p14"><span class="s1"><b>受入</b></span></p>
+        <p class="p14"><span class="s1"><b>5%</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【A】要件定義・仕様策定</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">要件定義</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">詳細仕様策定</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">業務フロー分析・モック作成</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">6</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">6</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">9</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">60</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">120,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【B】UI/UXデザイン作成</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td28" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">UI/UXデザイン</span></p>
+      </td>
+      <td valign="middle" class="td28" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">管理者画面デザイン</span></p>
+      </td>
+      <td valign="middle" class="td29" style="background-color: #e0e0e0;">
+        <p class="p15"><span class="s1">・Admin Dashboardレイアウト設計</span></p>
+        <p class="p15"><span class="s1">・CSP一覧・Creator一覧グリッド</span></p>
+        <p class="p15"><span class="s1">・統計チャート・グラフ配置</span></p>
+        <p class="p15"><span class="s1">・レスポンシブ対応</span></p>
+      </td>
+      <td valign="middle" class="td30" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td30" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td30" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td31" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td31" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td32" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td31" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td33" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td34" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td28" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">UI/UXデザイン</span></p>
+      </td>
+      <td valign="middle" class="td28" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">CSPポータル画面</span></p>
+      </td>
+      <td valign="middle" class="td29" style="background-color: #e0e0e0;">
+        <p class="p15"><span class="s1">・CSP専用ダッシュボード設計</span></p>
+        <p class="p15"><span class="s1">・自分のCreator一覧</span></p>
+        <p class="p15"><span class="s1">・報酬実績グラフ</span></p>
+        <p class="p15"><span class="s1">・目標達成進捗バー</span></p>
+      </td>
+      <td valign="middle" class="td30" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td30" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td30" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td31" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td31" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+<td valign="middle" class="td32" style="background-color: #e0e0e0;">
+  <p class="p14"><span class="s1">0</span></p>
+</td>
+      <td valign="middle" class="td31" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td33" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+      <td valign="middle" class="td34" style="background-color: #e0e0e0;">
+        <p class="p14"><span class="s1">0</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【C】認証・ログイン機能</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">4</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">管理者認証</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Adminログイン</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・ログイン画面UI実装</span></p>
+        <p class="p15"><span class="s1">・Email/Password認証</span></p>
+        <p class="p15"><span class="s1">・5回試行制限・アカウントロック</span></p>
+        <p class="p15"><span class="s1">・セッション管理（2時間自動ログアウト）</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">10</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">40,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">5</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">CSP認証</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">CSPログイン</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・CSP専用ログイン画面</span></p>
+        <p class="p15"><span class="s1">・Email/パスワード認証</span></p>
+        <p class="p15"><span class="s1">・CSP別データ分離アクセス制御</span></p>
+        <p class="p15"><span class="s1">・初期パスワード変更強制</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">10</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">40,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【D】管理者ダッシュボード</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">6</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">統計表示</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Creator集計画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・CSP別Creator招待数（月別・累計）</span></p>
+        <p class="p15"><span class="s1">・売上サマリー（為替適用後）</span></p>
+        <p class="p15"><span class="s1">・アクティブCreator数・成長率</span></p>
+        <p class="p15"><span class="s1">・手動更新ボタン・自動更新（5分間隔）</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">7</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">処理状況</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">RPA監視画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・配信中・未配信・処理中ステータス表示</span></p>
+        <p class="p15"><span class="s1">・RPA健全性監視（成功/失敗率）</span></p>
+        <p class="p15"><span class="s1">・エラーログ一覧・詳細表示</span></p>
+        <p class="p15"><span class="s1">・システムアラート・通知設定</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【E】CSPパートナー管理</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">8</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">CSP管理</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">CSP一覧・編集画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・CSP CRUD（作成・編集・無効化）</span></p>
+        <p class="p15"><span class="s1">・担当者情報・連絡先管理</span></p>
+        <p class="p15"><span class="s1">・ステータス管理（アクティブ・停止）</span></p>
+        <p class="p15"><span class="s1">・検索・フィルタ（名前・ステータス別）</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">9</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">LME連携</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">LINE友達追加設定画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・CSPコード付き友達追加URL生成</span></p>
+        <p class="p15"><span class="s1">・QRコード自動生成・表示</span></p>
+        <p class="p15"><span class="s1">・LME連携状況確認・テスト機能</span></p>
+        <p class="p15"><span class="s1">・URL有効期限設定・更新</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">10</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">報酬設定</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">ボーナス制度設定画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・基本20%報酬率設定・編集</span></p>
+        <p class="p15"><span class="s1">・qualified数ボーナス設定（段階別）</span></p>
+        <p class="p15"><span class="s1">・期間設定・有効期限管理</span></p>
+        <p class="p15"><span class="s1">・設定変更履歴・承認フロー</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【F】クリエイター管理</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">11</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Creator一覧</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Creator一覧画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・CSP紹介元・ライブ状況表示</span></p>
+        <p class="p15"><span class="s1">・実績指標（Diamond・配信時間・売上）</span></p>
+        <p class="p15"><span class="s1">・検索・フィルタ（CSP別・ステータス別）</span></p>
+        <p class="p15"><span class="s1">・ページネーション・ソート機能</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">4</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">4</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">6</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">40</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">80,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">12</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Creator詳細</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Creator詳細画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・ライブ履歴（日別・時間帯別グラフ）</span></p>
+        <p class="p15"><span class="s1">・実績推移・Diamond獲得履歴</span></p>
+        <p class="p15"><span class="s1">・30分チェックログ・ステータス履歴</span></p>
+        <p class="p15"><span class="s1">・手動ステータス更新・メモ機能</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">13</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">自動化処理</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">マッピング管理画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・Creator⇔CSPマッピング表示・編集</span></p>
+        <p class="p15"><span class="s1">・自動リチェック・手動マッピング</span></p>
+        <p class="p15"><span class="s1">・マッピング競合解決・優先順位</span></p>
+        <p class="p15"><span class="s1">・エラー処理・再実行・ログ表示</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">10</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">40,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【G】報酬計算・管理機能</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">14</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">データ収集</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Backstage連携画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・TikTokデータ取得状況・進捗表示</span></p>
+        <p class="p15"><span class="s1">・payment net計算・検証</span></p>
+        <p class="p15"><span class="s1">・取得エラーログ・再試行機能</span></p>
+        <p class="p15"><span class="s1">・データ整合性チェック・アラート</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">6</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">6</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">9</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">60</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">120,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">外貨換算</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">為替レート管理画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・月次為替レート適用・全体再計算</span></p>
+        <p class="p15"><span class="s1">・過去データ遡及処理・影響確認</span></p>
+        <p class="p15"><span class="s1">・計算結果プレビュー・承認機能</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">10</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">40,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">16</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">報酬計算</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">月次報酬計算画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・20%+ボーナス計算・月次集計</span></p>
+        <p class="p15"><span class="s1">・CSP別計算結果・詳細内訳</span></p>
+        <p class="p15"><span class="s1">・計算結果プレビュー・検証</span></p>
+        <p class="p15"><span class="s1">・手動調整・備考入力・承認処理</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【H】為替レート設定</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">17</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">為替管理</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">レート入力画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・月次USD-JPYレート入力・更新</span></p>
+        <p class="p15"><span class="s1">・レート履歴管理・変更ログ</span></p>
+        <p class="p15"><span class="s1">・影響確認・計算プレビュー</span></p>
+        <p class="p15"><span class="s1">・適用期間設定・バリデーション</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【I】CSPポータル画面</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">18</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">CSPダッシュ</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">CSP専用ダッシュボード</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・紹介数・活動数・月別報酬表示</span></p>
+        <p class="p15"><span class="s1">・自分のCreator統計・実績推移</span></p>
+        <p class="p15"><span class="s1">・Qualified達成状況・目標進捗</span></p>
+        <p class="p15"><span class="s1">・収益予測・ランキング表示</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">25</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">5</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">7.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">50</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">100,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">19</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Creator表示</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">担当Creator一覧</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・担当Creator状況・実績表示</span></p>
+        <p class="p15"><span class="s1">・Live状況確認・配信スケジュール</span></p>
+        <p class="p15"><span class="s1">・個別実績詳細・Diamond獲得</span></p>
+        <p class="p15"><span class="s1">・Creator別パフォーマンス比較</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【J】レポート・データ出力</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">レポート機能</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">各種レポート出力画面</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・CSP別・月別レポート生成</span></p>
+        <p class="p15"><span class="s1">・期間・条件設定・フィルタ</span></p>
+        <p class="p15"><span class="s1">・CSV・PDF出力・メール送信</span></p>
+        <p class="p15"><span class="s1">・レポート履歴・再実行機能</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">25</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">5</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">7.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">50</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">100,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【K】RPA・バックグラウンド処理</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">21</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">LME RPA</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">LME友達追加監視</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・新規Creator検出・自動登録</span></p>
+        <p class="p15"><span class="s1">・CSPコード解析・マッピング処理</span></p>
+        <p class="p15"><span class="s1">・友達追加イベント監視・同期</span></p>
+        <p class="p15"><span class="s1">・データ整合性チェック・エラー処理</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">4</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">4</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">6</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">40</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">80,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">22</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">TikTok RPA</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">Backstage自動取得</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・実績データ自動取得・解析</span></p>
+        <p class="p15"><span class="s1">・Backstage画面スクレイピング</span></p>
+        <p class="p15"><span class="s1">・アカウントローテーション管理</span></p>
+        <p class="p15"><span class="s1">・CAPTCHA検知・回避・リトライ</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">25</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">5</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">7.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">2.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">50</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">100,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">23</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">スケジューラ</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">定期処理管理</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・30分間隔チェック・月次集計</span></p>
+        <p class="p15"><span class="s1">・Cron Job管理・実行制御</span></p>
+        <p class="p15"><span class="s1">・処理状況監視・ログ記録</span></p>
+        <p class="p15"><span class="s1">・エラー処理・通知・再実行</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【L】セキュリティ・コンプライアンス</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">24</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">データ分離</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">アクセス制御実装</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・CSP別データ分離・権限管理</span></p>
+        <p class="p15"><span class="s1">・Row-Level Security実装</span></p>
+        <p class="p15"><span class="s1">・API認証・認可制御</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">10</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">40,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">25</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">セキュリティ</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">暗号化・監査実装</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">・データ暗号化・SSL/TLS設定</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">10</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">2</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">20</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">40,000</span></p>
+      </td>
+    </tr>
 
-    <div class="grid">
-      <!-- left column -->
-      <div>
-        <!-- Gộp Quick Facts + Tổng hợp nhanh -->
-        <section class="card" aria-labelledby="overview">
-          <div class="section-title">
-            <h3 id="overview">Tổng hợp nhanh</h3>
-            <div class="muted">Số liệu và chỉ số nổi bật</div>
-          </div>
+    <tr>
+      <td colspan="11" valign="middle" class="td26">
+        <p class="p14"><span class="s1"><b>【N】レスポンシブ対応</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td27">
+        <p class="p14"><span class="s1">26</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">レスポンシブ対応</span></p>
+      </td>
+      <td valign="middle" class="td28">
+        <p class="p14"><span class="s1">モバイル・PC</span></p>
+      </td>
+      <td valign="middle" class="td29">
+        <p class="p15"><span class="s1">基本のレスポンシブ</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">15</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td30">
+        <p class="p14"><span class="s1">3</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td32">
+        <p class="p14"><span class="s1">4.5</span></p>
+      </td>
+      <td valign="middle" class="td31">
+        <p class="p14"><span class="s1">1.5</span></p>
+      </td>
+      <td valign="middle" class="td33">
+        <p class="p14"><span class="s1">30</span></p>
+      </td>
+      <td valign="middle" class="td34">
+        <p class="p14"><span class="s1">60,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" valign="middle" class="td35">
+        <p class="p14"><span class="s1"><b>合計</b></span></p>
+      </td>
+      <td valign="middle" class="td36">
+        <p class="p14"><span class="s1"><b>400</b></span></p>
+      </td>
+      <td valign="middle" class="td36">
+        <p class="p14"><span class="s1"><b>80</b></span></p>
+      </td>
+      <td valign="middle" class="td36">
+        <p class="p14"><span class="s1"><b>79</b></span></p>
+      </td>
+      <td valign="middle" class="td37">
+        <p class="p14"><span class="s1"><b>40</b></span></p>
+      </td>
+      <td valign="middle" class="td37">
+        <p class="p14"><span class="s1"><b>40</b></span></p>
+      </td>
+      <td valign="middle" class="td38">
+        <p class="p14"><span class="s1"><b>120</b></span></p>
+      </td>
+      <td valign="middle" class="td37">
+        <p class="p14"><span class="s1"><b>40</b></span></p>
+      </td>
+      <td valign="middle" class="td39">
+        <p class="p14"><span class="s1"><b>800</b></span></p>
+      </td>
+      <td valign="middle" class="td40">
+        <p class="p14"><span class="s1"><b>1,600,000</b></span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-          <!-- Quick Facts trước -->
-          <table>
-            <tbody>
-              <tr><th>Job apply</th><td>99</td></tr>
-              <tr><th>Phản hồi</th><td>12</td></tr>
-              <tr><th>Contact form</th><td>74</td></tr>
-              <tr><th>Email gửi</th><td>128</td></tr>
-            </tbody>
-          </table>
+<p class="p11"><span class="s1"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px 'Hiragino Sans'; -webkit-text-stroke: #000000"><span class="s1"><b>マイルストーン（成果物・確認ポイント）</b></span></h3>
+<table cellspacing="0" cellpadding="0" class="t3">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td41">
+        <p class="p7"><span class="s1"><b>Phase 1完了時</b><b></b></span></p>
+      </td>
+      <td valign="middle" class="td42">
+        <p class="p7"><span class="s1">要件定義・ワイヤーフレーム</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td41">
+        <p class="p7"><span class="s1"><b>Phase 2完了時</b><b></b></span></p>
+      </td>
+      <td valign="middle" class="td42">
+        <p class="p7"><span class="s1">認証・Admin Dashboard・CSP管理機能デモ実施</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td41">
+        <p class="p7"><span class="s1"><b>Phase 3完了時</b><b></b></span></p>
+      </td>
+      <td valign="middle" class="td42">
+        <p class="p7"><span class="s1">Creator管理・報酬計算・CSPポータル機能デモ</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td43">
+        <p class="p7"><span class="s1"><b>Phase 4完了時</b><b></b></span></p>
+      </td>
+      <td valign="middle" class="td44">
+        <p class="p7"><span class="s1">RPA・自動化・本番リリース・運用マニュアル引継ぎ</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px 'Hiragino Sans'; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"><b></b></span><br></h3>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px 'Hiragino Sans'; -webkit-text-stroke: #000000"><span class="s1"><b>月次運用コスト見積（AWS構成）</b></span></h3>
+<table cellspacing="0" cellpadding="0" class="t4">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td45">
+        <p class="p7"><span class="s1"><b>項目</b></span></p>
+      </td>
+      <td valign="middle" class="td46">
+        <p class="p9"><span class="s1"><b>スペック</b></span></p>
+      </td>
+      <td valign="middle" class="td47">
+        <p class="p9"><span class="s1"><b>月額（USD）</b></span></p>
+      </td>
+      <td valign="middle" class="td48">
+        <p class="p9"><span class="s1"><b>月額（円）</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td49">
+        <p class="p7"><span class="s1">EC2（Rails API）</span></p>
+      </td>
+      <td valign="middle" class="td50">
+        <p class="p9"><span class="s1">t3.medium × 2</span></p>
+      </td>
+      <td valign="middle" class="td51">
+        <p class="p9"><span class="s1">$80</span></p>
+      </td>
+      <td valign="middle" class="td52">
+        <p class="p9"><span class="s1">¥12,000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td49">
+        <p class="p7"><span class="s1">RDS（PostgreSQL）</span></p>
+      </td>
+      <td valign="middle" class="td50">
+        <p class="p9"><span class="s1">db.t3.small</span></p>
+      </td>
+      <td valign="middle" class="td51">
+        <p class="p9"><span class="s1">$45</span></p>
+      </td>
+      <td valign="middle" class="td52">
+        <p class="p9"><span class="s1">¥6,750</span></p>
+      </td>
+    </tr>
 
-          <!-- Sau đó là Tổng hợp nhanh -->
-          <div style="margin-top:16px">
-            <div class="muted">Tỷ lệ mở Email</div>
-            <div class="progress" style="margin:8px 0"><i style="width:26.92%"></i></div>
-            <div class="muted">(Mục tiêu tiếp theo: 50%)</div>
-          </div>
 
-          <div style="margin-top:12px">
-            <div class="muted">Số meeting đã hoàn thành</div>
-            <div style="font-size:18px;font-weight:700;margin-top:6px">1 <span class="muted">/ mục tiêu 1</span></div>
-          </div>
 
-          <div style="margin-top:12px">
-            <div class="muted">Doanh thu</div>
-            <div style="font-size:18px;font-weight:700;margin-top:6px">0</div>
-          </div>
-        </section>
+    <tr>
+      <td valign="middle" class="td49">
+        <p class="p7"><span class="s1">Vercel Pro</span></p>
+      </td>
+      <td valign="middle" class="td50">
+        <p class="p9"><span class="s1">フロントエンド</span></p>
+      </td>
+      <td valign="middle" class="td51">
+        <p class="p9"><span class="s1">$20</span></p>
+      </td>
+      <td valign="middle" class="td52">
+        <p class="p9"><span class="s1">¥3,000</span></p>
+      </td>
+    </tr>
 
-        <!-- Tóm tắt -->
-        <section class="card" aria-labelledby="summary" style="margin-top:12px">
-          <div class="section-title"><h3 id="summary">1. Tóm tắt</h3><div class="muted">Tổng quan tháng 9</div></div>
-          <p class="muted">Trong tháng 9, hoạt động kinh doanh và tìm kiếm khách hàng diễn ra đều đặn. Đã có kết quả khả quan trước mắt với <strong>1 meeting</strong> với khách hàng tiềm năng trong tuần 4. Tuy nhiên, chất lượng job không cao, chủ yếu là các job nhỏ, về web3, blockchain và games.</p>
-        </section>
-
-        <!-- Thực tích -->
-        <section class="card" aria-labelledby="thuctich" style="margin-top:12px">
-          <div class="section-title"><h3 id="thuctich">2. Thực tích</h3><div class="muted">Các chỉ số chính</div></div>
-          <div class="kpis" style="margin-bottom:12px">
-            <div class="kpi">
-              <div class="label">Tổng số job apply (PPH, Guru)</div>
-              <div class="value">99</div>
-            </div>
-            <div class="kpi">
-              <div class="label">Số phản hồi</div>
-              <div class="value">12</div>
-            </div>
-            <div class="kpi">
-              <div class="label">Tổng Email Marketing</div>
-              <div class="value">128</div>
-            </div>
-            <div class="kpi">
-              <div class="label">Tỷ lệ mở Email</div>
-              <div class="value">26.92%</div>
-            </div>
-          </div>
-          <table aria-describedby="thuctich-desc">
-            <tbody>
-              <tr><th>Tổng số Contact form</th><td>74</td></tr>
-              <tr><th>Doanh thu (đến hiện tại)</th><td>0</td></tr>
-              <tr><th>Số meeting</th><td>1</td></tr>
-            </tbody>
-          </table>
-          <div id="thuctich-desc" class="muted" style="margin-top:10px">Ghi chú: số liệu thu thập đến ngày 29/09/2025.</div>
-        </section>
-
-        <!-- Vấn đề còn tồn tại -->
-        <section class="card" aria-labelledby="vande" style="margin-top:12px">
-          <div class="section-title"><h3 id="vande">3. Vấn đề còn tồn tại</h3><div class="muted">Những rào cản cần xử lý</div></div>
-          <ul>
-            <li>Số lượng job phù hợp ít — cần tham khảo thêm các thị trường khác.</li>
-            <li>Chưa có kế hoạch truyền thông dài hạn để thu hút khách hàng.</li>
-          </ul>
-        </section>
-
-        <!-- Mục tiêu & định hướng -->
-        <section class="card" aria-labelledby="muctieu" style="margin-top:12px">
-          <div class="section-title"><h3 id="muctieu">4. Mục tiêu & định hướng</h3><div class="muted">Kế hoạch hành động</div></div>
-          <div class="goals">
-            <div>
-              <h4 style="margin:0 0 6px 0">Mục tiêu ngắn hạn</h4>
-              <ul>
-                <li>Hẹn được <strong>1 meeting</strong> với khách hàng tiềm năng trong tháng tới.</li>
-                <li>Chỉnh sửa Email để tỷ lệ mở tăng lên <strong>50%</strong>.</li>
-                <li>Nghiên cứu thêm công cụ <strong>LinkedIn</strong> để mở rộng nguồn khách hàng.</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="margin:0 0 6px 0">Hoạt động hỗ trợ</h4>
-              <ul>
-                <li>Viết bài đăng lên LinkedIn của công ty.</li>
-                <li>Hoàn thành tốt các công việc hỗ trợ HCNS và Marketing.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <footer>
-      Báo cáo tháng 9 - Amcolab 
-    </footer>
-  </div>
+    <tr>
+      <td colspan="2" valign="middle" class="td53">
+        <p class="p7"><span class="s1"><b>合計</b></span></p>
+      </td>
+      <td valign="middle" class="td51">
+        <p class="p9"><span class="s1"><b>$145</b></span></p>
+      </td>
+      <td valign="middle" class="td54">
+        <p class="p9"><span class="s1"><b>¥22,500</b></span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p21"><span class="s1">※ 為替1USD=150円、初期想定ユーザー数：CSP 30名、Creator 300名（コスト最適化）</span></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px 'Hiragino Sans'; -webkit-text-stroke: #000000"><span class="s1"><b>今後の確認事項</b></span></h3>
+<ul class="ul1">
+  <li class="li23"><span class="s7"></span><span class="s8">LME</span>や<span class="s8">Backstage</span>の画面構成、要素名、<span class="s8">JavaScript</span>挙動などが変更された場合、既存の<span class="s8">RPA</span>や自動処理が動作しなくなる可能性があります。</li>
+  <li class="li23"><span class="s7"></span>特に<span class="s9"><b>CAPTCHA</b></span><b>強化やアクセス制限</b>が行われた場合、追加対応が必要となり、<b>別途工数・費用が発生する</b>ことがあります。</li>
+  <li class="li23"><span class="s7"></span><span class="s8">LME</span>または<span class="s8">Backstage</span>側の仕様・ポリシーにより、一定回数以上のアクセス、または自動化検知により、<b>アカウントが一時的または永久的にブロックされるリスク</b>があります。</li>
+  <li class="li23"><span class="s7"></span>弊社ではこのようなアカウント停止に対して<b>責任を負いかねます</b>ので、ご了承の上で自動化をご利用ください。</li>
+</ul>
+<p class="p24"><span class="s1">本見積書の有効期限は2025年10月15日までとなります。</span></p>
+<p class="p24"><span class="s1">ご不明な点がございましたら、お気軽にお問い合わせください。</span></p>
 </body>
-</html>
-
+</html>      
 
