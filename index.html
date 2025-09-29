@@ -1,246 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sales Report — IT Market (Japan) — Tháng 9</title>
+  <title>Sales Report - IT Market (EU) - Tháng 9/2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f8fafc;           /* page background */
-      --card:#ffffff;         /* card background */
-      --muted:#64748b;        /* secondary text */
-      --text:#1e293b;         /* primary text */
-      --brand:#2563eb;        /* accent */
-      --brand-2:#16a34a;      /* secondary accent */
-      --danger:#dc2626;
-      --warn:#d97706;
-      --ok:#059669;
-      --chip:#f1f5f9;
-      --border:#e2e8f0;
-      --shadow: 0 4px 12px rgba(0,0,0,.08);
+      --bg:#ffffff;
+      --card:#f9fafb;
+      --muted:#4b5563;
+      --accent:#10b981; /* green */
+      --accent-2:#3b82f6; /* blue */
+      --glass: rgba(0,0,0,0.03);
+      --card-radius:14px;
     }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-    }
-    .container{ max-width:1080px; margin:40px auto; padding:0 20px; }
-
-    /* Header */
-    .header{ display:grid; grid-template-columns: 1fr auto; gap:16px; align-items:center; }
-    .title{ font-size: clamp(26px, 3vw, 34px); line-height:1.2; margin:0; font-weight:800; }
-    .subtitle{ margin-top:6px; color:var(--muted); font-size:14px; }
-
-    .badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:#f8fafc; box-shadow: var(--shadow);
-    }
-    .badge svg{ width:18px; height:18px; }
-
-    /* Card grid */
-    .grid{ display:grid; gap:16px; grid-template-columns: repeat(12, 1fr); margin-top:24px; }
-    .card{ grid-column: span 12; background:var(--card); border:1px solid var(--border); border-radius:20px; padding:18px 20px; box-shadow: var(--shadow); }
-    .card h3{ margin:0 0 10px; font-size:16px; font-weight:700; color:var(--text); letter-spacing:.2px; }
-
-    /* KPI cards */
-    .kpi{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
-    .kpi .value{ font-weight:800; font-size: clamp(22px, 3vw, 28px); }
-    .kpi .delta{ font-size:12px; color:var(--muted); }
-
-    .kpi-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
-    .kpi-card{ background: #f1f5f9; border:1px solid var(--border); border-radius:16px; padding:14px; }
-
-    .muted{ color:var(--muted); }
-
-    /* Chips */
-    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
-    .chip{ background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--text); }
-
-    /* Two columns */
-    .col-6{ grid-column: span 6; }
-
-    /* Lists & table */
-    .list{ margin:10px 0 0 0; padding:0 0 0 18px; }
-    .list li{ margin:8px 0; }
-
-    table{ width:100%; border-collapse:collapse; margin-top:8px; font-size:14px; }
-    th, td{ padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
-    th{ color:var(--text); font-weight:700; }
-
-    /* Progress */
-    .progress-wrap{ margin-top:8px; }
-    .progress{ height:10px; border-radius:999px; background:#e2e8f0; position:relative; overflow:hidden; }
-    .progress > i{ position:absolute; inset:0; width:0%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); border-radius:inherit; }
-    .progress-label{ display:flex; justify-content:space-between; color:var(--muted); font-size:12px; margin-bottom:6px; }
-
-    /* Notes */
-    .note{ margin-top:6px; font-size:13px; color:var(--muted); }
-    .callout{ border-left:3px solid var(--brand); padding:10px 12px; background:#f8fafc; border-radius:10px; }
-
-    /* Footer */
-    footer{ color:var(--muted); font-size:12px; text-align:center; margin:28px 0 16px; }
-
-    /* Responsive */
-    @media (max-width: 860px){
-      .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
-      .col-6{ grid-column: span 12; }
-    }
+    *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+    body{margin:0;background:var(--bg);color:#111827;padding:32px}
+    .container{max-width:980px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{width:74px;height:74px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+    .title{line-height:1}
+    h1{margin:0;font-size:20px}
+    .meta{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .card{background:var(--card);border-radius:var(--card-radius);padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .kpis{display:flex;gap:12px;flex-wrap:wrap}
+    .kpi{flex:1 1 140px;background:var(--glass);padding:12px;border-radius:10px}
+    .kpi .label{font-size:12px;color:var(--muted)}
+    .kpi .value{font-weight:700;font-size:20px;margin-top:6px}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:10px;border-bottom:1px solid rgba(0,0,0,0.06);text-align:left;font-size:14px}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .muted{color:var(--muted);font-size:13px}
+    .progress{background:rgba(0,0,0,0.06);height:12px;border-radius:999px;overflow:hidden}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));}
+    ul{padding-left:18px}
+    .goals{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .badge{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+    footer{color:var(--muted);font-size:13px;margin-top:18px;text-align:center}
+    @media (max-width:900px){.grid{grid-template-columns:1fr;}.goals{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
-    <div class="header">
-      <div>
-        <h1 class="title">Sales Report — IT Market (Japan) — Tổng kết tháng 9</h1>
-        <p class="subtitle">Prepared by: <strong>Đỗ Thị Huyền</strong> • Date: <strong>30/09/2025</strong></p>
+    <header>
+      <div class="brand">
+        <div class="logo">IT</div>
+        <div class="title">
+          <h1>Sales Report — IT Market (EU) — Tháng 9/2025</h1>
+          <div class="meta">Prepared by: <strong>Trần Thuỳ Linh</strong> · Date: <strong>29/09/2025</strong></div>
+        </div>
       </div>
-      <div class="badge" title="Japan Market">
-        <!-- flag & sparkles -->
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" opacity=".35"/><circle cx="12" cy="12" r="5" fill="currentColor"/></svg>
-        <span><strong>Japan</strong> • IT Outsourcing</span>
+      <div style="text-align:right">
+        <div class="badge">Monthly Report</div>
+        <div class="muted" style="margin-top:6px">Trạng thái: <strong>Báo cáo tháng 9</strong></div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- left column -->
+      <div>
+        <!-- Gộp Quick Facts + Tổng hợp nhanh -->
+        <section class="card" aria-labelledby="overview">
+          <div class="section-title">
+            <h3 id="overview">Tổng hợp nhanh</h3>
+            <div class="muted">Số liệu và chỉ số nổi bật</div>
+          </div>
+
+          <!-- Quick Facts trước -->
+          <table>
+            <tbody>
+              <tr><th>Job apply</th><td>99</td></tr>
+              <tr><th>Phản hồi</th><td>12</td></tr>
+              <tr><th>Contact form</th><td>74</td></tr>
+              <tr><th>Email gửi</th><td>128</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Sau đó là Tổng hợp nhanh -->
+          <div style="margin-top:16px">
+            <div class="muted">Tỷ lệ mở Email</div>
+            <div class="progress" style="margin:8px 0"><i style="width:26.92%"></i></div>
+            <div class="muted">(Mục tiêu tiếp theo: 50%)</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="muted">Số meeting đã hoàn thành</div>
+            <div style="font-size:18px;font-weight:700;margin-top:6px">1 <span class="muted">/ mục tiêu 1</span></div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="muted">Doanh thu</div>
+            <div style="font-size:18px;font-weight:700;margin-top:6px">0</div>
+          </div>
+        </section>
+
+        <!-- Tóm tắt -->
+        <section class="card" aria-labelledby="summary" style="margin-top:12px">
+          <div class="section-title"><h3 id="summary">1. Tóm tắt</h3><div class="muted">Tổng quan tháng 9</div></div>
+          <p class="muted">Trong tháng 9, hoạt động kinh doanh và tìm kiếm khách hàng diễn ra đều đặn. Đã có kết quả khả quan trước mắt với <strong>1 meeting</strong> với khách hàng tiềm năng trong tuần 4. Tuy nhiên, chất lượng job không cao, chủ yếu là các job nhỏ, về web3, blockchain và games.</p>
+        </section>
+
+        <!-- Thực tích -->
+        <section class="card" aria-labelledby="thuctich" style="margin-top:12px">
+          <div class="section-title"><h3 id="thuctich">2. Thực tích</h3><div class="muted">Các chỉ số chính</div></div>
+          <div class="kpis" style="margin-bottom:12px">
+            <div class="kpi">
+              <div class="label">Tổng số job apply (PPH, Guru)</div>
+              <div class="value">99</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Số phản hồi</div>
+              <div class="value">12</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Tổng Email Marketing</div>
+              <div class="value">128</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Tỷ lệ mở Email</div>
+              <div class="value">26.92%</div>
+            </div>
+          </div>
+          <table aria-describedby="thuctich-desc">
+            <tbody>
+              <tr><th>Tổng số Contact form</th><td>74</td></tr>
+              <tr><th>Doanh thu (đến hiện tại)</th><td>0</td></tr>
+              <tr><th>Số meeting</th><td>1</td></tr>
+            </tbody>
+          </table>
+          <div id="thuctich-desc" class="muted" style="margin-top:10px">Ghi chú: số liệu thu thập đến ngày 29/09/2025.</div>
+        </section>
+
+        <!-- Vấn đề còn tồn tại -->
+        <section class="card" aria-labelledby="vande" style="margin-top:12px">
+          <div class="section-title"><h3 id="vande">3. Vấn đề còn tồn tại</h3><div class="muted">Những rào cản cần xử lý</div></div>
+          <ul>
+            <li>Số lượng job phù hợp ít — cần tham khảo thêm các thị trường khác.</li>
+            <li>Chưa có kế hoạch truyền thông dài hạn để thu hút khách hàng.</li>
+          </ul>
+        </section>
+
+        <!-- Mục tiêu & định hướng -->
+        <section class="card" aria-labelledby="muctieu" style="margin-top:12px">
+          <div class="section-title"><h3 id="muctieu">4. Mục tiêu & định hướng</h3><div class="muted">Kế hoạch hành động</div></div>
+          <div class="goals">
+            <div>
+              <h4 style="margin:0 0 6px 0">Mục tiêu ngắn hạn</h4>
+              <ul>
+                <li>Hẹn được <strong>1 meeting</strong> với khách hàng tiềm năng trong tháng tới.</li>
+                <li>Chỉnh sửa Email để tỷ lệ mở tăng lên <strong>50%</strong>.</li>
+                <li>Nghiên cứu thêm công cụ <strong>LinkedIn</strong> để mở rộng nguồn khách hàng.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="margin:0 0 6px 0">Hoạt động hỗ trợ</h4>
+              <ul>
+                <li>Viết bài đăng lên LinkedIn của công ty.</li>
+                <li>Hoàn thành tốt các công việc hỗ trợ HCNS và Marketing.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
-    <!-- KPI Cards -->
-    <section class="grid" aria-label="KPIs">
-      <div class="card">
-        <div class="kpi-grid">
-          <div class="kpi-card">
-            <div class="muted">Job apply</div>
-            <div class="kpi"><span class="value">182</span><span class="delta">CW / Lancers / Coconala</span></div>
-          </div>
-          <div class="kpi-card">
-            <div class="muted">Phản hồi</div>
-            <div class="kpi"><span class="value">31</span><span class="delta">chủ yếu từ Coconala & Lancers</span></div>
-          </div>
-          <div class="kpi-card">
-            <div class="muted">Doanh thu T9 (tới hiện tại)</div>
-            <div class="kpi"><span class="value">¥333,000</span><span class="delta">khách quen</span></div>
-          </div>
-          <div class="kpi-card">
-            <div class="muted">Số meeting (cả tháng)</div>
-            <div class="kpi"><span class="value">10 </span><span class="delta">chi tiết trao đổi tại cuộc họp</span></div>
-          </div>
-        </div>
-        <div class="chips" style="margin-top:12px">
-          <span class="chip">CrowdWorks</span>
-          <span class="chip">Lancers</span>
-          <span class="chip">Coconala</span>
-          <span class="chip">HP / LP / Data Tools</span>
-          <span class="chip">Design yêu cầu cao</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tóm tắt -->
-    <section class="grid" aria-label="Summary">
-      <div class="card col-6">
-        <h3>1) Tóm tắt</h3>
-        <div class="callout">
-          Trong tháng 9, hoạt động tìm kiếm khách hàng diễn ra đều đặn. Tuy nhiên, <strong>chất lượng job phù hợp giảm</strong>, thiên về các dự án <strong>HP/LP quy mô nhỏ</strong> và yêu cầu <strong>thiết kế</strong>. Bên cạnh đó có nhu cầu các <strong>tool trích xuất/phân tích dữ liệu</strong>.
-        </div>
-      </div>
-      <div class="card col-6">
-        <h3>Tiến độ KPI trong tháng</h3>
-        <div class="progress-wrap">
-          <div class="progress-label"><span>Meet </span><span><b id="meetNow">10</b>/8</span></div>
-          <div class="progress" aria-hidden="true"><i id="meetBar"></i></div>
-          <p class="note">Các meet báo cáo chi tiết trên hub</p>
-        </div>
-        <div class="progress-wrap" style="margin-top:14px">
-          <div class="progress-label"><span>Hợp đồng mới</span><span><b id="dealNow">1</b></span></div>
-          <div class="progress" aria-hidden="true"><i id="dealBar"></i></div>
-          <p class="note">Đã ký <strong>1</strong> hợp đồng. Mục tiêu: có thêm <strong>2</strong> hợp đồng mới trước 30/09.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Thực tích -->
-    <section class="grid" aria-label="Performance">
-      <div class="card">
-        <h3>2) Thực tích</h3>
-        <table role="table" aria-label="Sales performance table">
-          <thead>
-            <tr>
-              <th>Chỉ tiêu</th>
-              <th>Giá trị</th>
-              <th>Ghi chú</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Tổng job apply</td>
-              <td><strong>182</strong></td>
-              <td>CrowdWorks / Lancers / Coconala</td>
-            </tr>
-            <tr>
-              <td>Số phản hồi</td>
-              <td><strong>31</strong></td>
-              <td>Chủ yếu từ Coconala & Lancers</td>
-            </tr>
-            <tr>
-              <td>Doanh thu tháng 9</td>
-              <td><strong>¥333,000</strong></td>
-              <td>Khách hàng cũ (repeat)</td>
-            </tr>
-            <tr>
-              <td>Số meeting</td>
-              <td><strong>10</strong></td>
-              <td>có thêm nghiên cứu về thị trường mới.</td>
-            </tr>
-            <tr>
-              <td>Số hợp đồng</td>
-              <td><strong>1</strong></td>
-              <td>Đã ký kết</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="note"><em>Nhận xét:</em> Trên các nền tảng có nhiều “bên nhận thầu” cạnh tranh giá/đề xuất. Cần tăng hấp dẫn với khách quen: <strong>ưu đãi</strong>, <strong>phản hồi nhanh/chất lượng</strong>, <strong>cam kết tiến độ</strong>.</p>
-      </div>
-    </section>
-
-    <!-- Issues & Actions -->
-    <section class="grid" aria-label="Issues and Goals">
-      <div class="card col-6">
-        <h3>3) Vấn đề còn tồn tại</h3>
-        <ul class="list">
-          <li>Chất lượng & số lượng job phù hợp <strong>ít</strong>; đang khảo sát thêm thị trường khác nhưng <strong>chưa tìm được</strong>.</li>
-          <li>Cạnh tranh cao: ngoài <strong>AMCOLAB</strong> còn nhiều đối thủ mạnh.</li>
-          <li>Cần xây dựng hình ảnh ngay từ đầu: <strong>Home Page</strong> công ty, <strong>deck</strong> (PPTX) giới thiệu.</li>
-        </ul>
-      </div>
-      <div class="card col-6">
-        <h3>4) Mục tiêu tháng 10</h3>
-        <ul class="list">
-          <li>✔️ Hợp đồng <strong>3 hợp đồng trên các nền tảng</strong>.</li>
-          <li>✔️ Đạt đủ <strong>8</strong> meet chất lượng/tháng.</li>
-          <li>✔️ Duy trì quan hệ tốt với khách hàng hiện hữu.</li>
-           <li>✔️ Tiến hành nhận job qua aimitsu</li>
-        </ul>
-      </div>
-    </section>
-
     <footer>
-      © 2025 AMCOLAB Technology — Báo cáo phục vụ nội bộ.
+      Báo cáo tháng 9 - Amcolab 
     </footer>
   </div>
-
-  <script>
-    // Simple progress animation for KPIs
-    const meetNow = 6, meetGoal = 8; // từ dữ liệu báo cáo
-    const dealNow = 1, dealGoal = 2;
-    const meetPct = Math.min(100, Math.round(meetNow / meetGoal * 100));
-    const dealPct = Math.min(100, Math.round(dealNow / dealGoal * 100));
-    document.getElementById('meetNow').textContent = meetNow;
-    document.getElementById('dealNow').textContent = dealNow;
-    const animateBar = (el, to) => {
-      let cur = 0; const step = () => { cur += 2; el.style.width = cur + '%'; if(cur < to) requestAnimationFrame(step); }; step();
-    };
-    animateBar(document.getElementById('meetBar'), meetPct);
-    animateBar(document.getElementById('dealBar'), dealPct);
-  </script>
 </body>
 </html>
+
 
