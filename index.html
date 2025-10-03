@@ -3,840 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>見積書</title>
+    <title>業務追加契約書</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-            font-size: 11pt;
-            line-height: 1.6;
-            color: #000;
-            background: #fff;
-            padding: 20mm;
-        }
-
-        @media print {
-            body {
-                padding: 15mm;
-            }
-            .page-break {
-                page-break-before: always;
-            }
-            table {
-                page-break-inside: auto;
-            }
-            tr {
-                page-break-inside: avoid;
-                page-break-after: auto;
-            }
-            h1, h2, h3 {
-                page-break-after: avoid;
-            }
-        }
-
         @page {
             size: A4;
-            margin: 15mm;
+            margin: 25mm 20mm;
         }
-
-        h1 {
-            font-size: 24pt;
-            font-weight: bold;
+        
+        body {
+            font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "MS Mincho", serif;
+            font-size: 10.5pt;
+            line-height: 1.8;
+            color: #000;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 25mm 20mm;
+            background: white;
+        }
+        
+        .contract-title {
             text-align: center;
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        
+        .preamble {
+            text-align: justify;
+            margin-bottom: 25px;
+            text-indent: 1em;
+        }
+        
+        .article {
             margin-bottom: 20px;
         }
-
-        h2 {
-            font-size: 16pt;
+        
+        .article-title {
             font-weight: bold;
-            background-color: #262626;
-            color: #fff;
-            padding: 8px 12px;
-            margin: 20px 0 13px 0;
-        }
-
-        h3 {
-            font-size: 14pt;
-            font-weight: bold;
-            margin: 15px 0 14px 0;
-        }
-
-        .header-info {
-            margin-bottom: 12px;
-        }
-
-        .total-amount {
-            font-size: 22pt;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .valid-until {
             font-size: 11pt;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            margin-top: 20px;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+        
+        .article-content {
+            margin-left: 1em;
+            text-align: justify;
         }
-
-        th, td {
-            border: 1px solid #262626;
-            padding: 8px;
-            text-align: left;
-            font-size: 10pt;
-            vertical-align: middle;
+        
+        .clause {
+            margin-bottom: 10px;
+            text-align: justify;
         }
-
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-            text-align: center;
+        
+        .sub-clause {
+            margin-left: 2em;
+            margin-bottom: 8px;
         }
-
-        td.center {
-            text-align: center;
-        }
-
-        td.right {
-            text-align: right;
-        }
-
-        .section-header {
-            background-color: #e3f1f6 !important;
-            font-weight: bold;
-            text-align: left !important;
-        }
-
-        .gray-row {
-            background-color: #e0e0e0;
-        }
-
-        .total-row {
-            background-color: #fff;
-            font-weight: bold;
-        }
-
-        .milestone-table td {
-            border-bottom: 1px solid #000;
-            border-left: none;
-            border-right: none;
-            border-top: none;
-            padding: 6px;
-        }
-
-        .milestone-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        ul {
-            margin: 11px 0 11px 25px;
-            list-style-type: disc;
-        }
-
-        li {
+        
+        .list-item {
+            margin-left: 2em;
             margin-bottom: 5px;
-            font-size: 12pt;
         }
-
-        .footer-note {
+        
+        .signature-section {
+            margin-top: 40px;
+            page-break-inside: avoid;
+        }
+        
+        .signature-date {
             text-align: center;
-            color: #535353;
-            margin: 11px 0;
+            margin-bottom: 30px;
             font-size: 11pt;
         }
-
-        .small-note {
+        
+        .party {
+            margin-bottom: 30px;
+        }
+        
+        .party-title {
+            font-weight: bold;
             font-size: 11pt;
-            margin: 0 0 11px 0;
+            margin-bottom: 10px;
+        }
+        
+        .party-info {
+            line-height: 1.6;
+        }
+        
+        .signature-line {
+            margin-top: 15px;
+            border-bottom: 1px solid #000;
+            width: 300px;
+            display: inline-block;
+        }
+        
+        .divider {
+            border-bottom: 2px solid #000;
+            margin: 30px 0;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-   <h1>別紙 成果物目録</h1>
-    <h1>見積書</h1>
+    <div class="contract-title">業務追加契約書</div>
     
-    <div class="header-info">
-        <p>下記のとおりお見積申し上げます。</p>
-        <p class="total-amount">合計金額（非課税）：<strong>¥1,600,000</strong></p>
-        <p class="valid-until">有効期限：2025年10月15日</p>
+    <div class="preamble">
+        本契約は、株式会社スタディオティガ（以下「委託者」という。）と AMCOLAB TECHNOLOGY COMPANY LIMITED（以下「受託者」という。）が 2025年6月11日に締結した「ClassTrip予約サービスの開発業務委託契約書」（以下「原契約」という。）に基づき、追加業務に関して次のとおり合意したものである。
     </div>
-
-    <h2>1. 工数概要</h2>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 5%;">No.</th>
-                <th style="width: 30%;">項目</th>
-                <th style="width: 12%;">単価（円）</th>
-                <th style="width: 8%;">人時</th>
-                <th style="width: 13%;">金額（円）</th>
-                <th style="width: 32%;">備考</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="center">1</td>
-                <td>要件定義・仕様策定</td>
-                <td class="right">2,000</td>
-                <td class="right">60</td>
-                <td class="right">120,000</td>
-                <td>詳細仕様策定・ワイヤーフレーム</td>
-            </tr>
-            <tr class="gray-row">
-                <td class="center">2</td>
-                <td>UI/UXデザイン・モック作成</td>
-                <td class="right">2,000</td>
-                <td class="right">0</td>
-                <td class="right">0</td>
-                <td>対応対象外</td>
-            </tr>
-            <tr>
-                <td class="center">3</td>
-                <td>認証・ログイン機能</td>
-                <td class="right">2,000</td>
-                <td class="right">40</td>
-                <td class="right">80,000</td>
-                <td>Admin/CSP分離・基本認証</td>
-            </tr>
-            <tr>
-                <td class="center">4</td>
-                <td>管理者ダッシュボード</td>
-                <td class="right">2,000</td>
-                <td class="right">60</td>
-                <td class="right">120,000</td>
-                <td>統計表示・RPA状況監視</td>
-            </tr>
-            <tr>
-                <td class="center">5</td>
-                <td>CSPパートナー管理</td>
-                <td class="right">2,000</td>
-                <td class="right">90</td>
-                <td class="right">180,000</td>
-                <td>CRUD・LME連携・報酬設定</td>
-            </tr>
-            <tr>
-                <td class="center">6</td>
-                <td>クリエイター管理</td>
-                <td class="right">2,000</td>
-                <td class="right">90</td>
-                <td class="right">180,000</td>
-                <td>一覧・詳細・自動マッピング</td>
-            </tr>
-            <tr>
-                <td class="center">7</td>
-                <td>報酬計算・管理機能</td>
-                <td class="right">2,000</td>
-                <td class="right">110</td>
-                <td class="right">220,000</td>
-                <td>Backstage連携・計算・為替適用</td>
-            </tr>
-            <tr>
-                <td class="center">8</td>
-                <td>為替レート設定</td>
-                <td class="right">2,000</td>
-                <td class="right">30</td>
-                <td class="right">60,000</td>
-                <td>月次更新</td>
-            </tr>
-            <tr>
-                <td class="center">9</td>
-                <td>CSPポータル画面</td>
-                <td class="right">2,000</td>
-                <td class="right">80</td>
-                <td class="right">160,000</td>
-                <td>専用ダッシュボード・実績表示</td>
-            </tr>
-            <tr>
-                <td class="center">10</td>
-                <td>レポート・データ出力</td>
-                <td class="right">2,000</td>
-                <td class="right">50</td>
-                <td class="right">100,000</td>
-                <td>CSV・PDF出力機能</td>
-            </tr>
-            <tr>
-                <td class="center">11</td>
-                <td>RPA・バックグラウンド処理</td>
-                <td class="right">2,000</td>
-                <td class="right">120</td>
-                <td class="right">240,000</td>
-                <td>TikTok・LME自動化・スケジューラ</td>
-            </tr>
-            <tr>
-                <td class="center">12</td>
-                <td>セキュリティ・コンプライアンス</td>
-                <td class="right">2,000</td>
-                <td class="right">70</td>
-                <td class="right">140,000</td>
-                <td>データ分離・基本暗号化</td>
-            </tr>
-            <tr>
-                <td class="center">13</td>
-                <td>レスポンシブ対応</td>
-                <td class="right">2,000</td>
-                <td class="right">30</td>
-                <td class="right">60,000</td>
-                <td>AWS基本環境・デプロイ</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="3" class="center"><strong>合計</strong></td>
-                <td class="right"><strong>800</strong></td>
-                <td class="right"><strong>1,600,000</strong></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="page-break"></div>
-
-    <h2>2. システム開発詳細</h2>
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2" style="width: 3%;">No</th>
-                <th rowspan="2" style="width: 11%;">大項目</th>
-                <th rowspan="2" style="width: 11%;">中項目</th>
-                <th rowspan="2" style="width: 15%;">機能概要</th>
-                <th colspan="7" style="width: 35%;">工数内訳（人時）</th>
-                <th rowspan="2" style="width: 5%;">合計<br>工数</th>
-                <th rowspan="2" style="width: 8%;">費用<br>（円）</th>
-            </tr>
-            <tr>
-                <th style="width: 5%;">開発<br>50%</th>
-                <th style="width: 5%;">管理<br>10%</th>
-                <th style="width: 5%;">仕様<br>分析<br>10%</th>
-                <th style="width: 5%;">設計<br>5%</th>
-                <th style="width: 5%;">デプ<br>ロイ<br>5%</th>
-                <th style="width: 5%;">テスト<br>15%</th>
-                <th style="width: 5%;">受入<br>5%</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【A】要件定義・仕様策定</strong></td>
-            </tr>
-            <tr>
-                <td class="center">1</td>
-                <td class="center">要件定義</td>
-                <td class="center">詳細仕様策定</td>
-                <td>業務フロー分析・モック作成</td>
-                <td class="center">30</td>
-                <td class="center">6</td>
-                <td class="center">6</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">9</td>
-                <td class="center">3</td>
-                <td class="center">60</td>
-                <td class="center">120,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【B】UI/UXデザイン作成</strong></td>
-            </tr>
-            <tr class="gray-row">
-                <td class="center">2</td>
-                <td class="center">UI/UXデザイン</td>
-                <td class="center">管理者画面デザイン</td>
-                <td>・Admin Dashboardレイアウト設計<br>・CSP一覧・Creator一覧グリッド<br>・統計チャート・グラフ配置<br>・レスポンシブ対応</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-            </tr>
-            <tr class="gray-row">
-                <td class="center">3</td>
-                <td class="center">UI/UXデザイン</td>
-                <td class="center">CSPポータル画面</td>
-                <td>・CSP専用ダッシュボード設計<br>・自分のCreator一覧<br>・報酬実績グラフ<br>・目標達成進捗バー</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-                <td class="center">0</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【C】認証・ログイン機能</strong></td>
-            </tr>
-            <tr>
-                <td class="center">4</td>
-                <td class="center">管理者認証</td>
-                <td class="center">Adminログイン</td>
-                <td>・ログイン画面UI実装<br>・Email/Password認証<br>・5回試行制限・アカウントロック<br>・セッション管理（2時間自動ログアウト）</td>
-                <td class="center">10</td>
-                <td class="center">2</td>
-                <td class="center">2</td>
-                <td class="center">1</td>
-                <td class="center">1</td>
-                <td class="center">3</td>
-                <td class="center">1</td>
-                <td class="center">20</td>
-                <td class="center">40,000</td>
-            </tr>
-            <tr>
-                <td class="center">5</td>
-                <td class="center">CSP認証</td>
-                <td class="center">CSPログイン</td>
-                <td>・CSP専用ログイン画面<br>・Email/パスワード認証<br>・CSP別データ分離アクセス制御<br>・初期パスワード変更強制</td>
-                <td class="center">10</td>
-                <td class="center">2</td>
-                <td class="center">2</td>
-                <td class="center">1</td>
-                <td class="center">1</td>
-                <td class="center">3</td>
-                <td class="center">1</td>
-                <td class="center">20</td>
-                <td class="center">40,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【D】管理者ダッシュボード</strong></td>
-            </tr>
-            <tr>
-                <td class="center">6</td>
-                <td class="center">統計表示</td>
-                <td class="center">Creator集計画面</td>
-                <td>・CSP別Creator招待数（月別・累計）<br>・売上サマリー（為替適用後）<br>・アクティブCreator数・成長率<br>・手動更新ボタン・自動更新（5分間隔）</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td class="center">7</td>
-                <td class="center">処理状況</td>
-                <td class="center">RPA監視画面</td>
-                <td>・配信中・未配信・処理中ステータス表示<br>・RPA健全性監視（成功/失敗率）<br>・エラーログ一覧・詳細表示<br>・システムアラート・通知設定</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【E】CSPパートナー管理</strong></td>
-            </tr>
-            <tr>
-                <td class="center">8</td>
-                <td class="center">CSP管理</td>
-                <td class="center">CSP一覧・編集画面</td>
-                <td>・CSP CRUD（作成・編集・無効化）<br>・担当者情報・連絡先管理<br>・ステータス管理（アクティブ・停止）<br>・検索・フィルタ（名前・ステータス別）</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td class="center">9</td>
-                <td class="center">LME連携</td>
-                <td class="center">LINE友達追加設定画面</td>
-                <td>・CSPコード付き友達追加URL生成<br>・QRコード自動生成・表示<br>・LME連携状況確認・テスト機能<br>・URL有効期限設定・更新</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td class="center">10</td>
-                <td class="center">報酬設定</td>
-                <td class="center">ボーナス制度設定画面</td>
-                <td>・基本20%報酬率設定・編集<br>・qualified数ボーナス設定（段階別）<br>・期間設定・有効期限管理<br>・設定変更履歴・承認フロー</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【F】クリエイター管理</strong></td>
-            </tr>
-            <tr>
-                <td class="center">11</td>
-                <td class="center">Creator一覧</td>
-                <td class="center">Creator一覧画面</td>
-                <td>・CSP紹介元・ライブ状況表示<br>・実績指標（Diamond・配信時間・売上）<br>・検索・フィルタ（CSP別・ステータス別）<br>・ページネーション・ソート機能</td>
-                <td class="center">20</td>
-                <td class="center">4</td>
-                <td class="center">4</td>
-                <td class="center">2</td>
-                <td class="center">2</td>
-                <td class="center">6</td>
-                <td class="center">2</td>
-                <td class="center">40</td>
-                <td class="center">80,000</td>
-            </tr>
-            <tr>
-                <td class="center">12</td>
-                <td class="center">Creator詳細</td>
-                <td class="center">Creator詳細画面</td>
-                <td>・ライブ履歴（日別・時間帯別グラフ）<br>・実績推移・Diamond獲得履歴<br>・30分チェックログ・ステータス履歴<br>・手動ステータス更新・メモ機能</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td class="center">13</td>
-                <td class="center">自動化処理</td>
-                <td class="center">マッピング管理画面</td>
-                <td>・Creator⇔CSPマッピング表示・編集<br>・自動リチェック・手動マッピング<br>・マッピング競合解決・優先順位<br>・エラー処理・再実行・ログ表示</td>
-                <td class="center">10</td>
-                <td class="center">2</td>
-                <td class="center">2</td>
-                <td class="center">1</td>
-                <td class="center">1</td>
-                <td class="center">3</td>
-                <td class="center">1</td>
-                <td class="center">20</td>
-                <td class="center">40,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【G】報酬計算・管理機能</strong></td>
-            </tr>
-            <tr>
-                <td class="center">14</td>
-                <td class="center">データ収集</td>
-                <td class="center">Backstage連携画面</td>
-                <td>・TikTokデータ取得状況・進捗表示<br>・payment net計算・検証<br>・取得エラーログ・再試行機能<br>・データ整合性チェック・アラート</td>
-                <td class="center">30</td>
-                <td class="center">6</td>
-                <td class="center">6</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">9</td>
-                <td class="center">3</td>
-                <td class="center">60</td>
-                <td class="center">120,000</td>
-            </tr>
-            <tr>
-                <td class="center">15</td>
-                <td class="center">外貨換算</td>
-                <td class="center">為替レート管理画面</td>
-                <td>・月次為替レート適用・全体再計算<br>・過去データ遡及処理・影響確認<br>・計算結果プレビュー・承認機能</td>
-                <td class="center">10</td>
-                <td class="center">2</td>
-                <td class="center">2</td>
-                <td class="center">1</td>
-                <td class="center">1</td>
-                <td class="center">3</td>
-                <td class="center">1</td>
-                <td class="center">20</td>
-                <td class="center">40,000</td>
-            </tr>
-            <tr>
-                <td class="center">16</td>
-                <td class="center">報酬計算</td>
-                <td class="center">月次報酬計算画面</td>
-                <td>・20%+ボーナス計算・月次集計<br>・CSP別計算結果・詳細内訳<br>・計算結果プレビュー・検証<br>・手動調整・備考入力・承認処理</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【H】為替レート設定</strong></td>
-            </tr>
-            <tr>
-                <td class="center">17</td>
-                <td class="center">為替管理</td>
-                <td class="center">レート入力画面</td>
-                <td>・月次USD-JPYレート入力・更新<br>・レート履歴管理・変更ログ<br>・影響確認・計算プレビュー<br>・適用期間設定・バリデーション</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【I】CSPポータル画面</strong></td>
-            </tr>
-            <tr>
-                <td class="center">18</td>
-                <td class="center">CSPダッシュ</td>
-                <td class="center">CSP専用ダッシュボード</td>
-                <td>・紹介数・活動数・月別報酬表示<br>・自分のCreator統計・実績推移<br>・Qualified達成状況・目標進捗<br>・収益予測・ランキング表示</td>
-                <td class="center">25</td>
-                <td class="center">5</td>
-                <td class="center">5</td>
-                <td class="center">2.5</td>
-                <td class="center">2.5</td>
-                <td class="center">7.5</td>
-                <td class="center">2.5</td>
-                <td class="center">50</td>
-                <td class="center">100,000</td>
-            </tr>
-            <tr>
-                <td class="center">19</td>
-                <td class="center">Creator表示</td>
-                <td class="center">担当Creator一覧</td>
-                <td>・担当Creator状況・実績表示<br>・Live状況確認・配信スケジュール<br>・個別実績詳細・Diamond獲得<br>・Creator別パフォーマンス比較</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【J】レポート・データ出力</strong></td>
-            </tr>
-            <tr>
-                <td class="center">20</td>
-                <td class="center">レポート機能</td>
-                <td class="center">各種レポート出力画面</td>
-                <td>・CSP別・月別レポート生成<br>・期間・条件設定・フィルタ<br>・CSV・PDF出力・メール送信<br>・レポート履歴・再実行機能</td>
-                <td class="center">25</td>
-                <td class="center">5</td>
-                <td class="center">5</td>
-                <td class="center">2.5</td>
-                <td class="center">2.5</td>
-                <td class="center">7.5</td>
-                <td class="center">2.5</td>
-                <td class="center">50</td>
-                <td class="center">100,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【K】RPA・バックグラウンド処理</strong></td>
-            </tr>
-            <tr>
-                <td class="center">21</td>
-                <td class="center">LME RPA</td>
-                <td class="center">LME友達追加監視</td>
-                <td>・新規Creator検出・自動登録<br>・CSPコード解析・マッピング処理<br>・友達追加イベント監視・同期<br>・データ整合性チェック・エラー処理</td>
-                <td class="center">20</td>
-                <td class="center">4</td>
-                <td class="center">4</td>
-                <td class="center">2</td>
-                <td class="center">2</td>
-                <td class="center">6</td>
-                <td class="center">2</td>
-                <td class="center">40</td>
-                <td class="center">80,000</td>
-            </tr>
-            <tr>
-                <td class="center">22</td>
-                <td class="center">TikTok RPA</td>
-                <td class="center">Backstage自動取得</td>
-                <td>・実績データ自動取得・解析<br>・Backstage画面スクレイピング<br>・アカウントローテーション管理<br>・CAPTCHA検知・回避・リトライ</td>
-                <td class="center">25</td>
-                <td class="center">5</td>
-                <td class="center">5</td>
-                <td class="center">2.5</td>
-                <td class="center">2.5</td>
-                <td class="center">7.5</td>
-                <td class="center">2.5</td>
-                <td class="center">50</td>
-                <td class="center">100,000</td>
-            </tr>
-            <tr>
-                <td class="center">23</td>
-                <td class="center">スケジューラ</td>
-                <td class="center">定期処理管理</td>
-                <td>・30分間隔チェック・月次集計<br>・Cron Job管理・実行制御<br>・処理状況監視・ログ記録<br>・エラー処理・通知・再実行</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【L】セキュリティ・コンプライアンス</strong></td>
-            </tr>
-            <tr>
-                <td class="center">24</td>
-                <td class="center">データ分離</td>
-                <td class="center">アクセス制御実装</td>
-                <td>・CSP別データ分離・権限管理<br>・Row-Level Security実装<br>・API認証・認可制御</td>
-                <td class="center">10</td>
-                <td class="center">2</td>
-                <td class="center">1</td>
-                <td class="center">1</td>
-                <td class="center">1</td>
-                <td class="center">3</td>
-                <td class="center">1</td>
-                <td class="center">20</td>
-                <td class="center">40,000</td>
-            </tr>
-            <tr>
-                <td class="center">25</td>
-                <td class="center">セキュリティ</td>
-                <td class="center">暗号化・監査実装</td>
-                <td>・データ暗号化・SSL/TLS設定</td>
-                <td class="center">10</td>
-                <td class="center">2</td>
-                <td class="center">2</td>
-                <td class="center">1</td>
-                <td class="center">1</td>
-                <td class="center">3</td>
-                <td class="center">1</td>
-                <td class="center">20</td>
-                <td class="center">40,000</td>
-            </tr>
-            <tr>
-                <td colspan="11" class="section-header"><strong>【N】レスポンシブ対応</strong></td>
-            </tr>
-            <tr>
-                <td class="center">26</td>
-                <td class="center">レスポンシブ対応</td>
-                <td class="center">モバイル・PC</td>
-                <td>基本のレスポンシブ</td>
-                <td class="center">15</td>
-                <td class="center">3</td>
-                <td class="center">3</td>
-                <td class="center">1.5</td>
-                <td class="center">1.5</td>
-                <td class="center">4.5</td>
-                <td class="center">1.5</td>
-                <td class="center">30</td>
-                <td class="center">60,000</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="4" class="center"><strong>合計</strong></td>
-                <td class="center"><strong>400</strong></td>
-                <td class="center"><strong>80</strong></td>
-                <td class="center"><strong>79</strong></td>
-                <td class="center"><strong>40</strong></td>
-                <td class="center"><strong>40</strong></td>
-                <td class="center"><strong>120</strong></td>
-                <td class="center"><strong>40</strong></td>
-                <td class="center"><strong>800</strong></td>
-                <td class="center"><strong>1,600,000</strong></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h3>マイルストーン（成果物・確認ポイント）</h3>
-    <table class="milestone-table">
-        <tbody>
-            <tr>
-                <td style="width: 25%;"><strong>Phase 1完了時</strong></td>
-                <td style="width: 75%;">要件定義・ワイヤーフレーム</td>
-            </tr>
-            <tr>
-                <td><strong>Phase 2完了時</strong></td>
-                <td>認証・Admin Dashboard・CSP管理機能デモ実施</td>
-            </tr>
-            <tr>
-                <td><strong>Phase 3完了時</strong></td>
-                <td>Creator管理・報酬計算・CSPポータル機能デモ</td>
-            </tr>
-            <tr>
-                <td><strong>Phase 4完了時</strong></td>
-                <td>RPA・自動化・本番リリース・運用マニュアル引継ぎ</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h3>月次運用コスト見積（AWS構成）</h3>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 30%;">項目</th>
-                <th style="width: 30%;">スペック</th>
-                <th style="width: 20%;">月額（USD）</th>
-                <th style="width: 20%;">月額（円）</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>EC2（Rails API）</td>
-                <td class="center">t3.medium × 2</td>
-                <td class="center">$80</td>
-                <td class="center">¥12,000</td>
-            </tr>
-            <tr>
-                <td>RDS（PostgreSQL）</td>
-                <td class="center">db.t3.small</td>
-                <td class="center">$45</td>
-                <td class="center">¥6,750</td>
-            </tr>
-            <tr>
-                <td>Vercel Pro</td>
-                <td class="center">フロントエンド</td>
-                <td class="center">$20</td>
-                <td class="center">¥3,000</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="2"><strong>合計</strong></td>
-                <td class="center"><strong>$145</strong></td>
-                <td class="center"><strong>¥22,500</strong></td>
-            </tr>
-        </tbody>
-    </table>
-    <p class="small-note">※ 為替1USD=150円、初期想定ユーザー数：CSP 30名、Creator 300名（コスト最適化）</p>
-
-    <h3>今後の確認事項</h3>
-    <ul>
-        <li>LMEやBackstageの画面構成、要素名、JavaScript挙動などが変更された場合、既存のRPAや自動処理が動作しなくなる可能性があります。</li>
-        <li>特に<strong>CAPTCHA強化やアクセス制限</strong>が行われた場合、追加対応が必要となり、<strong>別途工数・費用が発生する</strong>ことがあります。</li>
-        <li>LMEまたはBackstage側の仕様・ポリシーにより、一定回数以上のアクセス、または自動化検知により、<strong>アカウントが一時的または永久的にブロックされるリスク</strong>があります。</li>
-        <li>弊社ではこのようなアカウント停止に対して<strong>責任を負いかねます</strong>ので、ご了承の上で自動化をご利用ください。</li>
-    </ul>
-
-    <div class="footer-note">
-        <p>本見積書の有効期限は2025年10月15日までとなります。</p>
-        <p>ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+    
+    <div class="article">
+        <div class="article-title">第1条（目的）</div>
+        <div class="article-content">
+            <div class="clause">
+                本契約は、原契約に定める業務に追加して、委託者が受託者に委託する追加業務の内容及び条件を定めることを目的とする。
+            </div>
+        </div>
     </div>
-
+    
+    <div class="article">
+        <div class="article-title">第2条（追加業務内容）</div>
+        <div class="article-content">
+            <div class="clause">
+                受託者は、委託者の要望に基づき、以下の業務を実施する。
+            </div>
+            <div class="list-item">1. LINEでもログインできるように</div>
+            <div class="list-item">2. WhatsAppでもログインできるように</div>
+            <div class="list-item">3. セッションをコピー</div>
+            <div class="list-item">4. 公開／非公開の切り替え</div>
+            <div class="list-item">5. 予約のキャンセルポリシー（±3日）</div>
+            <div class="list-item">6. メールで参加者を追加（各自で支払い）</div>
+            <div class="list-item">7. ゲストの参加はホストの承認が必要</div>
+            <div class="list-item">8. ライブ配信中にチャットできる</div>
+            <div class="list-item">9. 参加者数の制限をつける</div>
+            <div class="list-item">10. バッジ（毎月配信時間・参加時間によってバッジをつける）</div>
+            <div class="list-item">11. 通知・リマインダーセクション</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第3条（追加業務の対価及び支払条件）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 委託者は、追加業務の対価として276,000円（税抜）を受託者に支払う。
+            </div>
+            <div class="clause">
+                2. 支払時期・方法は、原契約第3条の規定に準じる。ただし、分割払いやマイルストーンがある場合は別途記載する。
+            </div>
+            <div class="clause">
+                3. 追加業務に関する対価は、書面合意によりのみ変更できる。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第4条（納期）</div>
+        <div class="article-content">
+            <div class="clause">
+                追加業務の実施期間は、2025年10月1日から2025年10月31日までとする。納期は双方協議の上調整できる。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第5条（検収）</div>
+        <div class="article-content">
+            <div class="clause">
+                追加業務の成果物は、委託者による検査・確認を経て検収完了とする。検収手続は原契約第18条を準用する。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第6条（知的財産権）</div>
+        <div class="article-content">
+            <div class="clause">
+                追加業務により生じた成果物に関する著作権その他の知的財産権は、原契約第10条の定めに従い委託者に帰属する。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第7条（遅延損害金）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 委託者の責に帰すべき事由により、追加業務の対価の支払いが約定日に行われない場合、受託者は委託者に対し、支払遅延日数に応じた遅延損害金（年利14.6％、又は月利1.3％）を請求できる。
+            </div>
+            <div class="clause">
+                2. 受託者の責に帰すべき事由により、追加業務の納期が遅延した場合、委託者は受託者に対し、当該遅延期間に応じた違約金を請求できる。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第8条（保証期間）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 受託者は、追加業務により納品された成果物について、検収完了日から1ヶ月間の保証を行う。
+            </div>
+            <div class="clause">
+                2. 保証期間中に成果物に瑕疵、不具合、仕様不適合が発見された場合、受託者は無償で修正・改修を行う。
+            </div>
+            <div class="clause">
+                3. 保証期間を過ぎた後の修正・改修については、別途協議のうえ有償対応とする。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第9条（契約解除）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 委託者または受託者が本契約に違反し、相当期間を定めて催告したにもかかわらず是正されない場合、相手方は本契約を解除できる。
+            </div>
+            <div class="clause">
+                2. 追加業務の履行が著しく困難になった場合、いずれかの当事者は協議のうえ本契約を解除できる。
+            </div>
+            <div class="clause">
+                3. 契約解除時点までに実施済みの業務については、その成果物に応じた委託料を支払うものとする。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第10条（その他）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本契約に定めのない事項については、原契約の規定を適用する。
+            </div>
+            <div class="clause">
+                2. 本契約と原契約の定めが矛盾する場合は、本契約を優先する。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第11条（協議）</div>
+        <div class="article-content">
+            <div class="clause">
+                本契約に疑義が生じた場合は、原契約第32条の協議条項に従い、委託者及び受託者が誠意をもって協議し解決を図る。
+            </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第12条（契約の効力）</div>
+        <div class="article-content">
+            <div class="clause">
+                本契約は、委託者及び受託者の署名又は記名押印により成立し、原契約と一体をなすものとする。
+            </div>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="signature-section">
+ 
+        </div>
+        
+        <div class="signature-date">
+            2025年10月15日
+        </div>
+        
+        <div class="party">
+            <div class="party-title">委託者</div>
+            <div class="party-info">
+                住所　　3F Yazawa Blg., 3-1-9 Shibuya, Shibuya, Tokyo,<br>
+                　　　　150-0002, Japan<br>
+                会社名　株式会社スタディオティガ<br>
+                役職名　代表者　三神安史<br><br>
+                署名<span class="signature-line"></span>
+            </div>
+        </div>
+        
+        <div class="party">
+            <div class="party-title">受託者</div>
+            <div class="party-info">
+                住所　　3th Audi Bld, 8 Pham Hung Str,<br>
+                　　　　Me Tri Ward, Nam Tu Liem Dist, Ha Noi City, Viet Nam<br>
+                会社名　AMCOLAB TECHNOLOGY COMPANY LIMITED<br>
+                役職名　代表取締役　NGUYEN THI QUY<br><br>
+                署名<span class="signature-line"></span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
-
