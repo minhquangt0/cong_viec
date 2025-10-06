@@ -1,304 +1,232 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>業務追加契約書</title>
-    <style>
-        @page {
-            size: A4;
-            margin: 25mm 20mm;
-        }
-        
-        body {
-            font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "MS Mincho", serif;
-            font-size: 10.5pt;
-            line-height: 1.8;
-            color: #000;
-            max-width: 210mm;
-            margin: 0 auto;
-            padding: 25mm 20mm;
-            background: white;
-        }
-        
-        .contract-title {
-            text-align: center;
-            font-size: 18pt;
-            font-weight: bold;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-        }
-        
-        .preamble {
-            text-align: justify;
-            margin-bottom: 25px;
-            text-indent: 1em;
-        }
-        
-        .article {
-            margin-bottom: 20px;
-        }
-        
-        .article-title {
-            font-weight: bold;
-            font-size: 11pt;
-            margin-bottom: 10px;
-            margin-top: 20px;
-        }
-        
-        .article-content {
-            margin-left: 1em;
-            text-align: justify;
-        }
-        
-        .clause {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-        
-        .list-item {
-            margin-left: 2em;
-            margin-bottom: 5px;
-        }
-        
-        .phase-title {
-            margin-top: 15px;
-            margin-bottom: 10px;
-            font-weight: normal;
-        }
-        
-        .signature-section {
-            margin-top: 40px;
-            page-break-inside: avoid;
-        }
-        
-        .signature-date {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 11pt;
-        }
-        
-        .party {
-            margin-bottom: 30px;
-        }
-        
-        .party-title {
-            font-weight: bold;
-            font-size: 11pt;
-            margin-bottom: 10px;
-        }
-        
-        .party-info {
-            line-height: 1.6;
-        }
-        
-        .signature-line {
-            margin-top: 15px;
-            border-bottom: 1px solid #000;
-            width: 300px;
-            display: inline-block;
-        }
-        
-        .divider {
-            border-bottom: 2px solid #000;
-            margin: 30px 0;
-        }
-        
-        @media print {
-            body {
-                padding: 0;
-                max-width: 100%;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sales Report — IT Market (Japan) — Tuần 1 tháng 10</title>
+  <style>
+    :root{
+      --bg:#f8fafc;           /* page background */
+      --card:#ffffff;         /* card background */
+      --muted:#64748b;        /* secondary text */
+      --text:#1e293b;         /* primary text */
+      --brand:#2563eb;        /* accent */
+      --brand-2:#16a34a;      /* secondary accent */
+      --danger:#dc2626;
+      --warn:#d97706;
+      --ok:#059669;
+      --chip:#f1f5f9;
+      --border:#e2e8f0;
+      --shadow: 0 4px 12px rgba(0,0,0,.08);
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    .container{ max-width:1080px; margin:40px auto; padding:0 20px; }
+
+    /* Header */
+    .header{ display:grid; grid-template-columns: 1fr auto; gap:16px; align-items:center; }
+    .title{ font-size: clamp(26px, 3vw, 34px); line-height:1.2; margin:0; font-weight:800; }
+    .subtitle{ margin-top:6px; color:var(--muted); font-size:14px; }
+
+    .badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:#f8fafc; box-shadow: var(--shadow);
+    }
+    .badge svg{ width:18px; height:18px; }
+
+    /* Card grid */
+    .grid{ display:grid; gap:16px; grid-template-columns: repeat(12, 1fr); margin-top:24px; }
+    .card{ grid-column: span 12; background:var(--card); border:1px solid var(--border); border-radius:20px; padding:18px 20px; box-shadow: var(--shadow); }
+    .card h3{ margin:0 0 10px; font-size:16px; font-weight:700; color:var(--text); letter-spacing:.2px; }
+
+    /* KPI cards */
+    .kpi{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .kpi .value{ font-weight:800; font-size: clamp(22px, 3vw, 28px); }
+    .kpi .delta{ font-size:12px; color:var(--muted); }
+
+    .kpi-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
+    .kpi-card{ background: #f1f5f9; border:1px solid var(--border); border-radius:16px; padding:14px; }
+
+    .muted{ color:var(--muted); }
+
+    /* Chips */
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .chip{ background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--text); }
+
+    /* Two columns */
+    .col-6{ grid-column: span 6; }
+
+    /* Lists & table */
+    .list{ margin:10px 0 0 0; padding:0 0 0 18px; }
+    .list li{ margin:8px 0; }
+
+    table{ width:100%; border-collapse:collapse; margin-top:8px; font-size:14px; }
+    th, td{ padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
+    th{ color:var(--text); font-weight:700; }
+
+    /* Progress */
+    .progress-wrap{ margin-top:8px; }
+    .progress{ height:10px; border-radius:999px; background:#e2e8f0; position:relative; overflow:hidden; }
+    .progress > i{ position:absolute; inset:0; width:0%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); border-radius:inherit; }
+    .progress-label{ display:flex; justify-content:space-between; color:var(--muted); font-size:12px; margin-bottom:6px; }
+
+    /* Notes */
+    .note{ margin-top:6px; font-size:13px; color:var(--muted); }
+    .callout{ border-left:3px solid var(--brand); padding:10px 12px; background:#f8fafc; border-radius:10px; }
+
+    /* Footer */
+    footer{ color:var(--muted); font-size:12px; text-align:center; margin:28px 0 16px; }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
+      .col-6{ grid-column: span 12; }
+    }
+  </style>
 </head>
 <body>
-    <div class="contract-title">業務追加契約書</div>
-    
-    <div class="preamble">
-        本契約は、株式会社スタディオティガ（以下「委託者」という。）と AMCOLAB TECHNOLOGY COMPANY LIMITED（以下「受託者」という。）が 2025年6月11日に締結した「ClassTrip予約サービスの開発業務委託契約書」（以下「原契約」という。）に基づき、追加業務に関して次のとおり合意したものである。
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <h1 class="title">Sales Report — IT Market (Japan) — Tuần 1 tháng 10</h1>
+        <p class="subtitle">Prepared by: <strong>Đỗ Thị Huyền</strong> • Date: <strong>06/10/2025</strong></p>
+      </div>
+      <div class="badge" title="Japan Market">
+        <!-- flag & sparkles -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" opacity=".35"/><circle cx="12" cy="12" r="5" fill="currentColor"/></svg>
+        <span><strong>Japan</strong> • IT Outsourcing</span>
+      </div>
     </div>
-    
-    <div class="article">
-        <div class="article-title">第1条（目的）</div>
-        <div class="article-content">
-            <div class="clause">
-                本契約は、原契約に定める業務に追加して、委託者が受託者に委託する追加業務の内容及び条件を定めることを目的とする。
-            </div>
+
+    <!-- KPI Cards -->
+    <section class="grid" aria-label="KPIs">
+      <div class="card">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="muted">Job apply</div>
+            <div class="kpi"><span class="value">34</span><span class="delta">CW / Lancers / Coconala</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="muted">Phản hồi</div>
+            <div class="kpi"><span class="value">6</span><span class="delta">Crowdworks & Coconala & Lancers</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="muted">Doanh thu T9 (tới hiện tại)</div>
+            <div class="kpi"><span class="value">¥595,600</span><span class="delta">khách từ Crowdwork và thị trường EU</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="muted">Số meeting (tuần 1/tháng 10)</div>
+            <div class="kpi"><span class="value"> 1 </span><span class="delta">chi tiết trao đổi tại cuộc họp</span></div>
+          </div>
         </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第2条（追加業務内容）</div>
-        <div class="article-content">
-            <div class="clause">
-                受託者は、委託者の要望に基づき、以下の業務を実施する。
-            </div>
-            <div class="list-item">1. LINEによるログイン機能</div>
-            <div class="list-item">2. WhatsAppによるログイン機能</div>
-            <div class="list-item">3. セッションのコピー機能</div>
-            <div class="list-item">4. 公開／非公開の切り替え機能</div>
-            <div class="list-item">5. 予約のキャンセルポリシー（±3日）</div>
-            <div class="list-item">6. メールで参加者を追加（各自で支払い）</div>
-            <div class="list-item">7. ゲスト参加におけるホスト承認機能</div>
-            <div class="list-item">8. ライブ配信中のチャット機能</div>
-            <div class="list-item">9. 参加者数の制限設定機能</div>
-            <div class="list-item">10. バッジ付与機能（毎月の配信時間・参加時間に応じて）</div>
-            <div class="list-item">11. 通知・リマインダー機能</div>
-            
-            <div class="phase-title">
-                さらに、Phase 2における予定業務として以下を含む。
-            </div>
-            <div class="list-item">12. Stripeによる決済機能</div>
-            <div class="list-item">13. トークン・報酬システム</div>
+        <div class="chips" style="margin-top:12px">
+      </div>
+    </section>
+
+    <!-- Tóm tắt -->
+    <section class="grid" aria-label="Summary">
+      <div class="card col-6">
+        <h3>1) Tóm tắt</h3>
+        <div class="callout">
+          Trong tuần 1 tháng 10, hoạt động tìm kiếm khách hàng diễn ra. Thực tế chỉ 4 ngày vì dành một ngày làm Home Page và hợp đồng. Các job có kinh phí thấp
         </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第3条（追加業務の対価及び支払条件）</div>
-        <div class="article-content">
-            <div class="clause">
-                1. 本追加業務の対価は 616,000円（税抜） とする。
-            </div>
-            <div class="clause">
-                2. 本追加業務を含めた本件業務全体の総額は 2,240,690円（税抜） とする。
-            </div>
-            <div class="clause">
-                3. 支払条件及び方法は原契約第3条の規定に従う。
-            </div>
-            <div class="clause">
-                4. 追加業務に関する費用変更が必要となった場合は、委託者と受託者の書面合意によってのみ行う。
-            </div>
+      </div>
+      <div class="card col-6">
+        <h3>Tiến độ KPI trong tháng</h3>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Meet chất lượng</span><span><b id="meetNow">1</b>/8</span></div>
+          <div class="progress" aria-hidden="true"><i id="meetBar"></i></div>
+          <p class="note">Đã có <strong>1</strong> meet trong tuần này. Mục tiêu: đạt đủ <strong>8</strong> meet chất lượng trong tháng 10.</p>
         </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第4条（納期）</div>
-        <div class="article-content">
-            <div class="clause">
-                追加業務の成果物は、2025年12月末日までに納品・リリースするものとする。
-            </div>
+        <div class="progress-wrap" style="margin-top:14px">
+          <div class="progress-label"><span>Hợp đồng mới</span><span><b id="dealNow">2</b>/5</span></div>
+          <div class="progress" aria-hidden="true"><i id="dealBar"></i></div>
+          <p class="note">Đã ký <strong>2</strong> hợp đồng. Mục tiêu: có thêm <strong>3</strong> hợp đồng mới trước 31/10.</p>
         </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第5条（検収）</div>
-        <div class="article-content">
-            <div class="clause">
-                追加業務の成果物は、委託者による検査・確認を経て検収完了とする。検収手続は原契約第18条を準用する。
-            </div>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第6条（知的財産権）</div>
-        <div class="article-content">
-            <div class="clause">
-                追加業務により生じた成果物に関する著作権その他の知的財産権は、原契約第10条の定めに従い委託者に帰属する。
-            </div>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第7条（遅延損害金）</div>
-        <div class="article-content">
-            <div class="clause">
-                1. 委託者の責に帰すべき事由により、追加業務の対価の支払いが約定日に行われない場合、受託者は委託者に対し、支払遅延日数に応じた遅延損害金（年利14.6％、又は月利1.3％）を請求できる。
-            </div>
-            <div class="clause">
-                2. 受託者の責に帰すべき事由により、追加業務の納期が遅延した場合、委託者は受託者に対し、当該遅延期間に応じた違約金を請求できる。
-            </div>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第8条（保証期間）</div>
-        <div class="article-content">
-            <div class="clause">
-                1. 受託者は、追加業務により納品された成果物について、検収完了日から1ヶ月間の保証を行う。
-            </div>
-            <div class="clause">
-                2. 保証期間中に成果物に瑕疵、不具合、仕様不適合が発見された場合、受託者は無償で修正・改修を行う。
-            </div>
-            <div class="clause">
-                3. 保証期間を過ぎた後の修正・改修については、別途協議のうえ有償対応とする。
-            </div>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第9条（契約解除）</div>
-        <div class="article-content">
-            <div class="clause">
-                1. 委託者または受託者が本契約に違反し、相当期間を定めて催告したにもかかわらず是正されない場合、相手方は本契約を解除できる。
-            </div>
-            <div class="clause">
-                2. 追加業務の履行が著しく困難になった場合、いずれかの当事者は協議のうえ本契約を解除できる。
-            </div>
-            <div class="clause">
-                3. 契約解除時点までに実施済みの業務については、その成果物に応じた委託料を支払うものとする。
-            </div>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第10条（その他）</div>
-        <div class="article-content">
-            <div class="clause">
-                1. 本契約に定めのない事項については、原契約の規定を適用する。
-            </div>
-            <div class="clause">
-                2. 本契約と原契約の定めが矛盾する場合は、本契約を優先する。
-            </div>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第11条（協議）</div>
-        <div class="article-content">
-            <div class="clause">
-                本契約に疑義が生じた場合は、原契約第32条の協議条項に従い、委託者及び受託者が誠意をもって協議し解決を図る。
-            </div>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第12条（契約の効力）</div>
-        <div class="article-content">
-            <div class="clause">
-                本契約は、委託者及び受託者の署名又は記名押印により成立し、原契約と一体をなすものとする。
-            </div>
-        </div>
-    </div>
-    
-    <div class="divider"></div>
-    
-    <div class="signature-section">
-        </div>
-        
-        <div class="signature-date">
-            2025年10月15日
-        </div>
-        
-        <div class="party">
-            <div class="party-title">委託者</div>
-            <div class="party-info">
-                住所　　3F Yazawa Blg., 3-1-9 Shibuya, Shibuya, Tokyo,<br>
-                　　　　150-0002, Japan<br>
-                会社名　株式会社スタディオティガ<br>
-                役職名　代表者　三神安史<br><br>
-            </div>
-        </div>
-        
-        <div class="party">
-            <div class="party-title">受託者</div>
-            <div class="party-info">
-                住所　　3th Audi Bld, 8 Pham Hung Str,<br>
-                　　　　Me Tri Ward, Nam Tu Liem Dist, Ha Noi City, Viet Nam<br>
-                会社名　AMCOLAB TECHNOLOGY COMPANY LIMITED<br>
-                役職名　代表取締役　NGUYEN THI QUY<br><br>
-            </div>
-        </div>
-    </div>
+      </div>
+    </section>
+
+    <!-- Thực tích -->
+    <section class="grid" aria-label="Performance">
+      <div class="card">
+        <h3>2) Thực tích</h3>
+        <table role="table" aria-label="Sales performance table">
+          <thead>
+            <tr>
+              <th>Chỉ tiêu</th>
+              <th>Giá trị</th>
+              <th>Ghi chú</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tổng job apply</td>
+              <td><strong>34</strong></td>
+              <td>CrowdWorks / Lancers / Coconala</td>
+            </tr>
+            <tr>
+              <td>Số phản hồi</td>
+              <td><strong>5</strong></td>
+              <td>chiếm 17.4%</td>
+            </tr>
+            <tr>
+              <td>Doanh thu tháng 10</td>
+              <td><strong>¥595,600</strong></td>
+              <td>Job nhỏ từ Crowdwork và EU</td>
+            </tr>
+            <tr>
+              <td>Số meeting</td>
+              <td><strong>1</strong></td>
+              <td>Trong tuần 1 có 1, tổng cộng 1 từ đầu tháng</td>
+            </tr>
+            <tr>
+              <td>Số hợp đồng</td>
+              <td><strong>2</strong></td>
+              <td>Đã ký kết</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note"><em>Nhận xét:</em> Trên các nền tảng có nhiều “bên nhận thầu” cạnh tranh giá/đề xuất. Cần tăng hấp dẫn với khách quen: <strong>ưu đãi</strong>, <strong>phản hồi nhanh/chất lượng</strong>, <strong>cam kết tiến độ</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Issues & Actions -->
+    <section class="grid" aria-label="Issues and Goals">
+      <div class="card col-6">
+        <h3>3) Mục tiêu đến 30/09</h3>
+        <ul class="list">
+          <li>✔️ Ký thêm <strong>3 hợp đồng mới</strong>.</li>
+          <li>✔️ Đạt đủ <strong>8</strong> meet chất lượng/tháng.</li>
+          <li>✔️ Duy trì quan hệ tốt với khách hàng hiện hữu.</li>
+          <li>✔️ Chuẩn bị chiến lược & tài liệu thu hút khách mới (HP, PPTX, pricing, SLA).</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 AMCOLAB Technology — Báo cáo phục vụ nội bộ.
+    </footer>
+  </div>
+
+  <script>
+    // Simple progress animation for KPIs
+    const meetNow = 6, meetGoal = 8; // từ dữ liệu báo cáo
+    const dealNow = 1, dealGoal = 2;
+    const meetPct = Math.min(100, Math.round(meetNow / meetGoal * 100));
+    const dealPct = Math.min(100, Math.round(dealNow / dealGoal * 100));
+    document.getElementById('meetNow').textContent = meetNow;
+    document.getElementById('dealNow').textContent = dealNow;
+    const animateBar = (el, to) => {
+      let cur = 0; const step = () => { cur += 2; el.style.width = cur + '%'; if(cur < to) requestAnimationFrame(step); }; step();
+    };
+    animateBar(document.getElementById('meetBar'), meetPct);
+    animateBar(document.getElementById('dealBar'), dealPct);
+  </script>
 </body>
 </html>
+
