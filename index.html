@@ -6,40 +6,45 @@
     <title>業務委託契約書</title>
     <style>
         @page {
-            margin: 20mm;
+            size: A4;
+            margin: 25mm 20mm;
         }
         
         body {
             font-family: "MS Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
-            line-height: 1.8;
+            line-height: 1.7;
             max-width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
-            padding: 20px;
+            padding: 25mm 20mm;
             background-color: #fff;
             color: #000;
+            font-size: 10.5pt;
         }
         
         h1 {
             text-align: center;
-            font-size: 24px;
+            font-size: 20pt;
             font-weight: bold;
-            margin: 30px 0;
+            margin: 20mm 0 15mm 0;
             border-bottom: 2px solid #000;
             padding-bottom: 10px;
         }
         
         h2 {
-            font-size: 18px;
+            font-size: 14pt;
             font-weight: bold;
-            margin: 25px 0 15px 0;
+            margin: 20mm 0 10mm 0;
             border-left: 5px solid #333;
             padding-left: 10px;
+            page-break-after: avoid;
         }
         
         h3 {
-            font-size: 16px;
+            font-size: 11pt;
             font-weight: bold;
-            margin: 20px 0 10px 0;
+            margin: 8mm 0 5mm 0;
+            page-break-after: avoid;
         }
         
         .preamble {
@@ -49,7 +54,8 @@
         }
         
         .article {
-            margin: 20px 0;
+            margin: 8mm 0;
+            page-break-inside: avoid;
         }
         
         .article-number {
@@ -57,19 +63,19 @@
         }
         
         .clause {
-            margin: 10px 0 10px 20px;
+            margin: 5mm 0 5mm 10mm;
         }
         
         .subclause {
-            margin: 5px 0 5px 40px;
+            margin: 3mm 0 3mm 15mm;
         }
         
         ol, ul {
-            margin: 10px 0;
+            margin: 5mm 0;
         }
         
         li {
-            margin: 5px 0;
+            margin: 3mm 0;
         }
         
         .signature-section {
@@ -111,10 +117,16 @@
         @media print {
             body {
                 background-color: white;
+                padding: 0;
             }
             
             .no-print {
                 display: none;
+            }
+            
+            @page {
+                size: A4;
+                margin: 20mm;
             }
         }
         
@@ -332,6 +344,8 @@
         </div>
     </div>
     
+    <div style="page-break-before: always;"></div>
+    
     <h2>第3章 所有権及び知的財産権等</h2>
     
     <div class="article">
@@ -372,6 +386,8 @@
             <p>3. 受託者の帰責事由によって第三者の知的財産権が侵害されたことを理由として、委託者が成果物等を将来に向けて使用できなくなるおそれがある場合、受託者は、受託者の費用負担で、委託者の判断により、権利侵害のない他の成果物等との交換、権利侵害している部分の変更、継続使用のための権利取得、又は損害賠償等の措置を講じる。</p>
         </div>
     </div>
+    
+    <div style="page-break-before: always;"></div>
     
     <h2>第4章 一般条項</h2>
     
@@ -510,225 +526,225 @@
     
     <div style="page-break-before: always;"></div>
     
-    <h2 style="text-align: center; margin-top: 50px; font-size: 22px;">別紙：見積書</h2>
-    <h3 style="text-align: center; margin-bottom: 30px;">従業員遠隔点呼システム（iOS版＋勤務管理統合）</h3>
+    <h2 style="text-align: center; margin-top: 20mm; font-size: 16pt; margin-bottom: 10mm;">別紙：見積書</h2>
+    <h3 style="text-align: center; margin-bottom: 10mm; font-size: 12pt;">従業員遠隔点呼システム（iOS版＋勤務管理統合）</h3>
     
-    <div style="text-align: right; margin-bottom: 30px;">
+    <div style="text-align: right; margin-bottom: 10mm; font-size: 9pt;">
         <p><strong>AMCOLAB Technology Co., Ltd</strong></p>
         <p>日付：2025年10月</p>
         <p>単価：2,000円 / 時間</p>
     </div>
     
-    <h3 style="background-color: #f0f0f0; padding: 10px; border-left: 5px solid #333;">① iOS版 従業員遠隔点呼システム</h3>
-    <p>VideoSDKを利用した従業員遠隔点呼システム（iOS専用）の開発に関するお見積りです。</p>
+    <h3 style="background-color: #f0f0f0; padding: 5mm; border-left: 5px solid #333; font-size: 11pt;">① iOS版 従業員遠隔点呼システム</h3>
+    <p style="font-size: 9pt;">VideoSDKを利用した従業員遠隔点呼システム（iOS専用）の開発に関するお見積りです。</p>
     
-    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+    <table style="width: 100%; border-collapse: collapse; margin: 5mm 0; font-size: 9pt; page-break-inside: avoid;">
         <thead>
             <tr style="background-color: #333; color: white;">
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: center; width: 5%;">No</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; width: 20%;">機能</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; width: 40%;">内容概要</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: center; width: 10%;">対象範囲</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right; width: 10%;">工数(h)</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right; width: 15%;">費用(円)</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: center; width: 5%;">No</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; width: 20%;">機能</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; width: 40%;">内容概要</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: center; width: 10%;">対象範囲</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: right; width: 10%;">工数(h)</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: right; width: 15%;">費用(円)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">アプリ基盤構築</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">FlutterベースでiOS用アプリを構築（ON/OFF機能含む）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">28</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥56,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">アプリ基盤構築</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">FlutterベースでiOS用アプリを構築（ON/OFF機能含む）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">28</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥56,000</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">2</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">通知受信機能</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">FCM＋VoIP Push対応（着信アラート、マナーモード対応）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">20</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥40,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">2</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">通知受信機能</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">FCM＋VoIP Push対応（着信アラート、マナーモード対応）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">20</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥40,000</td>
             </tr>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">3</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">VideoSDK連携</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">VideoSDK統合、通話UI、録音、録音データダウンロード</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">40</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥80,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">3</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">VideoSDK連携</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">VideoSDK統合、通話UI、録音、録音データダウンロード</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">40</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥80,000</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">4</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">CallKit + PushKit導入</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">アプリ終了時でも通話受信可能にするiOSネイティブ実装</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">36</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥72,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">4</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">CallKit + PushKit導入</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">アプリ終了時でも通話受信可能にするiOSネイティブ実装</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">36</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥72,000</td>
             </tr>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">5</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">スタッフ管理</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">オンライン状態管理・最大10名スタッフ対応</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">16</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥32,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">5</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">スタッフ管理</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">オンライン状態管理・最大10名スタッフ対応</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">16</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥32,000</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">会議室機能</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">URL生成・ルーム管理・参加者制御・招待機能</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">20</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥40,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">6</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">会議室機能</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">URL生成・ルーム管理・参加者制御・招待機能</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">20</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥40,000</td>
             </tr>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">7</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">セキュリティ実装</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">HTTPS通信・暗号化・基本的なログ監視</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">20</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥40,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">7</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">セキュリティ実装</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">HTTPS通信・暗号化・基本的なログ監視</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">20</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥40,000</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">8</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">インフラ構築</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">Firebase連携・デプロイ環境設定（AWS構築は除外）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">50</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥100,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">8</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">インフラ構築</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">Firebase連携・デプロイ環境設定（AWS構築は除外）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">50</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥100,000</td>
             </tr>
             <tr style="background-color: #ffffcc; font-weight: bold;">
-                <td colspan="4" style="border: 1px solid #ddd; padding: 10px; text-align: right;">小計（iOS版）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">230</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥460,000</td>
+                <td colspan="4" style="border: 1px solid #ddd; padding: 6px; text-align: right;">小計（iOS版）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">230</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥460,000</td>
             </tr>
         </tbody>
     </table>
     
-    <p style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107; margin: 20px 0;">
+    <p style="background-color: #fff3cd; padding: 5mm; border-left: 4px solid #ffc107; margin: 5mm 0; font-size: 9pt;">
         <strong>※</strong> Android版開発（¥408,000）は今回除外となります。→ 対応プラットフォームをiOSのみに絞ることで、全体費用を削減しました。
     </p>
     
-    <h3 style="background-color: #f0f0f0; padding: 10px; border-left: 5px solid #333; margin-top: 40px;">② 出勤記録・スケジュール記録機能</h3>
+    <h3 style="background-color: #f0f0f0; padding: 5mm; border-left: 5px solid #333; margin-top: 10mm; font-size: 11pt;">② 出勤記録・スケジュール記録機能</h3>
     
-    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+    <table style="width: 100%; border-collapse: collapse; margin: 5mm 0; font-size: 9pt; page-break-inside: avoid;">
         <thead>
             <tr style="background-color: #333; color: white;">
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: center; width: 5%;">No</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; width: 25%;">機能</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; width: 45%;">内容概要</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: center; width: 10%;">対象範囲</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right; width: 10%;">工数(h)</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right; width: 15%;">費用(円)</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: center; width: 5%;">No</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; width: 25%;">機能</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; width: 45%;">内容概要</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: center; width: 10%;">対象範囲</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: right; width: 10%;">工数(h)</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: right; width: 15%;">費用(円)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">出勤記録機能</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">出勤／退勤打刻、勤務履歴表示、勤務時間計算、データ保存</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">40</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥80,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">出勤記録機能</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">出勤／退勤打刻、勤務履歴表示、勤務時間計算、データ保存</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">40</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥80,000</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">2</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">スケジュール記録機能</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">当日メモ入力・保存・表示・編集・削除（カレンダーUI除外）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">In Scope</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">32</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥64,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">2</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">スケジュール記録機能</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">当日メモ入力・保存・表示・編集・削除（カレンダーUI除外）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">In Scope</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">32</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥64,000</td>
             </tr>
             <tr style="background-color: #ffffcc; font-weight: bold;">
-                <td colspan="4" style="border: 1px solid #ddd; padding: 10px; text-align: right;">小計（勤務管理）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">72</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥144,000</td>
+                <td colspan="4" style="border: 1px solid #ddd; padding: 6px; text-align: right;">小計（勤務管理）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">72</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥144,000</td>
             </tr>
         </tbody>
     </table>
     
-    <h3 style="background-color: #f0f0f0; padding: 10px; border-left: 5px solid #333; margin-top: 40px;">③ サーバー運用費（Running Server）</h3>
-    <p>Firebase / AWS 環境での運用コスト目安です（VideoSDK利用料を除く）。</p>
+    <h3 style="background-color: #f0f0f0; padding: 5mm; border-left: 5px solid #333; margin-top: 10mm; font-size: 11pt;">③ サーバー運用費（Running Server）</h3>
+    <p style="font-size: 9pt;">Firebase / AWS 環境での運用コスト目安です（VideoSDK利用料を除く）。</p>
     
-    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+    <table style="width: 100%; border-collapse: collapse; margin: 5mm 0; font-size: 9pt; page-break-inside: avoid;">
         <thead>
             <tr style="background-color: #333; color: white;">
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: center; width: 10%;">項目</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; width: 50%;">内容</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right; width: 20%;">月額(円)</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right; width: 20%;">年間(円)</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: center; width: 10%;">項目</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; width: 50%;">内容</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: right; width: 20%;">月額(円)</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: right; width: 20%;">年間(円)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">Firebase Hosting / Firestore</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥1,000〜¥2,000</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">約¥18,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">Firebase Hosting / Firestore</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥1,000〜¥2,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">約¥18,000</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">2</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">Cloud Functions / Authentication</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥1,000〜¥1,500</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">約¥15,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">2</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">Cloud Functions / Authentication</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥1,000〜¥1,500</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">約¥15,000</td>
             </tr>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">3</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">AWS EC2 / S3（録音ファイル保存用）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥2,000〜¥3,000</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">約¥30,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">3</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">AWS EC2 / S3（録音ファイル保存用）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥2,000〜¥3,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">約¥30,000</td>
             </tr>
             <tr style="background-color: #ffffcc; font-weight: bold;">
-                <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;">合計目安</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">約¥5,000/月</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">約¥60,000/年</td>
+                <td colspan="2" style="border: 1px solid #ddd; padding: 6px; text-align: right;">合計目安</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">約¥5,000/月</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">約¥60,000/年</td>
             </tr>
         </tbody>
     </table>
     
-    <h3 style="background-color: #f0f0f0; padding: 10px; border-left: 5px solid #333; margin-top: 40px;">④ 総合見積</h3>
+    <h3 style="background-color: #f0f0f0; padding: 5mm; border-left: 5px solid #333; margin-top: 10mm; font-size: 11pt;">④ 総合見積</h3>
     
-    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+    <table style="width: 100%; border-collapse: collapse; margin: 5mm 0; font-size: 9pt; page-break-inside: avoid;">
         <thead>
             <tr style="background-color: #333; color: white;">
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; width: 40%;">項目</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right; width: 15%;">工数合計(h)</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right; width: 20%;">費用(円)</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; width: 25%;">備考</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; width: 40%;">項目</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: right; width: 15%;">工数合計(h)</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: right; width: 20%;">費用(円)</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; width: 25%;">備考</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">iOS版 ビデオ通話機能</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">230</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥460,000</td>
-                <td style="border: 1px solid #ddd; padding: 10px; font-size: 12px;">対象プラットフォームをiOSのみに限定</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">iOS版 ビデオ通話機能</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">230</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥460,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px; font-size: 8pt;">対象プラットフォームをiOSのみに限定</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-                <td style="border: 1px solid #ddd; padding: 10px;">勤務管理機能（出勤＋スケジュール）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">72</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥144,000</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">-</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">勤務管理機能（出勤＋スケジュール）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">72</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥144,000</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">-</td>
             </tr>
             <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">サーバー運用費</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">-</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">約¥60,000/年</td>
-                <td style="border: 1px solid #ddd; padding: 10px; font-size: 12px;">Firebase + AWS環境運用</td>
+                <td style="border: 1px solid #ddd; padding: 6px;">サーバー運用費</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">-</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">約¥60,000/年</td>
+                <td style="border: 1px solid #ddd; padding: 6px; font-size: 8pt;">Firebase + AWS環境運用</td>
             </tr>
-            <tr style="background-color: #d4edda; font-weight: bold; font-size: 16px;">
-                <td style="border: 1px solid #ddd; padding: 10px;">合計</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">302</td>
-                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">¥604,000（税抜）＋ 年間¥60,000（運用）</td>
-                <td style="border: 1px solid #ddd; padding: 10px; font-size: 12px;">※Android分除外済み</td>
+            <tr style="background-color: #d4edda; font-weight: bold; font-size: 10pt;">
+                <td style="border: 1px solid #ddd; padding: 6px;">合計</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">302</td>
+                <td style="border: 1px solid #ddd; padding: 6px; text-align: right;">¥604,000（税抜）＋ 年間¥60,000（運用）</td>
+                <td style="border: 1px solid #ddd; padding: 6px; font-size: 8pt;">※Android分除外済み</td>
             </tr>
         </tbody>
     </table>
     
-    <div style="background-color: #f8f9fa; padding: 20px; border: 1px solid #ddd; margin: 30px 0;">
-        <h4 style="margin-top: 0; border-bottom: 2px solid #333; padding-bottom: 10px;">備考：</h4>
-        <ul style="line-height: 1.8;">
+    <div style="background-color: #f8f9fa; padding: 10mm; border: 1px solid #ddd; margin: 5mm 0; font-size: 9pt; page-break-inside: avoid;">
+        <h4 style="margin-top: 0; border-bottom: 2px solid #333; padding-bottom: 5px; font-size: 10pt;">備考：</h4>
+        <ul style="line-height: 1.6; margin: 5mm 0;">
             <li>Firebase基盤およびVideoSDK利用料は別途課金。</li>
             <li>VideoSDK有料プラン利用時の概算運用費：月約¥4,000〜¥5,000（軽負荷利用時）。</li>
             <li>サーバー運用費：約¥5,000/月（Firebase＋AWS）。</li>
