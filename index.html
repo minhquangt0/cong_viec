@@ -77,13 +77,29 @@
             page-break-inside: avoid;
         }
         
+        .signature-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
         .signature-block {
-            margin: 30px 0;
+            flex: 1;
+            margin: 0;
         }
         
         .signature-title {
             font-weight: bold;
             margin-bottom: 10px;
+            font-size: 16px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        
+        .signature-content {
+            min-height: 100px;
+            padding: 10px 0;
         }
         
         .date {
@@ -469,21 +485,29 @@
     <div style="margin-top: 50px; text-align: center;">
         <p>以上、本契約の証として、本契約書データを作成し、委託者及び受託者の双方が電子署名又は電子的同意の方法により締結し、各自その控えを保有するものとする。</p>
     </div>
-     <div class="signature-section">
+    
+    <div class="signature-section">
         <div class="date">2025年10月15日</div>
         
-        <div class="signature-block">
-            <div class="signature-title">委託者</div>
-            <p>祐斗 木村</p>
-        </div>
-        
-        <div class="signature-block">
-            <div class="signature-title">受託者</div>
-            <p>3rd Floor, Audi Building, No. 8 Pham Hung Street, Yen Hoa Ward, Hanoi City, Vietnam</p>
-            <p><strong>AMCOLAB TECHNOLOGY Co., Ltd</strong></p>
-            <p>代表取締役 NGUYEN THI QUY ㊞</p>
+        <div class="signature-container">
+            <div class="signature-block">
+                <div class="signature-title">委託者</div>
+                <div class="signature-content">
+                    <p>祐斗 木村</p>
+                </div>
+            </div>
+            
+            <div class="signature-block">
+                <div class="signature-title">受託者</div>
+                <div class="signature-content">
+                    <p>3rd Floor, Audi Building, No. 8 Pham Hung Street, Yen Hoa Ward, Hanoi City, Vietnam</p>
+                    <p><strong>AMCOLAB TECHNOLOGY Co., Ltd</strong></p>
+                    <p>代表取締役 NGUYEN THI QUY ㊞</p>
+                </div>
+            </div>
         </div>
     </div>
+    
     <div style="page-break-before: always;"></div>
     
     <h2 style="text-align: center; margin-top: 50px; font-size: 22px;">別紙：見積書</h2>
@@ -713,7 +737,5 @@
             <li>Ad-hoc配信対応（App Store公開なし）、証明書更新費用：¥10,000／年。</li>
         </ul>
     </div>
-    
-    <div style="page-break-before: always;"></div>
 </body>
 </html>
