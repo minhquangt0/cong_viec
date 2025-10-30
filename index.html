@@ -1,217 +1,261 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>契約関連書類 - 成果物目録と開発見積</title>
+    <title>工数見積書 - 総合版（初期費用のみ）</title>
     <style>
-        /* =======================================
-           Global & A4 Print Styles
-           ======================================= */
-        @page {
-            /* Thiết lập khổ A4 cho in ấn */
-            size: A4;
-            margin: 20mm;
-        }
-
         body {
-            font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-            font-size: 11pt;
+            font-family: 'Yu Gothic', 'Meiryo', sans-serif;
+            font-size: 12px;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-            color: #333;
+            padding: 20px;
+            color: #000;
+            background-color: #fff;
         }
-
-        .document-section {
-            padding: 10mm 0; /* Giảm padding tổng thể */
-            break-after: page; 
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* =======================================
-           Section 1: 別紙 成果物目録 (Phụ lục Hợp đồng)
-           ======================================= */
-        .header-box {
-            border: 2px solid black;
-            padding: 10px 0;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 16pt;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .deliverables ol {
-            padding-left: 25px;
-            margin: 0;
-        }
-
-        .deliverables ol li {
-            margin-bottom: 15px;
-        }
-        
-        /* =======================================
-           Section 2: 見積書 (Bảng Báo giá)
-           ======================================= */
-        .quotation h2 {
-            font-size: 18pt;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 3px double #333;
-            padding-bottom: 10px;
-        }
-
-        /* Định dạng Flex container cho 2 ô song song */
-        .quotation-info {
+        .header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 30px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #000;
         }
-        
-        /* Định dạng chung cho 2 ô (client & supplier) */
-        .client-box-new, .supplier-box-new {
-            width: 48%; 
-            border: 1px solid #333; /* Thêm viền cho cả 2 ô */
-            padding: 15px;
-            box-sizing: border-box;
-            line-height: 1.4;
+        .company-info {
+            text-align: right;
+            font-size: 11px;
+            line-height: 1.8;
         }
-        
-        /* Cụ thể hóa ô Khách hàng */
-        .client-box-new {
-            text-align: left;
-            font-size: 11pt;
-            border-color: #333; /* Viền đậm hơn */
-        }
-
-        .client-box-new strong {
-            display: block;
-            font-size: 13pt;
-            margin-bottom: 10px;
-        }
-        
-        .client-info-separator {
-            border-top: 1px solid #333; 
-            margin: 10px 0;
-        }
-        
-        .subject-line {
-            font-weight: bold;
-            font-size: 12pt;
-            margin: 0;
-        }
-
-        /* Cụ thể hóa ô Nhà cung cấp */
-        .supplier-box-new {
-            background-color: #f9f9f9;
-            font-size: 10pt;
-            text-align: left;
-        }
-
-        .supplier-box-new strong {
-            font-size: 11pt;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        /* Định dạng tổng tiền */
-        .total-price {
-            border: 3px solid black;
-            padding: 15px;
-            font-size: 24pt;
-            font-weight: bold;
+        h1 {
             text-align: center;
-            width: 50%;
-            margin: 20px auto;
+            font-size: 24px;
+            margin: 20px 0;
         }
-
-        /* Định dạng bảng */
-        .quotation table {
+        h2 {
+            background-color: #f0f0f0;
+            color: #000;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 30px;
+            border-left: 5px solid #000;
+        }
+        .total-amount {
+            background-color: #fff;
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px solid #000;
+            text-align: center;
+        }
+        .total-amount .amount {
+            font-size: 22px;
+            font-weight: bold;
+            color: #000;
+        }
+        .detail-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 40px; /* Tăng khoảng cách từ tổng tiền đến bảng */
+            margin: 15px 0;
+            font-size: 10px;
         }
-
-        .quotation th, .quotation td {
-            border: 1px solid #333;
-            padding: 8px 10px;
-            text-align: right;
-        }
-
-        .quotation th {
+        .detail-table th, .detail-table td {
+            border: 1px solid #666;
+            padding: 6px 4px;
             text-align: center;
+        }
+        .detail-table th {
             background-color: #f0f0f0;
-            white-space: nowrap;
-        }
-        
-        .quotation td:nth-child(2) {
-            text-align: left; /* Cột hạng mục */
-        }
-
-        .quotation .subtotal-row td,
-        .quotation .total-row td {
-            border-top: 3px double #333;
             font-weight: bold;
-            background-color: #f0f0f0;
+            font-size: 10px;
         }
-        
-        .quotation .final-total td {
-            font-size: 14pt;
-            background-color: #e0e0e0;
+        .detail-table .left {
+            text-align: left;
+            padding-left: 8px;
         }
-
-        .note {
-            margin-top: 30px;
-            font-size: 10pt;
+        .detail-table .right {
             text-align: right;
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
+            padding-right: 8px;
+        }
+        .notes {
+            background-color: #fff;
+            border-left: 4px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 11px;
+        }
+        .notes h3 {
+            margin-top: 0;
+            color: #000;
+            font-size: 14px;
+        }
+        .footer {
+            margin-top: 40px; 
+            padding-top: 20px; 
+            border-top: 1px solid #ccc; 
+            text-align: center; 
+            font-size: 11px; 
+            color: #666;
+        }
+        .payment-terms {
+            border: 1px dashed #000;
+            padding: 10px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        /* Style for graying out/removing the renewed section */
+        .grayed-out {
+            background-color: #f8f8f8 !important;
+            color: #999 !important;
+            text-decoration: line-through;
+        }
+        /* Remove maintenance section styling since the section is gone */
+        .maintenance-section {
+            display: none;
         }
     </style>
 </head>
 <body>
+    <h1>工数見積書</h1>
 
-    <div class="document-section deliverables">
-        <div class="container">
-            <div class="header-box">
-                <h1>成果物目録</h1>
-            </div>
-
-            <ol>
-               <li>コンサルティングサイトに係るソースコード一式 </li>
-                <li>サーバー（ステージング環境・本番環境の設定・構築情報を含み、本番環境への移行作業又は切り替え作業は第13条に従い受託者が実施する）</li>
-                <li>画面モック（プロトタイプ）</li>
-                <li>システム引き渡し資料 </li>
-                <li>システム構成図</li>
-                <li>DB設計書</li>
-                <li>ER図</li>
-                <li>その他システムに関わる重要な資料</li>
-            </ol>
-           
+    <div class="total-amount">
+        <div>初期開発・移行・調査費用（概算）：<span class="amount">¥404,000</span></div>
+        <div style="margin-top: 10px; font-size: 11px;">(総工数: 202時間 / 単価: 2,000円/時間)</div>
+        <div class="payment-terms">
+            支払条件: プロジェクト開始時 50% / プロジェクト完了時 50%
         </div>
     </div>
 
-    
-        <div class="container">
-           <div class="header-box">
-                <h1>別紙</h1>
-            </div>
-  <p>本業務の詳細については、別途「Consultancyサイトの開発見積もり
-」ファイルを参照するものとする。
-</p>
-        </div>
+    <h2>1. 初期開発・移行・調査工数詳細 (Initial Development & Transfer Detail)</h2>
+    <p>※単価：2,000円/時間</p>
+
+    <table class="detail-table">
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2" style="width: 5%;">利用者種別</th>
+                <th rowspan="2" style="width: 15%;">大カテゴリー</th>
+                <th rowspan="2" style="width: 15%;">中カテゴリー</th>
+                <th rowspan="2" style="width: 25%;">詳細機能</th>
+                <th colspan="6">工数内訳（人時）</th>
+                <th rowspan="2">合計<br>工数</th>
+                <th rowspan="2">費用<br>（円）</th>
+            </tr>
+            <tr>
+                <th>開発<br>50%</th>
+                <th>管理<br>10%</th>
+                <th>仕様<br>分析<br>10%</th>
+                <th>設計<br>5%</th>
+                    <th>検証<br>20%</th>
+                <th>受入<br>5%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="grayed-out">
+                <td>1</td>
+                <td>EndUser/Admin</td>
+                <td>ウェブサイトリニューアル</td>
+                <td>ページ実装</td>
+                <td class="left">約20種類のページの フロントエンド実装 (デザインデータに基づき実装)</td>
+                <td>80</td>
+                <td>16</td>
+                <td>16</td>
+                <td>8</td>
+                <td>32</td>
+                <td>8</td>
+                <td>160</td>
+                <td class="right">320,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Admin/Ops</td>
+                <td>インフラ・外部連携</td>
+                <td>外部連携・権限申請</td>
+                <td class="left">Meta権限申請作業 (申請書類作成・プロセス対応・技術的な設定確認)</td>
+                <td>21</td>
+                <td>4.2</td>
+                <td>4.2</td>
+                <td>2.1</td>
+                <td>8.4</td>
+                <td>2.1</td>
+                <td>42</td>
+                <td class="right">84,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Admin/System</td>
+                <td>データ移行</td>
+                <td>インスタ連携データ移行</td>
+                <td class="left">旧システムから新システムへのユーザー情報・Instagram取得データ移行</td>
+                <td>40</td>
+                <td>8</td>
+                <td>8</td>
+                <td>4</td>
+                <td>16</td>
+                <td>4</td>
+                <td>80</td>
+                <td class="right">160,000</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td>4</td>
+                <td>Dev/Ops</td>
+                <td>保守準備</td>
+                <td>システム調査・引継ぎ</td>
+                <td class="left">既存システムのコード、環境、Meta/Instagram連携詳細の調査およびドキュメント化</td>
+                <td>40</td>
+                <td>8</td>
+                <td>8</td>
+                <td>4</td>
+                <td>16</td>
+                <td>4</td>
+                <td>80</td>
+                <td class="right">160,000</td>
+            </tr>
+            <tr style="font-weight: bold; border: 2px solid #000;">
+                <td colspan="5">初期作業 総計</td>
+                <td>101</td>
+                <td>20.2</td>
+                <td>20.2</td>
+                <td>10.1</td>
+                <td>40.4</td>
+                <td>10.1</td>
+                <td>202</td>
+                <td class="right">404,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="notes">
+        <h3>🚨 重要な前提条件・制限事項</h3>
+        <ul>
+            <li>工数配分：開発 50%、管理 10%、仕様分析 10%、設計 5%、検証 20%、受入 5%を適用しています。</li>
+            <li>単価： 初期作業（No. 1〜4）は 2,000円/時間 を適用します。</li>
+            <li>ページリニューアル（No. 1）:
+                <ul style="margin-top: 5px;">
+                    <li>ウェブサイトリニューアル作業は今回の初期見積もりから除外されました。</li>
+                    <li>デザインデータ受領後、別途工数を再評価し、提案いたします。</li>
+                </ul>
+            </li>
+            <li>Meta権限申請（42時間）:
+                <ul style="margin-top: 5px;">
+                    <li>✅ 申請承認にかかる期間は、プロジェクト開始後1〜2週間を見込んでいますが、Meta側の審査応答速度に依存します。</li>
+                </ul>
+            </li>
+            <li>データ移行（No. 3）:
+                <ul style="margin-top: 5px;">
+                    <li>✅ ユーザーは新システムでInstagramに再接続することで、旧データが紐づけられ、表示可能になる前提です。</li>
+                </ul>
+            </li>
+            <li>システム調査・引継ぎ（No. 4）:
+                <ul style="margin-top: 5px;">
+                    <li>✅ この工程は、システム運用に必須の初期作業です。工数は80時間です。</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
+    <div class="footer">
+        <p>本見積もりの有効期限は発行日より30日間となります。</p>
+        <p>ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+    </div>
 </body>
 </html>
