@@ -25,6 +25,14 @@
             background-color: #f0fdf4; /* Very Light Green for subsections */
             font-style: italic;
         }
+        /* Custom styles for printing */
+        @media print {
+            /* Ensure background colors are printed for totals/sections (optional, browser dependent) */
+            .bg-blue-100, .bg-gray-100, .section-row, .subsection-row {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
     </style>
 </head>
 <body>
@@ -44,8 +52,7 @@
                 <!-- Company Information (Right) -->
                 <div class="text-right text-sm text-gray-700">
                     <p class="font-bold text-base">AMCOLAB TECHNOLOGY CO., LTD</p>
-                    <p>3rd Audi Building, No. 8 Pham Hung Street, Me Tri Ward, Nam Tu Liem Dist., Hanoi.
-</p>
+                    <p>3rd Audi Building, No. 8 Pham Hung Street, Me Tri Ward, Nam Tu Liem Dist., Hanoi.</p>
                     <p>TEL: 0968703531</p>
                     <p>Email: <a href="mailto:quynt@amcolab.vn" class="text-indigo-600 hover:text-indigo-800">quynt@amcolab.vn</a></p>
                 </div>
@@ -241,33 +248,42 @@
                     </tr>
                 </tbody>
                 
-                <!-- Footer Total -->
-                <tfoot>
-                    <tr class="bg-gray-100 border-t-2 border-gray-300">
-                        <td colspan="2" class="px-6 py-4 text-right text-base font-bold text-gray-700">
-                            GRAND TOTAL (EXCLUDING Payment BE)
-                        </td>
-                        <td class="px-4 py-4 text-center text-xl font-extrabold text-green-700">
-                            120h
-                        </td>
-                        <td class="px-6 py-4 text-center text-xl font-extrabold text-green-700 rounded-br-lg">
-                            $1,800
-                        </td>
-                    </tr>
-                    <tr class="bg-blue-100">
-                        <td colspan="2" class="px-6 py-4 text-right text-base font-bold text-gray-700">
-                            GRAND TOTAL (INCLUDING Payment BE)
-                        </td>
-                        <td class="px-4 py-4 text-center text-xl font-extrabold text-blue-700">
-                            184h
-                        </td>
-                        <td class="px-6 py-4 text-center text-xl font-extrabold text-blue-700 rounded-br-lg">
-                            $2,760
-                        </td>
-                    </tr>
-                </tfoot>
+                <!-- Footer Total (TFOOT removed and moved below the table for print control) -->
             </table>
         </div>
+
+        <!-- Grand Total Summary (Outside the table for precise print control and smaller font size) -->
+        <div class="mt-4 border border-gray-300 rounded-lg overflow-hidden shadow-md">
+            <!-- Row 1: Excluding BE -->
+            <div class="flex bg-gray-100 border-b-2 border-gray-300">
+                <div class="flex-1 px-6 py-3 text-right text-base font-bold text-gray-700">
+                    GRAND TOTAL (EXCLUDING Payment BE)
+                </div>
+                <!-- Reduced font size from text-xl to text-lg -->
+                <div class="w-1/5 px-4 py-3 text-center text-lg font-extrabold text-green-700 border-l border-gray-300">
+                    120h
+                </div>
+                <!-- Reduced font size from text-xl to text-lg -->
+                <div class="w-1/4 px-6 py-3 text-center text-lg font-extrabold text-green-700 border-l border-gray-300">
+                    $1,800
+                </div>
+            </div>
+            <!-- Row 2: Including BE (The main total) -->
+            <div class="flex bg-blue-100">
+                <div class="flex-1 px-6 py-3 text-right text-base font-bold text-gray-700">
+                    GRAND TOTAL (INCLUDING Payment BE)
+                </div>
+                <!-- Reduced font size from text-xl to text-lg -->
+                <div class="w-1/5 px-4 py-3 text-center text-lg font-extrabold text-blue-700 border-l border-gray-300">
+                    184h
+                </div>
+                <!-- Reduced font size from text-xl to text-lg -->
+                <div class="w-1/4 px-6 py-3 text-center text-lg font-extrabold text-blue-700 border-l border-gray-300">
+                    $2,760
+                </div>
+            </div>
+        </div>
+        
 
         <!-- Important Notes -->
         <footer class="mt-8 pt-4 border-t border-gray-200">
