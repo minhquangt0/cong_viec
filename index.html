@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,7 +12,7 @@
         }
         
         body {
-            font-family: 'MS Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+            font-family: 'MS Mincho', 'Yu Mincho', serif;
             line-height: 1.8;
             color: #000;
             background-color: #fff;
@@ -30,10 +31,26 @@
             padding-bottom: 10px;
         }
         
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 4px solid #333;
+        }
+        
         .preamble {
             text-indent: 1em;
-            margin-bottom: 30px;
-            line-height: 2;
+            margin-bottom: 20px;
         }
         
         .article {
@@ -48,7 +65,6 @@
         .article-content {
             text-indent: 1em;
             margin-bottom: 8px;
-            line-height: 1.9;
         }
         
         .sub-item {
@@ -56,59 +72,32 @@
             margin-bottom: 5px;
         }
         
-        /* Table Styles */
-        .contract-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .contract-table caption {
-            font-size: 14pt;
-            font-weight: bold;
-            padding: 15px;
-            text-align: center;
-            background-color: #2c3e50;
-            color: white;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-        
-        .contract-table th {
-            background-color: #34495e;
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: bold;
-            border: 1px solid #2c3e50;
-        }
-        
-        .contract-table td {
-            padding: 12px;
+        .contract-details {
+            background-color: #f9f9f9;
             border: 1px solid #ddd;
-            vertical-align: top;
-            line-height: 1.8;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
         }
         
-        .contract-table tr:nth-child(even) {
-            background-color: #f8f9fa;
+        .detail-section {
+            margin-bottom: 20px;
         }
         
-        .contract-table tr:hover {
-            background-color: #e8f4f8;
-        }
-        
-        .label-column {
+        .detail-label {
             font-weight: bold;
-            background-color: #ecf0f1;
-            width: 25%;
-            color: #2c3e50;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .detail-content {
+            margin-left: 1em;
+            line-height: 1.6;
         }
         
         .signature-section {
-            margin-top: 50px;
+            margin-top: 40px;
             page-break-inside: avoid;
         }
         
@@ -137,22 +126,6 @@
             .page-break {
                 page-break-after: always;
             }
-            .contract-table {
-                box-shadow: none;
-            }
-        }
-        
-        @media screen and (max-width: 768px) {
-            body {
-                padding: 10mm;
-            }
-            .contract-table {
-                font-size: 10pt;
-            }
-            .contract-table th,
-            .contract-table td {
-                padding: 8px;
-            }
         }
     </style>
 </head>
@@ -160,85 +133,8 @@
     <h1>ソフトウェア開発業務委託契約書</h1>
     
     <div class="preamble">
-        株式会社Spesia（以下、「甲」という）とAMCOLAB TECHNOLOGY CO., LTD（以下、「乙」という）とは、甲が乙に委託するの開発業務に関して、以下の契約条項及び契約要目表の記載の通り、業務委託契約（以下「本契約」という）を締結する。
+        株式会社Spesia（以下、「甲」という）とAMCOLAB TECHNOLOGY CO., LTD（以下、「乙」という）とは、甲が乙に委託するの開発業務に関して、以下の契約条項及び契約要目の記載の通り、業務委託契約（以下「本契約」という）を締結する。
     </div>
- <table class="contract-table">
-        <caption>契約要目表</caption>
-        <tbody>
-            <tr>
-                <td class="label-column">本件業務内容</td>
-                <td>WEB/APPの保守案件</td>
-            </tr>
-            <tr>
-                <td class="label-column">開発場所<br>所在地</td>
-                <td>ハノイ市 イエンホア区 ファムフン通り8番地 アウディビル 3階</td>
-            </tr>
-            <tr>
-                <td class="label-column">発注金額<br>（税抜き）</td>
-                <td>
-                    20,000円 × 3ヶ月 = 60,000円（11時間分）<br>
-                    超過分工数：2,000円／時間
-                </td>
-            </tr>
-            <tr>
-                <td class="label-column">作業範囲</td>
-                <td>
-                    + 運用のサポート（問題の調査、不具合修正）<br>
-                    + サーバーの監視<br>
-                    + 他のサポート<br>
-                    + 軽く機能追加の対応
-                </td>
-            </tr>
-            <tr>
-                <td class="label-column">支払時期</td>
-                <td>契約時点に3ヶ月分の費用をお支払い</td>
-            </tr>
-            <tr>
-                <td class="label-column">支払通貨</td>
-                <td>円</td>
-            </tr>
-            <tr>
-                <td class="label-column">費用支払方法</td>
-                <td>
-                    乙の以下指定口座に送金する（送金費用は甲が負担）<br><br>
-                    <strong>【Wise送金】</strong><br>
-                    yeucon12359@gmail.com<br><br>
-                    <strong>【銀行振込】</strong><br>
-                    金融機関：Tien Phong Commercial Joint Stock Bank<br>
-                    銀行コード：TpBank<br>
-                    支店名：THANG LONG<br>
-                    SWIFTコード：TPBVVNVX<br>
-                    口座番号：10110235555<br>
-                    口座名義人：CONG TY TNHH CONG NGHE AMCOLAB
-                </td>
-            </tr>
-            <tr>
-                <td class="label-column">稼働時間</td>
-                <td>
-                    8:30～17:30（ベトナム時間）／10:30～19:30（日本時間）<br><br>
-                    1ヶ月稼働時間：最大11時間<br><br>
-                    実際稼働時間が11時間を超えていた場合、超えた分を時給単価の2,000円の計算で追加で請求させていただきます。<br>
-                    事前にお知らせさせていただきます。
-                </td>
-            </tr>
-            <tr>
-                <td class="label-column">発注内容</td>
-                <td>
-                    ・軽微な不具合の調査・修正<br>
-                    ・環境変更に伴う設定変更<br>
-                    ・お問い合わせ対応
-                </td>
-            </tr>
-            <tr>
-                <td class="label-column">甲要員の常駐</td>
-                <td>無し</td>
-            </tr>
-            <tr>
-                <td class="label-column">契約期間</td>
-                <td>2025年11月30日～2026年3月31日</td>
-            </tr>
-        </tbody>
-    </table>
 
     <div class="article">
         <div class="article-title">第１条（目的）</div>
@@ -260,17 +156,30 @@
             甲は乙に対し、発注内容に記載した本件業務の内容を特定した上で、電子的又は非電子的方法により乙に通知して、本件業務の発注を行う。
         </div>
         <div class="article-content">
-            発注の際の発注単価は、契約要目表の単価に記載のとおりとする。なお、同単価には、本件業務の遂行過程において乙から甲に提出された成果物、情報、ノウハウその他に関する著作権を含む一切の知的財産権に関する譲渡費用を含むものとする。
+            発注の際の発注単価は、契約要目の単価に記載のとおりとする。なお、同単価には、本件業務の遂行過程において乙から甲に提出された成果物、情報、ノウハウその他に関する著作権を含む一切の知的財産権に関する譲渡費用を含むものとする。
         </div>
         <div class="article-content">
-            甲は、契約要目表に記載した本件業務内容及び既に発注済みの工数の範囲内においては、自由に業務の内容を変更することができる。
+            甲は、契約要目に記載した本件業務内容及び既に発注済みの工数の範囲内においては、自由に業務の内容を変更することができる。
         </div>
     </div>
 
     <div class="article">
-        <div class="article-title">第４条（開発場所）</div>
+        <div class="article-title">第４条（保守費用）</div>
         <div class="article-content">
-            乙は契約要目表に記載の開発場所において本件業務を行うものとする。
+            本契約の委託料金（税抜き）は、月間11時間の作業量に対し、月額20,000円とし、契約期間3ヶ月の合計金額は60,000円とする。
+        </div>
+        <div class="article-content">
+            月間作業量が11時間を超過した場合、超過分については、1時間あたり2,000円（税抜き）の単価で別途請求させていただきます。
+        </div>
+        <div class="article-content">
+            支払いは、契約締結時に3ヶ月分の委託料金（60,000円）を一括で、乙が指定する以下の口座へ日本円（JPY）で送金することにより行うものとする。なお、送金に際して発生する手数料は、全て甲が負担するものとする。
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第５条（開発場所）</div>
+        <div class="article-content">
+            乙は契約要目に記載の開発場所において本件業務を行うものとする。
         </div>
         <div class="article-content">
             乙は開発場所の確保に必要となる地代家賃、水道光熱費、ネットワーク関連費用、開発場所において使用する機材・基本ソフトウェア・開発ツールの費用を負担するものとする。
@@ -278,28 +187,28 @@
     </div>
 
     <div class="article">
-        <div class="article-title">第５条（支払遅延損害金）</div>
+        <div class="article-title">第６条（支払遅延損害金）</div>
         <div class="article-content">
             甲の責に帰すべき事由により委託料を支払約定日に支払うことができない場合、乙は甲に対し、支払約定日の翌日より支払いの日までの日数（以下「支払遅延期間」という。）に応じ締切日残高に対し月利1.3%を乗じて計算した金額を支払遅延損害金として請求することができるものとする。ただし、天災地変その他やむを得ない事由により支払約定日に支払うことができない場合は、当該事由の継続する期間は、支払遅延期間に算入しないものとする。
         </div>
     </div>
 
     <div class="article">
-        <div class="article-title">第６条（報告）</div>
+        <div class="article-title">第７条（報告）</div>
         <div class="article-content">
-            乙は、本件業務の進捗状況について、契約要目表に記載の報告頻度にて、また、甲から要求があった場合にはその都度、甲に対し甲の指定する様式にて報告するものとする。
+            乙は、本件業務の進捗状況について、契約要目に記載の報告頻度にて、また、甲から要求があった場合にはその都度、甲に対し甲の指定する様式にて報告するものとする。
         </div>
     </div>
 
     <div class="article">
-        <div class="article-title">第７条（服務規律）</div>
+        <div class="article-title">第８条（服務規律）</div>
         <div class="article-content">
             乙は、その事業所において適切且的確に本件業務を実行するに足りる服務規律を定め、本件業務を担当するプログラマー等に、同服務規律を周知徹底しなければならない。
         </div>
     </div>
 
     <div class="article">
-        <div class="article-title">第８条（資料などの情報提供および返還）</div>
+        <div class="article-title">第９条（資料などの情報提供および返還）</div>
         <div class="article-content">
             甲は、乙に対し、甲が本件業務の遂行に必要と認める資料等を、無償で貸与するものとする。
         </div>
@@ -309,14 +218,14 @@
     </div>
 
     <div class="article">
-        <div class="article-title">第９条（指揮命令）</div>
+        <div class="article-title">第１０条（指揮命令）</div>
         <div class="article-content">
             本件業務の遂行に関わる乙のプログラマー等に対する指示、労務管理、安全衛生等に関する一切の指揮命令は、乙が行うものとする。
         </div>
     </div>
 
     <div class="article">
-        <div class="article-title">第１０条（担当者）</div>
+        <div class="article-title">第１１条（担当者）</div>
         <div class="article-content">
             甲および乙は、それぞれ本件業務を円滑に遂行するため、本件業務の主任担当者を予め書面により相手方に通知する。
         </div>
@@ -326,7 +235,7 @@
     </div>
 
     <div class="article">
-        <div class="article-title">第１１条（報告聴取・視察・監査）</div>
+        <div class="article-title">第１２条（報告聴取・視察・監査）</div>
         <div class="article-content">
             甲は乙の本件業務の遂行状況及び機密保持契約書等に定めた機密情報の取り扱い状況を乙の主任担当者より聴取、又は報告を求めることができるものとする。
         </div>
@@ -339,14 +248,14 @@
     </div>
 
     <div class="article">
-        <div class="article-title">第１２条（秘密情報の取り扱い）</div>
+        <div class="article-title">第１３条（秘密情報の取り扱い）</div>
         <div class="article-content">
             乙は、本件業務遂行のため甲より提供を受けた技術上または営業上その他業務上の情報（相手方が特に秘密でない旨指定した情報を除く）および甲が保有する顧客等の個人情報（以下総称して「秘密情報」という。）を、第三者に漏洩してはならない。但し、次の各号のいずれか一つに該当する情報についてはこの限りではない。
         </div>
-        <div class="sub-item">秘密保持義務を負うことなく既に保有している情報</div>
-        <div class="sub-item">秘密保持義務を負うことなく第三者から正当に入手した情報</div>
-        <div class="sub-item">相手方から提供を受けた情報によらず、独自に開発した情報</div>
-        <div class="sub-item">本契約および個別契約に違反することなく、且つ、受領の前後を問わず公知となった情報</div>
+        <div class="sub-item">① 秘密保持義務を負うことなく既に保有している情報</div>
+        <div class="sub-item">② 秘密保持義務を負うことなく第三者から正当に入手した情報</div>
+        <div class="sub-item">③ 相手方から提供を受けた情報によらず、独自に開発した情報</div>
+        <div class="sub-item">④ 本契約および個別契約に違反することなく、且つ、受領の前後を問わず公知となった情報</div>
         <div class="article-content">
             乙は、当該秘密情報の管理に必要な措置を講ずるものとし、当該秘密情報を第三者に開示する場合は、事前に相手方からの書面による承諾を受けなければならない。
         </div>
@@ -359,7 +268,7 @@
     </div>
 
     <div class="article">
-        <div class="article-title">第１３条（プログラム等の著作権）</div>
+        <div class="article-title">第１４条（プログラム等の著作権）</div>
         <div class="article-content">
             本件業務の遂行の過程で発生したプログラム、仕様書、設計書その他の成果物の著作権（著作権法第２７条及び第２８条に定める権利を含む）は、乙がかかる成果物を甲に提供した時点で甲に移転する。
         </div>
@@ -372,9 +281,9 @@
     </div>
 
     <div class="article">
-        <div class="article-title">第１４条（別途契約）</div>
+        <div class="article-title">第１５条（別途契約）</div>
         <div class="article-content">
-            甲は、契約要目表に記載の本件業務の範囲を超えた業務を発注する場合には、その業務内容・仕様、納期、費用及び納品物については、事前に甲乙協議の上別途契約するものとする。
+            甲は、契約要目に記載の本件業務の範囲を超えた業務を発注する場合には、その業務内容・仕様、納期、費用及び納品物については、事前に甲乙協議の上別途契約するものとする。
         </div>
         <div class="article-content">
             運営・メンテナンスについては事前に甲乙協議の上別途契約するものとする。
@@ -382,13 +291,13 @@
     </div>
 
     <div class="article">
-        <div class="article-title">第１５条（損害賠償）</div>
+        <div class="article-title">第１６条（損害賠償）</div>
         <div class="article-content">
             本件業務遂行上、乙又は乙のプログラマー等及びその他の従業員の責に帰すべき事由により、甲が損害を被った場合には、甲は乙に対して損害賠償請求をすることができる。甲が乙に請求することができる損害賠償の範囲は、通常生ずべき損害、及び、乙が予見すべきであった特別の事情によって生じた損害とする。ただし、次の各号のいずれかに該当する事象が生じた時には、甲が被った全ての損害を賠償しなければならない。
         </div>
-        <div class="sub-item">甲の機器等を破損した</div>
-        <div class="sub-item">故意に甲のサーバーに過剰にアクセスした</div>
-        <div class="sub-item">故意にソフトウェアに悪質なコードを仕込んだ</div>
+        <div class="sub-item">① 甲の機器等を破損した</div>
+        <div class="sub-item">② 故意に甲のサーバーに過剰にアクセスした</div>
+        <div class="sub-item">③ 故意にソフトウェアに悪質なコードを仕込んだ</div>
         <div class="article-content">
             いずれの場合でも甲は乙に対し発注金額を超える損害賠償金を請求できないものとする。
         </div>
@@ -414,14 +323,14 @@
     <div class="article">
         <div class="article-title">第１８条（契約内容の変更）</div>
         <div class="article-content">
-            本契約条項及び契約要目表の内容は、甲乙の書面に基づく合意によってのみ変更することができる。
+            本契約条項及び契約要目の内容は、甲乙の書面に基づく合意によってのみ変更することができる。
         </div>
     </div>
 
     <div class="article">
         <div class="article-title">第１９条（有効期間）</div>
         <div class="article-content">
-            本契約の有効期間は、契約要目表に記載のとおりとする。
+            本契約の有効期間は、契約要目に記載のとおりとする。
         </div>
         <div class="article-content">
             本契約が更新された場合でも、甲の指示が無い限り、指定プログラマーは変更されず、乙において継続して確保する義務を負うものとする。
@@ -460,29 +369,22 @@
         <div class="article-content">
             本契約締結の証として、本契約書２通を作成し、甲乙記名押印の上、各１通を保有する。
         </div>
-    </div>
-
-    <div class="page-break"></div>
     <div class="signature-section">
-        <div class="signature-date" style="text-align: right; margin-bottom: 20px;">署名日　2025年11月30日</div>
-        
         <div class="signature-block">
+            <div class="signature-date">署名日　2025年11月30日</div>
             <div class="signature-line"><strong>甲：</strong></div>
             <div class="signature-line">会社：株式会社Spesia</div>
             <div class="signature-line">住所：東京都新宿区西新宿3-3-13西新宿水間ビル６F</div>
             <div class="signature-line">代表取締役：陣之内孝明</div>
         </div>
 
-        <div style="margin-top: 40px;"></div>
-
-        <div class="signature-date" style="text-align: right; margin-bottom: 20px;">署名日　2025年11月30日</div>
-        
         <div class="signature-block">
+            <div class="signature-date">署名日　2025年11月30日</div>
             <div class="signature-line"><strong>乙：</strong></div>
             <div class="signature-line">会社：AMCOLAB TECHNOLOGY CO., LTD</div>
             <div class="signature-line">住所：ハノイ市 イエンホア区 ファムフン通り8番地 アウディビル 3階</div>
-            <div class="signature-line">代表取締役：グェン・ティ・クィ（NGUYEN THI QUY）</div>
-        </div>
-    </div>
-</body>
-</html>
+<div class="signature-line">代表取締役：NGUYEN THI QUY</div>
+            <div class="signa
+codepen.html
+
+Đang hiển thị codepen.html.
