@@ -1,299 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>保守契約プラン別内容（別紙）</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Yu Gothic', 'Meiryo', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 210mm;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 24px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #3498db;
-        }
-
-        h2 {
-            color: #2c3e50;
-            font-size: 20px;
-            margin: 30px 0 20px 0;
-            padding-left: 15px;
-            border-left: 5px solid #3498db;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        th {
-            background: linear-gradient(to bottom, #3498db, #2980b9);
-            color: white;
-            padding: 12px 8px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 14px;
-            border: 1px solid #2980b9;
-        }
-
-        td {
-            padding: 10px 8px;
-            border: 1px solid #ddd;
-            font-size: 13px;
-            vertical-align: top;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        tr:hover {
-            background-color: #e8f4f8;
-            transition: background-color 0.3s ease;
-        }
-
-        td:first-child {
-            font-weight: bold;
-            background-color: #ecf0f1;
-            width: 160px;
-        }
-
-        .plan-header {
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .price {
-            color: #e74c3c;
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        .highlight {
-            background-color: #fff3cd;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-
-        .check {
-            color: #27ae60;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .cross {
-            color: #e74c3c;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .spot-section {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 30px;
-            border-left: 5px solid #e74c3c;
-        }
-
-        .spot-section p {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-
-        .note {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 10px;
-            border-left: 4px solid #ffc107;
-        }
-
-        @media print {
-            body {
-                background-color: white;
-                padding: 0;
-            }
-            
-            .container {
-                box-shadow: none;
-                padding: 20px;
-            }
-            
-            tr:hover {
-                background-color: inherit;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            table {
-                font-size: 11px;
-            }
-            
-            th, td {
-                padding: 8px 4px;
-            }
-            
-            td:first-child {
-                width: 120px;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>業務追加契約書</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; line-height:1.8; padding:24px; color:#111; }
+    header { text-align:center; margin-bottom:20px; }
+    h1 { font-size:28px; margin:0; }
+    h2 { font-size:20px; margin-top:28px; }
+    p { margin:8px 0; white-space:pre-wrap; }
+    .section { margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid #eee; }
+    .meta { font-size:14px; color:#444; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>保守契約プラン別内容（別紙）</h1>
+  <header>
+    <h1>業務追加契約書</h1>
+    <p class="meta"></p>
+  </header>
 
-        <h2>1. 保守プラン比較表</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th class="plan-header">基本プラン<br>（2万円/月）</th>
-                        <th class="plan-header">安心プラン<br>（4万円/月）</th>
-                        <th class="plan-header">フルプラン<br>（10万円/月）</th>
-                        <th class="plan-header">スポット対応</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>月額費用</td>
-                        <td class="price">20,000円</td>
-                        <td class="price">40,000円</td>
-                        <td class="price">100,000円</td>
-                        <td style="text-align: center;">なし（都度請求）</td>
-                    </tr>
-                    <tr>
-                        <td>工数上限</td>
-                        <td>なし（軽微対応中心）</td>
-                        <td>最大20h/月</td>
-                        <td>最大50h/月</td>
-                        <td style="text-align: center;">実費（都度）</td>
-                    </tr>
-                    <tr>
-                        <td>時間超過時の単価</td>
-                        <td class="price" style="text-align: center;">2,500円/h</td>
-                        <td class="price" style="text-align: center;">2,500円/h</td>
-                        <td class="price" style="text-align: center;">2,500円/h</td>
-                        <td class="price" style="text-align: center;">4,000円/h</td>
-                    </tr>
-                    <tr>
-                        <td>工数繰越</td>
-                        <td style="text-align: center;">不可</td>
-                        <td style="text-align: center;">不可</td>
-                        <td class="check">○（1ヶ月分のみ）</td>
-                        <td style="text-align: center;">不可</td>
-                    </tr>
-                    <tr>
-                        <td>サーバー監視・SSL更新</td>
-                        <td class="check">○</td>
-                        <td class="check">○</td>
-                        <td class="check">○</td>
-                        <td style="text-align: center;">○（都度見積）</td>
-                    </tr>
-                    <tr>
-                        <td>ドメイン管理</td>
-                        <td class="check">○</td>
-                        <td class="check">○</td>
-                        <td class="check">○</td>
-                        <td style="text-align: center;">○（都度見積）</td>
-                    </tr>
-                    <tr>
-                        <td>調査・バグ対応</td>
-                        <td>○（軽微のみ）</td>
-                        <td>○（中〜小対応まで）</td>
-                        <td class="check">○（全対応）</td>
-                        <td style="text-align: center;">○（都度見積）</td>
-                    </tr>
-                    <tr>
-                        <td>軽微なUI調整</td>
-                        <td>○（簡単な文言修正）</td>
-                        <td class="check">○</td>
-                        <td class="check">○</td>
-                        <td style="text-align: center;">○（都度見積）</td>
-                    </tr>
-                    <tr>
-                        <td>新機能開発</td>
-                        <td>別途見積（簡易対応）</td>
-                        <td>別途見積（優先対応）</td>
-                        <td class="check">○（月内に含む）</td>
-                        <td style="text-align: center;">○（別途見積）</td>
-                    </tr>
-                    <tr>
-                        <td>定例ミーティング</td>
-                        <td class="cross">✕</td>
-                        <td class="cross">✕</td>
-                        <td class="check">○（月1回）</td>
-                        <td class="cross">✕</td>
-                    </tr>
-                    <tr>
-                        <td>初回対応目安</td>
-                        <td>2営業日以内</td>
-                        <td>1営業日以内</td>
-                        <td class="highlight">即日対応（優先）</td>
-                        <td style="text-align: center;">2〜3営業日</td>
-                    </tr>
-                    <tr>
-                        <td>対応時間帯</td>
-                        <td>平日10:30〜19:30</td>
-                        <td>平日10:30〜19:30</td>
-                        <td>拡張可（相談）</td>
-                        <td>平日10:30〜19:30</td>
-                    </tr>
-                    <tr>
-                        <td>年額契約割引</td>
-                        <td class="highlight">5% OFF</td>
-                        <td class="highlight">5% OFF</td>
-                        <td class="highlight">10% OFF</td>
-                        <td style="text-align: center;">対象外</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+  <div class="section">
+    <p>本契約は、株式会社スタディオティガ（以下「委託者」という。）と AMCOLAB TECHNOLOGY COMPANY LIMITED（以下「受託者」という。）が 2025年6月11日に締結した「ClassTrip予約サービスの開発業務委託契約書」（以下「原契約」という。）に基づき、追加業務に関して次のとおり合意したものである。</p>
+  </div>
 
-        <h2>2. スポット対応について</h2>
-        <div class="spot-section">
-            <p>契約プランに加入されていないお客様でも、都度ご依頼に応じて対応が可能です。</p>
-            <p>対応内容に応じて事前にお見積りを提示し、ご承諾後に作業を実施いたします。</p>
-            <p>費用は実作業時間に応じて、<span class="price">1時間あたり4,000円</span>にてご請求させていただきます。</p>
-                <p><strong>※ 注意事項：</strong>ただし、定期的な対応が想定される場合は、月額プランのご契約を推奨いたします。</p>
-            </div>
-        </div>
-    </div>
+  <div class="section">
+    <h2>第1条（目的）</h2>
+    <p>本契約は、原契約に定める業務に追加して、委託者が受託者に委託する追加業務の内容及び条件を定めることを目的とする。</p>
+  </div>
+
+  <div class="section">
+    <h2>第2条（追加業務内容）</h2>
+    <p>受託者は、委託者の要望に基づき、以下の業務を実施する。</p>
+    <ol>
+      <li>LINEによるログイン機能</li>
+      <li>WhatsAppによるログイン機能</li>
+      <li>セッションのコピー機能</li>
+      <li>公開／非公開の切り替え機能</li>
+      <li>予約のキャンセルポリシー（±3日）</li>
+      <li>メールで参加者を追加（各自で支払い）</li>
+      <li>ゲスト参加におけるホスト承認機能</li>
+      <li>ライブ配信中のチャット機能</li>
+      <li>参加者数の制限設定機能</li>
+      <li>バッジ付与機能（毎月の配信時間・参加時間に応じて）</li>
+      <li>通知・リマインダー機能</li>
+    </ol>
+    <p>さらに、Phase 2における予定業務として以下を含む。</p>
+    <ol start="12">
+      <li>Stripeによる決済機能</li>
+      <li>トークン・報酬システム</li>
+    </ol>
+  </div>
+
+ <div class="section">
+  <h2>第3条（追加業務の対価及び支払条件）</h2>
+
+  <p>1. 本追加業務の対価は <strong>616,000円（税抜）</strong> とする。</p>
+
+  <p>2. 本追加業務を含めた本件業務全体の総額は <strong>2,240,690円（税抜）</strong> とする。</p>
+
+  <p>3. 支払条件及び方法は原契約第3条の規定に従うものとするが、追加業務に係る支払については、下記のとおり分割して支払うものとする。</p>
+
+  <ul>
+    <li><strong>一回目：160,000円</strong><br>
+      モック・デザイン着手時（50％）
+    </li>
+    <li><strong>二回目：160,000円</strong><br>
+      モック・デザイン完了時（50％）
+    </li>
+    <li><strong>三回目：960,345円</strong><br>
+      開発着手時（50％）
+    </li>
+    <li><strong>四回目：960,345円</strong><br>
+      開発完了・検収後（50％）
+    </li>
+  </ul>
+
+  <div class="section">
+    <h2>第4条（納期）</h2>
+    <p>追加業務の成果物は、2025年12月末日までに納品・リリースするものとする。</p>
+  </div>
+
+  <div class="section">
+    <h2>第5条（検収）</h2>
+    <p>追加業務の成果物は、委託者による検査・確認を経て検収完了とする。検収手続は原契約第18条を準用する。</p>
+  </div>
+
+  <div class="section">
+    <h2>第6条（知的財産権）</h2>
+    <p>追加業務により生じた成果物に関する著作権その他の知的財産権は、原契約第10条の定めに従い委託者に帰属する。</p>
+  </div>
+
+  <div class="section">
+    <h2>第7条（遅延損害金）</h2>
+    <p>1. 委託者の責に帰すべき事由により、追加業務の対価の支払いが約定日に行われない場合、受託者は委託者に対し、支払遅延日数に応じた遅延損害金（年利14.6％、又は月利1.3％）を請求できる。</p>
+    <p>2. 受託者の責に帰すべき事由により、追加業務の納期が遅延した場合、委託者は受託者に対し、当該遅延期間に応じた違約金を請求できる。</p>
+  </div>
+
+  <div class="section">
+    <h2>第8条（保証期間）</h2>
+    <p>1. 受託者は、追加業務により納品された成果物について、検収完了日から1ヶ月間の保証を行う。</p>
+    <p>2. 保証期間中に成果物に瑕疵、不具合、仕様不適合が発見された場合、受託者は無償で修正・改修を行う。</p>
+    <p>3. 保証期間を過ぎた後の修正・改修については、別途協議のうえ有償対応とする。</p>
+  </div>
+
+  <div class="section">
+    <h2>第9条（契約解除）</h2>
+    <p>1. 委託者または受託者が本契約に違反し、相当期間を定めて催告したにもかかわらず是正されない場合、相手方は本契約を解除できる。</p>
+    <p>2. 追加業務の履行が著しく困難になった場合、いずれかの当事者は協議のうえ本契約を解除できる。</p>
+    <p>3. 契約解除時点までに実施済みの業務については、その成果物に応じた委託料を支払うものとする。</p>
+  </div>
+
+  <div class="section">
+    <h2>第10条（その他）</h2>
+    <p>1. 本契約に定めのない事項については、原契約の規定を適用する。</p>
+    <p>2. 本契約と原契約の定めが矛盾する場合は、本契約を優先する。</p>
+  </div>
+
+  <div class="section">
+    <h2>第11条（協議）</h2>
+    <p>本契約に疑義が生じた場合は、原契約第32条の協議条項に従い、委託者及び受託者が誠意をもって協議し解決を図る。</p>
+  </div>
+
+  <div class="section">
+    <h2>第12条（契約の効力）</h2>
+    <p>本契約は、委託者及び受託者の署名又は記名押印により成立し、原契約と一体をなすものとする。</p>
+    <p>2025年12月15日</p>
+
+    <p><strong>委託者</strong><br>
+    住所 3F Yazawa Blg., 3-1-9 Shibuya, Shibuya, Tokyo, 150-0002, Japan<br>
+    会社名 株式会社スタディオティガ<br>
+    役職名 代表者 三神安史</p>
+
+    <p><strong>受託者</strong><br>
+    住所 3th Audi Bld, 8 Pham Hung Str, Me Tri Ward, Nam Tu Liem Dist, Ha Noi City, Viet Nam<br>
+    会社名 AMCOLAB TECHNOLOGY COMPANY LIMITED<br>
+    役職名 代表取締役 NGUYEN THI QUY</p>
+  </div>
 </body>
 </html>
-
