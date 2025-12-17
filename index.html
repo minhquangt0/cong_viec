@@ -1,331 +1,125 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>前受金の取扱いに関する覚書</title>
-  <style>
-    @page { size: A4 portrait; margin: 20mm; }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      margin: 0;
-      padding: 24px 32px;
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
-      background: #ffffff;
-      color: #000;
-      line-height: 1.9;
-      font-size: 11pt;
-    }
-    
-    .container {
-      max-width: 210mm;
-      margin: 0 auto;
-      background: white;
-    }
-    
-    /* Header */
-    header {
-      text-align: center;
-      margin-bottom: 28px;
-      padding-bottom: 16px;
-      border-bottom: 2px solid #333;
-    }
-    
-    h1 {
-      font-size: 18pt;
-      margin: 12px 0 20px 0;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-    
-    .lead {
-      text-align: justify;
-      line-height: 2;
-      margin: 16px 0;
-      font-size: 10.5pt;
-    }
-    
-    /* Article sections */
-    .article {
-      margin-bottom: 20px;
-      page-break-inside: avoid;
-    }
-    
-    .article-title {
-      font-weight: 700;
-      font-size: 11.5pt;
-      margin-bottom: 10px;
-      padding: 6px 0;
-      border-left: 4px solid #2c5aa0;
-      padding-left: 10px;
-      background: #f8f9fa;
-    }
-    
-    .article-body {
-      padding-left: 14px;
-      text-align: justify;
-    }
-    
-    .article-body > div {
-      margin-bottom: 8px;
-    }
-    
-    .article-body strong {
-      font-weight: 700;
-      color: #2c5aa0;
-    }
-    
-    /* Lists */
-    ol.special {
-      margin: 12px 0 12px 32px;
-      padding-left: 8px;
-      line-height: 2;
-    }
-    
-    ol.special li {
-      margin-bottom: 6px;
-    }
-    
-    /* Inline elements */
-    .inline-note {
-      display: block;
-      font-size: 9.5pt;
-      color: #666;
-      margin-top: 6px;
-      padding-left: 2em;
-      font-style: italic;
-    }
-    
-    /* Signature section */
-    .signature-section {
-      margin-top: 32px;
-      page-break-inside: avoid;
-    }
-    
-    .signature-date {
-      text-align: center;
-      font-size: 11pt;
-      margin-bottom: 24px;
-      font-weight: 600;
-    }
-    
-    .signature-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 20px;
-    }
-    
-    .signature-box {
-      border: 1px solid #333;
-      padding: 16px;
-      min-height: 120px;
-    }
-    
-    .signature-box .party-label {
-      font-weight: 700;
-      font-size: 11.5pt;
-      margin-bottom: 12px;
-      color: #2c5aa0;
-    }
-    
-    .signature-box .info-line {
-      margin-bottom: 8px;
-      line-height: 1.8;
-    }
-    
-    .signature-box .info-label {
-      display: inline-block;
-      width: 80px;
-      font-weight: 600;
-    }
-    
-    /* Closing statement */
-    .closing-statement {
-      text-align: center;
-      margin: 24px 0;
-      padding: 12px 0;
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-      font-size: 10.5pt;
-      line-height: 1.8;
-    }
-    
-    /* Subsections */
-    .subsection {
-      margin-left: 24px;
-      margin-top: 10px;
-    }
-    
-    .subsection > div {
-      margin-bottom: 8px;
-    }
-    
-    /* Print optimization */
-    @media print {
-      body {
-        padding: 16mm;
-      }
-      
-      .container {
-        max-width: 100%;
-      }
-      
-      .article {
-        page-break-inside: avoid;
-      }
-      
-      .signature-section {
-        page-break-before: avoid;
-      }
-    }
-  </style>
+
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giới thiệu Công ty AMCOLAB - Trang chủ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#20B2AA", // Light Sea Green / Teal từ logo
+                        secondary: "#1A3C4D", // Dark Slate / Deep Teal cho tiêu đề
+                        "background-light": "#F8FAFC", // Slate 50
+                        "background-dark": "#0F172A", // Slate 900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E293B",
+                        "text-light": "#334155",
+                        "text-dark": "#E2E8F0",
+                    },
+                    fontFamily: {
+                        display: ["'Noto Sans JP'", "sans-serif"], // Giữ nguyên font gốc (có thể thay bằng font Việt nếu cần)
+                        sans: ["'Inter'", "sans-serif"], // Giữ nguyên font gốc (có thể thay bằng font Việt nếu cần)
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        xl: "1rem",
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#20B2AA 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <h1>前受金の取扱いに関する覚書</h1>
-      <p class="lead">
-        株式会社スタディオティガ（以下「甲」という。）とAMCOLAB TECHNOLOGY COMPANY LIMITED（以下「乙」という。）は、甲乙間で締結済みの「ClassTrip予約サービスの開発」に関する業務委託契約（以下「本契約」という。）に付随して、乙が今後の保守・運用・追加開発等の対価として事前に受領する金銭の取扱いについて、以下のとおり覚書（以下「本覚書」という。）を締結する。
-      </p>
-    </header>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 min-h-screen flex flex-col items-center py-10 px-4 sm:px-8">
+<main class="w-full max-w-7xl bg-card-light dark:bg-card-dark shadow-2xl rounded-xl overflow-hidden relative flex flex-col h-[85vh] min-h-[600px]">
+<header class="flex justify-between items-start p-8 sm:p-12 pb-6 z-10">
+<div class="flex items-center gap-6">
+</div>
+<div class="flex flex-col items-end justify-center">
+<div class="text-sm font-bold text-secondary dark:text-white tracking-widest uppercase opacity-80">Ngày cập nhật: 2025/12/01</div>
+</div>
+</header>
+<div class="flex-grow flex flex-col items-center justify-center relative px-8 sm:px-12">
+<div class="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="z-10 flex flex-col items-center max-w-4xl w-full">
+<div class="mb-12 relative">
 
-    <!-- Article 1 -->
-    <section class="article">
-      <div class="article-title">第１条（目的）</div>
-      <div class="article-body">
-        本覚書は、乙が本契約およびその合意済みの追加契約に基づく開発費とは別に、今後の保守・運用・追加開発等の対価に充当することを前提として甲から事前に受領する金銭（以下「前受金」という。）の位置づけおよび取扱いを明確にすることを目的とする。
-      </div>
-    </section>
 
-    <!-- Article 2 -->
-    <section class="article">
-      <div class="article-title">第２条（前受金の金額）</div>
-      <div class="article-body">
-        <div>
-          <strong>１</strong>　本覚書締結日時点において、乙が甲から預かっている前受金残高は、<strong>金XXXX円</strong>（以下「本前受金残高」という。）とする。
-          <br>※ 実際の金額を<strong>「金XXXX円」</strong>のように記載すること。
-        </div>
-        <div>
-          <strong>２</strong>　本前受金残高は、乙が本契約およびその合意済みの追加契約に基づく開発費の総額（以下「本件開発費」という。）とは別枠で管理されるものとし、すでに支払済みの本件開発費には含まれないものとする。
-        </div>
-      </div>
-    </section>
+</div>
+</div>
+<h1 class="text-5xl sm:text-7xl font-bold text-secondary dark:text-white tracking-tight text-center mb-6">
+<span class="text-primary">AMCOLAB</span> TECHNOLOGY
+                </h1>
+<div class="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
+<p class="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 font-light tracking-widest uppercase text-center">
+                    Amazing <span class="text-primary mx-2">•</span> Collaborate <span class="text-primary mx-2">•</span> Laboratory
+                </p>
+</div>
+</div>
+<footer class="mt-auto bg-slate-50 dark:bg-slate-900/50 px-8 sm:px-12 py-6 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 z-10">
+<div class="text-sm text-slate-400 dark:text-slate-500 font-medium">
+                © 2023 AMCOLAB TECHNOLOGY.All Rights Reserved. 
+            </div>
+<div class="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-lg text-primary">language</span>
+<span>English  / Japanese /  Vietnamese
+</span>
+</div>
+<div class="h-4 w-px bg-slate-300 dark:bg-slate-700"></div>
+<div class="flex items-center gap-2 hover:text-primary transition-colors cursor-pointer">
+<span class="material-icons-round text-lg">public</span>
+<a href="https://www.amcolab.vn/">amcolab.vn</a>
+</div>
+</div>
 
-    <!-- Article 3 -->
-    <section class="article">
-      <div class="article-title">第３条（前受金の対象業務）</div>
-      <div class="article-body">
-        前受金は、原則として以下の業務に対する対価および立替費用に充当されるものとする。
-        <ol class="special">
-          <li>ClassTripに関するシステムの保守・運用サポート</li>
-          <li>Gunpla関連システムの保守・運用サポート</li>
-          <li>サーバー費用その他インフラ関連費用の支払い</li>
-          <li>軽微な仕様変更・不具合調査および改修</li>
-          <li>甲乙協議のうえ合意した追加開発業務</li>
-          <li>前各号に付随する業務</li>
-        </ol>
-      </div>
-    </section>
+<div class="fixed bottom-6 right-6 flex gap-3 z-50">
+  <button id="btnPrev" type="button" aria-label="Trang trước"
+    class="bg-card-light dark:bg-card-dark text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 p-3 rounded-full shadow-lg border border-slate-200 dark:border-slate-600 transition-all focus:outline-none focus:ring-2 focus:ring-primary group">
+    <span class="material-icons-round group-hover:-translate-x-1 transition-transform">arrow_back</span>
+  </button>
 
-    <!-- Article 4 -->
-    <section class="article">
-      <div class="article-title">第４条（充当方法および報告）</div>
-      <div class="article-body">
-        <div>
-          <strong>１</strong>　乙は、前条に定める業務を実施するにあたり、必要に応じて作業内容および概算工数・概算費用を甲に報告し、充当予定額について事前に確認を行うよう努める。
-        </div>
-        <div>
-          <strong>２</strong>　甲乙間で当該業務内容および金額について合意した場合、合意された金額は本前受金残高から順次充当されるものとし、乙は充当後の残高を適切な方法により管理する。
-        </div>
-        <div>
-          <strong>３</strong>　前受金残高を超える業務が発生する場合には、乙は不足分について別途請求書を発行し、甲はこれに基づき通常の支払条件に従って支払うものとする。
-        </div>
-      </div>
-    </section>
+  <button id="btnNext" type="button" aria-label="Trang tiếp theo"
+    class="bg-primary text-white hover:bg-teal-600 p-3 rounded-full shadow-lg shadow-teal-500/30 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary group">
+    <span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
+  </button>
+</div>
 
-    <!-- Article 5 -->
-    <section class="article">
-      <div class="article-title">第５条（残高の精算）</div>
-      <div class="article-body">
-        <div>
-          <strong>１</strong>　本前受金残高の精算方法は、原則として次の各号のいずれかによるものとする。
-        </div>
-        <div class="subsection">
-          <div>（１）甲乙協議のうえ、今後の保守・運用・追加開発等に継続して充当する。</div>
-          <div>（２）本契約または甲乙間の取引関係を終了する場合、本前受金残高が残っているときは、未払いの費用等を控除したうえで、税務・会計上の取扱いも踏まえて、甲乙協議のうえ合理的な方法で精算する。</div>
-        </div>
-        <div>
-          <strong>２</strong>　具体的な返金の要否・時期および方法については、甲乙協議のうえ決定するものとし、一方当事者のみの判断で一方的に決定しないものとする。
-        </div>
-      </div>
-    </section>
 
-    <!-- Article 6 -->
-    <section class="article">
-      <div class="article-title">第６条（本契約との関係）</div>
-      <div class="article-body">
-        <div>
-          <strong>１</strong>　本覚書は本契約の一部を構成するものとし、本契約の条項と本覚書の内容が矛盾する場合には、本契約の趣旨に反しない範囲で本覚書の定めを優先的に適用する。
-        </div>
-        <div>
-          <strong>２</strong>　本覚書に定めのない事項については、本契約の各条項および甲乙間の協議に従うものとする。
-        </div>
-      </div>
-    </section>
+<div class="fixed bottom-6 left-6 z-50">
+<button class="bg-secondary text-white p-3 rounded-full shadow-lg hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round">dark_mode</span>
+</button>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('btnPrev')?.addEventListener('click', () => {
+      window.location.href = './page1.html';
+    });
+    document.getElementById('btnNext')?.addEventListener('click', () => {
+      window.location.href = './page1.html';
+    });
+  });
+</script>
+</body></html>
 
-    <!-- Article 7 -->
-    <section class="article">
-      <div class="article-title">第７条（準拠法および協議）</div>
-      <div class="article-body">
-        <div>
-          <strong>１</strong>　本覚書に関する準拠法および管轄裁判所は、本契約の定めに従うものとする。
-        </div>
-        <div>
-          <strong>２</strong>　本覚書の解釈について疑義が生じた場合、甲乙は誠意をもって協議し、円満な解決を図るものとする。
-        </div>
-      </div>
-    </section>
-
-    <!-- Closing statement -->
-    <div class="closing-statement">
-      以上、本覚書は双方の同意のもと作成され、両者がその内容に合意したことを示すものである。
-    </div>
-
-    <!-- Signature section -->
-    <div class="signature-section">
-      <div class="signature-date">２０２５年　　月　　日</div>
-      
-      <div class="signature-grid">
-        <div class="signature-box">
-          <div class="party-label">（甲）株式会社スタディオティガ</div>
-          <div class="info-line">
-            <span class="info-label">住所：</span>3F Yazawa Blg., 3-1-9 Shibuya, Shibuya, Tokyo, 150-0002, Japan
-          </div>
-          <div class="info-line">
-            <span class="info-label">代表者名：</span>三神安史
-          </div>
-        </div>
-        
-        <div class="signature-box">
-          <div class="party-label">（乙）AMCOLAB TECHNOLOGY COMPANY LIMITED</div>
-          <div class="info-line">
-            <span class="info-label">住所：</span>ハノイ市 イエンホア区 ファムフン通り8番地 アウディビル 3階
-          </div>
-          <div class="info-line">
-            <span class="info-label">代表者名：</span>Nguyen Thi Quy
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</body>
-</html>
+```
