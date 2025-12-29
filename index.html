@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>契約変更覚書</title>
+    <title>契約変更覚書 - MatchHubシステム開発</title>
     <style>
         @page {
             size: A4;
-            margin: 25mm 20mm;
+            margin: 20mm;
         }
         
         * {
@@ -17,98 +17,201 @@
         }
         
         body {
-            font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'MS Gothic', sans-serif;
-            font-size: 10.5pt;
-            line-height: 1.8;
-            color: #000;
+            font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #333;
             background: #fff;
-            padding: 20mm;
+            padding: 15mm;
         }
         
         .container {
-            max-width: 170mm;
+            max-width: 210mm;
             margin: 0 auto;
+            background: white;
         }
         
-        .title {
+        .header {
             text-align: center;
-            font-size: 16pt;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c5282;
+        }
+        
+        h1 {
+            font-size: 18pt;
             font-weight: bold;
-            margin-bottom: 30px;
-            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+            color: #1a365d;
+        }
+        
+        .doc-info {
+            text-align: right;
+            font-size: 9pt;
+            margin-bottom: 20px;
+            color: #666;
         }
         
         .parties {
-            margin: 25px 0;
-            line-height: 2;
+            margin: 20px 0;
+            padding: 10px;
+            background: #f7fafc;
+            border-left: 4px solid #4299e1;
+        }
+        
+        .parties p {
+            margin: 5px 0;
+            font-size: 10pt;
         }
         
         .preamble {
-            text-indent: 1em;
             margin: 20px 0;
-            line-height: 2;
-            text-align: justify;
+            text-indent: 1em;
+            line-height: 1.8;
         }
         
         .article {
-            margin: 20px 0;
-            line-height: 2;
+            margin: 15px 0;
         }
         
         .article-title {
             font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            color: #2d3748;
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 3px;
         }
         
         .article-content {
-            text-indent: 1em;
-            text-align: justify;
+            margin-left: 1em;
+            line-height: 1.7;
+        }
+        
+        .article-content p {
+            margin: 8px 0;
         }
         
         .clause {
-            margin: 8px 0 8px 2em;
-            text-align: justify;
+            margin: 8px 0 8px 1em;
         }
         
-        .sub-clause {
-            margin: 5px 0 5px 1em;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 9pt;
         }
         
-        .schedule-table {
-            margin: 15px 0 15px 2em;
+        table.comparison {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #2c5282;
+            color: white;
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        
+        td {
+            padding: 10px 8px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f7fafc;
+        }
+        
+        .highlight {
+            background: #fef5e7;
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        .old-value {
+            color: #e53e3e;
+            text-decoration: line-through;
+        }
+        
+        .new-value {
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        .payment-schedule {
+            margin: 15px 0;
+        }
+        
+        .phase-box {
+            border: 2px solid #4299e1;
+            border-radius: 5px;
+            padding: 12px;
+            margin: 10px 0;
+            background: #ebf8ff;
+        }
+        
+        .phase-box h4 {
+            color: #2c5282;
+            margin-bottom: 8px;
+            font-size: 11pt;
+        }
+        
+        .phase-box ul {
+            margin-left: 1.5em;
             line-height: 1.8;
         }
         
-        .closing {
-            margin-top: 30px;
-            text-align: center;
-            line-height: 2;
-        }
-        
         .signature-section {
-            margin-top: 50px;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
         
-        .signature-block {
-            margin: 30px 0;
-            line-height: 2;
+        .signature-box {
+            border: 1px solid #cbd5e0;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f7fafc;
         }
         
-        .signature-block p {
-            margin: 3px 0;
+        .signature-box h3 {
+            font-size: 11pt;
+            margin-bottom: 10px;
+            color: #2d3748;
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 5px;
         }
         
-        .indent-1 {
-            margin-left: 1em;
+        .signature-box p {
+            margin: 5px 0;
+            font-size: 9pt;
         }
         
-        .indent-2 {
-            margin-left: 2em;
+        .note-box {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 12px;
+            margin: 15px 0;
+            font-size: 9pt;
+        }
+        
+        .note-box strong {
+            color: #c05621;
         }
         
         @media print {
             body {
                 padding: 0;
+            }
+            
+            .container {
+                max-width: 100%;
             }
             
             .article {
@@ -119,246 +222,293 @@
 </head>
 <body>
     <div class="container">
-        <div class="title">
-            契約変更覚書
+        <div class="header">
+            <h1>契約変更覚書</h1>
+            <p style="font-size: 11pt; margin-top: 5px;">（MatchHub+ARMSシステム開発業務委託契約に関する変更）</p>
+        </div>
+        
+        <div class="doc-info">
+            <p>覚書締結日：2025年1月●日</p>
+            <p>原契約締結日：2025年6月23日</p>
         </div>
         
         <div class="parties">
-            <p>MediaBirth株式会社（以下「甲」という。）とAMCOLAB TECHNOLOGY COMPANY LIMITED（以下「乙」という。）は、2025年6月23日付で締結した「MatchHub+ARMSシステムの開発業務委託契約書」（以下「原契約」という。）について、開発要件の追加及び仕様変更に伴い、以下のとおり契約内容の変更について合意し、本覚書を締結する。</p>
+            <p><strong>委託者（甲）：</strong>MediaBirth株式会社</p>
+            <p style="margin-left: 2em;">代表取締役　神原勝彦</p>
+            <p style="margin-top: 8px;"><strong>受託者（乙）：</strong>AMCOLAB TECHNOLOGY COMPANY LIMITED</p>
+            <p style="margin-left: 2em;">代表取締役　NGUYEN THI QUY</p>
+        </div>
+        
+        <div class="preamble">
+            <p>委託者（以下「甲」という。）と受託者（以下「乙」という。）は、2025年6月23日付で締結した「MatchHub+ARMSシステムの開発業務委託契約書」（以下「原契約」という。）について、開発要件の追加及び仕様変更に伴い、以下のとおり契約内容の変更について合意する。</p>
         </div>
         
         <div class="article">
             <div class="article-title">第1条（変更の背景）</div>
             <div class="article-content">
-                <p>原契約の履行過程において、システムの機能拡張及び追加要件が発生したため、開発範囲、委託料及び開発スケジュールを見直すこととなった。本覚書は、かかる変更内容を明確化し、双方の合意事項を確認するものである。</p>
+                <p>原契約の履行過程において、システムの機能拡張及び追加要件が発生したため、開発範囲、金額及びスケジュールを見直すこととなった。本覚書は、かかる変更内容を明確化し、双方の合意事項を確認するものである。</p>
             </div>
         </div>
         
         <div class="article">
-            <div class="article-title">第2条（委託料の変更）</div>
+            <div class="article-title">第2条（契約金額の変更）</div>
             <div class="article-content">
-                <p>原契約第3条に定める委託料を以下のとおり変更する。</p>
-            </div>
-            <div class="clause">
-                <p>1. 原契約における委託料総額：金2,644,000円（税抜き）</p>
-                <div class="indent-1">
-                    <p>（1）画面モック作成：金320,000円</p>
-                    <p>（2）デザイン制作：甲側で担当</p>
-                    <p>（3）システム開発：金2,324,000円</p>
-                </div>
-            </div>
-            <div class="clause">
-                <p>2. 変更後の委託料総額：金4,818,000円（税抜き）</p>
-                <div class="indent-1">
-                    <p>（1）画面モック作成：金320,000円（完了済み）</p>
-                    <p>（2）UI/UXデザイン制作：金150,000円（新規追加）</p>
-                    <p>（3）システム開発（Phase 1）：金1,668,000円</p>
-                    <p>（4）システム開発（Phase 2）：金2,680,000円</p>
-                </div>
-            </div>
-            <div class="clause">
-                <p>3. 追加委託料：金2,174,000円（税抜き）</p>
+                <p>原契約における委託料を以下のとおり変更する。</p>
+                
+                <table class="comparison">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>原契約</th>
+                            <th>変更後</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>画面モック作成</strong></td>
+                            <td>320,000円</td>
+                            <td>320,000円<br><span style="color: #38a169; font-size: 8pt;">（完了済み）</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>UI/UXデザイン制作</strong></td>
+                            <td><span class="old-value">お客様側で担当</span></td>
+                            <td><span class="new-value">150,000円（新規追加）</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>システム開発（Phase 1）</strong></td>
+                            <td rowspan="2"><span class="old-value">2,324,000円</span></td>
+                            <td><span class="new-value">1,668,000円</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>システム開発（Phase 2）</strong></td>
+                            <td><span class="new-value">2,680,000円</span></td>
+                        </tr>
+                        <tr style="background: #edf2f7; font-weight: bold;">
+                            <td><strong>合計金額（税抜）</strong></td>
+                            <td><span class="old-value">2,644,000円</span></td>
+                            <td><span class="new-value">4,818,000円</span></td>
+                        </tr>
+                        <tr style="background: #fef5e7;">
+                            <td colspan="2"><strong>差額（追加費用）</strong></td>
+                            <td><span style="color: #d97706; font-weight: bold;">+2,174,000円</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         
         <div class="article">
-            <div class="article-title">第3条（開発期間の変更）</div>
+            <div class="article-title">第3条（開発スケジュールの変更）</div>
             <div class="article-content">
-                <p>原契約に定める開発期間を以下のとおり変更する。</p>
-            </div>
-            <div class="clause">
-                <p>1. 原契約における開発期間：2025年6月25日から2025年12月15日まで（約5.5ヶ月）</p>
-            </div>
-            <div class="clause">
-                <p>2. 変更後の開発期間：2025年1月初旬から2025年7月末まで（約7ヶ月）</p>
-                <div class="indent-1">
-                    <p>（1）画面モック作成：1ヶ月（完了済み）</p>
-                    <p>（2）UI/UXデザイン制作：3週間</p>
-                    <p>（3）システム開発：5ヶ月（Phase 1及びPhase 2を含む）</p>
-                    <p>（4）受入検収期間：2ヶ月（Phase 1：1ヶ月、Phase 2：1ヶ月）</p>
-                </div>
+                <p>原契約における開発期間を以下のとおり変更する。</p>
+                
+                <table class="comparison">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">項目</th>
+                            <th>原契約</th>
+                            <th>変更後</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>開発期間</strong></td>
+                            <td><span class="old-value">2025年6月25日～2025年12月15日<br>（約5.5ヶ月）</span></td>
+                            <td><span class="new-value">2025年1月初旬～2025年7月末<br>（約7ヶ月）</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>画面モック作成</strong></td>
+                            <td>1ヶ月</td>
+                            <td>1ヶ月（完了済み）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>デザイン制作</strong></td>
+                            <td>お客様側で担当</td>
+                            <td><span class="new-value">3週間</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>システム開発</strong></td>
+                            <td>3.5ヶ月</td>
+                            <td><span class="new-value">5ヶ月（Phase 1: 3ヶ月 + Phase 2: 3ヶ月、一部並行）</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>受入検収期間</strong></td>
+                            <td>1ヶ月</td>
+                            <td><span class="new-value">2ヶ月（Phase 1: 1ヶ月 + Phase 2: 1ヶ月）</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         
         <div class="article">
-            <div class="article-title">第4条（開発フェーズの分割）</div>
+            <div class="article-title">第4条（フェーズ別開発計画）</div>
             <div class="article-content">
-                <p>本件業務のシステム開発を以下の2つのフェーズに分けて実施する。</p>
-            </div>
-            <div class="clause">
-                <p>1. Phase 1（コア機能の実装）</p>
-                <div class="indent-1">
-                    <p>（1）開始時期：2025年1月初旬</p>
-                    <p>（2）開発期間：2025年1月から2025年4月まで（3ヶ月）</p>
-                    <p>（3）受入検収期間：2025年5月末まで</p>
-                    <p>（4）検収完了予定日：2025年5月末</p>
-                    <p>（5）委託料：金1,668,000円（税抜き）</p>
-                    <p>（6）実施内容：公式サイト、CA及び求職者サイト、Zキャリア、求人ボックス等のコア機能実装並びにシステム全体の基本アーキテクチャ構築</p>
-                    <p>（7）本番公開：Phase 1の検収完了後、エンドユーザー向けの本番公開を開始する予定とする。</p>
+                <p>システム開発を以下の2フェーズに分けて実施する。</p>
+                
+                <div class="phase-box">
+                    <h4>■ Phase 1（コア機能の実装）</h4>
+                    <ul>
+                        <li><strong>契約単位：</strong>Phase 1単位で契約</li>
+                        <li><strong>開始時期：</strong>2025年1月初旬</li>
+                        <li><strong>開発期間：</strong>2025年1月～4月（3ヶ月）</li>
+                        <li><strong>受入テスト：</strong>2025年5月末まで</li>
+                        <li><strong>検収完了予定：</strong>2025年5月末</li>
+                        <li><strong>金額：</strong>1,668,000円</li>
+                        <li><strong>内容：</strong>公式サイト、CA&求職者サイト、Zキャリア、求人ボックス等のコア機能実装及びシステム全体の基本アーキテクチャ構築</li>
+                    </ul>
+                    <div class="note-box">
+                        <strong>※注記：</strong>ベトナム側・日本側の年末年始の長期休暇を考慮し、5月末を目処にバッファを含めて設定。5月末にPhase 1検収完了及びエンドユーザー向け本番公開開始を想定。
+                    </div>
                 </div>
-            </div>
-            <div class="clause">
-                <p>2. Phase 2（拡張機能の実装）</p>
-                <div class="indent-1">
-                    <p>（1）開始時期：2025年4月初旬（Phase 1の基本アーキテクチャ確定後、前倒しで開始）</p>
-                    <p>（2）開発期間：2025年4月から2025年6月まで（3ヶ月）</p>
-                    <p>（3）受入検収期間：2025年7月（1ヶ月）</p>
-                    <p>（4）検収完了予定日：2025年7月末</p>
-                    <p>（5）委託料：金2,680,000円（税抜き）</p>
-                    <p>（6）実施内容：管理者機能、Google Jobs、engage、Indeed、SA用機能等の拡張機能及び高度な機能の追加実装、並びに全体の仕上げ</p>
+                
+                <div class="phase-box">
+                    <h4>■ Phase 2（拡張機能の実装）</h4>
+                    <ul>
+                        <li><strong>契約単位：</strong>Phase 2単位で契約</li>
+                        <li><strong>開始時期：</strong>2025年4月初旬（Phase 1のアーキテクチャ確定後、前倒しで開始）</li>
+                        <li><strong>開発期間：</strong>2025年4月～6月（3ヶ月）</li>
+                        <li><strong>受入テスト：</strong>2025年7月（1ヶ月）</li>
+                        <li><strong>検収完了予定：</strong>2025年7月末</li>
+                        <li><strong>金額：</strong>2,680,000円</li>
+                        <li><strong>内容：</strong>管理者機能、Google Jobs、engage、Indeed、SA用機能等の拡張機能及び高度な機能の追加実装、並びに全体の仕上げ</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="clause">
-                <p>3. Phase 1とPhase 2は、技術的な依存関係に応じて一部並行して開発を進めることができるものとする。</p>
-            </div>
-            <div class="clause">
-                <p>4. 各フェーズの詳細仕様については、別途双方で協議の上、決定するものとする。</p>
             </div>
         </div>
         
         <div class="article">
             <div class="article-title">第5条（支払条件の変更）</div>
             <div class="article-content">
-                <p>原契約第3条に定める支払条件を以下のとおり変更する。</p>
-            </div>
-            <div class="clause">
-                <p>1. 画面モック作成：金320,000円</p>
-                <div class="indent-1">
-                    <p>支払済み（着手時50%、検収後50%の分割支払いにて完了）</p>
+                <p>原契約第3条の支払条件を以下のとおり変更する。</p>
+                
+                <div class="payment-schedule">
+                    <table class="comparison">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">項目</th>
+                                <th style="width: 25%;">金額</th>
+                                <th>支払時期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #e6fffa;">
+                                <td><strong>画面モック作成</strong></td>
+                                <td>320,000円</td>
+                                <td>完了済み<br>（50%着手時・50%検収後に分割済み）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>UI/UXデザイン制作</strong></td>
+                                <td>150,000円</td>
+                                <td>着手時：75,000円（50%）<br>検収後：75,000円（50%）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phase 1 開発</strong></td>
+                                <td>1,668,000円</td>
+                                <td>着手時：834,000円（50%）<br>検収後：834,000円（50%）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phase 2 開発</strong></td>
+                                <td>2,680,000円</td>
+                                <td>着手時：1,340,000円（50%）<br>検収後：1,340,000円（50%）</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-            <div class="clause">
-                <p>2. UI/UXデザイン制作：金150,000円</p>
-                <div class="indent-1">
-                    <p>着手時支払い：金75,000円（50%）</p>
-                    <p>検収後支払い：金75,000円（50%）</p>
+                
+                <div class="clause">
+                    <p>1. 各フェーズの着手時支払いは、当該フェーズの開発開始前に行うものとする。</p>
+                    <p>2. 各フェーズの検収後支払いは、甲による検収完了後、乙からの請求書受領後30日以内に行うものとする。</p>
+                    <p>3. 支払方法及び振込先は原契約に定めるとおりとする。</p>
                 </div>
-            </div>
-            <div class="clause">
-                <p>3. Phase 1システム開発：金1,668,000円</p>
-                <div class="indent-1">
-                    <p>着手時支払い：金834,000円（50%）</p>
-                    <p>検収後支払い：金834,000円（50%）</p>
-                </div>
-            </div>
-            <div class="clause">
-                <p>4. Phase 2システム開発：金2,680,000円</p>
-                <div class="indent-1">
-                    <p>着手時支払い：金1,340,000円（50%）</p>
-                    <p>検収後支払い：金1,340,000円（50%）</p>
-                </div>
-            </div>
-            <div class="clause">
-                <p>5. 各フェーズの着手時支払いは、当該フェーズの開発開始前に行うものとし、検収後支払いは、甲による検収完了確認後、乙からの請求書受領後30日以内に行うものとする。</p>
-            </div>
-            <div class="clause">
-                <p>6. 支払方法及び振込先は、原契約に定めるとおりとする。</p>
             </div>
         </div>
         
         <div class="article">
             <div class="article-title">第6条（追加機能の概要）</div>
             <div class="article-content">
-                <p>本変更により追加される主な機能は以下のとおりである。詳細な機能仕様については、2025年10月6日付の見積書「MatchHubシステムの開発見積」に記載されたシステム開発の詳細機能一覧に基づくものとする。</p>
-            </div>
-            <div class="clause">
-                <p>1. 管理者機能の拡張</p>
-                <div class="indent-1">
-                    <p>報酬・支払管理、Finance Hub連携、Zキャリア自動取得設定及びRPA機能、Google for Jobs設定及び連携、求人ボックス設定及び連携、Indeed及びengage連携、求人リフレッシュルール設定、応募者分類用質問管理及びスコアリング機能、CA管理、求人管理、候補者管理、応募管理、システムアカウント管理、報酬率設定等</p>
-                </div>
-            </div>
-            <div class="clause">
-                <p>2. CA（キャリアアドバイザー）機能</p>
-                <div class="indent-1">
-                    <p>ログイン及びアカウント登録、ダッシュボード、担当候補者管理、AI求人提案機能、手動求人推薦、面接設定、Google Calendar連携、報酬管理及び集計、候補者とのメッセージ機能、求人検索及び詳細表示、各種設定等</p>
-                </div>
-            </div>
-            <div class="clause">
-                <p>3. SA（サポートアドバイザー）機能</p>
-                <div class="indent-1">
-                    <p>要支援候補者管理、CA機能に準じた各種機能</p>
-                </div>
-            </div>
-            <div class="clause">
-                <p>4. MatchHub公式サイト</p>
-                <div class="indent-1">
-                    <p>トップページ（Hero、Trust Strip、サービス説明、求人検索CTA、事例紹介、ブログ表示等）、求人一覧及び詳細ページ、応募フォーム（ウィザード形式）、応募者マイページ、紹介リワード機能、AI職務経歴書生成及びPDF出力、メッセージ機能、法人向けサービスページ、事例紹介ページ、会社概要、お問い合わせフォーム、コラム（Strapi CMS連携）、プライバシーポリシー、利用規約、手数料実績公開ページ（職業安定法対応）、SEO対策（サイトマップ自動生成、構造化データ）、レスポンシブ対応等</p>
-                </div>
-            </div>
-            <div class="clause">
-                <p>5. 外部システム連携</p>
-                <div class="indent-1">
-                    <p>ZキャリアRPA自動取得、Google for Jobs XMLフィード連携、求人ボックスXMLフィード連携、Indeed XMLフィード連携、engage RPA連携、Finance Hub API連携、Google Calendar API連携等</p>
-                </div>
+                <p>本変更により追加される主な機能は以下のとおりである。</p>
+                
+                <table class="comparison">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">カテゴリ</th>
+                            <th>主な追加機能</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>管理者機能</strong></td>
+                            <td>報酬・支払管理、Finance Hub連携、Z キャリアRPA設定、Google for Jobs設定、求人ボックス設定、Indeed・engage連携、質問管理、CA管理、求人管理、候補者管理、応募管理、アカウント管理、報酬率設定</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CA機能</strong></td>
+                            <td>ダッシュボード、候補者管理、推薦機能、面接設定、Google Calendar連携、報酬管理、メッセージ機能、求人管理、各種設定</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SA機能</strong></td>
+                            <td>要支援候補者管理、CA機能と同様の機能</td>
+                        </tr>
+                        <tr>
+                            <td><strong>公式サイト</strong></td>
+                            <td>トップページ、求人一覧・詳細、応募フォーム、応募者マイページ、職務経歴書AI生成、メッセージ画面、法人向けサービス、事例紹介、コラム、各種法定ページ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>外部連携</strong></td>
+                            <td>Z キャリアRPA、Google for Jobs、求人ボックス、Indeed、engage、Finance Hub、Google Calendar API</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         
         <div class="article">
-            <div class="article-title">第7条（検収及び検査）</div>
+            <div class="article-title">第7条（原契約の効力）</div>
             <div class="article-content">
-                <p>各フェーズの検収については、原契約第18条の規定に準じて実施するものとし、各フェーズごとに個別に検収を行うものとする。甲は、乙から成果物の納入を受けた日から30日以内に検査を行うことを基本とする。</p>
+                <p>本覚書に定めのない事項については、原契約の定めに従うものとする。本覚書と原契約の内容が矛盾する場合は、本覚書の内容が優先するものとする。</p>
             </div>
         </div>
         
         <div class="article">
-            <div class="article-title">第8条（契約不適合及びバグ対応）</div>
-            <div class="article-content">
-                <p>各フェーズの成果物に関する契約不適合責任及びバグ対応については、原契約第9条の規定を適用するものとし、各フェーズの検収完了日から6ヶ月間、乙は無償で修正対応を行うものとする。</p>
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第9条（原契約の効力）</div>
-            <div class="article-content">
-                <p>本覚書に定めのない事項については、原契約の定めに従うものとする。原契約の条項と本覚書の内容が矛盾抵触する場合は、本覚書の内容が優先して適用されるものとする。原契約に定める秘密保持、知的財産権、損害賠償、反社会的勢力の排除、準拠法、合意管轄等の条項は、本覚書においても引き続き有効に適用されるものとする。</p>
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第10条（覚書の有効期間）</div>
-            <div class="article-content">
-                <p>本覚書の有効期間は、本覚書締結日から、Phase 2の検収完了日までとする。ただし、原契約第9条、第10条、第15条、第16条、第21条、第22条、第23条及び第24条に定める義務は、本覚書終了後も引き続き有効に存続するものとする。</p>
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第11条（覚書の成立）</div>
+            <div class="article-title">第8条（覚書の成立）</div>
             <div class="article-content">
                 <p>本覚書は、甲乙両者が署名又は記名押印（電子的な署名又は押印を含む）した文書をPDF形式にて電子メールで相互に送受信すること、または、署名若しくは記名押印に代わる電磁的処理を施すことによって締結するものとする。甲及び乙は、電磁的記録（電子データ）を本覚書の原本とすることに同意し、それを各自保存するものとする。</p>
             </div>
         </div>
         
-        <div class="closing">
+        <div style="margin-top: 30px; text-align: center; font-size: 10pt;">
             <p>本覚書の締結を証するため、本書2通を作成し、甲乙記名押印の上、各自1通を保有する。</p>
         </div>
         
-        <div style="margin-top: 50px; text-align: center;">
-            <p>2025年1月　　日</p>
+        <div style="margin-top: 40px; text-align: center; font-size: 11pt;">
+            <p><strong>2025年1月●日</strong></p>
         </div>
         
         <div class="signature-section">
-            <div class="signature-block">
-                <p>委託者（甲）</p>
-                <p class="indent-1">住所　　東京都渋谷区神宮前1-19-13 ドミシール平野303</p>
-                <p class="indent-1">会社名　MediaBirth株式会社</p>
-                <p class="indent-1">役職名　代表取締役</p>
-                <p class="indent-1">氏名　　神原勝彦　　　　　　　　　　　㊞</p>
+            <div class="signature-box">
+                <h3>委託者（甲）</h3>
+                <p><strong>住所：</strong>東京都渋谷区神宮前1-19-13<br>　　　　ドミシール平野303</p>
+                <p><strong>会社名：</strong>MediaBirth株式会社</p>
+                <p><strong>役職名：</strong>代表取締役</p>
+                <p><strong>氏名：</strong>神原勝彦　　　　　　㊞</p>
             </div>
             
-            <div class="signature-block" style="margin-top: 40px;">
-                <p>受託者（乙）</p>
-                <p class="indent-1">住所　　3th Audi Bld, 8 Pham Hung Str,</p>
-                <p class="indent-1">　　　　Me Tri Ward, Nam Tu Liem Dist,</p>
-                <p class="indent-1">　　　　Ha Noi City, Viet Nam</p>
-                <p class="indent-1">会社名　AMCOLAB TECHNOLOGY COMPANY LIMITED</p>
-                <p class="indent-1">役職名　代表取締役</p>
-                <p class="indent-1">氏名　　NGUYEN THI QUY　　　　　　　㊞</p>
+            <div class="signature-box">
+                <h3>受託者（乙）</h3>
+                <p><strong>住所：</strong>3th Audi Bld, 8 Pham Hung Str,<br>　　　　Me Tri Ward, Nam Tu Liem Dist,<br>　　　　Ha Noi City, Viet Nam</p>
+                <p><strong>会社名：</strong>AMCOLAB TECHNOLOGY COMPANY LIMITED</p>
+                <p><strong>役職名：</strong>代表取締役</p>
+                <p><strong>氏名：</strong>NGUYEN THI QUY　　　㊞</p>
             </div>
         </div>
         
-        <div style="margin-top: 50px; page-break-before: always;">
-            <p style="text-align: center; font-weight: bold; margin-bottom: 20px;">以上</p>
+        <div class="note-box" style="margin-top: 30px;">
+            <strong>【重要事項】</strong><br>
+            ・本覚書は原契約の一部を変更するものであり、原契約の他の条項（秘密保持、知的財産権、損害賠償、準拠法等）は引き続き有効です。<br>
+            ・Phase 1の検収完了をもって、Phase 2への移行可否を判断することができます。<br>
+            ・各フェーズの詳細仕様については、別途「仕様書」または「要件定義書」を作成し、双方で合意するものとします。
         </div>
     </div>
 </body>
 </html>
+
