@@ -1,188 +1,364 @@
 <!DOCTYPE html>
-<html lang="vi"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Giới thiệu Công ty AMCOLAB</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#20B2AA", // Light Sea Green / Teal from logo
-                        secondary: "#1A3C4D", // Dark Slate / Deep Teal for headers
-                        "background-light": "#F8FAFC", // Slate 50
-                        "background-dark": "#0F172A", // Slate 900
-                        "card-light": "#FFFFFF",
-                        "card-dark": "#1E293B",
-                        "text-light": "#334155",
-                        "text-dark": "#E2E8F0",
-                    },
-                    fontFamily: {
-                        display: ["'Noto Sans JP'", "sans-serif"],
-                        sans: ["'Inter'", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.5rem",
-                        xl: "1rem",
-                    },
-                },
-            },
-        };
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-<style>
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>契約変更覚書</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 25mm 20mm;
         }
-        .dotted-line {
-            background-image: linear-gradient(to right, #94a3b8 33%, rgba(255,255,255,0) 0%);
-            background-position: bottom;
-            background-size: 6px 1px;
-            background-repeat: repeat-x;
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'MS Gothic', sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.8;
+            color: #000;
+            background: #fff;
+            padding: 20mm;
+        }
+        
+        .container {
+            max-width: 170mm;
+            margin: 0 auto;
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 0.1em;
+        }
+        
+        .parties {
+            margin: 25px 0;
+            line-height: 2;
+        }
+        
+        .preamble {
+            text-indent: 1em;
+            margin: 20px 0;
+            line-height: 2;
+            text-align: justify;
+        }
+        
+        .article {
+            margin: 20px 0;
+            line-height: 2;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .article-content {
+            text-indent: 1em;
+            text-align: justify;
+        }
+        
+        .clause {
+            margin: 8px 0 8px 2em;
+            text-align: justify;
+        }
+        
+        .sub-clause {
+            margin: 5px 0 5px 1em;
+        }
+        
+        .schedule-table {
+            margin: 15px 0 15px 2em;
+            line-height: 1.8;
+        }
+        
+        .closing {
+            margin-top: 30px;
+            text-align: center;
+            line-height: 2;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+        }
+        
+        .signature-block {
+            margin: 30px 0;
+            line-height: 2;
+        }
+        
+        .signature-block p {
+            margin: 3px 0;
+        }
+        
+        .indent-1 {
+            margin-left: 1em;
+        }
+        
+        .indent-2 {
+            margin-left: 2em;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .article {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 min-h-screen flex flex-col items-center py-10 px-4 sm:px-8">
-<main class="w-full max-w-7xl bg-card-light dark:bg-card-dark shadow-2xl rounded-xl overflow-hidden relative flex flex-col">
-<header class="flex justify-between items-start p-8 sm:p-12 pb-6">
-<div class="flex items-center gap-6">
-<div class="border-4 border-primary dark:border-primary text-primary dark:text-primary font-bold text-5xl sm:text-6xl px-4 py-2 rounded-lg flex items-center justify-center">
-                    01
-                </div>
-<h1 class="text-4xl sm:text-5xl font-bold text-secondary dark:text-white tracking-wide">
-                    Giới thiệu công ty
-                </h1>
-</div>
-<div class="flex items-center gap-3">
-<div class="text-right">
-</div>
-<img alt="AMCOLAB Logo" class="h-12 sm:h-14 object-contain mb-1" src="./logo-amcolab.webp" />
-</div>
-</header>
-<div class="flex-grow grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 sm:px-12 pb-12">
-<div class="flex flex-col gap-6">
-<div class="bg-slate-50 dark:bg-slate-800/50 rounded-lg overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700">
-<div class="bg-secondary text-white py-3 px-6 font-bold text-lg flex items-center gap-2">
-<span class="material-icons-round text-primary">business</span>
-                        Thông tin công ty
-                    </div>
-<div class="p-6 space-y-4 text-sm sm:text-base">
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Tên công ty</span>
-<span class="text-slate-800 dark:text-slate-100 font-medium">AMCOLAB TECHNOLOGY</span>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Đại diện</span>
-<span class="text-slate-800 dark:text-slate-100">Nguyễn Thị Quý</span>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Số lượng nhân viên</span>
-<span class="text-slate-800 dark:text-slate-100">50 người (Nhân viên chính thức)</span>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Vốn điều lệ</span>
-<span class="text-slate-800 dark:text-slate-100">5 triệu Yên</span>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 pb-1">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Thành lập</span>
-<span class="text-slate-800 dark:text-slate-100">Tháng 01 năm 2023</span>
-</div>
-</div>
-</div>
-<div class="relative group rounded-lg overflow-hidden shadow-md h-64 border border-slate-200 dark:border-slate-700">
-<img
-  alt="Ngoại thất tòa nhà trụ sở AMCOLAB"
-  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-  src="./amcolab_hq.png"
-/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
-<div class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/40 px-2 py-1 rounded backdrop-blur-sm">
-                        Trụ sở chính
-                    </div>
-</div>
-</div>
-<div class="flex flex-col gap-6">
-<div class="bg-slate-50 dark:bg-slate-800/50 rounded-lg overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700">
-<div class="bg-secondary text-white py-3 px-6 font-bold text-lg flex items-center gap-2">
-<span class="material-icons-round text-primary">layers</span>
-                        Tổng quan dịch vụ
-                    </div>
-<div class="p-6 space-y-4 text-sm sm:text-base">
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0 pt-1">Lĩnh vực kinh doanh</span>
-<ul class="text-slate-800 dark:text-slate-100 space-y-1 list-none">
-<li class="flex items-center gap-2"><span class="text-primary font-bold">①</span> Phát triển hệ thống</li>
-<li class="flex items-center gap-2"><span class="text-primary font-bold">②</span> Bảo trì hệ thống</li>
-<li class="flex items-center gap-2"><span class="text-primary font-bold">③</span> Kiểm thử hệ thống</li>
-</ul>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Trang web</span>
-<div class="flex flex-col">
-<a class="text-primary hover:text-teal-400 hover:underline transition-colors" href="https://amcolab.vn/">https://amcolab.vn/</a>
-<a class="text-primary hover:text-teal-400 hover:underline transition-colors" href="https://amcolab.jp/">https://amcolab.jp/</a>
-</div>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 pb-1">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Văn phòng</span>
-<span class="text-slate-800 dark:text-slate-100">Thủ đô Hà Nội, Việt Nam</span>
-</div>
-</div>
-</div>
-<div class="relative group rounded-lg overflow-hidden shadow-md h-64 border border-slate-200 dark:border-slate-700">
-<img
-  alt="Các thành viên đội ngũ AMCOLAB chụp ảnh tập thể"
-  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-  src="./amcolab_team.jpg"
-/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
-<div class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/40 px-2 py-1 rounded backdrop-blur-sm">
-                        Đội ngũ của chúng tôi
-                    </div>
-</div>
-</div>
-</div>
-<footer class="mt-auto bg-slate-100 dark:bg-slate-900 px-8 sm:px-12 py-4 border-t border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-4">
-<div class="text-primary font-medium italic text-lg sm:text-xl">
-                Amazing. Collaborate. Laboratory
+<body>
+    <div class="container">
+        <div class="title">
+            契約変更覚書
+        </div>
+        
+        <div class="parties">
+            <p>MediaBirth株式会社（以下「甲」という。）とAMCOLAB TECHNOLOGY COMPANY LIMITED（以下「乙」という。）は、2025年6月23日付で締結した「MatchHub+ARMSシステムの開発業務委託契約書」（以下「原契約」という。）について、開発要件の追加及び仕様変更に伴い、以下のとおり契約内容の変更について合意し、本覚書を締結する。</p>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第1条（変更の背景）</div>
+            <div class="article-content">
+                <p>原契約の履行過程において、システムの機能拡張及び追加要件が発生したため、開発範囲、委託料及び開発スケジュールを見直すこととなった。本覚書は、かかる変更内容を明確化し、双方の合意事項を確認するものである。</p>
             </div>
-<div class="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
-<div class="flex items-center gap-2">
-<span class="material-icons-round text-lg">public</span>
-<a class="hover:text-primary transition-colors" href="https://www.amcolab.vn/">https://www.amcolab.vn/</a>
-</div>
-</div>
-</footer>
-</main>
-<div class="fixed bottom-6 right-6 flex gap-3 z-50">
-  <button id="btnPrev" type="button" aria-label="Trang trước"
-    class="bg-card-light dark:bg-card-dark text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 p-3 rounded-full shadow-lg border border-slate-200 dark:border-slate-600 transition-all focus:outline-none focus:ring-2 focus:ring-primary group">
-    <span class="material-icons-round group-hover:-translate-x-1 transition-transform">arrow_back</span>
-  </button>
-
-  <button id="btnNext" type="button" aria-label="Trang tiếp theo"
-    class="bg-primary text-white hover:bg-teal-600 p-3 rounded-full shadow-lg shadow-teal-500/30 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary group">
-    <span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
-  </button>
-</div>
-
-
-<div class="fixed bottom-6 left-6 z-50">
-<button class="bg-secondary text-white p-3 rounded-full shadow-lg hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" onclick="document.documentElement.classList.toggle('dark')">
-<span class="material-icons-round">dark_mode</span>
-</button>
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('btnPrev')?.addEventListener('click', () => {
-      window.location.href = './page0.html';
-    });
-    document.getElementById('btnNext')?.addEventListener('click', () => {
-      window.location.href = './page2.html';
-    });
-  });
-</script>
-</body></html>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第2条（委託料の変更）</div>
+            <div class="article-content">
+                <p>原契約第3条に定める委託料を以下のとおり変更する。</p>
+            </div>
+            <div class="clause">
+                <p>1. 原契約における委託料総額：金2,644,000円（税抜き）</p>
+                <div class="indent-1">
+                    <p>（1）画面モック作成：金320,000円</p>
+                    <p>（2）デザイン制作：甲側で担当</p>
+                    <p>（3）システム開発：金2,324,000円</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>2. 変更後の委託料総額：金4,818,000円（税抜き）</p>
+                <div class="indent-1">
+                    <p>（1）画面モック作成：金320,000円（完了済み）</p>
+                    <p>（2）UI/UXデザイン制作：金150,000円（新規追加）</p>
+                    <p>（3）システム開発（Phase 1）：金1,668,000円</p>
+                    <p>（4）システム開発（Phase 2）：金2,680,000円</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>3. 追加委託料：金2,174,000円（税抜き）</p>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第3条（開発期間の変更）</div>
+            <div class="article-content">
+                <p>原契約に定める開発期間を以下のとおり変更する。</p>
+            </div>
+            <div class="clause">
+                <p>1. 原契約における開発期間：2025年6月25日から2025年12月15日まで（約5.5ヶ月）</p>
+            </div>
+            <div class="clause">
+                <p>2. 変更後の開発期間：2025年1月初旬から2025年7月末まで（約7ヶ月）</p>
+                <div class="indent-1">
+                    <p>（1）画面モック作成：1ヶ月（完了済み）</p>
+                    <p>（2）UI/UXデザイン制作：3週間</p>
+                    <p>（3）システム開発：5ヶ月（Phase 1及びPhase 2を含む）</p>
+                    <p>（4）受入検収期間：2ヶ月（Phase 1：1ヶ月、Phase 2：1ヶ月）</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第4条（開発フェーズの分割）</div>
+            <div class="article-content">
+                <p>本件業務のシステム開発を以下の2つのフェーズに分けて実施する。</p>
+            </div>
+            <div class="clause">
+                <p>1. Phase 1（コア機能の実装）</p>
+                <div class="indent-1">
+                    <p>（1）開始時期：2025年1月初旬</p>
+                    <p>（2）開発期間：2025年1月から2025年4月まで（3ヶ月）</p>
+                    <p>（3）受入検収期間：2025年5月末まで</p>
+                    <p>（4）検収完了予定日：2025年5月末</p>
+                    <p>（5）委託料：金1,668,000円（税抜き）</p>
+                    <p>（6）実施内容：公式サイト、CA及び求職者サイト、Zキャリア、求人ボックス等のコア機能実装並びにシステム全体の基本アーキテクチャ構築</p>
+                    <p>（7）本番公開：Phase 1の検収完了後、エンドユーザー向けの本番公開を開始する予定とする。</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>2. Phase 2（拡張機能の実装）</p>
+                <div class="indent-1">
+                    <p>（1）開始時期：2025年4月初旬（Phase 1の基本アーキテクチャ確定後、前倒しで開始）</p>
+                    <p>（2）開発期間：2025年4月から2025年6月まで（3ヶ月）</p>
+                    <p>（3）受入検収期間：2025年7月（1ヶ月）</p>
+                    <p>（4）検収完了予定日：2025年7月末</p>
+                    <p>（5）委託料：金2,680,000円（税抜き）</p>
+                    <p>（6）実施内容：管理者機能、Google Jobs、engage、Indeed、SA用機能等の拡張機能及び高度な機能の追加実装、並びに全体の仕上げ</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>3. Phase 1とPhase 2は、技術的な依存関係に応じて一部並行して開発を進めることができるものとする。</p>
+            </div>
+            <div class="clause">
+                <p>4. 各フェーズの詳細仕様については、別途双方で協議の上、決定するものとする。</p>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第5条（支払条件の変更）</div>
+            <div class="article-content">
+                <p>原契約第3条に定める支払条件を以下のとおり変更する。</p>
+            </div>
+            <div class="clause">
+                <p>1. 画面モック作成：金320,000円</p>
+                <div class="indent-1">
+                    <p>支払済み（着手時50%、検収後50%の分割支払いにて完了）</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>2. UI/UXデザイン制作：金150,000円</p>
+                <div class="indent-1">
+                    <p>着手時支払い：金75,000円（50%）</p>
+                    <p>検収後支払い：金75,000円（50%）</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>3. Phase 1システム開発：金1,668,000円</p>
+                <div class="indent-1">
+                    <p>着手時支払い：金834,000円（50%）</p>
+                    <p>検収後支払い：金834,000円（50%）</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>4. Phase 2システム開発：金2,680,000円</p>
+                <div class="indent-1">
+                    <p>着手時支払い：金1,340,000円（50%）</p>
+                    <p>検収後支払い：金1,340,000円（50%）</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>5. 各フェーズの着手時支払いは、当該フェーズの開発開始前に行うものとし、検収後支払いは、甲による検収完了確認後、乙からの請求書受領後30日以内に行うものとする。</p>
+            </div>
+            <div class="clause">
+                <p>6. 支払方法及び振込先は、原契約に定めるとおりとする。</p>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第6条（追加機能の概要）</div>
+            <div class="article-content">
+                <p>本変更により追加される主な機能は以下のとおりである。詳細な機能仕様については、2025年10月6日付の見積書「MatchHubシステムの開発見積」に記載されたシステム開発の詳細機能一覧に基づくものとする。</p>
+            </div>
+            <div class="clause">
+                <p>1. 管理者機能の拡張</p>
+                <div class="indent-1">
+                    <p>報酬・支払管理、Finance Hub連携、Zキャリア自動取得設定及びRPA機能、Google for Jobs設定及び連携、求人ボックス設定及び連携、Indeed及びengage連携、求人リフレッシュルール設定、応募者分類用質問管理及びスコアリング機能、CA管理、求人管理、候補者管理、応募管理、システムアカウント管理、報酬率設定等</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>2. CA（キャリアアドバイザー）機能</p>
+                <div class="indent-1">
+                    <p>ログイン及びアカウント登録、ダッシュボード、担当候補者管理、AI求人提案機能、手動求人推薦、面接設定、Google Calendar連携、報酬管理及び集計、候補者とのメッセージ機能、求人検索及び詳細表示、各種設定等</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>3. SA（サポートアドバイザー）機能</p>
+                <div class="indent-1">
+                    <p>要支援候補者管理、CA機能に準じた各種機能</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>4. MatchHub公式サイト</p>
+                <div class="indent-1">
+                    <p>トップページ（Hero、Trust Strip、サービス説明、求人検索CTA、事例紹介、ブログ表示等）、求人一覧及び詳細ページ、応募フォーム（ウィザード形式）、応募者マイページ、紹介リワード機能、AI職務経歴書生成及びPDF出力、メッセージ機能、法人向けサービスページ、事例紹介ページ、会社概要、お問い合わせフォーム、コラム（Strapi CMS連携）、プライバシーポリシー、利用規約、手数料実績公開ページ（職業安定法対応）、SEO対策（サイトマップ自動生成、構造化データ）、レスポンシブ対応等</p>
+                </div>
+            </div>
+            <div class="clause">
+                <p>5. 外部システム連携</p>
+                <div class="indent-1">
+                    <p>ZキャリアRPA自動取得、Google for Jobs XMLフィード連携、求人ボックスXMLフィード連携、Indeed XMLフィード連携、engage RPA連携、Finance Hub API連携、Google Calendar API連携等</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第7条（検収及び検査）</div>
+            <div class="article-content">
+                <p>各フェーズの検収については、原契約第18条の規定に準じて実施するものとし、各フェーズごとに個別に検収を行うものとする。甲は、乙から成果物の納入を受けた日から30日以内に検査を行うことを基本とする。</p>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第8条（契約不適合及びバグ対応）</div>
+            <div class="article-content">
+                <p>各フェーズの成果物に関する契約不適合責任及びバグ対応については、原契約第9条の規定を適用するものとし、各フェーズの検収完了日から6ヶ月間、乙は無償で修正対応を行うものとする。</p>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第9条（原契約の効力）</div>
+            <div class="article-content">
+                <p>本覚書に定めのない事項については、原契約の定めに従うものとする。原契約の条項と本覚書の内容が矛盾抵触する場合は、本覚書の内容が優先して適用されるものとする。原契約に定める秘密保持、知的財産権、損害賠償、反社会的勢力の排除、準拠法、合意管轄等の条項は、本覚書においても引き続き有効に適用されるものとする。</p>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第10条（覚書の有効期間）</div>
+            <div class="article-content">
+                <p>本覚書の有効期間は、本覚書締結日から、Phase 2の検収完了日までとする。ただし、原契約第9条、第10条、第15条、第16条、第21条、第22条、第23条及び第24条に定める義務は、本覚書終了後も引き続き有効に存続するものとする。</p>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第11条（覚書の成立）</div>
+            <div class="article-content">
+                <p>本覚書は、甲乙両者が署名又は記名押印（電子的な署名又は押印を含む）した文書をPDF形式にて電子メールで相互に送受信すること、または、署名若しくは記名押印に代わる電磁的処理を施すことによって締結するものとする。甲及び乙は、電磁的記録（電子データ）を本覚書の原本とすることに同意し、それを各自保存するものとする。</p>
+            </div>
+        </div>
+        
+        <div class="closing">
+            <p>本覚書の締結を証するため、本書2通を作成し、甲乙記名押印の上、各自1通を保有する。</p>
+        </div>
+        
+        <div style="margin-top: 50px; text-align: center;">
+            <p>2025年1月　　日</p>
+        </div>
+        
+        <div class="signature-section">
+            <div class="signature-block">
+                <p>委託者（甲）</p>
+                <p class="indent-1">住所　　東京都渋谷区神宮前1-19-13 ドミシール平野303</p>
+                <p class="indent-1">会社名　MediaBirth株式会社</p>
+                <p class="indent-1">役職名　代表取締役</p>
+                <p class="indent-1">氏名　　神原勝彦　　　　　　　　　　　㊞</p>
+            </div>
+            
+            <div class="signature-block" style="margin-top: 40px;">
+                <p>受託者（乙）</p>
+                <p class="indent-1">住所　　3th Audi Bld, 8 Pham Hung Str,</p>
+                <p class="indent-1">　　　　Me Tri Ward, Nam Tu Liem Dist,</p>
+                <p class="indent-1">　　　　Ha Noi City, Viet Nam</p>
+                <p class="indent-1">会社名　AMCOLAB TECHNOLOGY COMPANY LIMITED</p>
+                <p class="indent-1">役職名　代表取締役</p>
+                <p class="indent-1">氏名　　NGUYEN THI QUY　　　　　　　㊞</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 50px; page-break-before: always;">
+            <p style="text-align: center; font-weight: bold; margin-bottom: 20px;">以上</p>
+        </div>
+    </div>
+</body>
+</html>
