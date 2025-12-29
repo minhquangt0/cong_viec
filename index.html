@@ -7,7 +7,7 @@
     <style>
         @page {
             size: A4;
-            margin: 25mm 20mm;
+            margin: 20mm 18mm;
         }
         
         * {
@@ -18,46 +18,41 @@
         
         body {
             font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'MS Gothic', sans-serif;
-            font-size: 10.5pt;
-            line-height: 1.8;
+            font-size: 10pt;
+            line-height: 1.7;
             color: #000;
             background: #fff;
-            padding: 20mm;
+            padding: 20mm 18mm;
         }
         
         .container {
-            max-width: 170mm;
+            max-width: 174mm;
             margin: 0 auto;
         }
         
         .title {
             text-align: center;
-            font-size: 16pt;
+            font-size: 15pt;
             font-weight: bold;
-            margin-bottom: 30px;
-            letter-spacing: 0.1em;
+            margin-bottom: 25px;
+            letter-spacing: 0.15em;
         }
         
         .parties {
-            margin: 25px 0;
-            line-height: 2;
-        }
-        
-        .preamble {
-            text-indent: 1em;
             margin: 20px 0;
-            line-height: 2;
+            line-height: 1.9;
             text-align: justify;
         }
         
         .article {
-            margin: 20px 0;
-            line-height: 2;
+            margin: 15px 0;
+            line-height: 1.7;
         }
         
         .article-title {
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 10.5pt;
         }
         
         .article-content {
@@ -66,36 +61,8 @@
         }
         
         .clause {
-            margin: 8px 0 8px 2em;
+            margin: 6px 0 6px 2em;
             text-align: justify;
-        }
-        
-        .sub-clause {
-            margin: 5px 0 5px 1em;
-        }
-        
-        .schedule-table {
-            margin: 15px 0 15px 2em;
-            line-height: 1.8;
-        }
-        
-        .closing {
-            margin-top: 30px;
-            text-align: center;
-            line-height: 2;
-        }
-        
-        .signature-section {
-            margin-top: 50px;
-        }
-        
-        .signature-block {
-            margin: 30px 0;
-            line-height: 2;
-        }
-        
-        .signature-block p {
-            margin: 3px 0;
         }
         
         .indent-1 {
@@ -106,6 +73,25 @@
             margin-left: 2em;
         }
         
+        .closing {
+            margin-top: 25px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        .signature-section {
+            margin-top: 35px;
+        }
+        
+        .signature-block {
+            margin: 25px 0;
+            line-height: 1.8;
+        }
+        
+        .signature-block p {
+            margin: 2px 0;
+        }
+        
         @media print {
             body {
                 padding: 0;
@@ -114,14 +100,16 @@
             .article {
                 page-break-inside: avoid;
             }
+            
+            .signature-section {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="title">
-            契約変更覚書
-        </div>
+        <div class="title">契約変更覚書</div>
         
         <div class="parties">
             <p>MediaBirth株式会社（以下「甲」という。）とAMCOLAB TECHNOLOGY COMPANY LIMITED（以下「乙」という。）は、2025年6月23日付で締結した「MatchHub+ARMSシステムの開発業務委託契約書」（以下「原契約」という。）について、開発要件の追加及び仕様変更に伴い、以下のとおり契約内容の変更について合意し、本覚書を締結する。</p>
@@ -329,12 +317,11 @@
         </div>
         
         <div class="closing">
-            <p>本覚書の締結を証するため、本書を電磁的記録として作成し、甲乙はCloudSignを利用した電子署名をもって本覚書を締結するものとする。
-なお、本電磁的記録は、本覚書の原本と同一の効力を有するものとする。</p>
+            <p>本覚書の締結を証するため、本書を電磁的記録として作成し、甲乙はCloudSignを利用した電子署名をもって本覚書を締結するものとする。なお、本電磁的記録は、本覚書の原本と同一の効力を有するものとする。</p>
         </div>
         
-        <div style="margin-top: 50px; text-align: center;">
-            <p>2025年31月12日</p>
+        <div style="margin-top: 30px; text-align: center;">
+            <p>2025年1月12日</p>
         </div>
         
         <div class="signature-section">
@@ -346,7 +333,7 @@
                 <p class="indent-1">氏名　　神原勝彦　　　　　　　　　　　㊞</p>
             </div>
             
-            <div class="signature-block" style="margin-top: 40px;">
+            <div class="signature-block">
                 <p>受託者（乙）</p>
                 <p class="indent-1">住所　　3th Audi Bld, 8 Pham Hung Str,</p>
                 <p class="indent-1">　　　　Me Tri Ward, Nam Tu Liem Dist,</p>
@@ -357,8 +344,8 @@
             </div>
         </div>
         
-        <div style="margin-top: 50px; page-break-before: always;">
-            <p style="text-align: center; font-weight: bold; margin-bottom: 20px;">以上</p>
+        <div style="margin-top: 40px; text-align: center;">
+            <p style="font-weight: bold;">以上</p>
         </div>
     </div>
 </body>
