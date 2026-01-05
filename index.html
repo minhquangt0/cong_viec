@@ -7,7 +7,7 @@
     <style>
         @page {
             size: A4 portrait;
-            margin: 20mm 18mm;
+            margin: 15mm;
         }
         
         * {
@@ -18,8 +18,8 @@
         
         body {
             font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
-            font-size: 10.5pt;
-            line-height: 1.6;
+            font-size: 11pt;
+            line-height: 1.7;
             color: #333;
             background: #fff;
         }
@@ -27,7 +27,7 @@
         .page {
             width: 210mm;
             min-height: 297mm;
-            padding: 20mm 18mm;
+            padding: 15mm;
             margin: 0 auto;
             background: white;
             page-break-after: always;
@@ -40,78 +40,74 @@
         
         .header {
             text-align: center;
-            margin-bottom: 14px;
-            padding-bottom: 8px;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #2c5282;
         }
         
         h1 {
-            font-size: 18pt;
+            font-size: 20pt;
             font-weight: bold;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
             color: #1a365d;
         }
         
         .doc-info {
             text-align: right;
-            font-size: 9.5pt;
-            margin-bottom: 14px;
+            font-size: 10pt;
+            margin-bottom: 18px;
             color: #666;
         }
         
         .parties {
-            margin: 14px 0;
-            padding: 8px 10px;
+            margin: 18px 0;
+            padding: 10px;
             background: #f7fafc;
-            border-left: 3px solid #4299e1;
+            border-left: 4px solid #4299e1;
         }
         
         .parties p {
-            margin: 4px 0;
-            font-size: 10.5pt;
+            margin: 5px 0;
+            font-size: 11pt;
         }
         
         .preamble {
-            margin: 14px 0;
+            margin: 18px 0;
             text-indent: 1em;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         
         .article {
-            margin: 12px 0;
+            margin: 15px 0;
         }
         
         .article-title {
             font-weight: bold;
-            font-size: 11pt;
-            margin-bottom: 8px;
+            font-size: 12pt;
+            margin-bottom: 10px;
             color: #2d3748;
             border-bottom: 1px solid #cbd5e0;
-            padding-bottom: 3px;
+            padding-bottom: 4px;
         }
         
         .article-content {
             margin-left: 1em;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         
         .article-content p {
-            margin: 6px 0;
+            margin: 8px 0;
         }
         
         .clause {
-            margin: 6px 0 6px 1em;
-        }
-        
-        .clause p {
-            margin: 4px 0;
+            margin: 8px 0 8px 1em;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 10px 0;
-            font-size: 9.5pt;
+            margin: 15px 0;
+            font-size: 10pt;
         }
         
         table.comparison {
@@ -122,14 +118,14 @@
         th {
             background: #2c5282;
             color: white;
-            padding: 8px 6px;
+            padding: 10px 8px;
             text-align: left;
             font-weight: bold;
-            font-size: 10pt;
+            font-size: 11pt;
         }
         
         td {
-            padding: 8px 6px;
+            padding: 10px 8px;
             border: 1px solid #e2e8f0;
             vertical-align: top;
         }
@@ -150,62 +146,56 @@
         
         .phase-box {
             border: 2px solid #4299e1;
-            border-radius: 4px;
-            padding: 10px;
-            margin: 10px 0;
+            border-radius: 5px;
+            padding: 12px;
+            margin: 12px 0;
             background: #ebf8ff;
         }
         
         .phase-box h4 {
             color: #2c5282;
-            margin-bottom: 6px;
-            font-size: 11pt;
+            margin-bottom: 8px;
+            font-size: 12pt;
         }
         
         .phase-box ul {
             margin-left: 1.5em;
-            line-height: 1.6;
-        }
-        
-        .phase-box ul li {
-            margin: 3px 0;
+            line-height: 1.7;
         }
         
         .signature-section {
-            margin-top: 25px;
+            margin-top: 30px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 20px;
         }
         
         .signature-box {
             border: 1px solid #cbd5e0;
-            padding: 12px;
-            border-radius: 4px;
+            padding: 15px;
+            border-radius: 5px;
             background: #f7fafc;
         }
         
         .signature-box h3 {
-            font-size: 11pt;
-            margin-bottom: 8px;
+            font-size: 12pt;
+            margin-bottom: 10px;
             color: #2d3748;
             border-bottom: 1px solid #cbd5e0;
-            padding-bottom: 4px;
+            padding-bottom: 5px;
         }
         
         .signature-box p {
-            margin: 4px 0;
-            font-size: 9.5pt;
-            line-height: 1.5;
+            margin: 5px 0;
+            font-size: 10pt;
         }
         
         .note-box {
             background: #fffaf0;
-            border-left: 3px solid #ed8936;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 9.5pt;
-            line-height: 1.5;
+            border-left: 4px solid #ed8936;
+            padding: 12px;
+            margin: 15px 0;
+            font-size: 10pt;
         }
         
         .note-box strong {
@@ -234,7 +224,7 @@
     <div class="page">
         <div class="header">
             <h1>契約変更覚書</h1>
-            <p style="font-size: 10.5pt; margin-top: 6px;">（MatchHub+ARMSシステム開発業務委託契約に関する変更）</p>
+            <p style="font-size: 11pt; margin-top: 8px;">（MatchHub+ARMSシステム開発業務委託契約に関する変更）</p>
         </div>
         
         <div class="doc-info">
@@ -245,7 +235,7 @@
         <div class="parties">
             <p><strong>委託者（甲）：</strong>MediaBirth株式会社</p>
             <p style="margin-left: 2em;">代表取締役　神原勝彦</p>
-            <p style="margin-top: 6px;"><strong>受託者（乙）：</strong>AMCOLAB TECHNOLOGY COMPANY LIMITED</p>
+            <p style="margin-top: 8px;"><strong>受託者（乙）：</strong>AMCOLAB TECHNOLOGY COMPANY LIMITED</p>
             <p style="margin-left: 2em;">代表取締役　NGUYEN THI QUY</p>
         </div>
         
@@ -307,6 +297,10 @@
             </div>
         </div>
     </div>
+
+    <!-- ページ 2: 第3条、第4条 -->
+    <div class="page">
+        <div class="article">
             <div class="article-title">第3条（開発スケジュールの変更）</div>
             <div class="article-content">
                 <p>原契約における開発期間を以下のとおり変更する。</p>
@@ -354,6 +348,9 @@
         </div>
     </div>
 
+    <!-- ページ 3: 第5条、第5条の2、第5条の3 -->
+    <div class="page">
+        <div class="article">
             <div class="article-title">第5条（支払条件の変更）</div>
             <div class="article-content">
                 <p>原契約第3条の支払条件を以下のとおり変更する。</p>
@@ -362,7 +359,7 @@
                     <thead>
                         <tr>
                             <th style="width: 30%;">項目</th>
-                            <th style="width: 25%;">金額</th>
+                            <th style="width: 20%;">金額</th>
                             <th>支払時期</th>
                         </tr>
                     </thead>
@@ -370,7 +367,7 @@
                         <tr style="background: #e6fffa;">
                             <td><strong>画面モック作成</strong></td>
                             <td>320,000円</td>
-                            <td>完了済み（50%着手時・50%検収後に分割済み）</td>
+                            <td>完了済み<br>（50%着手時・50%検収後に分割済み）</td>
                         </tr>
                         <tr>
                             <td><strong>Phase 1 開発とUX/UIデザイン</strong></td>
@@ -415,13 +412,17 @@
         </div>
     </div>
 
+    <!-- ページ 4: 第6条、第7条 -->
+    <div class="page">
+        <div class="article">
+            <div class="article-title">第6条（追加機能の概要）</div>
             <div class="article-content">
                 <p>本変更により追加される主な機能は以下のとおりである。本見積および機能範囲の前提は、Figmaデザイン（2025年9月15日版）とする。</p>
                 
                 <table class="comparison">
                     <thead>
                         <tr>
-                            <th style="width: 22%;">カテゴリ</th>
+                            <th style="width: 20%;">カテゴリ</th>
                             <th>主な追加機能</th>
                         </tr>
                     </thead>
@@ -448,6 +449,7 @@
                         </tr>
                     </tbody>
                 </table>
+                
                 <p>本条は概要であり、各フェーズの範囲は別紙2の機能一覧を優先する。</p>
             </div>
         </div>
@@ -458,23 +460,23 @@
                 <p>本覚書に定めのない事項については、原契約の定めに従うものとする。本覚書と原契約の内容が矛盾する場合は、本覚書の内容が優先するものとする。</p>
             </div>
         </div>
-        
+    </div>
+
+    <!-- ページ 5: 第8条、署名欄、重要事項 -->
+    <div class="page">
         <div class="article">
             <div class="article-title">第8条（覚書の成立）</div>
             <div class="article-content">
                 <p>本覚書は、甲乙両者が署名又は記名押印（電子的な署名又は押印を含む）した文書をPDF形式にて電子メールで相互に送受信すること、または、署名若しくは記名押印に代わる電磁的処理を施すことによって締結するものとする。甲及び乙は、電磁的記録（電子データ）を本覚書の原本とすることに同意し、それを各自保存するものとする。</p>
+                <p style="margin-top: 12px;">本覚書の締結を証するため、本書を電磁的記録として作成し、甲乙はCloudSignを利用した電子署名をもって本覚書を締結するものとする。なお、本電磁的記録は、本覚書の原本と同一の効力を有するものとする。</p>
             </div>
         </div>
         
-        <div style="margin-top: 20px; text-align: center; font-size: 10.5pt;">
-            <p>本覚書の締結を証するため、本書を電磁的記録として作成し、甲乙はCloudSignを利用した電子署名をもって本覚書を締結するものとする。なお、本電磁的記録は、本覚書の原本と同一の効力を有するものとする。</p>
-        </div>
-        
-        <div style="margin-top: 25px; text-align: center; font-size: 11pt;">
+        <div style="margin-top: 40px; text-align: center; font-size: 12pt;">
             <p><strong>2026年1月07日</strong></p>
         </div>
-    </div>
-
+        
+        <div class="signature-section">
             <div class="signature-box">
                 <h3>委託者（甲）</h3>
                 <p><strong>住所：</strong>東京都渋谷区神宮前1-19-13<br>　　　　ドミシール平野303</p>
