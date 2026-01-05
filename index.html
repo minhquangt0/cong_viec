@@ -6,7 +6,7 @@
     <title>契約変更覚書 - MatchHubシステム開発</title>
     <style>
         @page {
-            size: A4;
+            size: A4 portrait;
             margin: 20mm;
         }
         
@@ -22,13 +22,20 @@
             line-height: 1.6;
             color: #333;
             background: #fff;
-            padding: 15mm;
         }
         
-        .container {
-            max-width: 210mm;
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
             margin: 0 auto;
             background: white;
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .page:last-child {
+            page-break-after: auto;
         }
         
         .header {
@@ -205,23 +212,81 @@
             color: #c05621;
         }
         
+        .appendix-page {
+            text-align: center;
+        }
+        
+        .appendix-title {
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 40px 0 30px 0;
+            color: #1a365d;
+        }
+        
+        .estimate-embed {
+            width: 100%;
+            border: 2px solid #cbd5e0;
+            border-radius: 5px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .estimate-header {
+            background: #2c5282;
+            color: white;
+            padding: 15px;
+            font-size: 12pt;
+            font-weight: bold;
+        }
+        
+        .estimate-content {
+            padding: 20px;
+            font-size: 9pt;
+        }
+        
+        .estimate-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .estimate-table th {
+            background: #4a5568;
+            color: white;
+            padding: 8px;
+            font-size: 9pt;
+        }
+        
+        .estimate-table td {
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+        }
+        
+        .estimate-total {
+            background: #edf2f7;
+            font-weight: bold;
+        }
+        
         @media print {
             body {
+                margin: 0;
                 padding: 0;
             }
             
-            .container {
-                max-width: 100%;
+            .page {
+                margin: 0;
+                page-break-after: always;
             }
             
-            .article {
-                page-break-inside: avoid;
+            .page:last-child {
+                page-break-after: auto;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- ページ 1: 表紙、前文、第1条、第2条 -->
+    <div class="page">
         <div class="header">
             <h1>契約変更覚書</h1>
             <p style="font-size: 11pt; margin-top: 5px;">（MatchHub+ARMSシステム開発業務委託契約に関する変更）</p>
@@ -296,16 +361,17 @@
                 </table>
             </div>
         </div>
-        
+    </div>
+
+    <!-- ページ 2: 第3条、第4条 -->
+    <div class="page">
         <div class="article">
             <div class="article-title">第3条（開発スケジュールの変更）</div>
             <div class="article-content">
                 <p>原契約における開発期間を以下のとおり変更する。</p>
-              1. 原契約における開発期間：2025年6月25日から2025年12月15日まで。</p>
-
-          2. 変更後の開発期間：別紙1（開発スケジュール）に定める期間とする。</p>
-
-      3. 受入検収期間は、各フェーズの成果物の納入日から起算して30日間とする。</p>
+                <p>1. 原契約における開発期間：2025年6月25日から2025年12月15日まで。</p>
+                <p>2. 変更後の開発期間：別紙1（開発スケジュール）に定める期間とする。</p>
+                <p>3. 受入検収期間は、各フェーズの成果物の納入日から起算して30日間とする。</p>
             </div>
         </div>
         
@@ -339,12 +405,16 @@
                         <li><strong>実施内容：</strong>管理者機能、Google Jobs、engage、Indeed、SA用機能等の拡張機能の追加実装、並びに全体の仕上げ</li>
                         <li><strong>内容：</strong>管理者機能、Google Jobs、engage、Indeed、SA用機能等の拡張機能及び高度な機能の追加実装、並びに全体の仕上げ</li>
                     </ul>
+                </div>
+                
+                <p>3. Phase 1とPhase 2は、技術的な依存関係に応じて一部並行して進めることができる。</p>
+                <p>4. 各フェーズの詳細仕様は、別紙2（機能一覧／仕様）に従う。</p>
+            </div>
         </div>
-    <div class="article-content">
-                  <p> 3. Phase 1とPhase 2は、技術的な依存関係に応じて一部並行して進めることができる。</p>
+    </div>
 
-                  <p> 4. 各フェーズの詳細仕様は、別紙2（機能一覧／仕様）に従う。</p>
-            </div>      
+    <!-- ページ 3: 第5条 -->
+    <div class="page">
         <div class="article">
             <div class="article-title">第5条（支払条件の変更）</div>
             <div class="article-content">
@@ -391,33 +461,34 @@
                 </div>
             </div>
         </div>
-              
-          <div class="article">
-            <div class="article-title">第5条の2 （UI/UXデザインの前提及び進め方）</div>
+        
+        <div class="article">
+            <div class="article-title">第5条の2（UI/UXデザインの前提及び進め方）</div>
             <div class="article-content">
                 <p>1. UI/UXデザインは、2025年11月に双方で確定した画面モック（別紙3：画面モック／URL・版数）を前提として実施する。</p>
-              <p>2. 乙は、甲のデザイン要望（トーン＆マナー、参考デザイン、優先順位等）をヒアリングし整理する。</p>
-              <p>3. 乙は、代表画面1画面について2案のデザイン案を提示し、甲はそのうち1案を選定する。</p>
-              <p>4. 乙は、甲が選定したデザイン案を基準として、別紙3に定める他画面のデザインを作成する。</p>
-              <p>5. 甲はデザインに対してフィードバックを行うことができ、修正ラウンドは最大3回とする。</p>
-              <div> 
-<div> 
-  
-  <div class="article">
-            <div class="article-title">第5条の3 （仕様変更・追加要望の取扱い）</div>
+                <p>2. 乙は、甲のデザイン要望（トーン＆マナー、参考デザイン、優先順位等）をヒアリングし整理する。</p>
+                <p>3. 乙は、代表画面1画面について2案のデザイン案を提示し、甲はそのうち1案を選定する。</p>
+                <p>4. 乙は、甲が選定したデザイン案を基準として、別紙3に定める他画面のデザインを作成する。</p>
+                <p>5. 甲はデザインに対してフィードバックを行うことができ、修正ラウンドは最大3回とする。</p>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第5条の3（仕様変更・追加要望の取扱い）</div>
             <div class="article-content">
                 <p>1. 文言修正、配置・余白等の外観調整など、業務フロー・画面遷移・データ項目・DB/API仕様に影響しない軽微な修正は、契約範囲内として対応する。</p>
-              <p>2.  前項に該当しない変更（新機能追加、業務要件の追加・変更、画面追加、データ項目追加、再設計・再実装を伴うもの等）は契約範囲外とし、乙は追加費用・納期影響を見積の上、甲乙協議により対応可否を決定する。</p>
-              <p>3. 追加対応は、甲の書面または電磁的記録（メール等）による承認をもって着手する。</p>
-              <div> 
-<div>             
-              
+                <p>2. 前項に該当しない変更（新機能追加、業務要件の追加・変更、画面追加、データ項目追加、再設計・再実装を伴うもの等）は契約範囲外とし、乙は追加費用・納期影響を見積の上、甲乙協議により対応可否を決定する。</p>
+                <p>3. 追加対応は、甲の書面または電磁的記録（メール等）による承認をもって着手する。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ページ 4: 第6条、第7条、第8条 -->
+    <div class="page">
         <div class="article">
             <div class="article-title">第6条（追加機能の概要）</div>
             <div class="article-content">
-                <p>本変更により追加される主な機能は以下のとおりである。本見積および機能範囲の前提は、Figmaデザイン（2025年9月15日版）とする。
-
-</p>
+                <p>本変更により追加される主な機能は以下のとおりである。本見積および機能範囲の前提は、Figmaデザイン（2025年9月15日版）とする。</p>
                 
                 <table class="comparison">
                     <thead>
@@ -465,7 +536,10 @@
                 <p>本覚書は、甲乙両者が署名又は記名押印（電子的な署名又は押印を含む）した文書をPDF形式にて電子メールで相互に送受信すること、または、署名若しくは記名押印に代わる電磁的処理を施すことによって締結するものとする。甲及び乙は、電磁的記録（電子データ）を本覚書の原本とすることに同意し、それを各自保存するものとする。</p>
             </div>
         </div>
-        
+    </div>
+
+    <!-- ページ 5: 締結文、署名欄、重要事項 -->
+    <div class="page">
         <div style="margin-top: 30px; text-align: center; font-size: 10pt;">
             <p>本覚書の締結を証するため、本書2通を作成し、甲乙記名押印の上、各自1通を保有する。</p>
         </div>
@@ -498,8 +572,8 @@
             ・Phase 1の検収完了をもって、Phase 2への移行可否を判断することができます。<br>
             ・各フェーズの詳細仕様については、別途「仕様書」または「要件定義書」を作成し、双方で合意するものとします。
         </div>
-    </div>
-</body>
-</html>
-
-
+    <div class="page appendix-page">
+        <h2 class="appendix-title">別紙1：開発見積書</h2>
+            </div>
+            
+           
