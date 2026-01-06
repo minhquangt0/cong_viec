@@ -1,121 +1,318 @@
 <!DOCTYPE html>
-<html lang="ja"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AMCOLAB Company Introduction - Home</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#20B2AA", // Light Sea Green / Teal from logo
-                        secondary: "#1A3C4D", // Dark Slate / Deep Teal for headers
-                        "background-light": "#F8FAFC", // Slate 50
-                        "background-dark": "#0F172A", // Slate 900
-                        "card-light": "#FFFFFF",
-                        "card-dark": "#1E293B",
-                        "text-light": "#334155",
-                        "text-dark": "#E2E8F0",
-                    },
-                    fontFamily: {
-                        display: ["'Noto Sans JP'", "sans-serif"],
-                        sans: ["'Inter'", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.5rem",
-                        xl: "1rem",
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    }
-                },
-            },
-        };
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-<style>
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト概要書 - LINEアプリ開発とCRM連携</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
         }
-        .bg-grid-pattern {
-            background-image: radial-gradient(#20B2AA 1px, transparent 1px);
-            background-size: 40px 40px;
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm 15mm;
+            background: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25pt;
+            padding-bottom: 15pt;
+            border-bottom: 2pt solid #2c5aa0;
+        }
+        
+        .header h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 8pt;
+        }
+        
+        .header .subtitle {
+            font-size: 11pt;
+            color: #666;
+        }
+        
+        .meta-info {
+            margin-bottom: 20pt;
+            padding: 12pt;
+            background: #f8f9fa;
+            border-left: 4pt solid #2c5aa0;
+        }
+        
+        .meta-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .meta-info td {
+            padding: 4pt 8pt;
+            font-size: 10pt;
+        }
+        
+        .meta-info td:first-child {
+            width: 100pt;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .section {
+            margin-bottom: 18pt;
+        }
+        
+        .section-title {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 10pt;
+            padding-bottom: 4pt;
+            border-bottom: 1pt solid #ddd;
+        }
+        
+        .section-content {
+            font-size: 10.5pt;
+            line-height: 1.7;
+            margin-left: 10pt;
+        }
+        
+        .subsection {
+            margin-bottom: 12pt;
+        }
+        
+        .subsection-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 6pt;
+            display: flex;
+            align-items: center;
+        }
+        
+        .subsection-title::before {
+            content: "●";
+            color: #2c5aa0;
+            margin-right: 6pt;
+            font-size: 8pt;
+        }
+        
+        ul {
+            margin-left: 20pt;
+            margin-top: 6pt;
+        }
+        
+        ul li {
+            margin-bottom: 5pt;
+            line-height: 1.6;
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4pt solid #ffc107;
+            padding: 10pt;
+            margin: 12pt 0;
+        }
+        
+        .highlight-box strong {
+            color: #856404;
+        }
+        
+        .requirements-box {
+            background: #e7f3ff;
+            border: 1pt solid #2c5aa0;
+            padding: 12pt;
+            margin: 12pt 0;
+            border-radius: 4pt;
+        }
+        
+        .requirements-box .req-title {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 8pt;
+            font-size: 11pt;
+        }
+        
+        .requirements-box ol {
+            margin-left: 20pt;
+        }
+        
+        .requirements-box li {
+            margin-bottom: 6pt;
+        }
+        
+        .footer {
+            margin-top: 30pt;
+            padding-top: 15pt;
+            border-top: 1pt solid #ddd;
+            text-align: center;
+            font-size: 9pt;
+            color: #888;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 min-h-screen flex flex-col items-center py-10 px-4 sm:px-8">
-<main class="w-full max-w-7xl bg-card-light dark:bg-card-dark shadow-2xl rounded-xl overflow-hidden relative flex flex-col h-[85vh] min-h-[600px]">
-<header class="flex justify-between items-start p-8 sm:p-12 pb-6 z-10">
-<div class="flex items-center gap-6">
-</div>
-<div class="flex flex-col items-end justify-center">
-<div class="text-sm font-bold text-secondary dark:text-white tracking-widest uppercase opacity-80">Ngày cập nhật：20225/12/01</div>
-</div>
-</header>
-<div class="flex-grow flex flex-col items-center justify-center relative px-8 sm:px-12">
-<div class="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
-<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-<div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
-<div class="z-10 flex flex-col items-center max-w-4xl w-full">
-<div class="mb-12 relative">
-
-
-</div>
-</div>
-<h1 class="text-5xl sm:text-7xl font-bold text-secondary dark:text-white tracking-tight text-center mb-6">
-<span class="text-primary">AMCOLAB</span> TECHNOLOGY
-                </h1>
-<div class="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
-<p class="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 font-light tracking-widest uppercase text-center">
-                    Amazing <span class="text-primary mx-2">•</span> Collaborate <span class="text-primary mx-2">•</span> Laboratory
-                </p>
-</div>
-</div>
-<footer class="mt-auto bg-slate-50 dark:bg-slate-900/50 px-8 sm:px-12 py-6 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 z-10">
-<div class="text-sm text-slate-400 dark:text-slate-500 font-medium">
-                © 2023 AMCOLAB TECHNOLOGY. All Rights Reserved.
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>プロジェクト概要書</h1>
+            <div class="subtitle">自社サービスの加入者向けLINEアプリの開発とCRM連携</div>
+        </div>
+        
+        <div class="meta-info">
+            <table>
+                <tr>
+                    <td>発注者名：</td>
+                    <td>長谷川 歩美 様</td>
+                </tr>
+                <tr>
+                    <td>連絡先：</td>
+                    <td>080-5916-8225</td>
+                </tr>
+                <tr>
+                    <td>プロジェクト分類：</td>
+                    <td>アプリ開発（LINE）/ CRM連携</td>
+                </tr>
+                <tr>
+                    <td>作成日：</td>
+                    <td>2026年1月6日</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">1. プロジェクト背景</div>
+            <div class="section-content">
+                <p>発注者様はケーブルテレビ事業を展開されており、現在の顧客窓口はコールセンターへの電話とホームページのみとなっています。利用者の多いLINEを新たな窓口として追加し、顧客の利便性を高めることを目的としています。</p>
+                <p style="margin-top: 8pt;">既存のLINEアカウントは不特定多数への情報配信やキャンペーン用として運用されていますが、本プロジェクトでは自社サービスの加入者（既加入者）に限定した専用窓口を新設します。</p>
             </div>
-<div class="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
-<div class="flex items-center gap-2">
-<span class="material-icons-round text-lg text-primary">language</span>
-<span>English / Japanese / Vietnamese</span>
-</div>
-<div class="h-4 w-px bg-slate-300 dark:bg-slate-700"></div>
-<div class="flex items-center gap-2 hover:text-primary transition-colors cursor-pointer">
-<span class="material-icons-round text-lg">public</span>
-<a href="https://www.amcolab.vn/">amcolab.vn</a>
-</div>
-</div>
-
-<div class="fixed bottom-6 right-6 flex gap-3 z-50">
-  <button id="btnPrev" type="button" aria-label="Previous Slide"
-    class="bg-card-light dark:bg-card-dark text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 p-3 rounded-full shadow-lg border border-slate-200 dark:border-slate-600 transition-all focus:outline-none focus:ring-2 focus:ring-primary group">
-    <span class="material-icons-round group-hover:-translate-x-1 transition-transform">arrow_back</span>
-  </button>
-
-  <button id="btnNext" type="button" aria-label="Next Slide"
-    class="bg-primary text-white hover:bg-teal-600 p-3 rounded-full shadow-lg shadow-teal-500/30 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary group">
-    <span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
-  </button>
-</div>
-
-
-<div class="fixed bottom-6 left-6 z-50">
-<button class="bg-secondary text-white p-3 rounded-full shadow-lg hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" onclick="document.documentElement.classList.toggle('dark')">
-<span class="material-icons-round">dark_mode</span>
-</button>
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('btnPrev')?.addEventListener('click', () => {
-      window.location.href = './page1.html';
-    });
-    document.getElementById('btnNext')?.addEventListener('click', () => {
-      window.location.href = './page1.html';
-    });
-  });
-</script>
-</body></html>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">2. プロジェクト目的</div>
+            <div class="section-content">
+                <ul>
+                    <li>加入者専用のLINE窓口を構築し、顧客サービスの向上を図る</li>
+                    <li>既存の顧客管理システム（Salesforce）と連携し、効率的な顧客対応を実現する</li>
+                    <li>契約内容の確認、支払い状況の照会、問い合わせ対応などをLINE上で完結させる</li>
+                    <li>対象者を制限した形での情報発信機能を実装する</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">3. 主要機能要件</div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-title">加入者向けLINEアプリの機能</div>
+                    <ul>
+                        <li><strong>契約内容の確認：</strong>現在の契約プラン、オプションサービスなどの閲覧</li>
+                        <li><strong>支払い状況の確認：</strong>請求額、支払い履歴、未払い情報などの照会</li>
+                        <li><strong>機器故障時の問い合わせ：</strong>トラブル内容の報告と対応依頼</li>
+                        <li><strong>工事予約機能：</strong>設置工事や修理工事の予約受付</li>
+                        <li><strong>対象者限定の情報発信：</strong>特定地域や条件に該当する加入者への通知機能</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Salesforce連携機能</div>
+                    <ul>
+                        <li>Salesforceの顧客データとLINEアカウントの紐付け</li>
+                        <li>個人情報の安全な取得と表示（マスキング処理を含む）</li>
+                        <li>特定顧客への情報発信機能</li>
+                        <li>問い合わせ履歴のSalesforceへの記録</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>代替案：</strong>万が一Salesforceとの連携が困難な場合は、チャットボットを用いて契約者情報を聞き取る窓口としての運用も検討されています。ただし、優先順位としてはSalesforce連携のご提案が可能な企業様を優先で検討されています。
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">4. セキュリティ要件</div>
+            <div class="section-content">
+                <p>個人情報の取り扱いに関して、以下のセキュリティ対策が必須となります：</p>
+                <ul style="margin-top: 8pt;">
+                    <li>Salesforceから個人情報を取り出す際のデータマスキング処理</li>
+                    <li>通信の暗号化（SSL/TLS）</li>
+                    <li>アクセス制御とユーザー認証の適切な実装</li>
+                    <li>個人情報保護に関する技術的な対応と説明</li>
+                </ul>
+                <p style="margin-top: 8pt;">セキュリティに関する技術的な対応と説明が可能であることが、本プロジェクトの必須条件となります。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">5. エントリー条件</div>
+            <div class="section-content">
+                <div class="requirements-box">
+                    <div class="req-title">以下の条件を満たす企業様のみエントリー可能です：</div>
+                    <ol>
+                        <li><strong>Salesforceと連携したLINEアプリの開発実績がある企業様限定</strong><br>
+                        具体的な実績を必ず「自己推薦文」と「回答欄」にご記載ください。</li>
+                        <li><strong>個人情報のマスキングなど、セキュリティに関する技術的な対応・説明が可能な企業様限定</strong></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">6. スケジュール</div>
+            <div class="section-content">
+                <ul>
+                    <li><strong>初回商談：</strong>2024年12月25日（木）以降の平日を希望<br>
+                    ※12月27日（土）～1月4日（日）は年末年始の休業のため不可</li>
+                    <li><strong>納期：</strong>明確な納期指定はありませんが、段階を踏んでできるだけ早めに進めたいとのご意向です</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">7. 予算</div>
+            <div class="section-content">
+                <p>現時点では明確な予算額は決まっておらず、まずは企業様からのご提案を受けて検討したいという段階です。実績に基づいた適切な見積もりをご提示ください。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">8. 打ち合わせ方法</div>
+            <div class="section-content">
+                <p>基本的にはWebミーティング（Zoom、Google Meet等）でのお打ち合わせを希望されています。</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>本書は発注ナビ担当者のヒアリング内容に基づき作成されたプロジェクト概要書です。</p>
+            <p>詳細な要件については、初回商談時に改めてご確認ください。</p>
+        </div>
+    </div>
+</body>
+</html>
