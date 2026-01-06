@@ -1,661 +1,478 @@
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>既婚者向け食事マッチング×心理診断Webサービスβ版開発 - プロジェクト概要書</title>
+    <title>契約変更覚書 - MatchHubシステム開発</title>
     <style>
+        @page {
+            size: A4 portrait;
+            margin: 15mm;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        @page {
-            size: A4;
-            margin: 15mm;
-        }
-
+        
         body {
-            font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
             font-size: 11pt;
-        }
-
-        .container {
+            line-height: 1.7;
+            color: #333;
+            background: #fff;
             max-width: 210mm;
             margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25mm 15mm;
-            text-align: center;
-            page-break-after: avoid;
-        }
-
-        header h1 {
-            font-size: 20pt;
-            font-weight: bold;
-            margin-bottom: 8mm;
-            line-height: 1.4;
-        }
-
-        header .subtitle {
-            font-size: 12pt;
-            opacity: 0.95;
-        }
-
-        .content {
             padding: 15mm;
         }
-
-        .section {
-            margin-bottom: 8mm;
-            page-break-inside: avoid;
+        
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c5282;
         }
-
-        .section:last-child {
-            margin-bottom: 0;
-        }
-
-        .section-title {
-            font-size: 14pt;
+        
+        h1 {
+            font-size: 20pt;
             font-weight: bold;
-            color: #667eea;
-            margin-bottom: 4mm;
-            padding-bottom: 2mm;
-            border-bottom: 2pt solid #667eea;
-            display: flex;
-            align-items: center;
-            page-break-after: avoid;
+            margin-bottom: 10px;
+            color: #1a365d;
         }
-
-        .section-title .icon {
-            margin-right: 3mm;
-            font-size: 16pt;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3mm;
-        }
-
-        .info-item {
-            background-color: #f8f9fa;
-            padding: 3mm 4mm;
-            border-radius: 2mm;
-            border-left: 1mm solid #667eea;
-            page-break-inside: avoid;
-        }
-
-        .info-label {
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 1mm;
+        
+        .doc-info {
+            text-align: right;
             font-size: 10pt;
+            margin-bottom: 18px;
+            color: #666;
         }
-
-        .info-value {
-            color: #333;
-            font-size: 10pt;
-            line-height: 1.5;
+        
+        .parties {
+            margin: 18px 0;
+            padding: 10px;
+            background: #f7fafc;
+            border-left: 4px solid #4299e1;
         }
-
-        .highlight-box {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 5mm;
-            border-radius: 3mm;
-            margin: 4mm 0;
-            page-break-inside: avoid;
-        }
-
-        .highlight-box h3 {
-            font-size: 12pt;
-            margin-bottom: 3mm;
-            font-weight: bold;
-        }
-
-        .highlight-box p {
-            margin-bottom: 2mm;
-            line-height: 1.6;
-            font-size: 10pt;
-        }
-
-        .highlight-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        .feature-list {
-            margin-top: 4mm;
-        }
-
-        .feature-item {
-            background-color: #fff;
-            padding: 4mm;
-            margin-bottom: 3mm;
-            border-radius: 2mm;
-            border: 0.5mm solid #e9ecef;
-            page-break-inside: avoid;
-        }
-
-        .feature-item h4 {
+        
+        .parties p {
+            margin: 5px 0;
             font-size: 11pt;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 2mm;
         }
-
-        .feature-item p {
-            color: #666;
-            font-size: 10pt;
-            line-height: 1.5;
+        
+        .preamble {
+            margin: 18px 0;
+            text-indent: 1em;
+            line-height: 1.7;
         }
-
-        .feature-item ul {
-            margin-top: 2mm;
-            padding-left: 5mm;
-        }
-
-        .feature-item li {
-            color: #666;
-            font-size: 9.5pt;
-            margin-bottom: 1mm;
-            line-height: 1.5;
-        }
-
-        .requirements-box {
-            background-color: #fff3cd;
-            border: 0.5mm solid #ffc107;
-            border-radius: 2mm;
-            padding: 5mm;
-            margin: 4mm 0;
+        
+        .article {
+            margin: 15px 0;
             page-break-inside: avoid;
         }
-
-        .requirements-box h3 {
-            color: #856404;
+        
+        .article-title {
+            font-weight: bold;
             font-size: 12pt;
-            margin-bottom: 3mm;
-            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2d3748;
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 4px;
         }
-
-        .requirement-item {
-            background-color: white;
-            padding: 3mm;
-            margin-bottom: 2.5mm;
-            border-radius: 2mm;
-            border-left: 1mm solid #ffc107;
+        
+        .article-content {
+            margin-left: 1em;
+            line-height: 1.7;
+        }
+        
+        .article-content p {
+            margin: 8px 0;
+        }
+        
+        .clause {
+            margin: 8px 0 8px 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
             page-break-inside: avoid;
         }
-
-        .requirement-item:last-child {
-            margin-bottom: 0;
+        
+        table.comparison {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-
-        .requirement-number {
-            display: inline-block;
-            background-color: #ffc107;
+        
+        th {
+            background: #2c5282;
             color: white;
-            width: 6mm;
-            height: 6mm;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 6mm;
-            font-weight: bold;
-            margin-right: 2mm;
-            font-size: 10pt;
-        }
-
-        .requirement-text {
-            display: inline;
-            color: #333;
-            font-size: 10pt;
-            line-height: 1.5;
-        }
-
-        .priority-badge {
-            display: inline-block;
-            background-color: #dc3545;
-            color: white;
-            padding: 1mm 2.5mm;
-            border-radius: 3mm;
-            font-size: 9pt;
-            font-weight: bold;
-            margin-left: 2mm;
-        }
-
-        .優遇-badge {
-            background-color: #28a745;
-        }
-
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4mm;
-            margin-top: 4mm;
-        }
-
-        .schedule-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 5mm;
-            border-radius: 3mm;
-            text-align: center;
-            page-break-inside: avoid;
-        }
-
-        .schedule-card h4 {
-            font-size: 10pt;
-            opacity: 0.9;
-            margin-bottom: 2mm;
-        }
-
-        .schedule-card .value {
-            font-size: 16pt;
-            font-weight: bold;
-            margin-bottom: 1mm;
-        }
-
-        .schedule-card p {
-            font-size: 9pt;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-
-        .expectations-list {
-            background-color: #e7f3ff;
-            padding: 5mm;
-            border-radius: 2mm;
-            border: 0.5mm solid #0066cc;
-            page-break-inside: avoid;
-        }
-
-        .expectations-list h3 {
-            color: #0066cc;
-            font-size: 12pt;
-            margin-bottom: 3mm;
-            font-weight: bold;
-        }
-
-        .expectations-list p {
-            color: #333;
-            margin-bottom: 2.5mm;
-            padding-left: 6mm;
-            position: relative;
-            font-size: 10pt;
-            line-height: 1.6;
-        }
-
-        .expectations-list p:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #0066cc;
+            padding: 10px 8px;
+            text-align: left;
             font-weight: bold;
             font-size: 11pt;
         }
-
-        .expectations-list p:last-child {
-            margin-bottom: 0;
+        
+        td {
+            padding: 10px 8px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
         }
-
+        
+        tr:nth-child(even) {
+            background: #f7fafc;
+        }
+        
+        .old-value {
+            color: #e53e3e;
+            text-decoration: line-through;
+        }
+        
+        .new-value {
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        .phase-box {
+            border: 2px solid #4299e1;
+            border-radius: 5px;
+            padding: 12px;
+            margin: 12px 0;
+            background: #ebf8ff;
+            page-break-inside: avoid;
+        }
+        
+        .phase-box h4 {
+            color: #2c5282;
+            margin-bottom: 8px;
+            font-size: 12pt;
+        }
+        
+        .phase-box ul {
+            margin-left: 1.5em;
+            line-height: 1.7;
+        }
+        
+        .signature-section {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .signature-box {
+            border: 1px solid #cbd5e0;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f7fafc;
+        }
+        
+        .signature-box h3 {
+            font-size: 12pt;
+            margin-bottom: 10px;
+            color: #2d3748;
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 5px;
+        }
+        
+        .signature-box p {
+            margin: 5px 0;
+            font-size: 10pt;
+        }
+        
         .note-box {
-            background-color: #f8f9fa;
-            border-left: 1mm solid #6c757d;
-            padding: 4mm;
-            margin-top: 6mm;
-            border-radius: 1mm;
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 12px;
+            margin: 15px 0;
+            font-size: 10pt;
             page-break-inside: avoid;
         }
-
-        .note-box p {
-            color: #495057;
-            font-size: 9.5pt;
-            margin-bottom: 2mm;
-            line-height: 1.5;
+        
+        .note-box strong {
+            color: #c05621;
         }
-
-        .note-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        footer {
-            background-color: #2d3748;
-            color: white;
-            padding: 8mm;
-            text-align: center;
-            page-break-before: avoid;
-        }
-
-        footer p {
-            font-size: 9.5pt;
-            opacity: 0.8;
-            line-height: 1.5;
-        }
-
+        
         @media print {
             body {
-                background-color: white;
-            }
-
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-            }
-
-            header {
-                padding: 15mm 10mm;
-            }
-
-            .content {
-                padding: 10mm;
-            }
-
-            .section {
-                page-break-inside: avoid;
-            }
-
-            .feature-item {
-                border: 0.5mm solid #e9ecef;
-            }
-
-            .schedule-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .content {
-                padding: 5mm;
-            }
-
-            header {
-                padding: 8mm 5mm;
-            }
-
-            header h1 {
-                font-size: 16pt;
-            }
-
-            .section-title {
-                font-size: 13pt;
-            }
-
-            .schedule-grid {
-                grid-template-columns: 1fr;
+                margin: 0;
+                padding: 15mm;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>既婚者向け食事マッチング×心理診断<br>Webサービスβ版開発</h1>
-            <p class="subtitle">プロジェクト概要書</p>
-        </header>
-
-        <div class="content">
-            <!-- 基本情報 -->
-            <section class="section">
-                <h2 class="section-title">
-                    <span class="icon">📋</span>
-                    基本情報
-                </h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">プロジェクト名</div>
-                        <div class="info-value">既婚者向けの食事のマッチングと心理診断のWebサービスβ版開発</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">発注者情報</div>
-                        <div class="info-value">
-                            氏名：田中 佑季<br>
-                            電話番号：090-6580-7050<br>
-                            拠点：静岡・東京
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">プロジェクト種別</div>
-                        <div class="info-value">新規事業立ち上げ（0→1フェーズ）/ スタートアップ</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">カテゴリ</div>
-                        <div class="info-value">アプリ / Webシステム</div>
-                    </div>
+    <div class="header">
+        <h1>契約変更覚書</h1>
+        <p style="font-size: 11pt; margin-top: 8px;">（MatchHub+ARMSシステム開発業務委託契約に関する変更）</p>
+    </div>
+    
+    <div class="doc-info">
+        <p>覚書締結日：2026年1月07日</p>
+        <p>原契約締結日：2025年6月23日</p>
+    </div>
+    
+    <div class="parties">
+        <p><strong>委託者（甲）：</strong>MediaBirth株式会社</p>
+        <p style="margin-left: 2em;">代表取締役　神原勝彦</p>
+        <p style="margin-top: 8px;"><strong>受託者（乙）：</strong>AMCOLAB TECHNOLOGY COMPANY LIMITED</p>
+        <p style="margin-left: 2em;">代表取締役　NGUYEN THI QUY</p>
+    </div>
+    
+    <div class="preamble">
+        <p>委託者（以下「甲」という。）と受託者（以下「乙」という。）は、2025年6月23日付で締結した「MatchHub+ARMSシステムの開発業務委託契約書」（以下「原契約」という。）について、開発要件の追加及び仕様変更に伴い、以下のとおり契約内容の変更について合意する。</p>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第1条（変更の背景）</div>
+        <div class="article-content">
+            <p>原契約の履行過程において、システムの機能拡張及び追加要件が発生したため、開発範囲、金額及びスケジュールを見直すこととなった。本覚書は、かかる変更内容を明確化し、双方の合意事項を確認するものである。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第2条（契約金額の変更）</div>
+        <div class="article-content">
+            <p>原契約における委託料を以下のとおり変更する。</p>
+            
+            <table class="comparison">
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>原契約</th>
+                        <th>変更後</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>画面モック作成</strong></td>
+                        <td>320,000円</td>
+                        <td>320,000円<br><span style="color: #38a169; font-size: 9pt;">（完了済み）</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>UI/UXデザイン制作</strong></td>
+                        <td><span class="old-value">お客様側で担当</span></td>
+                        <td><span class="new-value">150,000円（新規追加）</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>システム開発（Phase 1）</strong></td>
+                        <td rowspan="2"><span class="old-value">2,324,000円</span></td>
+                        <td><span class="new-value">1,668,000円</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>システム開発（Phase 2）</strong></td>
+                        <td><span class="new-value">2,680,000円</span></td>
+                    </tr>
+                    <tr style="background: #edf2f7; font-weight: bold;">
+                        <td><strong>合計金額（税抜）</strong></td>
+                        <td><span class="old-value">2,644,000円</span></td>
+                        <td><span class="new-value">4,818,000円</span></td>
+                    </tr>
+                    <tr style="background: #fef5e7;">
+                        <td colspan="2"><strong>差額（追加費用）</strong></td>
+                        <td><span style="color: #d97706; font-weight: bold;">+2,174,000円</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第3条（開発スケジュールの変更）</div>
+        <div class="article-content">
+            <p>原契約における開発期間を以下のとおり変更する。</p>
+            <p>1. 原契約における開発期間：2025年6月25日から2025年12月15日まで。</p>
+            <p>2. 詳細な開発スケジュールは、第4条に定めるとおりとします。</p>
+            <p>3. 受入検収期間は、各フェーズのステージング環境へ納品した時点（乙の納品完了通知時点）から起算して30日間とする。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第4条（開発フェーズの分割）</div>
+        <div class="article-content">
+            <p>システム開発を以下の2フェーズに分けて実施する。</p>
+            
+            <div class="phase-box">
+                <h4>1. Phase 1（コア機能の実装）</h4>
+                <ul>
+                    <li><strong>開発時期：</strong>別紙の見積書(システム開発)に従う</li>
+                    <li><strong>開発期間：</strong>原則として3ヶ月</li>
+                    <li><strong>受入検収期間：</strong>各フェーズのステージング環境へ納品した時点（乙の納品完了通知時点）から起算して30日間とする。</li>
+                    <li><strong>委託料：</strong>金1,818,000円（税抜き）</li>
+                    <li><strong>実施内容：</strong>公式サイト、CA及び求職者サイト、Zキャリア、求人ボックス等に関する。画面設計・UI／UXデザインを含むコア機能の実装並びに基本アーキテクチャの構築</li>
+                    <li><strong>本番公開：</strong>Phase 1検収完了後に開始する。</li>
+                </ul>
+                <div class="note-box">
+                    <strong>※注記：</strong>ベトナム側・日本側の年末年始の長期休暇を考慮し、2026年5月末を目処にバッファを含めて設定。5月末にPhase 1検収完了及びエンドユーザー向け本番公開開始を想定。
                 </div>
-            </section>
-
-            <!-- サービスコンセプト -->
-            <section class="section">
-                <h2 class="section-title">
-                    <span class="icon">🎯</span>
-                    サービスコンセプト
-                </h2>
-                
-                <div class="highlight-box">
-                    <h3>ターゲット層</h3>
-                    <p>既婚者（主に30〜50代）</p>
-                </div>
-
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">サービスの目的</div>
-                        <div class="info-value">
-                            ・恋愛目的ではなく、性格・パーソナリティが合う友人作りの場を提供<br>
-                            ・「大人の友達・癒やし・第二の居場所（サードプレイス）」の提供<br>
-                            ・異性・同性を問わないマッチング<br>
-                            ・食事を起点とした安心・安全な出会いの場
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">参考サービス</div>
-                        <div class="info-value">
-                            Dine（https://dthree.app/）の既婚者版イメージ
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 開発内容 -->
-            <section class="section">
-                <h2 class="section-title">
-                    <span class="icon">💻</span>
-                    開発内容
-                </h2>
-
-                <div class="info-item">
-                    <div class="info-label">開発範囲</div>
-                    <div class="info-value">
-                        ・Webサービスβ版（PC/スマホブラウザ対応）<br>
-                        ・要件定義〜設計〜開発〜テスト〜初期リリースまで一貫対応<br>
-                        ・将来的なネイティブアプリ化を見据えた拡張可能な設計
-                    </div>
-                </div>
-
-                <h3 style="font-size: 18px; font-weight: bold; color: #667eea; margin-top: 30px; margin-bottom: 20px;">主要機能（MVP想定）</h3>
-
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <h4>1. 会員管理機能</h4>
-                        <ul>
-                            <li>会員登録・認証（メールアドレス or SNS認証）</li>
-                            <li>プロフィール登録（ニックネーム、年齢層、性別、既婚者フラグ、自己紹介等）</li>
-                            <li>管理画面での会員管理（有料/無料、利用停止等のステータス管理）</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-item">
-                        <h4>2. 心理診断機能</h4>
-                        <ul>
-                            <li>オリジナル心理診断の作成（7タイプ程度を想定）</li>
-                            <li>診断結果に基づくタイプラベルのプロフィール付与</li>
-                            <li>マッチングロジックでの診断結果活用</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-item">
-                        <h4>3. マッチング機能</h4>
-                        <ul>
-                            <li>食事前提のマッチング（メッセージする/しないの選択可能）</li>
-                            <li>条件検索（希望エリア、曜日/時間帯、年齢層、診断タイプ等）</li>
-                            <li>相性の良い相手/グループの候補表示</li>
-                            <li>まずは1対1、将来的には少人数グループ（2対2等）も想定</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-item">
-                        <h4>4. メッセージ機能</h4>
-                        <ul>
-                            <li>マッチング相手との簡易テキストチャット</li>
-                            <li>通報・ブロック機能（最低限）</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-item">
-                        <h4>5. 飲食店・食事管理機能</h4>
-                        <ul>
-                            <li>管理画面での飲食店情報の登録・編集（店名、エリア、ジャンル、予算等）</li>
-                            <li>ユーザー側での候補店リスト選択</li>
-                            <li>予約リクエスト・ステータス管理（受付中/予約手配中/確定/終了）</li>
-                            <li>マイページでの食事予定・履歴確認</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-item">
-                        <h4>6. 課金機能（β版）</h4>
-                        <ul>
-                            <li>本番想定：男性のみ月額6,500円</li>
-                            <li>β版：Stripe等を使用したシンプルなサブスク決済、または無料利用後の有料化対応</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-item">
-                        <h4>7. セキュリティ・プライバシー</h4>
-                        <ul>
-                            <li>ログ管理、通報対応等（将来拡張前提の設計）</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- スケジュール・予算 -->
-            <section class="section">
-                <h2 class="section-title">
-                    <span class="icon">📅</span>
-                    スケジュール・予算
-                </h2>
-
-                <div class="schedule-grid">
-                    <div class="schedule-card">
-                        <h4>開発期間</h4>
-                        <div class="value">3〜4ヶ月</div>
-                        <p style="font-size: 13px; opacity: 0.9;">要件定義〜β版リリースまで</p>
-                    </div>
-                    <div class="schedule-card">
-                        <h4>予算</h4>
-                        <div class="value">応相談</div>
-                        <p style="font-size: 13px; opacity: 0.9;">提示要件に基づくお見積もり提案</p>
-                    </div>
-                    <div class="schedule-card">
-                        <h4>初回打ち合わせ</h4>
-                        <div class="value">1月4日以降</div>
-                        <p style="font-size: 13px; opacity: 0.9;">Webミーティング基本<br>近場の場合は対面も可</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 応募条件 -->
-            <section class="section">
-                <h2 class="section-title">
-                    <span class="icon">🔍</span>
-                    応募条件（エントリー条件）
-                </h2>
-
-                <div class="requirements-box">
-                    <h3>必須条件および優遇条件</h3>
-                    
-                    <div class="requirement-item">
-                        <span class="requirement-number">1</span>
-                        <span class="requirement-text">
-                            <strong>恋愛系マッチングシステムの開発実績</strong>
-                            <span class="priority-badge">必須</span><br>
-                            ※実績を回答欄および自己推薦文に必ず記載すること
-                        </span>
-                    </div>
-
-                    <div class="requirement-item">
-                        <span class="requirement-number">2</span>
-                        <span class="requirement-text">
-                            <strong>要件定義・UX設計からの伴走経験</strong>
-                            <span class="priority-badge">必須</span><br>
-                            ※これまでの実績を回答欄および自己推薦文に必ず記載すること
-                        </span>
-                    </div>
-
-                    <div class="requirement-item">
-                        <span class="requirement-number">3</span>
-                        <span class="requirement-text">
-                            <strong>スタートアップ・新規事業（0→1フェーズ）支援実績</strong>
-                            <span class="priority-badge">必須</span><br>
-                            ※これまでの実績を回答欄および自己推薦文に必ず記載すること
-                        </span>
-                    </div>
-
-                    <div class="requirement-item">
-                        <span class="requirement-number">4</span>
-                        <span class="requirement-text">
-                            <strong>心理診断機能の作成実績・強み</strong>
-                            <span class="priority-badge 優遇-badge">優遇</span><br>
-                            ※診断ロジック・アルゴリズム作成経験がある場合、実績を記載
-                        </span>
-                    </div>
-
-                    <div class="requirement-item">
-                        <span class="requirement-number">5</span>
-                        <span class="requirement-text">
-                            <strong>迅速なレスポンス対応が可能</strong>
-                            <span class="priority-badge">必須</span>
-                        </span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 発注者の希望・期待 -->
-            <section class="section">
-                <h2 class="section-title">
-                    <span class="icon">💡</span>
-                    発注者の希望・期待
-                </h2>
-
-                <div class="expectations-list">
-                    <h3>プロジェクト推進における期待事項</h3>
-                    <p>仕様や機能は暫定イメージのため、知見のある開発会社と相談しながら要件定義を固めたい</p>
-                    <p>UI/UXを含めたプロ目線での提案を期待</p>
-                    <p>機能の優先順位付けや現実的な落としどころについて、プロジェクト進行中も相談しながら進めたい</p>
-                    <p>将来の機能追加、本番リリース、アプリ化を見据えた拡張しやすい構成を希望</p>
-                    <p>オリジナル心理診断の作成も巻き取ってもらえると尚良い</p>
-                </div>
-            </section>
-
-            <!-- 備考 -->
-            <div class="note-box">
-                <p><strong>備考：</strong>本案件は過去案件（No. 202512240022）の再募集案件です。</p>
-                <p><strong>応募条件の変更：</strong>「恋愛系のマッチングシステム開発実績がある企業様限定」に変更されました。</p>
+            </div>
+            
+            <div class="phase-box">
+                <h4>2. Phase 2（拡張機能の実装）</h4>
+                <ul>
+                    <li><strong>開始時期：</strong>別紙の見積書(システム開発)に従う</li>
+                    <li><strong>開発期間：</strong>Phase 1の検収結果を踏まえ、甲乙協議の上、定めるものとする。</li>
+                    <li><strong>受入検収期間：</strong>各フェーズのステージング環境へ納品した時点（乙の納品完了通知時点）から起算して30日間とする。</li>
+                    <li><strong>委託料：</strong>金2,680,000円（税抜き）</li>
+                    <li><strong>検収完了予定：</strong>2026年7月末頃を目処とする。</li>
+                    <li><strong>実施内容：</strong>管理者機能、Google Jobs、engage、Indeed、SA用機能等の拡張機能の追加実装、並びに全体の仕上げ</li>
+                </ul>
+            </div>
+            
+            <p>3. Phase 1とPhase 2は、技術的な依存関係に応じて一部並行して進めることができる。</p>
+            <p>4. 各フェーズの詳細仕様は、 別紙の見積書(システム開発)に従う。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第5条（支払条件の変更）</div>
+        <div class="article-content">
+            <p>原契約第3条の支払条件を以下のとおり変更する。</p>
+            
+            <table class="comparison">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">項目</th>
+                        <th style="width: 20%;">金額</th>
+                        <th>支払時期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #e6fffa;">
+                        <td><strong>画面モック作成</strong></td>
+                        <td>320,000円</td>
+                        <td>完了済み<br>（50%着手時・50%検収後に分割済み）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 1 開発とUX/UIデザイン</strong></td>
+                        <td>1,818,000円</td>
+                        <td>着手時：984,000円（50%開発+デザイン料）<br>検収後：834,000円（50%）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 2 開発</strong></td>
+                        <td>2,680,000円</td>
+                        <td>着手時：1,340,000円（50%）<br>検収後：1,340,000円（50%）</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="clause">
+                <p>1. 各フェーズの着手時支払いは、当該フェーズの開発開始前に行うものとする。</p>
+                <p>2. 支払方法及び振込先は原契約に定めるとおりとする。</p>
             </div>
         </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第5条の2（UI/UXデザインの前提及び進め方）</div>
+        <div class="article-content">
+              <p>1. UI/UXデザインは、2025年9月に双方で確定した画面モックを前提として実施する。</p>
+              <p>2. 乙は、甲のデザイン要望（トーン＆マナー、参考デザイン、優先順位等）をヒアリングし整理する。</p>
+              <p>3. 乙は、代表画面1画面について2案のデザイン案を提示し、甲はそのうち1案を選定する。</p>
+              <p>4. 乙は、甲が選定したデザイン案を基準として、別紙3に定める他画面のデザインを作成する。</p>
+              <p>5. 甲はデザインに対してフィードバックを行うことができ、修正ラウンドは最大3回とする。</p>
 
-        <footer>
-            <p>既婚者向け食事マッチング×心理診断Webサービスβ版開発 プロジェクト概要書</p>
-            <p style="margin-top: 10px;">発行日：2025年1月</p>
-        </footer>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第5条の3（仕様変更・追加要望の取扱い）</div>
+        <div class="article-content">
+             <p>1. 文言修正、配置・余白等の外観調整など、業務フロー・画面遷移・データ項目・DB/API仕様に影響しない軽微な修正は、契約範囲内として対応する。</p>
+            <p>2. 前項に該当しない変更（新機能追加、業務要件の追加・変更、画面追加、データ項目追加、再設計・再実装を伴うもの等）は契約範囲外とし、乙は追加費用・納期影響を見積の上、甲乙協議により対応可否を決定する。</p>
+            <p>3. 追加対応は、甲の書面または電磁的記録（メール等）による承認をもって着手する。</p>
+            <p>4. 本システムは、Zキャリアおよび各種求人媒体／外部Webサイト（以下「外部サービス等」という）に依存する機能（データ連携、求人取得、情報参照等）を含む。外部サービス等の仕様変更、画面構造変更、認証方式・利用規約の変更、アクセス制限（ブロック／レート制限／CAPTCHA等）、提供停止、機能制限、または非対応等により、乙（AMCOLAB）が当初想定した方法での取得・連携が困難または不可能となった場合、乙は速やかに甲へ報告し、代替手段（方式変更、対象範囲変更、運用回避策等）を甲乙協議の上で決定する。前項の事由により追加対応（調査、設計変更、実装変更、再実装、検証追加等）が必要となる場合、当該対応は原則として契約範囲外（追加開発）とし、乙は追加工数・費用およびスケジュール影響を見積の上、甲の承認を得て対応する。なお、外部サービス等は乙の管理外であるため、外部サービス等の変更・制約に起因する影響について、乙は責任を負わないものとする（ただし、乙の実装不備に起因する場合を除く）。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第6条（追加機能の概要）</div>
+        <div class="article-content">
+            <p>本変更により追加される主な機能は以下のとおりである。本見積および機能範囲の前提は、Figmaデザイン（2025年9月）とする。</p>
+            
+            <table class="comparison">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">カテゴリ</th>
+                        <th>主な追加機能</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>管理者機能</strong></td>
+                        <td>報酬・支払管理、Finance Hub連携、Z キャリアRPA設定、Google for Jobs設定、求人ボックス設定、Indeed・engage連携、質問管理、CA管理、求人管理、候補者管理、応募管理、アカウント管理、報酬率設定</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CA機能</strong></td>
+                        <td>ダッシュボード、候補者管理、推薦機能、面接設定、Google Calendar連携、報酬管理、メッセージ機能、求人管理、各種設定</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SA機能</strong></td>
+                        <td>要支援候補者管理、CA機能と同様の機能</td>
+                    </tr>
+                    <tr>
+                        <td><strong>公式サイト</strong></td>
+                        <td>トップページ、求人一覧・詳細、応募フォーム、応募者マイページ、職務経歴書AI生成、メッセージ画面、法人向けサービス、事例紹介、コラム、各種法定ページ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>外部連携</strong></td>
+                        <td>Z キャリアRPA、Google for Jobs、求人ボックス、Indeed、engage、Finance Hub、Google Calendar API</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>本条は概要であり、各フェーズの範囲は別紙の見積書(システム開発)を優先する。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第7条（原契約の効力）</div>
+        <div class="article-content">
+            <p>本覚書に定めのない事項については、原契約の定めに従うものとする。本覚書と原契約の内容が矛盾する場合は、本覚書の内容が優先するものとする。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第8条（覚書の成立）</div>
+        <div class="article-content">
+            <p>本覚書は、甲乙両者が署名又は記名押印（電子的な署名又は押印を含む）した文書をPDF形式にて電子メールで相互に送受信すること、または、署名若しくは記名押印に代わる電磁的処理を施すことによって締結するものとする。甲及び乙は、電磁的記録（電子データ）を本覚書の原本とすることに同意し、それを各自保存するものとする。</p>
+            <p style="margin-top: 12px;">本覚書の締結を証するため、本書を電磁的記録として作成し、甲乙はCloudSignを利用した電子署名をもって本覚書を締結するものとする。なお、本電磁的記録は、本覚書の原本と同一の効力を有するものとする。</p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; text-align: center; font-size: 12pt;">
+        <p><strong>2026年1月07日</strong></p>
+    </div>
+    
+    <div class="signature-section">
+        <div class="signature-box">
+            <h3>委託者（甲）</h3>
+            <p><strong>住所：</strong>東京都渋谷区神宮前1-19-13<br>　　　　ドミシール平野303</p>
+            <p><strong>会社名：</strong>MediaBirth株式会社</p>
+            <p><strong>役職名：</strong>代表取締役</p>
+            <p><strong>氏名：</strong>神原勝彦　　　　　　㊞</p>
+        </div>
+        
+        <div class="signature-box">
+            <h3>受託者（乙）</h3>
+            <p><strong>住所：</strong>3th Audi Bld, 8 Pham Hung Str,<br>　　　　Me Tri Ward, Nam Tu Liem Dist,<br>　　　　Ha Noi City, Viet Nam</p>
+            <p><strong>会社名：</strong>AMCOLAB TECHNOLOGY COMPANY LIMITED</p>
+            <p><strong>役職名：</strong>代表取締役</p>
+            <p><strong>氏名：</strong>NGUYEN THI QUY　　　㊞</p>
+        </div>
+    </div>
+    
+    <div class="note-box" style="margin-top: 30px;">
+        <strong>【重要事項】</strong><br>
+        ・本覚書は原契約の一部を変更するものであり、原契約の他の条項（秘密保持、知的財産権、損害賠償、準拠法等）は引き続き有効です。<br>
+        ・Phase 1の検収完了をもって、Phase 2への移行可否を判断することができます。<br>
+        ・各フェーズの詳細仕様については、別途「仕様書」または「要件定義書」を作成し、双方で合意するものとします。
     </div>
 </body>
 </html>
+
