@@ -3,423 +3,1234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>業務委託契約 変更合意書 - AIオーダーシステム開発</title>
+    <title>AIオーダーシステム開発 - Phase提案書</title>
     <style>
-        @page {
-            size: A4;
-            margin: 20mm;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
-            font-size: 11pt;
-            line-height: 1.8;
+            font-family: 'Yu Gothic', 'Meiryo', sans-serif;
+            font-size: 11px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
             color: #000;
-            background: #fff;
-            max-width: 210mm;
-            margin: 0 auto;
-            padding: 20mm;
         }
-
-        @media print {
-            body {
-                max-width: 100%;
-                padding: 0;
-            }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #333;
         }
-
-        .title {
-            text-align: center;
-            font-size: 16pt;
-            font-weight: bold;
-            margin: 20pt 0 15pt 0;
+        
+        .company-info {
+            text-align: right;
+            font-size: 11px;
+            line-height: 1.8;
         }
-
-        .subtitle {
-            text-align: center;
-            font-size: 12pt;
-            margin-bottom: 20pt;
-        }
-
-        .preamble {
-            text-align: justify;
-            margin: 20pt 0;
-        }
-
+        
         h1 {
-            font-size: 12pt;
-            font-weight: bold;
-            margin: 20pt 0 12pt 0;
-            page-break-after: avoid;
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #000;
         }
-
+        
         h2 {
-            font-size: 11pt;
-            font-weight: bold;
-            margin: 15pt 0 8pt 0;
-            page-break-after: avoid;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 30px;
         }
-
-        p {
-            margin-bottom: 12pt;
-            text-align: justify;
+        
+        .summary-box {
+            background-color: #fff;
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px solid #000;
         }
-
-        .indent-1 {
-            margin-left: 20pt;
+        
+        .summary-box h3 {
+            margin-top: 0;
+            font-size: 14px;
+            color: #000;
         }
-
-        .indent-2 {
-            margin-left: 40pt;
-        }
-
-        .bold {
-            font-weight: bold;
-        }
-
-        table {
+        
+        .phase-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15pt 0;
-            page-break-inside: avoid;
+            margin: 15px 0;
+            font-size: 10px;
         }
-
-        th, td {
-            border: 1pt solid #000;
-            padding: 6pt 8pt;
+        
+        .phase-table th, .phase-table td {
+            border: 1px solid #666;
+            padding: 6px 4px;
+            text-align: center;
+        }
+        
+        .phase-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        
+        .phase-table .category {
+            background-color: #e8f4f8;
+            font-weight: bold;
             text-align: left;
+            font-size: 11px;
         }
-
-        th {
-            background-color: #d9d9d9;
-            font-weight: bold;
-            text-align: center;
+        
+        .phase-table .left {
+            text-align: left;
+            padding-left: 8px;
         }
-
-        td.number {
+        
+        .phase-table .right {
             text-align: right;
+            padding-right: 8px;
         }
-
-        tr.total {
-            background-color: #f2f2f2;
+        
+        .total-row {
+            background-color: #fff;
             font-weight: bold;
+            border: 2px solid #000;
         }
-
-        .signature-section {
-            margin-top: 30pt;
+        
+        .notes {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
         }
-
-        .signature-date {
-            text-align: right;
-            margin-bottom: 20pt;
+        
+        .notes h3 {
+            margin-top: 0;
+            color: #e65100;
+            font-size: 14px;
         }
-
-        .signature-block {
-            margin-bottom: 30pt;
+        
+        .notes ul {
+            margin: 10px 0;
+            padding-left: 25px;
         }
-
-        .signature-title {
-            font-weight: bold;
-            margin-bottom: 6pt;
+        
+        .notes li {
+            margin: 5px 0;
+            line-height: 1.6;
         }
-
-        .signature-line {
-            margin-bottom: 6pt;
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 11px;
         }
-
-        .page-break {
-            page-break-before: always;
-        }
-
-        .appendix-title {
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #333;
+            padding: 10px;
             text-align: center;
-            font-size: 16pt;
+        }
+        
+        .comparison-table th {
+            background-color: #e0e0e0;
             font-weight: bold;
-            margin: 20pt 0 30pt 0;
         }
-
-        .appendix-subtitle {
-            text-align: center;
-            font-size: 14pt;
-            font-weight: bold;
-            margin-bottom: 30pt;
+        
+        .comparison-table .phase1-col {
+            background-color: #ffffff;
         }
-
-        .end-mark {
-            text-align: center;
-            margin-top: 30pt;
+        
+        .comparison-table .phase2-col {
+            background-color: #ffffff;
         }
-
-        ul {
-            margin: 12pt 0 12pt 20pt;
-            list-style-type: none;
-        }
-
-        ul li {
-            margin-bottom: 6pt;
-            text-indent: -1em;
-            margin-left: 1em;
-        }
-
-        ul li:before {
-            content: "・ ";
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="title">業務委託契約 変更合意書</div>
-    
-    <div class="subtitle">（AIオーダーシステム開発に関する契約内容の変更について）</div>
+    <div class="header">
+        <div>
+           <strong>株式会社tiffin</strong><br>
+          Mail: takeshi@tiffin.one<br>
+        </div>
+        <div class="company-info">
+            <strong>AMCOLAB Technology Co., Ltd</strong><br>
+            3rd Floor, Audi Building, No. 8 Pham Hung, Street, <br>
+           Yen Hoa Ward, Ha Noi City, Viet Nam<br>
+            TEL: (+84) 986 703 531<br>
+            Mail: quynt@amcolab.vn
+        </div>
+    </div>
 
-    <p class="preamble">
-        tiffin株式会社（以下「甲」という。）とAMCOLAB TECHNOLOGY Co., Ltd（以下「乙」という。）は、2025年8月15日付で締結した「システム開発業務委託契約書」（以下「原契約」という。）について、以下のとおり変更することに合意する。
-    </p>
+    <h1>AIオーダーシステ開発Phase提案書</h1>
+<p style="text-align: center;">Phase 1 (MVP) & Phase 2 提案書</p>
 
-    <h1>第1条（契約変更の目的）</h1>
-    <p>
-        本変更合意書は、原契約に定める開発業務の範囲、フェーズ構成、開発費用、納期及び支払条件等を再定義し、より実態に即した開発体制を確立することを目的とする。
-    </p>
+    <div class="summary-box">
+        <h3>📊 Phase別サマリー</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">項目</th>
+                    <th style="width: 30%;" class="phase1-col">Phase 0 (要件定義)</th>
+                    <th style="width: 30%;" class="phase1-col">Phase 1 (MVP)</th>
+                    <th style="width: 30%;" class="phase2-col">Phase 2 (拡張)</th>
+                </tr>
+            </thead>
+            <tbody>
+     
+                <tr>
+                    <td><strong>主要機能</strong></td>
+                     <td class="phase1-col left">
+                        • 要件定義 (○)<br>
+                        • 画面モック作成(○)<br>
+                        • 画面のUI/UXデザイン制作 (○)<br>
+                    </td>
+                    <td class="phase1-col left">
+                        • AI音声・テキスト注文 (○)<br>
+                        • 決済連携（Square）(○)<br>
+                        • キッチン管理システム (○)<br>
+                        • 基本管理画面（新規）(➕)<br>
+                        • Webアプリ（QR注文）(○)<br>
+                        • レコメンデーション (○)<br>
+                        • 分析ダッシュボード (○)<br>
+                        • レストラン統合管理 (➕)<br>
+                        • 注文レポート (○)
+                    </td>
+                    <td class="phase2-col left">
+                        • PayPay連携 (➕)<br>
+                        • 順番待ち管理 (➕)<br>
+                        • ホールオペレーション (➕)<br>
+                        • LINE予約・テイクアウト (➕)<br>
+                        • <strong>基本レポート機能（顧客・売上）</strong> (➕)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 11px; margin-top: 10px;">
+            <strong>記号の意味：</strong><br>
+            ○ = そのまま実装（既存仕様）<br>
+            ➕ = 今回新規開発<br>
+            ▲ = 他の機能に含まれています<br>
+            × = 今回開発しない（Phase 1/2から除外）
+        </p>
+    </div>
 
-    <h1>第2条（開発範囲の変更）</h1>
-    <p>
-        原契約第3条に定める本件開発業務の内容を、以下のとおり変更する。
-    </p>
-    
-    <p class="bold">1. 開発は以下の3つのフェーズで構成される：</p>
+    <h2>Phase 1 (MVP) - 詳細機能一覧</h2>
 
-    <h2>【Phase 0：要件定義・UI/UXデザイン】</h2>
-    <ul class="indent-1">
-        <li>要件仕様フローの作成</li>
-        <li>画面モックアップの作成</li>
-        <li>UI/UXデザイン制作</li>
-    </ul>
-
-    <h2>【Phase 1：MVPシステム開発】</h2>
-    <p class="indent-1">
-        Phase 0の成果物に基づき、1店舗での実運用が可能な基本システムを開発する。<br>
-        主要機能：
-    </p>
-    <ul class="indent-2">
-        <li>AI音声・テキスト注文機能</li>
-        <li>Square決済連携</li>
-        <li>キッチン管理システム（注文受信、調理進捗管理、優先順位表示）</li>
-        <li>基本管理画面（店舗設定、スタッフ管理、顧客管理、メニュー管理）</li>
-        <li>Webアプリ（QR注文、メニュー表示、決済連携）</li>
-        <li>レコメンデーション機能</li>
-        <li>統計・分析ダッシュボード</li>
-        <li>レストラン統合管理ボード</li>
-        <li>注文レポート機能</li>
-    </ul>
-
-    <h2>【Phase 2：拡張機能開発】</h2>
-    <p class="indent-1">
-        Phase 1の成果物を基盤とし、以下の拡張機能を開発する：
-    </p>
-    <ul class="indent-2">
-        <li>PayPay決済連携</li>
-        <li>店内順番待ち管理システム</li>
-        <li>ホールスタッフオペレーション機能</li>
-        <li>LINE連携（予約機能）</li>
-        <li>基本レポート機能（顧客レポート、売上レポート）</li>
-    </ul>
-
-    <p class="bold" style="margin-top: 15pt;">
-        2.詳細な機能仕様は、別紙「AIオーダーシステム開発フェーズ提案書」に準拠する。
-    </p>
-
-    <h1>第3条（除外機能）</h1>
-    <p>
-        以下の機能は、Phase 0、Phase 1、Phase 2のいずれにも含まれず、本変更合意書の対象外とする：
-    </p>
-    <ul class="indent-1">
-        <li>音声認識システム（ASR）の独自開発</li>
-        <li>音声生成サーバ構築（TTS）</li>
-        <li>中国語・韓国語対応の自然言語処理</li>
-        <li>中国語・韓国語のUI対応（Mobile/Web）</li>
-        <li>アレルギー警告機能</li>
-        <li>クーポン・ポイント連携</li>
-        <li>フィードバックシステム</li>
-        <li>ハンズフリー操作（厨房スタッフ向け）</li>
-        <li>ガイド付き注文機能</li>
-        <li>音声ロイヤリティプログラム</li>
-        <li>BGM/環境音調整機能</li>
-        <li>時間帯連動メニュー</li>
-        <li>スタッフ間メッセージ機能</li>
-        <li>テンプレ回答機能</li>
-        <li>スタッフトレーニングモード</li>
-        <li>音声感情解析機能</li>
-        <li>カメラ学習機能</li>
-        <li>既存モバイルオーダー統合</li>
-        <li>シフト管理機能</li>
-        <li>精算・決済管理機能</li>
-        <li>テナント管理機能</li>
-        <li>店舗管理機能（複数店舗向け）</li>
-        <li>伝票出力機能（ドリンク・フード）</li>
-    </ul>
-    <p>
-        上記除外機能について、将来的に甲が開発を希望する場合は、甲乙協議の上、別途見積を作成し、新たな契約又は変更契約を締結するものとする。
-    </p>
-
-    <h1>第4条（開発費用の変更）</h1>
-    <p>
-        1. 原契約第16条第1項に定める報酬総額を、以下のとおり変更する：
-    </p>
-
-    <table>
+    <table class="phase-table">
         <thead>
             <tr>
-                <th style="width: 40%;">フェーズ</th>
-                <th style="width: 30%;">工数（時間）</th>
-                <th style="width: 30%;">費用（円）</th>
+                <th>No</th>
+                <th style="width: 10%;">ユーザー</th>
+                <th style="width: 10%;">役割</th>
+                <th style="width: 18%;">機能概要</th>
+                <th>開発<br>50%</th>
+                <th>管理<br>10%</th>
+                <th>仕様<br>分析<br>10%</th>
+                <th>設計<br>5%</th>
+                <th>検証<br>20%</th>
+                <th>受入<br>5%</th>
+                <th>合計<br>(h)</th>
+                <th>費用<br>(円)</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Phase 0 + Phase 1（MVP）</td>
-                <td class="number">3,430時間</td>
-                <td class="number">¥6,174,000</td>
+            <!-- Phase 1: Mobile/Tablet -->
+            <tr class="category">
+                <td colspan="12">【A】Mobile/Tablet</td>
             </tr>
             <tr>
-                <td>Phase 2（拡張）</td>
-                <td class="number">1,014時間</td>
-                <td class="number">¥1,826,000</td>
+                <td>2</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">自然言語処理 (NLP) ○</td>
+                <td>40</td>
+                <td>8</td>
+                <td>8</td>
+                <td>4</td>
+                <td>16</td>
+                <td>4</td>
+                <td>80</td>
+                <td class="right">160,000</td>
             </tr>
-            <tr class="total">
-                <td>合計</td>
-                <td class="number">4,444時間</td>
-                <td class="number">¥8,000,000</td>
+            <tr>
+                <td>4</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">音声で注文確認 ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">文字入力注文UI ○</td>
+                <td>30</td>
+                <td>6</td>
+                <td>6</td>
+                <td>3</td>
+                <td>12</td>
+                <td>3</td>
+                <td>60</td>
+                <td class="right">120,000</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">調理状況表示 ○</td>
+                <td>24</td>
+                <td>4.8</td>
+                <td>4.8</td>
+                <td>2.4</td>
+                <td>9.6</td>
+                <td>2.4</td>
+                <td>48</td>
+                <td class="right">96,000</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">Square API連携 ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">多言語対応 (JA/EN) ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">料理カスタマイズ機能 ○</td>
+                <td>50</td>
+                <td>10</td>
+                <td>10</td>
+                <td>5</td>
+                <td>20</td>
+                <td>5</td>
+                <td>100</td>
+                <td class="right">200,000</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Kitchen</td>
+                <td>Kitchen</td>
+                <td class="left">注文受信リアルタイム ○</td>
+                <td>30</td>
+                <td>6</td>
+                <td>6</td>
+                <td>3</td>
+                <td>12</td>
+                <td>3</td>
+                <td>60</td>
+                <td class="right">120,000</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Kitchen</td>
+                <td>Kitchen</td>
+                <td class="left">調理進捗更新 ○</td>
+                <td>24</td>
+                <td>4.8</td>
+                <td>4.8</td>
+                <td>2.4</td>
+                <td>9.6</td>
+                <td>2.4</td>
+                <td>48</td>
+                <td class="right">96,000</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Kitchen</td>
+                <td>Kitchen</td>
+                <td class="left">注文優先順位表示 ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Kitchen</td>
+                <td>Kitchen</td>
+                <td class="left">音声通知/新規注文 ○</td>
+                <td>16</td>
+                <td>3.2</td>
+                <td>3.2</td>
+                <td>1.6</td>
+                <td>6.4</td>
+                <td>1.6</td>
+                <td>32</td>
+                <td class="right">64,000</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">メニュー管理 ○</td>
+                <td>30</td>
+                <td>6</td>
+                <td>6</td>
+                <td>3</td>
+                <td>12</td>
+                <td>3</td>
+                <td>60</td>
+                <td class="right">120,000</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">テーブル管理 (Admin) ○</td>
+                <td>16</td>
+                <td>3.2</td>
+                <td>3.2</td>
+                <td>1.6</td>
+                <td>6.4</td>
+                <td>1.6</td>
+                <td>32</td>
+                <td class="right">64,000</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">注文レポート ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+
+            <!-- Admin New Development -->
+            <tr class="category">
+                <td colspan="12">【B】管理画面（新規開発）</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">店舗基本情報設定 ➕</td>
+                <td>12</td>
+                <td>2.4</td>
+                <td>2.4</td>
+                <td>1.2</td>
+                <td>4.8</td>
+                <td>1.2</td>
+                <td>24</td>
+                <td class="right">48,000</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">営業モード設定 ➕</td>
+                <td>48</td>
+                <td>9.6</td>
+                <td>9.6</td>
+                <td>4.8</td>
+                <td>19.2</td>
+                <td>4.8</td>
+                <td>96</td>
+                <td class="right">192,000</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">機能別詳細設定 ➕</td>
+                <td>164</td>
+                <td>32.8</td>
+                <td>32.8</td>
+                <td>16.4</td>
+                <td>65.6</td>
+                <td>16.4</td>
+                <td>328</td>
+                <td class="right">656,000</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">通知・メッセージ設定 ➕</td>
+                <td>24</td>
+                <td>4.8</td>
+                <td>4.8</td>
+                <td>2.4</td>
+                <td>9.6</td>
+                <td>2.4</td>
+                <td>48</td>
+                <td class="right">96,000</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">AI・自動化設定 ➕</td>
+                <td>108</td>
+                <td>21.6</td>
+                <td>21.6</td>
+                <td>10.8</td>
+                <td>43.2</td>
+                <td>10.8</td>
+                <td>216</td>
+                <td class="right">432,000</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">コース設定 ➕</td>
+                <td>24</td>
+                <td>4.8</td>
+                <td>4.8</td>
+                <td>2.4</td>
+                <td>9.6</td>
+                <td>2.4</td>
+                <td>48</td>
+                <td class="right">96,000</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">スタッフ管理 ➕</td>
+                <td>16</td>
+                <td>3.2</td>
+                <td>3.2</td>
+                <td>1.6</td>
+                <td>6.4</td>
+                <td>1.6</td>
+                <td>32</td>
+                <td class="right">64,000</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">顧客管理 ➕</td>
+                <td>34</td>
+                <td>6.8</td>
+                <td>6.8</td>
+                <td>3.4</td>
+                <td>13.6</td>
+                <td>3.4</td>
+                <td>68</td>
+                <td class="right">136,000</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>System</td>
+                <td>Core</td>
+                <td class="left">Difyバックエンド統合 ○</td>
+                <td>36</td>
+                <td>7.2</td>
+                <td>7.2</td>
+                <td>3.6</td>
+                <td>14.4</td>
+                <td>3.6</td>
+                <td>72</td>
+                <td class="right">144,000</td>
+            </tr>
+
+            <!-- Phase 2 - Web App -->
+            <tr class="category">
+                <td colspan="12">【C】Web App</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>End User</td>
+                <td>Webアプリ</td>
+                <td class="left">QR注文 ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>End User</td>
+                <td>Webアプリ</td>
+                <td class="left">メニュー表示・検索 ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>End User</td>
+                <td>Webアプリ</td>
+                <td class="left">カスタマイズ注文 ○</td>
+                <td>30</td>
+                <td>6</td>
+                <td>6</td>
+                <td>3</td>
+                <td>12</td>
+                <td>3</td>
+                <td>60</td>
+                <td class="right">120,000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>End User</td>
+                <td>Webアプリ</td>
+                <td class="left">決済連携 ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>End User</td>
+                <td>Webアプリ</td>
+                <td class="left">注文履歴・レコメンド ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>End User</td>
+                <td>Webアプリ</td>
+                <td class="left">多言語対応 (JA/EN) ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>System</td>
+                <td>Backend API</td>
+                <td class="left">Web注文API ○</td>
+                <td>15</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1.5</td>
+                <td>6</td>
+                <td>1.5</td>
+                <td>30</td>
+                <td class="right">60,000</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>System</td>
+                <td>Backend API</td>
+                <td class="left">決済API連携 ○</td>
+                <td>15</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1.5</td>
+                <td>6</td>
+                <td>1.5</td>
+                <td>30</td>
+                <td class="right">60,000</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Kitchen</td>
+                <td>Kitchen UI</td>
+                <td class="left">Web注文受信 ○</td>
+                <td>15</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1.5</td>
+                <td>6</td>
+                <td>1.5</td>
+                <td>30</td>
+                <td class="right">60,000</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>System</td>
+                <td>Realtime Sync</td>
+                <td class="left">WebSocket更新 ○</td>
+                <td>15</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1.5</td>
+                <td>6</td>
+                <td>1.5</td>
+                <td>30</td>
+                <td class="right">60,000</td>
+            </tr>
+
+            <!-- Phase 3 - Extensions -->
+            <tr class="category">
+                <td colspan="12">【D】拡張機能</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">レコメンデーション機能 ○</td>
+                <td>36</td>
+                <td>7.2</td>
+                <td>7.2</td>
+                <td>3.6</td>
+                <td>14.4</td>
+                <td>3.6</td>
+                <td>72</td>
+                <td class="right">144,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">栄養情報表示 ○</td>
+                <td>30</td>
+                <td>6</td>
+                <td>6</td>
+                <td>3</td>
+                <td>12</td>
+                <td>3</td>
+                <td>60</td>
+                <td class="right">120,000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">混雑状況連動 ○</td>
+                <td>45</td>
+                <td>9</td>
+                <td>9</td>
+                <td>4.5</td>
+                <td>18</td>
+                <td>4.5</td>
+                <td>90</td>
+                <td class="right">180,000</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">すぐに提供できるメニュー表示 ○</td>
+                <td>20</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>8</td>
+                <td>2</td>
+                <td>40</td>
+                <td class="right">80,000</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Kitchen</td>
+                <td>Kitchen</td>
+                <td class="left">調理指示表示 ○</td>
+                <td>24</td>
+                <td>4.8</td>
+                <td>4.8</td>
+                <td>2.4</td>
+                <td>9.6</td>
+                <td>2.4</td>
+                <td>48</td>
+                <td class="right">96,000</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Kitchen</td>
+                <td>Kitchen</td>
+                <td class="left">統計・分析ダッシュボード ○</td>
+                <td>36</td>
+                <td>7.2</td>
+                <td>7.2</td>
+                <td>3.6</td>
+                <td>14.4</td>
+                <td>3.6</td>
+                <td>72</td>
+                <td class="right">144,000</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Kitchen</td>
+                <td>Kitchen</td>
+                <td class="left">多端末同期 ○</td>
+                <td>24</td>
+                <td>4.8</td>
+                <td>4.8</td>
+                <td>2.4</td>
+                <td>9.6</td>
+                <td>2.4</td>
+                <td>48</td>
+                <td class="right">96,000</td>
+            </tr>
+
+            <!-- Restaurant Board -->
+            <tr class="category">
+                <td colspan="12">【E】レストランボード統合管理（新規開発）</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Admin</td>
+                <td>Restaurant board</td>
+                <td class="left">レストランボード独立 ➕</td>
+                <td>50</td>
+                <td>10</td>
+                <td>10</td>
+                <td>5</td>
+                <td>20</td>
+                <td>5</td>
+                <td>100</td>
+                <td class="right">200,000</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Staff</td>
+                <td>Restaurant board</td>
+                <td class="left">スタッフが全体を管理できるアプリ ➕</td>
+                <td>274</td>
+                <td>54.8</td>
+                <td>54.8</td>
+                <td>27.4</td>
+                <td>109.6</td>
+                <td>27.4</td>
+                <td>548</td>
+                <td class="right">1,096,000</td>
+            </tr>
+
+            <!-- Total Row -->
+            <tr class="total-row">
+                <td colspan="4"><strong>Phase 1 (MVP) 合計</strong></td>
+                <td>1,555</td>
+                <td>311</td>
+                <td>311</td>
+                <td>155.5</td>
+                <td>622</td>
+                <td>155.5</td>
+                <td><strong>3,110</strong></td>
+                <td class="right"><strong>6,222,000</strong></td>
             </tr>
         </tbody>
     </table>
 
-    <p>
-        2. 上記費用は、10％の割引を適用した後の金額である（割引前：¥8,888,000）。
-    </p>
-    <p>
-        3. 上記費用は非課税である。乙は外国法人であるため、日本国内における税務上の義務は原則として発生しない。万一、本契約に関連して日本国内で何らかの税務上の義務が発生した場合、当該税務上の義務は甲が負担するものとする。
-    </p>
+    <div class="page-break"></div>
 
-    <h1>第5条（納期の変更）</h1>
-    <p>
-        原契約第10条に定める納入期限を、以下のとおり変更する。
-    </p>
+    <h2>Phase 2 （拡張）- 詳細機能一覧</h2>
 
-    <h2>1. Phase 1（Phase 0の成果物を含む）</h2>
-    <p class="indent-1">
-        <span class="bold">開発期間：</span>12月初旬から3月末まで
-    </p>
-    <p class="indent-1">
-        <span class="bold">UAT期間：</span>3月から4月まで
-    </p>
-    <p class="indent-1" style="margin-top: 10pt;">
-        <span class="bold">備考：</span>Phase 0（モックアップ・UI/UX）は、Phase 1の開発期間内で並行して実施し、Phase 1の初期段階で完了する。詳細スケジュールは、AMCOLABが提示するプロジェクト計画書に従う。
-    </p>
+    <table class="phase-table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th style="width: 10%;">ユーザー</th>
+                <th style="width: 10%;">役割</th>
+                <th style="width: 18%;">機能概要</th>
+                <th>開発<br>50%</th>
+                <th>管理<br>10%</th>
+                <th>仕様<br>分析<br>10%</th>
+                <th>設計<br>5%</th>
+                <th>検証<br>20%</th>
+                <th>受入<br>5%</th>
+                <th>合計<br>(h)</th>
+                <th>費用<br>(円)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Multi-language Extensions -->
+            <tr class="category">
+                <td colspan="12">【A】多言語・決済拡張</td>
+            </tr>
+            
+            
+            
+            <tr>
+                <td>9</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">Paypay API連携 ➕</td>
+                <td>30</td>
+                <td>6</td>
+                <td>6</td>
+                <td>3</td>
+                <td>12</td>
+                <td>3</td>
+                <td>60</td>
+                <td class="right">120,000</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>End User</td>
+                <td>Frontend</td>
+                <td class="left">テーブル会計・レジ会計 (Mobile) ➕</td>
+                <td>16</td>
+                <td>3.2</td>
+                <td>3.2</td>
+                <td>1.6</td>
+                <td>6.4</td>
+                <td>1.6</td>
+                <td>32</td>
+                <td class="right">64,000</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>System</td>
+                <td>Backend API</td>
+                <td class="left">テーブル会計・レジ会計 (Backend) ➕</td>
+                <td>16</td>
+                <td>3.2</td>
+                <td>3.2</td>
+                <td>1.6</td>
+                <td>6.4</td>
+                <td>1.6</td>
+                <td>32</td>
+                <td class="right">64,000</td>
+            </tr>
 
-    <h2>2. Phase 2</h2>
-    <p class="indent-1">
-        <span class="bold">開始時期：</span>3月初旬（甲乙双方がPhase 1の開発結果を確認し、Phase 2開始について合意した後）
-    </p>
-    <p class="indent-1">
-        <span class="bold">開発期間：</span>3月から5月末まで
-    </p>
-    <p class="indent-1">
-        <span class="bold">UAT期間：</span>5月から6月まで
-    </p>
+            <!-- Reports (Moved from Phase 1) -->
+            <tr class="category">
+                <td colspan="12">【B】レポート機能（Phase 1から移動）</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">顧客レポート ➕</td>
+                <td>40</td>
+                <td>8</td>
+                <td>8</td>
+                <td>4</td>
+                <td>16</td>
+                <td>4</td>
+                <td>80</td>
+                <td class="right">160,000</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Admin</td>
+                <td>Admin</td>
+                <td class="left">売上レポート ➕</td>
+                <td>35</td>
+                <td>7</td>
+                <td>7</td>
+                <td>3.5</td>
+                <td>14</td>
+                <td>3.5</td>
+                <td>70</td>
+                <td class="right">140,000</td>
+            </tr>
+            
+            
 
-    <h2>3. スケジュール調整</h2>
-    <p class="indent-1">
-        甲乙双方は、上記の期間が予定であることを理解し、以下の事由により合理的な範囲で調整できることに合意する：
-    </p>
-    <ul class="indent-2">
-        <li>仕様・設計の確認状況</li>
-        <li>甲側からのUATフィードバックの進捗状況</li>
-        <li>その他の客観的事情</li>
-    </ul>
-    <p class="indent-1">
-        スケジュールに重大な変更が生じる場合は、甲乙双方が電子メール又は書面により協議の上、確認するものとする。
-    </p>
+            <!-- Shift & Billing (Moved from Phase 1) -->
+            <tr class="category">
+                <td colspan="12">【C】シフト・精算管理（Phase 1から移動）</td>
+            </tr>
+            
+            
 
-    <h1>第6条（支払条件の変更）</h1>
-    <p>
-        原契約第16条第2項に定める支払条件を、以下のとおり変更する。
-    </p>
+            <!-- Tenant Management -->
+            <tr class="category">
+                <td colspan="12">【D】テナント・店舗管理</td>
+            </tr>
+            
+            
 
-    <h2>1. Phase 0 + Phase 1（MVP）</h2>
-    <p class="indent-1">
-        Phase 0及びPhase 1を一括して管理し、合計金額は<span class="bold">¥6,174,000</span>とする。
-    </p>
-    <ul class="indent-2">
-        <li><span class="bold">支払済：¥2,982,600</span>（甲は既に当該金額を乙に支払済である）</li>
-        <li><span class="bold">検収完了後の支払：¥3,191,400</span>（Phase 1の検収完了後、甲は乙に対し当該残額を支払う）</li>
-    </ul>
+            <!-- Waiting List -->
+            <tr class="category">
+                <td colspan="12">【E】順番待ち管理</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>End User</td>
+                <td>Waitlist Tablet</td>
+                <td class="left">店内順番待ち ➕</td>
+                <td>24</td>
+                <td>4.8</td>
+                <td>4.8</td>
+                <td>2.4</td>
+                <td>9.6</td>
+                <td>2.4</td>
+                <td>48</td>
+                <td class="right">96,000</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Staff</td>
+                <td>Waitlist Display</td>
+                <td class="left">店内順番待ちを表示する画面 ➕</td>
+                <td>10</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>20</td>
+                <td class="right">40,000</td>
+            </tr>
 
-    <h2>2. Phase 2（拡張機能）</h2>
-    <p class="indent-1">
-        Phase 2の合計金額は<span class="bold">¥1,826,000</span>とする。
-    </p>
-    <ul class="indent-2">
-        <li><span class="bold">第1回支払（Phase 2着手時）：¥913,000</span>（Phase 2費用の50％）</li>
-        <li><span class="bold">第2回支払（検収完了後）：¥913,000</span>（Phase 2費用の50％）</li>
-    </ul>
+            <!-- Hall Operations -->
+            <tr class="category">
+                <td colspan="12">【F】ホールオペレーション</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Staff</td>
+                <td>Hall Staff</td>
+                <td class="left">ホールオペレーション ➕</td>
+                <td>184</td>
+                <td>36.8</td>
+                <td>36.8</td>
+                <td>18.4</td>
+                <td>73.6</td>
+                <td>18.4</td>
+                <td>368</td>
+                <td class="right">736,000</td>
+            </tr>
 
-    <h2>3. 検収及び支払期限</h2>
-    <p class="indent-1">
-        各フェーズの検収は、原契約第12条及び第13条の規定に準拠して行うものとする。
-    </p>
+            <!-- LINE Integration -->
+            <tr class="category">
+                <td colspan="12">【G】LINE連携</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>End User</td>
+                <td>顧客（LINE）</td>
+                <td class="left">顧客が予約できるLINEミニアプリ ➕</td>
+                <td>64</td>
+                <td>12.8</td>
+                <td>12.8</td>
+                <td>6.4</td>
+                <td>25.6</td>
+                <td>6.4</td>
+                <td>128</td>
+                <td class="right">256,000</td>
+            </tr>
+            
 
-    <h1>第7条（成果物の変更）</h1>
-    <p>
-        原契約別紙「成果物目録」を、本変更合意書別紙「AIオーダーシステ開発Phase提案書」記載の成果物に変更する。具体的には、各フェーズ完了時に以下の成果物を納入するものとする：
-    </p>
-    <ul class="indent-1">
-        <li>ソースコード一式</li>
-        <li>面面モック・Figmaデザイン</li>
-        <li>API仕様書</li>
-        <li>システム構成図、DB設計図、ER図</li>
-        <li>システム引き渡し資料</li>
-        <li>ステージング環境及び本番環境への移行作業</li>
-    </ul>
+            <!-- Takeout System -->
+            <tr class="category">
+                <td colspan="12">【H】テイクアウトシステム</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>End User</td>
+                <td>顧客（WEB）</td>
+                <td class="left">顧客がテイクアウトできるWEBアプリ ➕</td>
+                <td>88</td>
+                <td>17.6</td>
+                <td>17.6</td>
+                <td>8.8</td>
+                <td>35.2</td>
+                <td>8.8</td>
+                <td>176</td>
+                <td class="right">352,000</td>
+            </tr>
 
-    <h1>第8条（原契約の適用）</h1>
-    <p>
-        本変更合意書に定めのない事項については、原契約の規定を適用する。本変更合意書と原契約の内容が矛盾する場合は、本変更合意書の内容が優先するものとする。
-    </p>
+            <!-- Kitchen Extensions -->
+            <tr class="category">
+                <td colspan="12">【I】キッチン拡張</td>
+            </tr>
+            
 
-    <h1>第9条（効力発生日）</h1>
-    <p>
-    本変更合意書は、甲⼄両者が署名⼜は記名押印（電⼦的な署名⼜は押印を含む）した⽂書をPDF形式にて電
-⼦メールで相互に送受信すること、または、署名若しくは記名押印に代わる電磁的処理を施すことに
-よって締結するものとする。甲及び⼄は、電磁的記録（電⼦データ）を本変更合意書の原本とすることに同
-意し、それを各⾃保存するものとする。<br>
-本変更合意書の締結を証するため、本書を電磁的記録として作成し、甲⼄はCloudSignを利⽤した電⼦署名
-をもって本合意書を締結するものとする。なお、本電磁的記録は、本合意書の原本と同⼀の効⼒を有する
-ものとする。
+            <!-- SMS Notifications -->
+            <tr class="category">
+                <td colspan="12">【J】通知機能拡張</td>
+            </tr>
+            
+
+            <!-- Total Row -->
+            
+            <tr class="total-row">
+                <td colspan="4"><strong>Phase 2 合計</strong></td>
+                <td>507</td>
+                <td>101.4</td>
+                <td>101.4</td>
+                <td>50.7</td>
+                <td>202.8</td>
+                <td>50.7</td>
+                <td><strong>1,014</strong></td>
+                <td class="right"><strong>2,028,000</strong></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="notes">
+        <h3>🚨 除外機能（両Phase共に開発しない）</h3>
+        <p>以下の機能は、記号 × で示されており、Phase 1・Phase 2 いずれにも含まれません：</p>
+        <ul>
+            <li>音声認識システム (ASR) - 120h × - 音声入力の高度な認識</li>
+            <li>音声生成サーバ構築 (TTS) - 80h × - 音声応答機能</li>
+            <li>テーブル管理 (End User Frontend) - 48h × - 顧客側テーブル管理</li>
+            <li>アレルギー警告 - 60h × - アレルギー情報アラート</li>
+            <li>クーポン・ポイント連携 - 80h × - ポイントシステム統合</li>
+            <li>フィードバックシステム - 60h × - レビュー・評価機能</li>
+            <li>ハンズフリー操作（厨房スタッフ）- 72h × - 音声操作</li>
+            <li>ガイド付き注文 - 60h × - 注文サポート機能</li>
+            <li>音声ロイヤリティプログラム - 48h × - 音声ベースロイヤルティ</li>
+            <li>BGM/環境音調整 - 40h × - 店舗BGM管理</li>
+            <li>時間帯連動メニュー - 48h × - 時間別メニュー</li>
+            <li>スタッフ間メッセージ - 60h × - 内部チャット</li>
+            <li>テンプレ回答機能 - 40h × - 定型応答</li>
+            <li>店舗データ分析 - 60h × - 高度な分析</li>
+            <li>スタッフトレーニングモード - 80h × - トレーニング機能</li>
+            <li>音声感情解析 - 48h × - AI感情認識</li>
+            <li>カメラ学習機能 - 48h × - 画像AI推奨</li>
+            <li>既存モバイルオーダー統合 - 72h × - 外部システム統合</li>
+            <li>自然言語処理 (NLP) / (CN/KR) - 80h × - 中国語・韓国語向けの自然言語処理拡張</li>
+            <li>多言語対応 (CN/KR) - Mobile - 40h × - モバイルアプリの中国語・韓国語UI対応</li>
+            <li>多言語対応 (CN/KR) - Web - 40h × - Webアプリの中国語・韓国語UI対応</li>
+            <li>シフト管理 - 132h × - 管理者によるシフト一覧・調整機能</li>
+            <li>精算・決済管理 - 72h × - 売上・入金・精算状況の一元管理</li>
+            <li>テナント管理 - 68h × - 複数テナントの契約・利用状況管理</li>
+            <li>店舗管理 - 36h × - 複数店舗の基本情報・稼働状況管理</li>
+            <li>伝票（ドリンク・フード）- 32h × - キッチン向けドリンク・フード伝票出力</li>
+        </ul>
+        <p><strong>除外機能合計：</strong>1,624時間（¥3,248,000）</p>
+    </div>
+
+    <div class="notes" style="background-color: #e8f5e9; border-left: 4px solid #4caf50;">
+        <h3>✅ 含まれる機能（▲マーク）</h3>
+        <p>以下の機能は ▲ マークで示されており、他の機能に含まれています：</p>
+        <ul>
+            <li>テイクアウト対応 - 60h ▲ - 「顧客がテイクアウトできるWEBアプリ」に含む</li>
+            <li>予約連動システム - 80h ▲ - 「顧客が予約できるLINEミニアプリ」に含む</li>
+            <li>季節メニュー管理 - 48h ▲ - 「メニュー管理」に含む</li>
+            <li>在庫連動（品切自動非表示）- 80h ▲ - 「メニュー管理」に含む</li>
+        </ul>
+    </div>
+
+    <div class="summary-box" style="margin-top: 30px;">
+        <h3>💰 費用サマリー</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 8px; width: 30%;"><strong>Phase 0 (モック作成及びUI/UXデザイン)</strong></td>
+                <td style="padding: 8px; text-align: right;">¥640,000（非課税）</td>
+                <td style="padding: 8px; text-align: right;">¥576,000（割引後）</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 8px; width: 30%;"><strong>Phase 1 (MVP)</strong></td>
+                <td style="padding: 8px; text-align: right;">¥6,220,000（非課税）</td>
+                <td style="padding: 8px; text-align: right;">¥5,598,000（割引後）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 8px;"><strong>Phase 2</strong></td>
+                <td style="padding: 8px; text-align: right;">¥2,028,000（非課税）</td>
+                <td style="padding: 8px; text-align: right;">¥1,826,000（割引後）</td>
+            </tr>
+            <tr style="border-top: 2px solid #000; background-color: #f5f5f5;">
+                <td style="padding: 8px;"><strong>合計（Phase 0 + 1 + 2）</strong></td>
+                <td style="padding: 8px; text-align: right;"><strong>¥8,888,000 （非課税）</strong></td>
+                <td style="padding: 8px; text-align: right;"><strong>¥8,000,000（割引後）</strong></td>
+            </tr>
+
+        </table>
+        <p style="margin-top: 15px; font-size: 11px;">
+            <strong>※ 支払い条件（推奨）：</strong><br>
+            • Phase 0+1: 着手金50%（¥2,982,600）→ 納品時50%（¥3,191,400）<br>
+            • Phase 2: 着手金50%（¥913,000）→ 納品時50%（¥913,000）<br>
+            • 各Phase完了後、次Phaseの開始可否を判断可能
         </p>
+    </div>
 
-        <div class="signature-date">
-            2025年01月12日
-        </div>
+    <div class="notes">
+        <h3>📌 Phase分割の重要ポイント</h3>
+        <ul>
+            <li><strong>Phase 1 (MVP) - 3,110時間：</strong>
+                <ul style="margin-top: 5px;">
+                    <li>✅ 基本注文システム（NLP、音声確認、テキスト入力）</li>
+                    <li>✅ Square決済連携</li>
+                    <li>✅ キッチン管理（リアルタイム受信、進捗管理、優先順位）</li>
+                    <li>✅ 基本管理画面（店舗設定、スタッフ管理、顧客管理）</li>
+                    <li>✅ 注文レポートのみ（他レポートはPhase 2へ）</li>
+                    <li>✅ Webアプリ（QR注文、メニュー表示、決済）</li>
+                    <li>✅ レコメンデーション・分析機能</li>
+                    <li>✅ レストラン統合管理ボード（新規）</li>
+                    <li>✅ Dify統合</li>
+                </ul>
+            </li>
+            <li><strong>Phase 2 - 1,014時間：</strong>
+                <ul style="margin-top: 5px;">
+                    <li>🔸 PayPay決済連携</li>
+                    <li>🔸 テーブル会計・レジ会計</li>
+                    <li>🔸 <strong>基本レポート（顧客・売上）</strong></li>
+                    <li>🔸 順番待ち管理システム</li>
+                    <li>🔸 ホールスタッフオペレーション</li>
+                    <li>🔸 LINE連携（予約）</li>
+                    <li>🔸 テイクアウトWebアプリ</li>
+                </ul>
+            </li>
+            <li><strong>Phase 1の特徴：</strong>単一店舗での基本運用が可能、レストラン全体管理機能を含む</li>
+            <li><strong>Phase 2の特徴：</strong>顧客・売上レポート強化、順番待ち管理、ホールオペレーション、LINE予約・テイクアウト、外部決済連携の拡張</li>
+        </ul>
+    </div>
 
-        <div class="signature-block">
-            <div class="signature-title">甲（委託者）</div>
-            <div class="signature-line">新潟県燕市小高6245-1</div>
-            <div class="signature-line">tiffin株式会社</div>
-            <div class="signature-line">代表取締役　加藤健資　　　　　㊞</div>
-        </div>
-
-        <div class="signature-block">
-            <div class="signature-title">乙（受託者）</div>
-            <div class="signature-line">3rd Floor, Audi Building, No. 8 Pham Hung Street,</div>
-            <div class="signature-line">Yen Hoa Ward, Hanoi City, Vietnam</div>
-            <div class="signature-line">AMCOLAB TECHNOLOGY Co., Ltd</div>
-            <div class="signature-line">代表取締役　NGUYEN THI QUY　　　　　㊞</div>
-        </div>
+    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ccc; text-align: center; font-size: 11px; color: #666;">
+        <p>本提案書の有効期限は2026年12月31日までとなります。</p>
+        <p>ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+        <p style="margin-top: 15px;"><strong>AMCOLAB Technology Co., Ltd</strong><br>Mail: quynt@amcolab.vn | TEL: (+84) 986 703 531</p>
     </div>
 </body>
 </html>
