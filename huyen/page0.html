@@ -3,316 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プロジェクト概要書 - LINEアプリ開発とCRM連携</title>
+    <title>覚書 - 株式会社スタディオティガ</title>
     <style>
         @page {
             size: A4;
-            margin: 20mm 15mm;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            margin: 20mm;
         }
         
         body {
-            font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
+            font-family: "MS Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
             font-size: 10.5pt;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-        }
-        
-        .container {
-            width: 210mm;
-            min-height: 297mm;
+            line-height: 1.8;
+            color: #000;
+            max-width: 210mm;
             margin: 0 auto;
-            padding: 20mm 15mm;
+            padding: 20mm;
             background: white;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 25pt;
-            padding-bottom: 15pt;
-            border-bottom: 2pt solid #2c5aa0;
+            margin-bottom: 30px;
         }
         
-        .header h1 {
-            font-size: 16pt;
+        .title {
+            font-size: 18pt;
             font-weight: bold;
-            color: #2c5aa0;
-            margin-bottom: 8pt;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
         }
         
-        .header .subtitle {
-            font-size: 11pt;
-            color: #666;
+        .date {
+            text-align: right;
+            margin-bottom: 30px;
+            font-size: 10.5pt;
         }
         
-        .meta-info {
-            margin-bottom: 20pt;
-            padding: 12pt;
-            background: #f8f9fa;
-            border-left: 4pt solid #2c5aa0;
+        .parties {
+            margin-bottom: 30px;
+            line-height: 2.2;
         }
         
-        .meta-info table {
+        .party-section {
+            margin-bottom: 15px;
+        }
+        
+        .party-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 100px;
+        }
+        
+        .preamble {
+            text-indent: 1em;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        .article {
+            margin-bottom: 25px;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .article-content {
+            margin-left: 1em;
+            text-align: justify;
+        }
+        
+        table {
             width: 100%;
             border-collapse: collapse;
-        }
-        
-        .meta-info td {
-            padding: 4pt 8pt;
+            margin: 15px 0;
             font-size: 10pt;
         }
         
-        .meta-info td:first-child {
-            width: 100pt;
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
             font-weight: bold;
-            color: #555;
-        }
-        
-        .section {
-            margin-bottom: 18pt;
-        }
-        
-        .section-title {
-            font-size: 12pt;
-            font-weight: bold;
-            color: #2c5aa0;
-            margin-bottom: 10pt;
-            padding-bottom: 4pt;
-            border-bottom: 1pt solid #ddd;
-        }
-        
-        .section-content {
-            font-size: 10.5pt;
-            line-height: 1.7;
-            margin-left: 10pt;
-        }
-        
-        .subsection {
-            margin-bottom: 12pt;
-        }
-        
-        .subsection-title {
-            font-size: 11pt;
-            font-weight: bold;
-            color: #444;
-            margin-bottom: 6pt;
-            display: flex;
-            align-items: center;
-        }
-        
-        .subsection-title::before {
-            content: "●";
-            color: #2c5aa0;
-            margin-right: 6pt;
-            font-size: 8pt;
-        }
-        
-        ul {
-            margin-left: 20pt;
-            margin-top: 6pt;
-        }
-        
-        ul li {
-            margin-bottom: 5pt;
-            line-height: 1.6;
-        }
-        
-        .highlight-box {
-            background: #fff3cd;
-            border-left: 4pt solid #ffc107;
-            padding: 10pt;
-            margin: 12pt 0;
-        }
-        
-        .highlight-box strong {
-            color: #856404;
-        }
-        
-        .requirements-box {
-            background: #e7f3ff;
-            border: 1pt solid #2c5aa0;
-            padding: 12pt;
-            margin: 12pt 0;
-            border-radius: 4pt;
-        }
-        
-        .requirements-box .req-title {
-            font-weight: bold;
-            color: #2c5aa0;
-            margin-bottom: 8pt;
-            font-size: 11pt;
-        }
-        
-        .requirements-box ol {
-            margin-left: 20pt;
-        }
-        
-        .requirements-box li {
-            margin-bottom: 6pt;
-        }
-        
-        .footer {
-            margin-top: 30pt;
-            padding-top: 15pt;
-            border-top: 1pt solid #ddd;
             text-align: center;
+        }
+        
+        td.amount {
+            text-align: right;
+            font-family: "MS Gothic", monospace;
+        }
+        
+        td.center {
+            text-align: center;
+        }
+        
+        .calculation {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #333;
+        }
+        
+        .total-row {
+            font-weight: bold;
+            background-color: #e8e8e8;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .signature-block {
+            margin-bottom: 40px;
+        }
+        
+        .signature-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .signature-info {
+            margin-left: 20px;
+            line-height: 2;
+        }
+        
+        .note {
             font-size: 9pt;
-            color: #888;
+            color: #666;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-left: 3px solid #999;
         }
         
         @media print {
             body {
-                background: white;
-            }
-            .container {
-                width: 100%;
-                margin: 0;
                 padding: 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>プロジェクト概要書</h1>
-            <div class="subtitle">自社サービスの加入者向けLINEアプリの開発とCRM連携</div>
+    <div class="header">
+        <div class="title">覚書</div>
+    </div>
+    
+    <div class="date">
+        作成日:2025年1月12日
+    </div>
+    
+    <div class="parties">
+        <div class="party-section">
+            <span class="party-label">甲(発注者):</span>株式会社スタディオティガ<br>
         </div>
-        
-        <div class="meta-info">
+        <div class="party-section">
+            <span class="party-label">乙(受注者):</span>AMCOLAB TECHNOLOGY CO., LTD<br>
+        </div>
+    </div>
+    
+    <div class="preamble">
+        甲及び乙は、現在進行中の「Classtrip」プロジェクト及び「Gunpla」プロジェクトに関する支払状況及び今後の取引条件について、以下のとおり確認し、合意する。
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第1条(Classtripプロジェクトの支払状況)</div>
+        <div class="article-content">
+            <p>甲及び乙は、Classtripプロジェクトに関する支払状況が以下のとおりであることを確認する。</p>
+            
             <table>
-                <tr>
-                    <td>発注者名：</td>
-                    <td>長谷川 歩美 様</td>
-                </tr>
-                <tr>
-                    <td>連絡先：</td>
-                    <td>080-5916-8225</td>
-                </tr>
-                <tr>
-                    <td>プロジェクト分類：</td>
-                    <td>アプリ開発（LINE）/ CRM連携</td>
-                </tr>
-                <tr>
-                    <td>作成日：</td>
-                    <td>2026年1月6日</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th style="width: 150px;">金額(円)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>契約金額(合計)</td>
+                        <td class="amount">¥2,240,690</td>
+                    </tr>
+                    <tr>
+                        <td>甲から乙への支払済金額(合計4回)</td>
+                        <td class="amount">¥2,793,707</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>差額(過払金)</td>
+                        <td class="amount">¥553,017</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
-        
-        <div class="section">
-            <div class="section-title">1. プロジェクト背景</div>
-            <div class="section-content">
-                <p>発注者様はケーブルテレビ事業を展開されており、現在の顧客窓口はコールセンターへの電話とホームページのみとなっています。利用者の多いLINEを新たな窓口として追加し、顧客の利便性を高めることを目的としています。</p>
-                <p style="margin-top: 8pt;">既存のLINEアカウントは不特定多数への情報配信やキャンペーン用として運用されていますが、本プロジェクトでは自社サービスの加入者（既加入者）に限定した専用窓口を新設します。</p>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第2条(Gunplaプロジェクトの保守契約)</div>
+        <div class="article-content">
+            <p>甲及び乙は、Gunplaプロジェクトの保守・運用について以下のとおり合意する。</p>
+            
+            <p><strong>1. 保守期間及び費用</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th style="width: 120px;">内容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>保守期間</td>
+                        <td class="center">2024年11月~2025年3月<br>(5ヶ月間)</td>
+                    </tr>
+                    <tr>
+                        <td>月額保守費用</td>
+                        <td class="amount">¥20,000/月</td>
+                    </tr>
+                    <tr>
+                        <td>月間作業時間</td>
+                        <td class="center">10時間</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>保守費用合計(5ヶ月)</td>
+                        <td class="amount">¥100,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p><strong>2. 追加作業の取扱い</strong></p>
+            <p>月間10時間の作業範囲を超える作業が発生した場合、乙は甲の事前承認を得た上で、別途請求書を発行するものとする。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第3条(両プロジェクトの総合精算)</div>
+        <div class="article-content">
+            <p>甲及び乙は、上記第1条及び第2条を踏まえ、現時点での支払状況を以下のとおり確認する。</p>
+            
+            <div class="calculation">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th style="width: 150px;">金額(円)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Classtrip 過払金</td>
+                            <td class="amount">¥553,017</td>
+                        </tr>
+                        <tr>
+                            <td>Gunpla 保守費用(5ヶ月分)</td>
+                            <td class="amount">¥100,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>差引残高(過払金残額)</strong></td>
+                            <td class="amount"><strong>¥453,017</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p>2. 上記残高¥453,017は、契約金額を超過した支払額の残額(過払金残額)であり、甲の指示に基づき、以下のいずれかの方法で処理するものとする。<br>
+            (1) 今後発生する変更要求(CR)又は追加作業の費用に充当する。<br>
+            (2) 甲の書面による返金指示に基づき返金する。</p>
+            <p>3. 甲が返金を指示する場合、乙は甲からの書面による指示を受領後、30日以内に指定口座へ返金するものとする。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第4条(各当事者の責任)</div>
+        <div class="article-content">
+            <p><strong>1. 甲の責任</strong></p>
+            <p>(1) 追加作業又は新規プロジェクトの発注時には、事前に乙と協議の上、書面による合意を行う。<br>
+            (2) 過払金の使途について、乙から報告を受けた際には速やかに確認を行う。<br>
+            (3) 過払金を変更要求(CR)又は追加作業に充当する場合、事前に書面で指示する。</p>
+            
+            <p><strong>2. 乙の責任</strong></p>
+            <p>(1) 過払金の管理を適切に行い、甲からの照会に対して速やかに報告する。<br>
+            (2) Gunplaプロジェクトの保守作業について、月次で作業報告書を提出する。<br>
+            (3) 追加作業が発生する場合には、事前に甲の承認を得る。<br>
+            (4) 過払金を変更要求(CR)又は追加作業に充当する場合、使用前に甲の書面による指示を確認する。</p>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第5条(有効期間)</div>
+        <div class="article-content">
+            本覚書は、両当事者が署名した日から効力を発し、過払金の清算が完了するまで有効とする。
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第6条(協議事項)</div>
+        <div class="article-content">
+            本覚書に定めのない事項又は本覚書の解釈に疑義が生じた場合には、甲乙誠実に協議の上、解決するものとする。
+        </div>
+    </div>
+    
+    <div class="preamble">
+        本覚書の成立を証するため、本書2通を作成し、甲乙記名押印の上、各1通を保有する。
+    </div>
+    
+    <div class="signature-section">
+        <div class="signature-block">
+            <div class="signature-title">甲(発注者)</div>
+            <div class="signature-info">
+                住所:〒150-0002 東京都渋谷区渋谷3-1-9 矢澤ビル3F<br>
+                会社名:株式会社スタディオティガ<br>
+                代表者:三神安史<br>
             </div>
         </div>
         
-        <div class="section">
-            <div class="section-title">2. プロジェクト目的</div>
-            <div class="section-content">
-                <ul>
-                    <li>加入者専用のLINE窓口を構築し、顧客サービスの向上を図る</li>
-                    <li>既存の顧客管理システム（Salesforce）と連携し、効率的な顧客対応を実現する</li>
-                    <li>契約内容の確認、支払い状況の照会、問い合わせ対応などをLINE上で完結させる</li>
-                    <li>対象者を制限した形での情報発信機能を実装する</li>
-                </ul>
+        <div class="signature-block">
+            <div class="signature-title">乙(受注者)</div>
+            <div class="signature-info">
+                住所:3rd Audi Building, No. 8 Pham Hung Street,<br>
+                Me Tri Ward, Nam Tu Liem Dist., Hanoi, Vietnam<br>
+                会社名:AMCOLAB TECHNOLOGY CO., LTD<br>
+                代表者:Nguyen Thi Quy<br>
             </div>
         </div>
-        
-        <div class="section">
-            <div class="section-title">3. 主要機能要件</div>
-            <div class="section-content">
-                <div class="subsection">
-                    <div class="subsection-title">加入者向けLINEアプリの機能</div>
-                    <ul>
-                        <li><strong>契約内容の確認：</strong>現在の契約プラン、オプションサービスなどの閲覧</li>
-                        <li><strong>支払い状況の確認：</strong>請求額、支払い履歴、未払い情報などの照会</li>
-                        <li><strong>機器故障時の問い合わせ：</strong>トラブル内容の報告と対応依頼</li>
-                        <li><strong>工事予約機能：</strong>設置工事や修理工事の予約受付</li>
-                        <li><strong>対象者限定の情報発信：</strong>特定地域や条件に該当する加入者への通知機能</li>
-                    </ul>
-                </div>
-                
-                <div class="subsection">
-                    <div class="subsection-title">Salesforce連携機能</div>
-                    <ul>
-                        <li>Salesforceの顧客データとLINEアカウントの紐付け</li>
-                        <li>個人情報の安全な取得と表示（マスキング処理を含む）</li>
-                        <li>特定顧客への情報発信機能</li>
-                        <li>問い合わせ履歴のSalesforceへの記録</li>
-                    </ul>
-                </div>
-                
-                <div class="highlight-box">
-                    <strong>代替案：</strong>万が一Salesforceとの連携が困難な場合は、チャットボットを用いて契約者情報を聞き取る窓口としての運用も検討されています。ただし、優先順位としてはSalesforce連携のご提案が可能な企業様を優先で検討されています。
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">4. セキュリティ要件</div>
-            <div class="section-content">
-                <p>個人情報の取り扱いに関して、以下のセキュリティ対策が必須となります：</p>
-                <ul style="margin-top: 8pt;">
-                    <li>Salesforceから個人情報を取り出す際のデータマスキング処理</li>
-                    <li>通信の暗号化（SSL/TLS）</li>
-                    <li>アクセス制御とユーザー認証の適切な実装</li>
-                    <li>個人情報保護に関する技術的な対応と説明</li>
-                </ul>
-                <p style="margin-top: 8pt;">セキュリティに関する技術的な対応と説明が可能であることが、本プロジェクトの必須条件となります。</p>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">5. エントリー条件</div>
-            <div class="section-content">
-                <div class="requirements-box">
-                    <div class="req-title">以下の条件を満たす企業様のみエントリー可能です：</div>
-                    <ol>
-                        <li><strong>Salesforceと連携したLINEアプリの開発実績がある企業様限定</strong><br>
-                        具体的な実績を必ず「自己推薦文」と「回答欄」にご記載ください。</li>
-                        <li><strong>個人情報のマスキングなど、セキュリティに関する技術的な対応・説明が可能な企業様限定</strong></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">6. スケジュール</div>
-            <div class="section-content">
-                <ul>
-                    <li><strong>初回商談：</strong>2024年12月25日（木）以降の平日を希望<br>
-                    ※12月27日（土）～1月4日（日）は年末年始の休業のため不可</li>
-                    <li><strong>納期：</strong>明確な納期指定はありませんが、段階を踏んでできるだけ早めに進めたいとのご意向です</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">7. 予算</div>
-            <div class="section-content">
-                <p>現時点では明確な予算額は決まっておらず、まずは企業様からのご提案を受けて検討したいという段階です。実績に基づいた適切な見積もりをご提示ください。</p>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">8. 打ち合わせ方法</div>
-            <div class="section-content">
-                <p>基本的にはWebミーティング（Zoom、Google Meet等）でのお打ち合わせを希望されています。</p>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>本書は発注ナビ担当者のヒアリング内容に基づき作成されたプロジェクト概要書です。</p>
-            <p>詳細な要件については、初回商談時に改めてご確認ください。</p>
-        </div>
+    </div>
+    
+    <div class="note">
+        <strong>注記:</strong><br>
+        ・本覚書は、両プロジェクトの支払状況を明確化し、今後の取引を円滑に進めることを目的としています。<br>
+        ・過払金の使途については、甲の指示に基づいて決定されます。<br>
+        ・Gunpla保守期間終了後の継続については、別途協議するものとします。
     </div>
 </body>
 </html>
