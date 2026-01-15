@@ -3,283 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>秘密保持契約書 - AMCOLAB × 水迫</title>
+    <title>業務委託契約書 - 水迫</title>
     <style>
         @page {
             size: A4;
-            margin: 20mm;
+            margin: 20mm 15mm;
         }
         
         body {
-            font-family: "MS Mincho", "Yu Mincho", serif;
-            font-size: 10.5pt;
+            font-family: 'MS Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+            font-size: 11pt;
             line-height: 1.8;
             color: #000;
             margin: 0;
-            padding: 20mm;
-            background: white;
-        }
-        
-        .container {
-            max-width: 170mm;
+            padding: 20px;
+            max-width: 210mm;
             margin: 0 auto;
+            background: white;
         }
         
         h1 {
             text-align: center;
-            font-size: 16pt;
+            font-size: 18pt;
             font-weight: bold;
-            margin: 0 0 20pt 0;
-            letter-spacing: 2pt;
+            margin: 20px 0 30px 0;
+            padding: 0;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
         }
         
-        .preamble {
-            text-indent: 1em;
-            margin-bottom: 15pt;
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            padding: 0;
+        }
+        
+        p {
+            margin: 10px 0;
             text-align: justify;
         }
         
+        .preamble {
+            margin: 20px 0 30px 0;
+            text-align: justify;
+            line-height: 2;
+        }
+        
         .article {
-            margin-bottom: 15pt;
+            margin: 20px 0;
+            page-break-inside: avoid;
         }
         
         .article-title {
             font-weight: bold;
-            margin-bottom: 5pt;
+            margin: 15px 0 10px 0;
         }
         
         .article-content {
-            margin-left: 1em;
+            margin-left: 0;
             text-align: justify;
         }
         
         .clause {
-            margin-bottom: 8pt;
-            margin-left: 1em;
+            margin: 8px 0 8px 20px;
         }
         
         .sub-clause {
-            margin-bottom: 5pt;
-            margin-left: 2em;
+            margin: 5px 0 5px 30px;
         }
         
-        .signatures {
-            margin-top: 30pt;
+        .signature-section {
+            margin-top: 50px;
             page-break-inside: avoid;
         }
         
         .signature-block {
-            margin-bottom: 20pt;
+            margin: 30px 0;
+            line-height: 1.8;
         }
         
         .signature-block p {
-            margin: 3pt 0;
+            margin: 5px 0;
         }
         
-        .party-label {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        table th, table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+            font-size: 10.5pt;
+        }
+        
+        table th {
+            background-color: #f0f0f0;
             font-weight: bold;
-            margin-bottom: 5pt;
+        }
+        
+        .note {
+            font-size: 10pt;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #666;
         }
         
         @media print {
             body {
                 padding: 0;
             }
-            .container {
-                max-width: 100%;
+            .page-break {
+                page-break-after: always;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>秘密保持契約書</h1>
+    <h1>業務委託契約書</h1>
+    
+    <div class="preamble">
+        <p>株式会社水迫(以下「委託者」という。)とAMCOLAB TECHNOLOGY Co., Ltd(以下「受託者」という。)とは、委託者が受託者に委託する業務に関して、次のとおり業務委託契約(以下「本契約」という。)を締結する。</p>
+    </div>
+    
+    <h2>第1章 総則</h2>
+    
+    <div class="article">
+        <div class="article-title">第1条(契約の目的)</div>
+        <div class="article-content">
+            <div class="clause">1. 委託者は、本契約の定めるところにより、第2条に定める業務(以下「本件業務」という。)を受託者に委託し、受託者はこれを受託する。</div>
+            <div class="clause">2. 委託者は受託者に対し、本契約の定めるところにより、本件業務の対価として委託料を支払う。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第2条(業務内容)</div>
+        <div class="article-content">
+            <div class="clause">本件業務の内容は、次のとおりとする。</div>
+            <div class="clause">1. モバイルアプリケーション開発業務</div>
+            <div class="clause">2. バックエンド開発業務(必要に応じて)</div>
+            <div class="clause">3. 品質保証(QA)業務</div>
+            <div class="clause">4. その他委託者が指定する関連業務</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第3条(契約形態)</div>
+        <div class="article-content">
+            <div class="clause">本契約は、Time & Material方式(以下「T&M方式」という。)による業務委託契約とし、実際の作業工数に基づいて委託料を算定するものとする。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第4条(契約期間)</div>
+        <div class="article-content">
+            <div class="clause">1. 本契約の契約期間は、2026年2月1日から2026年4月30日までの3ヶ月間とする。</div>
+            <div class="clause">2. 契約期間満了の1ヶ月前までに、委託者又は受託者のいずれか一方から書面(電子メールを含む。)による解約の申し出がない場合、本契約は同一条件で1ヶ月間自動更新されるものとし、以後も同様とする。</div>
+        </div>
+    </div>
+    
+    <h2>第2章 業務の実施</h2>
+    
+    <div class="article">
+        <div class="article-title">第5条(業務の遂行)</div>
+        <div class="article-content">
+            <div class="clause">1. 受託者は、本件業務を善良なる管理者の注意をもって誠実に遂行するものとする。</div>
+            <div class="clause">2. 受託者は、本件業務の実施場所を自ら用意し、責任を持って確保するものとする。</div>
+            <div class="clause">3. 受託者は、通常の業務場所以外で業務を実施する場合でも、秘密保持義務および業務品質に支障がない限り、委託者の事前承諾を得る必要はない。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第6条(稼働時間)</div>
+        <div class="article-content">
+            <div class="clause">1. 本件業務における月間の最低稼働時間は160時間とする。</div>
+            <div class="clause">2. 実際の稼働時間は、受託者が提出する作業報告書に基づき、委託者との協議により確定するものとする。</div>
+            <div class="clause">3. 月間稼働時間が160時間を下回る場合であっても、委託者は最低稼働時間分の委託料を支払うものとする。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第7条(作業報告)</div>
+        <div class="article-content">
+            <div class="clause">1. 受託者は、毎月末日までに当該月の作業内容及び稼働時間を記載した作業報告書を委託者に提出するものとする。</div>
+            <div class="clause">2. 委託者は、作業報告書を受領後5営業日以内に内容を確認し、承認又は修正を求めるものとする。</div>
+            <div class="clause">3. 委託者が前項の期間内に異議を述べない場合、当該作業報告書の内容を承認したものとみなす。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第8条(業務の変更)</div>
+        <div class="article-content">
+            <div class="clause">1. 委託者は、本件業務の内容、範囲、優先順位等の変更を受託者に書面(電子メールを含む。)で通知することにより、変更を指示することができる。</div>
+            <div class="clause">2. 前項の変更により、稼働時間、納期等に影響が生じる場合、委託者と受託者は協議の上、これらを合理的に調整するものとする。</div>
+        </div>
+    </div>
+    
+    <h2>第3章 委託料及び支払条件</h2>
+    
+    <div class="article">
+        <div class="article-title">第9条(委託料)</div>
+        <div class="article-content">
+            <div class="clause">1. 本件業務に係る時間単価は、金2,000円(非課税)とする。</div>
+            <div class="clause">2. 受託者は外国法人であるため、日本国内における税務上の義務は原則として発生しない。万一、本契約に関連して日本国内で何らかの税務上の義務が発生した場合、当該税務上の義務は委託者が負担するものとする。</div>
+            <div class="clause">3. 月額委託料は、時間単価×当該月の実稼働時間により算定するものとする。ただし、最低委託料は金320,000円(非課税)(160時間×2,000円)とする。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第10条(支払条件)</div>
+        <div class="article-content">
+            <div class="clause">1. 委託者は、受託者から作業報告書の提出を受け、これを承認した後、当該月の委託料を翌月5日までに受託者が指定する銀行口座に振り込む方法により支払うものとする。</div>
+            <div class="clause">2. 振込手数料は委託者の負担とする。</div>
+            <div class="clause">3. 委託者が支払期日に遅滞した場合、委託者は受託者に対し、支払期日の翌日から支払完了の日まで、未払金額に対し年率14.6%の遅延損害金を支払うものとする。</div>
+        </div>
+    </div>
+    
+    <h2>第4章 知的財産権</h2>
+    
+    <div class="article">
+        <div class="article-title">第11条(成果物の著作権)</div>
+        <div class="article-content">
+            <div class="clause">1. 本件業務の遂行により作成される成果物(プログラム、ドキュメント等)に関する著作権(著作権法第27条及び第28条に定める権利を含む。)は、委託料の支払完了時に委託者に移転する。</div>
+            <div class="clause">2. 前項にかかわらず、受託者が従前より保有するノウハウ、技術情報、汎用的なプログラムモジュール、開発ツール、テンプレート等(以下「受託者ノウハウ」という。)に関する著作権およびその他の権利は、受託者に帰属するものとし、受託者は当該受託者ノウハウを本件業務以外にも自由に利用できるものとする。</div>
+        </div>
+    </div>
+    
+    <h2>第5章 機密保持</h2>
+    
+    <div class="article">
+        <div class="article-title">第12条(秘密情報)</div>
+        <div class="article-content">
+            <div class="clause">1. 本契約における秘密情報とは、文書、口頭、電磁的記録媒体その他開示の方法及び媒体並びに本契約締結の前後を問わず、委託者及び受託者が相手方から開示される、本件業務に関する商品企画・技術・技能・営業等に関する一切の情報をいう。</div>
+            <div class="clause">2. 委託者及び受託者は、事前に相手方の書面による承諾を得ることなく、本契約締結の事実、その内容及び秘密情報を、故意又は過失を問わず、第三者に開示してはならない。</div>
+            <div class="clause">3. 前項の規定は、本契約終了後も3年間有効とする。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第13条(個人情報)</div>
+        <div class="article-content">
+            <div class="clause">1. 受託者は、本件業務に関連して委託者から受託者に開示される個人情報(個人情報保護法第2条1項に定められたものをいう。)について、本契約の趣旨及び個人情報保護法の規定に従って、これを取り扱う。</div>
+            <div class="clause">2. 受託者は、次の事項を遵守する。</div>
+            <div class="sub-clause">① 個人情報は本件業務の目的のみに使用する。</div>
+            <div class="sub-clause">② 個人情報を事前に定められた役員及び従業員に限って取り扱わせる。</div>
+            <div class="sub-clause">③ 個人情報の取扱場所を特定し、第三者の個人情報への接触を防止する。</div>
+        </div>
+    </div>
+    
+    <h2>第6章 再委託</h2>
+    
+    <div class="article">
+        <div class="article-title">第14条(再委託)</div>
+        <div class="article-content">
+            <div class="clause">1. 本契約に基づく業務の全部または一部を第三者に再委託するか否かについては、受託者の裁量により判断・決定するものとする。</div>
+            <div class="clause">2. ただし、受託者は再委託の有無にかかわらず、成果物の品質、納期の遵守、本契約に基づく情報管理および秘密保持等に関して、自己が業務を遂行する場合と同等の責任を負うものとする。</div>
+            <div class="clause">3. 委託者が合理的な理由に基づき情報開示を求めた場合、受託者は、受託者の業務運営に支障を来さない範囲で、再委託の内容や委託先に関する情報を提供するよう努める。</div>
+        </div>
+    </div>
+    
+    <h2>第7章 契約の解除</h2>
+    
+    <div class="article">
+        <div class="article-title">第15条(契約の解除)</div>
+        <div class="article-content">
+            <div class="clause">1. 委託者及び受託者は、相手方が本契約の各条項に違反したと認めた場合において、相手方に対し相当の期間を定めて催告をしたにもかかわらず当該期間内に是正されないときは、本契約の全部又は一部を解除することができるものとする。</div>
+            <div class="clause">2. 委託者及び受託者は、相手方に次の各号の一つに該当する事由が生じたと認めたときは、相手方に対し催告その他の手続きを要せず、直ちに本契約の全部又は一部を解除することができるものとする。</div>
+            <div class="sub-clause">① 本契約に関し、相手方による重大な違反又は背信行為があったとき。</div>
+            <div class="sub-clause">② 債務の全部又は一部の履行が不能であるとき又は相手方がその債務の全部又は一部の履行を拒絶する意思を明確に表示したとき。</div>
+            <div class="sub-clause">③ 支払の停止があった場合、又は仮差押、差押、競売、破産手続開始、民事再生手続開始、会社更生手続開始、特別清算開始の申立があったとき。</div>
+        </div>
+    </div>
+    
+    <h2>第8章 一般条項</h2>
+    
+    <div class="article">
+        <div class="article-title">第16条(損害賠償)</div>
+        <div class="article-content">
+            <div class="clause">委託者及び受託者は、本契約の履行に関し、相手方の責に帰すべき事由により損害を被った場合、相当因果関係の範囲内で、現実に発生した直接損害に限り、その賠償を請求することができるものとする。ただし、損害賠償責任の上限は、本契約に基づき過去12ヶ月間に支払われた委託料の総額を限度とする。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第17条(不可抗力)</div>
+        <div class="article-content">
+            <div class="clause">天災地変、戦争、暴動、内乱、パンデミック等の伝染病の蔓延、その他不測の事態の発生等、委託者と受託者双方の責に帰することができない事由により、本契約に基づく義務の全部又は一部の履行が遅延又は不可能となったときは、本契約の違反とせず、委託者及び受託者はその責を負わないものとする。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第18条(反社会的勢力の排除)</div>
+        <div class="article-content">
+            <div class="clause">1. 委託者及び受託者は、現在、暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業、総会屋等、社会運動等標榜ゴロ又は特殊知能暴力集団等、その他これらに準ずる者(以下「反社会的勢力」という。)に該当しないこと、及び将来にわたっても該当しないことを表明し、かつ確約する。</div>
+            <div class="clause">2. 委託者又は受託者は、相手方が反社会的勢力に該当すると判明した場合には、相手方に対して何らの催告をすることなく本契約を解除することができる。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第19条(権利義務譲渡の禁止)</div>
+        <div class="article-content">
+            <div class="clause">委託者及び受託者は、事前に相手方の書面による承諾を得ることなく、本契約上の地位及び権利義務の全部若しくは一部を、第三者に譲渡し、承継させ、又は担保に供することができないものとする。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第20条(準拠法・紛争解決)</div>
+        <div class="article-content">
+            <div class="clause">1. 本契約は日本法を準拠法とする。</div>
+            <div class="clause">2. 本契約に関する紛争は、まず両当事者が誠意をもって協議し、解決に努めるものとする。</div>
+            <div class="clause">3. 協議開始後30日以内に解決に至らない場合、東京地方裁判所を第一審の専属的合意管轄裁判所とする。</div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <div class="article-title">第21条(誠実協議)</div>
+        <div class="article-content">
+            <div class="clause">本契約に規定しない事項が発生した場合、委託者と受託者が協議の上、誠意をもって解決することとする。</div>
+        </div>
+    </div>
+    
+    <div class="signature-section">
+        <p>以上、本契約の証として、本契約書データを作成し、委託者及び受託者の双方が電子署名又は電子的同意の方法により締結し、各自その控えを保有するものとする。</p>
         
-        <div class="preamble">
-            AMCOLAB TECHNOLOGY CO., LTD（以下「甲」という）と水迫様（以下「乙」という）は、Time & Materials方式によるソフトウェア開発業務（以下「本業務」という）に関して相互に提供する取引上の秘密情報につき、次のとおり契約を締結する。
+        <p style="text-align: center; margin-top: 40px; font-weight: bold;">2026年1月20日</p>
+        
+        <div class="signature-block">
+            <p><strong>委託者</strong></p>
+            <p>〒[郵便番号]</p>
+            <p>[住所]</p>
+            <p>株式会社水迫</p>
+            <p>代表取締役　[代表者名]　㊞</p>
         </div>
         
-        <div class="article">
-            <div class="article-title">第1条（目的）</div>
-            <div class="article-content">
-                甲および乙は、甲乙間の取引が相互の信頼に基づくものであることを認識し、本業務を履行するにあたり、本契約に定められた各条項を遵守し、相手方の秘密情報の守秘を徹底し、公正な取引関係を維持することを目的（以下「本目的」という）とする。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第2条（秘密情報）</div>
-            <div class="clause">
-                １．本契約において秘密情報とは、本目的のために開示又は知得された次の各号の情報をいう。
-                <div class="sub-clause">（１）開示者が相手方に固定媒体（紙、電子媒体、磁気媒体等）によって開示する情報</div>
-                <div class="sub-clause">（２）開示者が相手方に口頭、映像、電気通信回線を通じて提供された電子データ、その他前号に定める以外の方法により開示する情報</div>
-                <div class="sub-clause">（３）開示者の顧客情報並びに開示者の営業上、技術上および財務上の情報</div>
-                <div class="sub-clause">（４）本目的のために、甲および乙が協議した経緯、結果等を記した議事録又は記録</div>
-            </div>
-            <div class="clause">
-                ２．前項にかかわらず、次の各号のいずれかに該当する情報は秘密情報に含まれないものとする。
-                <div class="sub-clause">（１）知得した時点ですでに公知の情報</div>
-                <div class="sub-clause">（２）知得した時点ですでに受領者が保有していたことを証明できる情報</div>
-                <div class="sub-clause">（３）知得した後、受領者の責によらずして公知となった情報</div>
-                <div class="sub-clause">（４）知得した後、正当な権原を有する第三者から秘密保持義務を負うことなく受領者が適法に入手したことを証明できる情報</div>
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第3条（情報の管理）</div>
-            <div class="article-content">
-                甲および乙は、相手方の秘密情報を厳重に管理するものとし、相手方の承諾または指示のある場合を除き、複写、複製、改変等を行わないものとする。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第4条（流用の禁止）</div>
-            <div class="article-content">
-                甲および乙は、取引上知り得た相手方の秘密情報を事前に相手方の文書による承諾を得ることなく、甲と乙との間で明示的または黙示的に合意された目的以外の目的に使用してはならない。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第5条（秘密の保持等）</div>
-            <div class="clause">
-                １．甲および乙は、本契約締結の事実、内容および相手方から入手した秘密情報は、相手方の文書による承認を得ることなく、第三者に開示しないものとする。
-            </div>
-            <div class="clause">
-                ２．甲および乙は、個人情報の取扱いについては関連法規等を遵守し、適切な保護を図るものとする。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第６条（第三者への開示）</div>
-            <div class="article-content">
-                甲および乙は、委託等の為、相手方の承諾を得て秘密情報の全部または一部を第三者に開示する場合には、開示する第三者に対して、本契約と同様の秘密保持の義務を課し、当該第三者と連帯して責任を負うこととする。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第７条（知的財産権）</div>
-            <div class="clause">
-                １．本業務の遂行により新たに創出される知的財産権（特許権、実用新案権、意匠権、商標権、著作権その他一切の知的財産権を含む。以下「成果物知的財産権」という）は、別途書面による合意がない限り、全て甲に帰属する。
-            </div>
-            <div class="clause">
-                ２．乙が本業務遂行前から保有していた知的財産権（以下「乙既存知的財産権」という）については、乙に帰属する。ただし、乙は甲に対し、本業務の成果物において乙既存知的財産権を使用することについて、無償かつ非独占的な使用許諾を行うものとする。
-            </div>
-            <div class="clause">
-                ３．甲が本業務遂行前から保有していた知的財産権、ノウハウ、技術、ツール、ライブラリ、フレームワーク等（以下「甲既存知的財産権等」という）については、甲に帰属し、乙は甲既存知的財産権等に関していかなる権利も有しない。
-            </div>
-            <div class="clause">
-                ４．本業務において甲が作成したソースコード、設計書、ドキュメント等の著作権は、甲に帰属する。
-            </div>
-            <div class="clause">
-                ５．本契約に基づいて乙より提供または開示される秘密情報から得られる発明・考案については、甲は直ちに乙に通知し、その取り扱いについては別途協議する。
-            </div>
-            <div class="clause">
-                ６．乙は、成果物知的財産権について甲が第三者にライセンス、譲渡その他の処分を行うことを妨げない。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第８条（損害賠償）</div>
-            <div class="clause">
-                １．甲または甲の任命した従業員および代理人が乙の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、乙は甲に対して損害賠償および乙が必要と認める措置を請求できるものとする。また、乙または乙の任命した従業員および代理人が甲の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、甲は乙に対して損害賠償および甲が必要と認める措置を請求できるものとする。
-            </div>
-            <div class="clause">
-                ２．前項に基づく損害賠償の額は、過失による違反の場合、違反発生日から遡って12ヶ月間に当該違反当事者が相手方から受領した金額（本業務に関する報酬、対価等の合計額）を上限とする。ただし、実際の損害額が当該上限額を下回る場合は、実際の損害額とする。
-            </div>
-            <div class="clause">
-                ３．前項の規定にかかわらず、故意または重大な過失による違反の場合、損害賠償の額に上限を設けず、相手方が被った実損害の全額および合理的な範囲内での弁護士費用、調査費用その他の関連費用を賠償するものとする。
-            </div>
-            <div class="clause">
-                ４．故意または重大な過失による違反が認められた場合、違反当事者は損害賠償に加えて、相手方が請求する以下の措置を講じなければならない。
-                <div class="sub-clause">（１）違反行為の即時停止</div>
-                <div class="sub-clause">（２）漏洩した秘密情報の回収および廃棄</div>
-                <div class="sub-clause">（３）再発防止策の策定および実施</div>
-                <div class="sub-clause">（４）違反事実および是正措置に関する書面報告</div>
-            </div>
-            <div class="clause">
-                ５．本条に定める損害賠償責任は、本契約の終了後も存続するものとする。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第９条（反社会的勢力の排除）</div>
-            <div class="clause">
-                １．甲および乙は、それぞれ相手方に対し、次の各号の事項を表明し、保証する。
-                <div class="sub-clause">（１）自ら又は自らの役員若しくは実質的に経営権を有する者が、現在、暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業・団体、総会屋等、社会運動等標榜ゴロ又は特殊知能暴力集団その他これらに準ずる者（以下総称して「反社会的勢力」という。）に該当しないこと</div>
-                <div class="sub-clause">（２）反社会的勢力が経営を支配していると認められる関係を有しないこと</div>
-                <div class="sub-clause">（３）反社会的勢力が経営に実質的に関与していると認められる関係を有しないこと</div>
-                <div class="sub-clause">（４）反社会的勢力を利用していると認められる関係を有しないこと</div>
-                <div class="sub-clause">（５）反社会的勢力に対して資金等を提供し、又は便宜を供与するなどの関与をしていると認められる関係を有しないこと</div>
-                <div class="sub-clause">（６）反社会的勢力と社会的に非難されるべき関係を有しないこと</div>
-            </div>
-            <div class="clause">
-                ２．甲および乙は、自ら又は第三者を利用して次の各号の行為を行わないことを確約する。
-                <div class="sub-clause">（１）暴力的な要求行為</div>
-                <div class="sub-clause">（２）法的な責任を超えた不当な要求行為</div>
-                <div class="sub-clause">（３）取引に関して、脅迫的な言動をし、又は暴力を用いる行為</div>
-                <div class="sub-clause">（４）風説を流布し、偽計又は威力を用いて相手方の信用を毀損し、又は相手方の業務を妨害する行為</div>
-                <div class="sub-clause">（５）その他前各号に準ずる行為</div>
-            </div>
-            <div class="clause">
-                ３．甲および乙は、相手方が前二項のいずれかに違反したことが判明した場合、自己の責めに帰すべき事由の有無を問わず、相手方に対して何らの催告を要せずして、直ちに本契約その他の甲乙間の契約を解除することができる。
-            </div>
-            <div class="clause">
-                ４．前項の規定により本契約が解除された場合には、解除された当事者は、相手方に対し解除により相手方が被った損害を賠償する。
-            </div>
-            <div class="clause">
-                ５．第3項の規定により本契約が解除された場合、解除された当事者は、解除により損害が生じた場合でも、相手方に対し一切の損害賠償請求を行わない。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第10条（合意管轄）</div>
-            <div class="article-content">
-                甲および乙は、本契約書に関連して訴訟の必要が生じたときは、東京地方裁判所を第一審の専属裁判所とすることに合意する。本契約は日本法に基づき解釈されるものとする。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第11条（本契約失効後の取扱い）</div>
-            <div class="article-content">
-                本契約書の第4条（流用の禁止）、第5条（秘密の保持等）、第7条（知的財産権）は、本契約がその効力を失った後も5年間有効とする。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第12条（協議解決）</div>
-            <div class="article-content">
-                本契約の修正は、両当事者の書面合意によるもの以外無効とする。本契約に規定なき事項および解釈に疑義が生じた場合は、甲乙誠意をもって協議解決するものとする。
-            </div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title">第13条（契約有効期間と更新）</div>
-            <div class="article-content">
-                本契約の有効期間は、本契約締結日から１年間とする。ただし、上記期間満了日の３ヶ月前までに、甲または乙いずれからも書面による別段の申入れがないときは、本契約の有効期間はさらに１年間延長されるものとし、その後も同様とする。
-            </div>
-        </div>
-        
-        <div class="preamble" style="margin-top: 20pt;">
-            本契約締結の証として、本契約書2通を作成し、甲乙記名押印のうえ各自1通を保有する。
-        </div>
-        
-        <div class="signatures">
-            <p style="text-align: right; margin-bottom: 20pt;">2026年　　月　　日</p>
-            
-            <div class="signature-block">
-                <p class="party-label">甲</p>
-                <p>住所：3th Audi Bld, 8 Pham Hung Str, Me Tri Ward,</p>
-                <p style="margin-left: 3em;">Nam Tu Liem Dist, Ha Noi City, Viet Nam</p>
-                <p>会社名：AMCOLAB TECHNOLOGY CO., LTD</p>
-                <p>役職名：代表取締役</p>
-                <p>氏名：NGUYEN THI QUY　　　　　　　　印</p>
-            </div>
-            
-            <div class="signature-block">
-                <p class="party-label">乙</p>
-                <p>住所：</p>
-                <p style="height: 1.8em;"></p>
-                <p>氏名：水迫　　　　　　　　　　　　　印</p>
-            </div>
+        <div class="signature-block">
+            <p><strong>受託者</strong></p>
+            <p>3rd Floor, Audi Building, No. 8 Pham Hung Street,</p>
+            <p>Yen Hoa Ward, Hanoi City, Vietnam</p>
+            <p>AMCOLAB TECHNOLOGY Co., Ltd</p>
+            <p>代表取締役　NGUYEN THI QUY　㊞</p>
         </div>
     </div>
 </body>
