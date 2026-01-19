@@ -3,344 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>覚書 - 株式会社スタディオティガ</title>
+    <title>見守り用GPS端末・アプリ開発プロジェクト概要</title>
     <style>
-        @page {
-            size: A4;
-            margin: 20mm;
-        }
-        
         body {
-            font-family: "MS Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
-            font-size: 10.5pt;
+            font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
             line-height: 1.8;
-            color: #000;
-            max-width: 210mm;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20mm;
-            background: white;
+            padding: 40px 20px;
+            background-color: #f5f5f5;
         }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
+        .container {
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
-        
-        .title {
-            font-size: 18pt;
-            font-weight: bold;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-        }
-        
-        .date {
-            text-align: right;
-            margin-bottom: 30px;
-            font-size: 10.5pt;
-        }
-        
-        .parties {
-            margin-bottom: 30px;
-            line-height: 2.2;
-        }
-        
-        .party-section {
-            margin-bottom: 15px;
-        }
-        
-        .party-label {
-            font-weight: bold;
-            display: inline-block;
-            width: 100px;
-        }
-        
-        .preamble {
-            text-indent: 1em;
-            margin-bottom: 25px;
-            text-align: justify;
-        }
-        
-        .article {
-            margin-bottom: 25px;
-        }
-        
-        .article-title {
-            font-weight: bold;
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
             margin-bottom: 10px;
+            font-size: 24px;
         }
-        
-        .article-content {
-            margin-left: 1em;
-            text-align: justify;
+        .project-number {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 30px;
         }
-        
-        table {
+        h2 {
+            color: #34495e;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-left: 12px;
+            border-left: 4px solid #3498db;
+            font-size: 20px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        h4 {
+            color: #666;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .info-box {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .info-box table {
             width: 100%;
             border-collapse: collapse;
+        }
+        .info-box td {
+            padding: 8px 0;
+            vertical-align: top;
+        }
+        .info-box td:first-child {
+            font-weight: bold;
+            width: 150px;
+            color: #555;
+        }
+        .highlight-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .success-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+        .phase-section {
+            background-color: #f8f9fa;
+            padding: 15px 20px;
             margin: 15px 0;
-            font-size: 10pt;
+            border-radius: 5px;
+            border-left: 3px solid #6c757d;
         }
-        
-        th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: left;
+        .phase-section h4 {
+            margin-top: 0;
+            color: #495057;
         }
-        
-        th {
-            background-color: #f0f0f0;
+        .tech-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .tech-card {
+            background-color: #f8f9fa;
+            padding: 18px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        .tech-card h4 {
+            margin-top: 0;
+            color: #495057;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 8px;
+        }
+        .requirement-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 13px;
             font-weight: bold;
-            text-align: center;
+            margin-right: 8px;
+            margin-bottom: 5px;
         }
-        
-        td.amount {
-            text-align: right;
-            font-family: "MS Gothic", monospace;
+        .badge-required {
+            background-color: #dc3545;
+            color: white;
         }
-        
-        td.center {
-            text-align: center;
+        .badge-preferred {
+            background-color: #28a745;
+            color: white;
         }
-        
-        .calculation {
-            margin: 15px 0;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-left: 4px solid #333;
+        strong {
+            color: #2c3e50;
         }
-        
-        .total-row {
-            font-weight: bold;
-            background-color: #e8e8e8;
-        }
-        
-        .signature-section {
-            margin-top: 50px;
-            page-break-inside: avoid;
-        }
-        
-        .signature-block {
-            margin-bottom: 40px;
-        }
-        
-        .signature-title {
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        
-        .signature-info {
-            margin-left: 20px;
-            line-height: 2;
-        }
-        
-        .note {
-            font-size: 9pt;
-            color: #666;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #f5f5f5;
-            border-left: 3px solid #999;
-        }
-        
         @media print {
             body {
+                background-color: white;
                 padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="title">覚書</div>
-    </div>
-    
-    <div class="date">
-        作成日:2026年1月12日
-    </div>
-    
-    <div class="parties">
-        <div class="party-section">
-            <span class="party-label">甲(発注者):</span>株式会社スタディオティガ<br>
-        </div>
-        <div class="party-section">
-            <span class="party-label">乙(受注者):</span>AMCOLAB TECHNOLOGY CO., LTD<br>
+    <div class="container">
+        <h1>見守り用GPS端末・スマホアプリ開発プロジェクト</h1>
+        <div class="project-number">案件番号: 202601140009</div>
 
-        </div>
-    </div>
-    
-    <div class="preamble">
-        甲及び乙は、現在進行中の「Classtrip」プロジェクト及び「Gunpla」プロジェクトに関する支払状況及び今後の取引条件について、以下のとおり確認し、合意する。
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第1条(Classtripプロジェクトの支払状況)</div>
-        <div class="article-content">
-            <p>甲及び乙は、Classtripプロジェクトに関する支払状況が以下のとおりであることを確認する。</p>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th style="width: 150px;">金額(円)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>契約金額(合計)</td>
-                        <td class="amount">¥2,240,690</td>
-                    </tr>
-                    <tr>
-                        <td>甲から乙への支払済金額(合計4回)</td>
-                        <td class="amount">¥2,793,707</td>
-                    </tr>
-                    <tr class="total-row">
-                        <td>差額(過払金)</td>
-                        <td class="amount">¥553,017</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <p>2. 上記差額¥553,017は、契約金額を超過した支払額(過払金)であり、甲の指示に基づき、以下のいずれかの方法で処理するものとする。<br>
-            (1) 今後発生する変更要求(CR)又は追加作業の費用に充当する。<br>
-            (2) 甲の書面による返金指示に基づき返金する。</p>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第2条(Gunplaプロジェクトの保守契約)</div>
-        <div class="article-content">
-            <p>甲及び乙は、Gunplaプロジェクトの保守・運用について以下のとおり合意する。</p>
-            
-            <p><strong>1. 保守期間及び費用</strong></p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th style="width: 170px;">内容</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>保守期間</td>
-                        <td class="center">2025年11月~2026年3月<br>(5ヶ月間)</td>
-                    </tr>
-                    <tr>
-                        <td>月額保守費用</td>
-                        <td class="amount">¥20,000/月</td>
-                    </tr>
-                    <tr>
-                        <td>月間作業時間</td>
-                        <td class="center">10時間</td>
-                    </tr>
-                    <tr class="total-row">
-                        <td>保守費用合計(5ヶ月)</td>
-                        <td class="amount">¥100,000</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <p><strong>2. 追加作業の取扱い</strong></p>
-            <p>月間10時間の作業範囲を超える作業が発生した場合、乙は甲の事前承認を得た上で、別途請求書を発行するものとする。</p>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第3条(両プロジェクトの総合精算)</div>
-        <div class="article-content">
-            <p>甲及び乙は、上記第1条及び第2条を踏まえ、現時点での支払状況を以下のとおり確認する。</p>
-            
-            <div class="calculation">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>項目</th>
-                            <th style="width: 150px;">金額(円)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Classtrip 過払金</td>
-                            <td class="amount">¥553,017</td>
-                        </tr>
-                        <tr>
-                            <td>Gunpla 保守費用(5ヶ月分)</td>
-                            <td class="amount">¥100,000</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td><strong>差引残高(過払金残額)</strong></td>
-                            <td class="amount"><strong>¥453,017</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <p>2. 上記残高¥453,017は、契約金額を超過した支払額の残額(過払金残額)であり、甲の指示に基づき、以下のいずれかの方法で処理するものとする。<br>
-            (1) 今後発生する変更要求(CR)又は追加作業の費用に充当する。<br>
-            (2) 甲の書面による返金指示に基づき返金する。</p>
-            <p>3. 甲が返金を指示する場合、乙は甲からの書面による指示を受領後、30日以内に指定口座へ返金するものとする。</p>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第4条(各当事者の責任)</div>
-        <div class="article-content">
-            <p><strong>1. 甲の責任</strong></p>
-            <p>(1) 追加作業又は新規プロジェクトの発注時には、事前に乙と協議の上、書面による合意を行う。<br>
-            (2) 過払金の使途について、乙から報告を受けた際には速やかに確認を行う。<br>
-            (3) 過払金を変更要求(CR)又は追加作業に充当する場合、事前に書面で指示する。</p>
-            
-            <p><strong>2. 乙の責任</strong></p>
-            <p>(1) 過払金の管理を適切に行い、甲からの照会に対して速やかに報告する。<br>
-            (2) Gunplaプロジェクトの保守作業について、月次で作業報告書を提出する。<br>
-            (3) 追加作業が発生する場合には、事前に甲の承認を得る。<br>
-            (4) 過払金を変更要求(CR)又は追加作業に充当する場合、使用前に甲の書面による指示を確認する。</p>
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第5条(有効期間)</div>
-        <div class="article-content">
-            本覚書は、両当事者が署名した日から効力を発し、過払金の清算が完了するまで有効とする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第6条(協議事項)</div>
-        <div class="article-content">
-            本覚書に定めのない事項又は本覚書の解釈に疑義が生じた場合には、甲乙誠実に協議の上、解決するものとする。
-        </div>
-    </div>
-    
-    <div class="preamble">
-        本覚書の成立を証するため、本書2通を作成し、甲乙記名押印の上、各1通を保有する。
-    </div>
-    
-    <div class="signature-section">
-        <div class="signature-block">
-            <div class="signature-title">甲(発注者)</div>
-            <div class="signature-info">
-                住所:〒150-0002 東京都渋谷区渋谷3-1-9 矢澤ビル3F<br>
-                会社名:株式会社スタディオティガ<br>
-                代表者:三神安史<br>
-            </div>
-        </div>
+        <h2>1. プロジェクト概要</h2>
         
-        <div class="signature-block">
-            <div class="signature-title">乙(受注者)</div>
-            <div class="signature-info">
-                住所:3rd Audi Building, No. 8 Pham Hung Street,<br>
-                Me Tri Ward, Nam Tu Liem Dist., Hanoi, Vietnam<br>
-                会社名:AMCOLAB TECHNOLOGY CO., LTD<br>
-                代表者:Nguyen Thi Quy<br>
+        <div class="info-box">
+            <table>
+                <tr>
+                    <td>発注者:</td>
+                    <td>高橋康介様(個人事業主として起業予定)</td>
+                </tr>
+                <tr>
+                    <td>利用プラン:</td>
+                    <td>セレクト-システム/アプリ</td>
+                </tr>
+                <tr>
+                    <td>背景:</td>
+                    <td>公職(警察)からの離職後、起業予定</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>目的</h3>
+        <p>高齢者や精神疾患のある方の見守りを目的とした、下着装着型GPS端末とスマートフォンアプリケーションの開発。ご家族が安心して見守りができる環境を実現し、行方不明や危険エリアへの侵入を未然に防ぐ。</p>
+
+        <div class="highlight-box">
+            <strong>⚠ 重要:</strong> 本プロジェクトは補助金・助成金を活用した段階的開発(PoC → 試作 → 量産)を前提としており、ハードウェアとソフトウェアの統合開発が必須となります。
+        </div>
+
+        <h2>2. 開発対象</h2>
+
+        <div class="tech-specs">
+            <div class="tech-card">
+                <h4>📱 GPS端末(ハードウェア)</h4>
+                <ul>
+                    <li>下着装着型(マジックテープ式ポケット)</li>
+                    <li>位置情報取得機能</li>
+                    <li>生活防水対応(IPX5〜IPX7)</li>
+                    <li>バッテリー残量検知(アプリ連携)</li>
+                    <li>小型・軽量設計</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h4>📲 スマホアプリ</h4>
+                <ul>
+                    <li><strong>対応OS:</strong> iOS & Android</li>
+                    <li>リアルタイム位置情報表示</li>
+                    <li>位置履歴の確認</li>
+                    <li>バッテリー残量通知</li>
+                    <li>危険エリア侵入時アラート</li>
+                    <li>複数端末管理機能</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h4>☁️ サーバーシステム</h4>
+                <ul>
+                    <li>位置情報受信・保存</li>
+                    <li>位置履歴管理</li>
+                    <li>危険エリア判定ロジック</li>
+                    <li>プッシュ通知配信</li>
+                    <li>ユーザー認証・管理</li>
+                </ul>
             </div>
         </div>
-    </div>
-    
-    <div class="note">
-        <strong>注記:</strong><br>
-        ・本覚書は、両プロジェクトの支払状況を明確化し、今後の取引を円滑に進めることを目的としています。<br>
-        ・過払金の使途については、甲の指示に基づいて決定されます。<br>
-        ・Gunpla保守期間終了後の継続については、別途協議するものとします。
+
+        <h2>3. エントリー条件</h2>
+
+        <h3><span class="requirement-badge badge-required">必須</span> 必須要件</h3>
+        <ol>
+            <li><strong>ハードウェア開発能力</strong>
+                <ul>
+                    <li>GPS端末の設計・開発・製造が可能であること</li>
+                    <li>小型IoTデバイスの開発実績</li>
+                </ul>
+            </li>
+            <li><strong>ソフトウェア開発能力</strong>
+                <ul>
+                    <li>iOS/Androidアプリ開発</li>
+                    <li>サーバーサイド開発</li>
+                    <li>ストア申請代行が可能であること</li>
+                </ul>
+            </li>
+            <li><strong>補助金・助成金サポート</strong>
+                <ul>
+                    <li>活用可能な補助金・助成金のご提案</li>
+                    <li>申請書類作成サポート</li>
+                    <li>見積書・開発スケジュール作成協力</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3><span class="requirement-badge badge-preferred">歓迎</span> 歓迎要件</h3>
+        <ul>
+            <li>医療・福祉分野での開発実績</li>
+            <li>量産体制の構築経験</li>
+            <li>在庫保管・発送フロー対応の可否</li>
+        </ul>
+
+        <h2>4. 開発アプローチ</h2>
+
+        <h3>段階的開発フロー</h3>
+
+        <div class="phase-section">
+            <h4>Phase 1: PoC(概念実証)</h4>
+            <ul>
+                <li>基本機能の実現可能性検証</li>
+                <li>プロトタイプ開発</li>
+                <li>補助金申請準備</li>
+            </ul>
+        </div>
+
+        <div class="phase-section">
+            <h4>Phase 2: 試作開発</h4>
+            <ul>
+                <li>実用レベルの試作品開発</li>
+                <li>ユーザーテスト実施</li>
+                <li>改良・最適化</li>
+            </ul>
+        </div>
+
+        <div class="phase-section">
+            <h4>Phase 3: 量産準備</h4>
+            <ul>
+                <li>量産設計</li>
+                <li>製造パートナー選定</li>
+                <li>初期量産(小ロット)</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            各フェーズにおいて活用可能な補助金・助成金の提案をいただき、開発費用の最適化を図る方針です。
+        </div>
+
+        <h2>5. 技術要件</h2>
+
+        <h3>GPS端末</h3>
+        <ul>
+            <li><strong>測位精度:</strong> 屋外10m以内(目標)</li>
+            <li><strong>バッテリー:</strong> 駆動時間は要相談(用途に応じて設定)</li>
+            <li><strong>防水性能:</strong> IPX5〜IPX7</li>
+            <li><strong>サイズ・重量:</strong> 装着感を考慮した小型設計</li>
+            <li><strong>通信方式:</strong> LTE/3G等(要検討)</li>
+        </ul>
+
+        <h3>アプリケーション</h3>
+        <ul>
+            <li><strong>対応OS:</strong> iOS 14以降、Android 10以降(要相談)</li>
+            <li><strong>地図表示:</strong> Google Maps API等</li>
+            <li><strong>通知機能:</strong> プッシュ通知対応</li>
+            <li><strong>セキュリティ:</strong> 通信暗号化、認証機能</li>
+        </ul>
+
+        <h3>サーバー</h3>
+        <ul>
+            <li><strong>環境:</strong> クラウド環境(AWS/GCP/Azure等)</li>
+            <li><strong>スケーラビリティ:</strong> 将来的な拡張を考慮</li>
+            <li><strong>信頼性:</strong> データバックアップ・冗長化</li>
+        </ul>
+
+        <h2>6. 主な相談事項</h2>
+
+        <h3>技術面</h3>
+        <ul>
+            <li>構想の実現可否</li>
+            <li>技術的観点からのフィードバック</li>
+            <li>最適な技術選定の提案</li>
+        </ul>
+
+        <h3>プロジェクト管理</h3>
+        <ul>
+            <li>開発スケジュールの提案</li>
+            <li>段階的開発のマイルストーン設定</li>
+            <li>リスク管理・品質管理体制</li>
+        </ul>
+
+        <h3>補助金・助成金</h3>
+        <ul>
+            <li>活用可能な制度の提案</li>
+            <li>申請に必要な見積書作成</li>
+            <li>申請書類作成サポート</li>
+        </ul>
+
+        <h3>量産・運用</h3>
+        <ul>
+            <li>製造後の在庫保管・発送フロー(可能であれば)</li>
+            <li>メンテナンス・サポート体制</li>
+            <li>将来的な機能拡張の可能性</li>
+        </ul>
+
+        <h2>7. プロジェクト体制</h2>
+
+        <div class="info-box">
+            <table>
+                <tr>
+                    <td>打ち合わせ:</td>
+                    <td>基本的にWebミーティング、要所で対面打ち合わせも実施予定</td>
+                </tr>
+                <tr>
+                    <td>納期:</td>
+                    <td>未定(補助金活用や量産体制を考慮し、開発会社と相談の上決定)</td>
+                </tr>
+                <tr>
+                    <td>予算:</td>
+                    <td>未定(補助金活用や量産体制を考慮し、開発会社と相談の上決定)</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>8. 期待される成果</h2>
+
+        <div class="success-box">
+            <h3>社会的意義</h3>
+            <ul>
+                <li>高齢者の見守り支援による家族の安心確保</li>
+                <li>認知症患者の行方不明防止</li>
+                <li>精神疾患者の安全確保</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <h3>事業的意義</h3>
+            <ul>
+                <li>補助金活用による開発リスク低減</li>
+                <li>段階的開発による市場適合性の確認</li>
+                <li>将来的な事業拡大の基盤構築</li>
+            </ul>
+        </div>
+
+        <h2>9. まとめ</h2>
+        <p>本プロジェクトは、社会的ニーズの高い見守りサービスを実現する重要な取り組みです。ハードウェアとソフトウェアの統合開発、補助金活用、量産体制構築という多面的な要素を含む挑戦的なプロジェクトですが、適切なパートナー企業とともに、段階的かつ確実に進めていくことが期待されています。</p>
+
+        <div class="highlight-box">
+            <strong>注意事項:</strong> 本案件は「案件番号:202506110020」の追加募集となります。前回募集では「ハードとソフトの両方対応が難しい」というフィードバックを受けたため、両方対応可能な企業様に限定して募集しています。
+        </div>
     </div>
 </body>
 </html>
