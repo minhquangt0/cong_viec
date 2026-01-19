@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ソフトウェアメンテナンス契約書</title>
+    <title>秘密保持契約書 - AMCOLAB × 水迫</title>
     <style>
         @page {
             size: A4;
-            margin: 20mm 15mm;
+            margin: 20mm;
         }
         
         body {
             font-family: "MS Mincho", "Yu Mincho", serif;
             font-size: 10.5pt;
             line-height: 1.8;
-            margin: 0;
-            padding: 20mm 15mm;
             color: #000;
+            margin: 0;
+            padding: 20mm;
+            background: white;
+        }
+        
+        .container {
+            max-width: 170mm;
+            margin: 0 auto;
         }
         
         h1 {
@@ -24,350 +30,198 @@
             font-size: 16pt;
             font-weight: bold;
             margin: 0 0 20pt 0;
-            line-height: 1.5;
+            letter-spacing: 2pt;
         }
         
         .preamble {
-            text-indent: 0;
+            text-indent: 1em;
             margin-bottom: 15pt;
             text-align: justify;
         }
         
         .article {
             margin-bottom: 15pt;
-            page-break-inside: avoid;
         }
         
         .article-title {
             font-weight: bold;
-            margin-bottom: 8pt;
-        }
-        
-        .article-content {
-            text-indent: 1em;
-            margin-left: 0;
-            text-align: justify;
-        }
-        
-        .indent {
-            margin-left: 2em;
-            text-indent: 0;
-        }
-        
-        .list-item {
-            margin-left: 2em;
-            text-indent: -1em;
             margin-bottom: 5pt;
         }
         
-        .signature-section {
+        .article-content {
+            margin-left: 1em;
+            text-align: justify;
+        }
+        
+        .clause {
+            margin-bottom: 8pt;
+            margin-left: 1em;
+        }
+        
+        .sub-clause {
+            margin-bottom: 5pt;
+            margin-left: 2em;
+        }
+        
+        .signatures {
             margin-top: 30pt;
             page-break-inside: avoid;
         }
         
         .signature-block {
-            margin-bottom: 25pt;
+            margin-bottom: 20pt;
         }
         
-        .signature-label {
+        .signature-block p {
+            margin: 3pt 0;
+        }
+        
+        .party-label {
             font-weight: bold;
             margin-bottom: 5pt;
         }
         
-        .signature-line {
-            margin-left: 2em;
-            line-height: 1.8;
-        }
-        
-        .page-break {
-            page-break-after: always;
-        }
-        
         @media print {
             body {
-                margin: 0;
-                padding: 20mm 15mm;
+                padding: 0;
+            }
+            .container {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <h1>ソフトウェアメンテナンス契約書</h1>
-    
-    <div class="preamble">
-        株式会社Spesia（以下、「甲」という）とAMCOLAB TECHNOLOGY CO., LTD（以下、「乙」という）とは、甲が乙に委託するソフトウェアメンテナンス業務に関して、以下の契約条項の記載の通り、業務委託契約（以下「本契約」という）を締結する。
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１条（目的）</div>
-        <div class="article-content">
-            甲は、本契約に基づき、ソフトウェア保守およびその関連業務（以下「本件業務」という）を乙に委託し、乙はこれを受託する。本契約においては、甲が乙に対して最低でも一定量の発注を行うことの対価として、プログラマー、システムエンジニア、プロジェクトマネージャー等（以下「プログラマー等」という）を特定して、甲のために確保することを目的とする。
+    <div class="container">
+        <h1>秘密保持契約書</h1>
+        
+        <div class="preamble">
+            AMCOLAB TECHNOLOGY CO., LTD（以下「甲」という）と水迫幹 様（以下「乙」という）は、Time & Materials方式によるソフトウェア開発業務（以下「本業務」という）に関して相互に提供する取引上の秘密情報につき、次のとおり契約を締結する。
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第1条（目的）</div>
+            <div class="article-content">
+                甲および乙は、甲乙間の取引が相互の信頼に基づくものであることを認識し、本業務を履行するにあたり、本契約に定められた各条項を遵守し、相手方の秘密情報の守秘を徹底し、公正な取引関係を維持することを目的（以下「本目的」という）とする。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第2条（秘密情報）</div>
+            <div class="clause">
+                １．本契約において秘密情報とは、本目的のために開示又は知得された次の各号の情報をいう。
+                <div class="sub-clause">（１）開示者が相手方に固定媒体（紙、電子媒体、磁気媒体等）によって開示する情報</div>
+                <div class="sub-clause">（２）開示者が相手方に口頭、映像、電気通信回線を通じて提供された電子データ、その他前号に定める以外の方法により開示する情報</div>
+                <div class="sub-clause">（３）開示者の顧客情報並びに開示者の営業上、技術上および財務上の情報</div>
+                <div class="sub-clause">（４）本目的のために、甲および乙が協議した経緯、結果等を記した議事録又は記録</div>
+            </div>
+            <div class="clause">
+                ２．前項にかかわらず、次の各号のいずれかに該当する情報は秘密情報に含まれないものとする。
+                <div class="sub-clause">（１）知得した時点ですでに公知の情報</div>
+                <div class="sub-clause">（２）知得した時点ですでに受領者が保有していたことを証明できる情報</div>
+                <div class="sub-clause">（３）知得した後、受領者の責によらずして公知となった情報</div>
+                <div class="sub-clause">（４）知得した後、正当な権原を有する第三者から秘密保持義務を負うことなく受領者が適法に入手したことを証明できる情報</div>
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第3条（情報の管理）</div>
+            <div class="article-content">
+                甲および乙は、相手方の秘密情報を厳重に管理するものとし、相手方の承諾または指示のある場合を除き、複写、複製、改変等を行わないものとする。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第4条（流用の禁止）</div>
+            <div class="article-content">
+                甲および乙は、取引上知り得た相手方の秘密情報を事前に相手方の文書による承諾を得ることなく、甲と乙との間で明示的または黙示的に合意された目的以外の目的に使用してはならない。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第5条（秘密の保持等）</div>
+            <div class="clause">
+                １．甲および乙は、本契約締結の事実、内容および相手方から入手した秘密情報は、相手方の文書による承認を得ることなく、第三者に開示しないものとする。
+            </div>
+            <div class="clause">
+                ２．甲および乙は、個人情報の取扱いについては関連法規等を遵守し、適切な保護を図るものとする。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第６条（第三者への開示）</div>
+            <div class="article-content">
+                甲および乙は、委託等のために相手方の事前の書面承諾を得て秘密情報の全部または一部を第三者に開示する場合、当該第三者に対し本契約と同等の秘密保持義務を課し、適切かつ合理的に監督するものとする。なお、開示当事者は、自己の故意又は過失がある範囲で当該第三者の行為について責任を負う。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第7条（損害賠償）</div>
+            <div class="clause">
+                甲または甲の任命した従業員および代理人が乙の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、乙は甲に対して損害賠償および乙が必要と認める合理的な措置を請求できるものとする。また、乙または乙の任命した従業員および代理人が甲の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、甲は乙に対して損害賠償および甲が必要と認める合理的な措置を請求できるものとする。なお、当事者の過失による本契約違反に起因して相手方に生じた損害について、当該当事者の損害賠償責任の総額は、違反が発生した日から遡って過去12か月間に相手方が当該当事者に支払った委託料等の総額を上限とする。ただし、当事者の故意又は重大な過失（重過失）による場合はこの限りでない。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第8条（反社会的勢力の排除）</div>
+            <div class="clause">
+              甲または甲の任命した従業員および代理人が乙の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、乙は甲に対して損害賠償および乙が必要と認める合理的な措置を請求できるものとする。また、乙または乙の任命した従業員および代理人が甲の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、甲は乙に対して損害賠償および甲が必要と認める合理的な措置を請求できるものとする。なお、当事者の過失による本契約違反に起因して相手方に生じた損害について、当該当事者の損害賠償責任の総額は、違反が発生した日から遡って過去12か月間に相手方が当該当事者に支払った委託料等の総額を上限とする。ただし、当事者の故意又は重大な過失（重過失）による場合はこの限りでない。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第9条（合意管轄）</div>
+            <div class="article-content">
+                甲および乙は、本契約書に関連して訴訟の必要が生じたときは、東京地方裁判所を第一審の専属裁判所とすることに合意する。本契約は日本法に基づき解釈されるものとする。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第10条（本契約失効後の取扱い）</div>
+            <div class="article-content">
+                本契約書の第4条（流用の禁止）、第5条（秘密の保持等）、第7条（知的財産権）は、本契約がその効力を失った後も5年間有効とする。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第11条（協議解決）</div>
+            <div class="article-content">
+                本契約の修正は、両当事者の書面合意によるもの以外無効とする。本契約に規定なき事項および解釈に疑義が生じた場合は、甲乙誠意をもって協議解決するものとする。
+            </div>
+        </div>
+        
+        <div class="article">
+            <div class="article-title">第12条（契約有効期間と更新）</div>
+            <div class="article-content">
+                本契約の有効期間は、本契約締結日から１年間とする。ただし、上記期間満了日の３ヶ月前までに、甲または乙いずれからも書面による別段の申入れがないときは、本契約の有効期間はさらに１年間延長されるものとし、その後も同様とする。
+            </div>
+        </div>
+        
+        <div class="preamble" style="margin-top: 20pt;">
+            本契約締結の証として、本契約書2通を作成し、甲乙記名押印のうえ各自1通を保有する。
+        </div>
+        
+        <div class="signatures">
+            <p style="text-align: right; margin-bottom: 20pt;">2025年01月16日</p>
+            
+            <div class="signature-block">
+                <p class="party-label">甲</p>
+                <p>住所：3th Audi Bld, 8 Pham Hung Str, Me Tri Ward,</p>
+                <p style="margin-left: 3em;">Nam Tu Liem Dist, Ha Noi City, Viet Nam</p>
+                <p>会社名：AMCOLAB TECHNOLOGY CO., LTD</p>
+                <p>役職名：代表取締役</p>
+                <p>氏名：NGUYEN THI QUY　　　　　　　　印</p>
+            </div>
+            
+            <div class="signature-block">
+                <p class="party-label">乙</p>
+                <p>住所：</p>
+                <p>会社名：株式会社WAT CREATES</p>
+                <p>役職名：代表取締役</p>
+                <p>氏名：水迫幹　　　　　　　　印</p>
+            </div>
         </div>
     </div>
-    
-    <div class="article">
-        <div class="article-title">第２条（初期費用）</div>
-        <div class="article-content">
-            乙は甲に対し、本件業務の開始のために必要となる初期費用を甲に請求することはできない。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第３条（発注）</div>
-        <div class="article-content">
-            甲は乙に対し、発注内容に記載した本件業務の内容を特定した上で、電子的又は非電子的方法により乙に通知して、本件業務の発注を行う。
-        </div>
-        <div class="article-content">
-            発注の際の発注単価は、第４条に記載のとおりとする。なお、同単価には、本件業務の遂行過程において乙から甲に提出された成果物、情報、ノウハウその他に関する著作権を含む一切の知的財産権に関する譲渡費用を含むものとする。
-        </div>
-        <div class="article-content">
-            甲は、既に発注済みの工数の範囲内においては、自由に業務の内容を変更することができる。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第４条（保守費用）</div>
-        <div class="article-content">
-            本契約の委託料金（税抜き）は、月間11時間の作業量に対し、月額20,000円とし、契約期間3ヶ月の合計金額は60,000円とする。
-        </div>
-        <div class="article-content">
-            月間作業量が11時間を超過した場合、超過分については、1時間あたり2,000円（税抜き）の単価で別途請求させていただきます。
-        </div>
-        <div class="article-content">
-            支払いは、契約締結時に3ヶ月分の委託料金（60,000円）を一括で、乙が指定する以下の口座へ日本円（JPY）で送金することにより行うものとする。なお、送金に際して発生する手数料は、全て甲が負担するものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第５条（2026年2月における特別業務範囲）</div>
-        <div class="article-content">
-            2026年2月においては、通常の保守業務に加え、以下の業務が含まれる：
-        </div>
-        <div class="list-item">① 通常保守業務（月間11時間の基準を適用）</div>
-        <div class="list-item">② 残存開発業務（当初開発契約における未完了タスクの完了作業）</div>
-        <div class="article-content">
-            残存開発業務は、システムの完成に向けた追加開発作業であり、2026年2月10日頃までの完了を目標とする。
-        </div>
-        <div class="article-content">
-            残存開発業務に係る作業時間については、1時間あたり1,800円（税抜き）の単価で請求するものとする。
-        </div>
-        <div class="article-content">
-            当該月の作業時間は、作業内容の記載により保守業務と開発業務を区別し、月次で報告するものとする。
-        </div>
-        <div class="article-content">
-            2026年3月1日以降は、残存開発業務が完了しているため、純粋な保守業務のみとなる。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第６条（開発場所）</div>
-        <div class="article-content">
-            乙はベトナム国ハノイ市の乙の事業所において本件業務を行うものとする。
-        </div>
-        <div class="article-content">
-            乙は開発場所の確保に必要となる地代家賃、水道光熱費、ネットワーク関連費用、開発場所において使用する機材・基本ソフトウェア・開発ツールの費用を負担するものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第７条（支払遅延損害金）</div>
-        <div class="article-content">
-            甲の責に帰すべき事由により委託料を支払約定日に支払うことができない場合、乙は甲に対し、支払約定日の翌日より支払いの日までの日数（以下「支払遅延期間」という。）に応じ締切日残高に対し月利1.3%を乗じて計算した金額を支払遅延損害金として請求することができるものとする。ただし、天災地変その他やむを得ない事由により支払約定日に支払うことができない場合は、当該事由の継続する期間は、支払遅延期間に算入しないものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第８条（報告）</div>
-        <div class="article-content">
-            乙は、本件業務の進捗状況について、月次で、また、甲から要求があった場合にはその都度、甲に対し甲の指定する様式にて報告するものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第９条（服務規律）</div>
-        <div class="article-content">
-            乙は、その事業所において適切且的確に本件業務を実行するに足りる服務規律を定め、本件業務を担当するプログラマー等に、同服務規律を周知徹底しなければならない。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１０条（資料などの情報提供および返還）</div>
-        <div class="article-content">
-            甲は、乙に対し、甲が本件業務の遂行に必要と認める資料等を、無償で貸与するものとする。
-        </div>
-        <div class="article-content">
-            乙は、甲より提供を受けた資料等が本件業務の遂行上必要でなくなったときには、速やかに甲に返却するものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１１条（指揮命令）</div>
-        <div class="article-content">
-            本件業務の遂行に関わる乙のプログラマー等に対する指示、労務管理、安全衛生等に関する一切の指揮命令は、乙が行うものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１２条（担当者）</div>
-        <div class="article-content">
-            甲および乙は、それぞれ本件業務を円滑に遂行するため、本件業務の主任担当者を予め書面により相手方に通知する。
-        </div>
-        <div class="article-content">
-            甲および乙は、本件業務の履行に関する連絡等は、原則として主任担当者を通じて行うものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１３条（報告聴取・視察・監査）</div>
-        <div class="article-content">
-            甲は乙の本件業務の遂行状況及び機密保持契約書等に定めた機密情報の取り扱い状況を乙の主任担当者より聴取、又は報告を求めることができるものとする。
-        </div>
-        <div class="article-content">
-            甲は事前に乙に通知して、乙の作業場所を視察し、監査することができるものとする。
-        </div>
-        <div class="article-content">
-            乙は甲の視察又は監査に際しては、現地における交通の手配など、甲において必要となる協力を行うものとする。
-        </div>
-    </div>
-
-        <div class="article-title">第１４条（秘密情報の取り扱い）</div>
-        <div class="article-content">
-            乙は、本件業務遂行のため甲より提供を受けた技術上または営業上その他業務上の情報（相手方が特に秘密でない旨指定した情報を除く）および甲が保有する顧客等の個人情報（以下総称して「秘密情報」という。）を、第三者に漏洩してはならない。但し、次の各号のいずれか一つに該当する情報についてはこの限りではない。
-        </div>
-        <div class="list-item">① 秘密保持義務を負うことなく既に保有している情報</div>
-        <div class="list-item">② 秘密保持義務を負うことなく第三者から正当に入手した情報</div>
-        <div class="list-item">③ 相手方から提供を受けた情報によらず、独自に開発した情報</div>
-        <div class="list-item">④ 本契約および個別契約に違反することなく、且つ、受領の前後を問わず公知となった情報</div>
-        <div class="article-content">
-            乙は、当該秘密情報の管理に必要な措置を講ずるものとし、当該秘密情報を第三者に開示する場合は、事前に相手方からの書面による承諾を受けなければならない。
-        </div>
-        <div class="article-content">
-            乙は、甲より提供を受けた秘密情報について、本契約および個別契約の目的の範囲内でのみ使用し、複製、改変が必要なときは、事前に相手方から書面による承諾を受けるものとする。
-        </div>
-        <div class="article-content">
-            甲と乙が別途機密保持契約書等を締結し又は締結している場合には、同契約書の定めが本条に優先するものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１５条（プログラム等の著作権）</div>
-        <div class="article-content">
-            本件業務の遂行の過程で発生したプログラム、仕様書、設計書その他の成果物の著作権（著作権法第２７条及び第２８条に定める権利を含む）は、乙がかかる成果物を甲に提供した時点で甲に移転する。
-        </div>
-        <div class="article-content">
-            乙は、乙又は乙のプログラマー等をして、甲及び甲の指定する第三者に対して成果物にかかる著作者人格権を行使しないものとする。
-        </div>
-        <div class="article-content">
-            開発場所の現地法において著作権の移転及び著作者人格権の不行使並びにこれらに相当する権利に、本契約書の締結以外の手続きが必要とされている場合には、乙は自らの責任においてこれを行い、随時その完了を甲に対して報告しなければならない。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１６条（別途契約）</div>
-        <div class="article-content">
-            甲は、本契約に記載の本件業務の範囲を超えた業務を発注する場合には、その業務内容・仕様、納期、費用及び納品物については、事前に甲乙協議の上別途契約するものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１７条（損害賠償）</div>
-        <div class="article-content">
-            本件業務遂行上、乙又は乙のプログラマー等及びその他の従業員の責に帰すべき事由により、甲が損害を被った場合には、甲は乙に対して損害賠償請求をすることができる。甲が乙に請求することができる損害賠償の範囲は、通常生ずべき損害、及び、乙が予見すべきであった特別の事情によって生じた損害とする。ただし、次の各号のいずれかに該当する事象が生じた時には、甲が被った全ての損害を賠償しなければならない。
-        </div>
-        <div class="list-item">① 甲の機器等を破損した</div>
-        <div class="list-item">② 故意に甲のサーバーに過剰にアクセスした</div>
-        <div class="list-item">③ 故意にソフトウェアに悪質なコードを仕込んだ</div>
-        <div class="article-content">
-            いずれの場合でも甲は乙に対し発注金額を超える損害賠償金を請求できないものとする。
-        </div>
-        <div class="article-content">
-            前項の損害賠償請求は、各個別契約において定めるシステム公開日から起算して365日以内に行わなければ、請求権を行使することができない。（システムに関するソフトウェア問題点：エラー・バグ発生の対応期間）
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１８条（不可抗力）</div>
-        <div class="article-content">
-            乙に不測の事態が発生し、本件業務の遂行が不可能または困難となったときには、乙は直ちに甲に報告すると共に、適切な措置を講じ甲の業務に支障をきたさないよう最善の努力をしなければならない。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第１９条（直接交渉の禁止）</div>
-        <div class="article-content">
-            本件業務の遂行にあたり、乙は甲の指示がある場合を除き、甲が取り扱う商品および役務ならびにこれに附帯関連する業務に関して、甲の取引先と直接交渉してはならない。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第２０条（契約内容の変更）</div>
-        <div class="article-content">
-            本契約の内容は、甲乙の書面に基づく合意によってのみ変更することができる。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第２１条（有効期間）</div>
-        <div class="article-content">
-            本契約の有効期間は、2026年2月1日から2026年4月30日までの3ヶ月間とする。
-        </div>
-        <div class="article-content">
-            本契約は、期間満了の1ヶ月前までに甲または乙のいずれからも書面による別段の意思表示がない場合には、同一条件でさらに3ヶ月間自動的に更新されるものとし、以後も同様とする。
-        </div>
-        <div class="article-content">
-            本契約が更新された場合でも、甲の指示が無い限り、指定プログラマーは変更されず、乙において継続して確保する義務を負うものとする。
-        </div>
-        <div class="article-content">
-            乙は、本条１項の定めにより本契約が更新されずに終了した場合でも、営業損失、人員確保費用の補償その他一切の賠償を請求できない。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第２２条（残存条項）</div>
-        <div class="article-content">
-            本契約が終了した後も、第１２条、第１３条、第１４条、第１５条、第１６条、第１７条、第１８条、第１９条、第２０条、第２１条、第２３条、第２４条、第２５条、本条はなお存続するものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第２３条（準拠法）</div>
-        <div class="article-content">
-            本契約に関する一切の事項は日本国の法律に準拠し、解釈されるものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第２４条（正本）</div>
-        <div class="article-content">
-            本契約に関して日本語以外の翻訳文が甲又は乙により作成された場合でも、本契約の解釈は日本語の契約書に従って行うものとする。
-        </div>
-    </div>
-    
-    <div class="article">
-        <div class="article-title">第２５条（合意管轄裁判所）</div>
-        <div class="article-content">
-            本契約に関し訴訟の必要が生じた場合には、東京地方裁判所を専属合意管轄裁判所とする。
-        </div>
-    </div>
-    
-    <div class="article-content" style="margin-top: 20pt;">
-        本契約締結の証として、本契約書２通を作成し、甲乙記名押印の上、各１通を保有する。
-    </div>
-    
-    <div class="signature-section">
-        <div class="signature-block">
-            <div class="signature-label">署名日　2026年01月25日</div>
-            <div class="signature-label" style="margin-top: 15pt;">甲：</div>
-            <div class="signature-line">会社：株式会社Spesia</div>
-            <div class="signature-line">住所：東京都新宿区西新宿3-3-13西新宿水間ビル６F</div>
-            <div class="signature-line">代表取締役：陣之内孝明</div>
-        </div>
-            <div class="signature-label" style="margin-top: 15pt;">乙：</div>
-            <div class="signature-line">会社：AMCOLAB TECHNOLOGY CO., LTD</div>
-            <div class="signature-line">住所：ハノイ市 イエンホア区 ファムフン通り8番地 アウディビル 3階</div>
-            <div class="signature-line">代表取締役：NGUYEN THI QUY</div>
-        </div>
-    </div>
-    
 </body>
 </html>
+
