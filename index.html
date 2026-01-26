@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>既存LINEミニアプリのシステム引継ぎ及びAWSでの運用保守等におけるベンダーさがし - 案件概要</title>
+    <title>LINEを活用した簡易的な予約管理システム開発の検討</title>
     <style>
         @page {
             size: A4;
@@ -11,326 +12,243 @@
         }
         
         body {
-            font-family: "Yu Gothic", "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-            font-size: 10.5pt;
-            line-height: 1.7;
+            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+            line-height: 1.8;
             color: #333;
             max-width: 210mm;
             margin: 0 auto;
-            padding: 20px;
-            background: #fff;
+            padding: 20mm;
+            background: white;
         }
         
         .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
             border-bottom: 3px solid #2c5aa0;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
         }
         
-        h1 {
-            font-size: 16pt;
-            color: #2c5aa0;
-            margin: 0 0 10px 0;
-            font-weight: bold;
-        }
-        
-        .meta-info {
-            font-size: 9pt;
-            color: #666;
-            margin-top: 8px;
-        }
-        
-        .meta-info span {
-            margin-right: 20px;
-        }
-        
-        h2 {
-            font-size: 13pt;
-            color: #2c5aa0;
-            border-left: 5px solid #2c5aa0;
-            padding-left: 12px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        
-        h3 {
-            font-size: 11pt;
-            color: #444;
-            margin-top: 18px;
+        .header h1 {
+            font-size: 18px;
             margin-bottom: 10px;
-            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .header .date {
+            font-size: 14px;
+            text-align: right;
+            margin-top: 20px;
         }
         
         .section {
             margin-bottom: 25px;
         }
         
-        .requirements-list {
-            background: #f8f9fa;
-            border-left: 4px solid #ffc107;
-            padding: 15px 20px;
-            margin: 15px 0;
+        .section h2 {
+            font-size: 16px;
+            background-color: #2c5aa0;
+            color: white;
+            padding: 8px 15px;
+            margin-bottom: 15px;
         }
         
-        .requirements-list ol {
-            margin: 0;
-            padding-left: 20px;
-        }
-        
-        .requirements-list li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        
-        .highlight-box {
-            background: #e3f2fd;
-            border: 1px solid #2c5aa0;
-            border-radius: 4px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .highlight-box h3 {
-            margin-top: 0;
+        .section h3 {
+            font-size: 14px;
             color: #2c5aa0;
+            margin: 15px 0 10px 0;
+            padding-left: 10px;
+            border-left: 3px solid #2c5aa0;
         }
         
-        .info-table {
+        .section p {
+            font-size: 13px;
+            margin: 10px 0;
+        }
+        
+        .section ul {
+            font-size: 13px;
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        
+        .section li {
+            margin: 8px 0;
+        }
+        
+        table {
             width: 100%;
             border-collapse: collapse;
             margin: 15px 0;
+            font-size: 13px;
         }
         
-        .info-table th {
-            background: #f5f5f5;
-            border: 1px solid #ddd;
+        table th {
+            background-color: #f0f0f0;
             padding: 10px;
             text-align: left;
-            font-weight: bold;
-            width: 25%;
-        }
-        
-        .info-table td {
+            width: 30%;
             border: 1px solid #ddd;
+        }
+        
+        table td {
             padding: 10px;
+            border: 1px solid #ddd;
         }
         
-        .note {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px 15px;
+        .flow-chart {
+            background-color: #f9f9f9;
+            padding: 15px;
             margin: 15px 0;
-            font-size: 9.5pt;
+            border-left: 4px solid #2c5aa0;
         }
         
-        .location-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+        .flow-step {
             margin: 10px 0;
+            padding-left: 20px;
         }
         
-        .location-tag {
-            background: #e8f4f8;
-            border: 1px solid #2c5aa0;
-            padding: 4px 10px;
-            border-radius: 3px;
-            font-size: 9pt;
-        }
-        
-        ul {
-            margin: 10px 0;
-            padding-left: 25px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        .emphasis {
-            color: #d32f2f;
+        .flow-arrow {
+            text-align: center;
+            color: #2c5aa0;
             font-weight: bold;
+            margin: 5px 0;
         }
         
-        .budget-section {
-            background: #e8f5e9;
-            border: 2px solid #4caf50;
-            border-radius: 4px;
+        .info-box {
+            background-color: #fff8dc;
+            border: 2px solid #ffcc00;
             padding: 15px;
             margin: 15px 0;
-        }
-        
-        .deadline-section {
-            background: #ffebee;
-            border: 2px solid #f44336;
-            border-radius: 4px;
-            padding: 15px;
-            margin: 15px 0;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>既存LINEミニアプリのシステム引継ぎ及びAWSでの運用保守等におけるベンダーさがし</h1>
-        <div class="meta-info">
-            <span><strong>カテゴリ:</strong> Webシステム</span>
-            <span><strong>案件種別:</strong> システム引継ぎ・運用保守・追加開発</span>
-        </div>
+        <h1>LINEを活用した簡易的な予約管理システム開発の検討</h1>
+        <div class="date">2025年1月27日</div>
     </div>
 
     <div class="section">
-        <h2>■ 案件概要</h2>
-        
-        <h3>背景</h3>
-        <p>既存ベンダーの人日単価上昇に対し、品質や主体性が伴っていないため、事業拡大に伴い、より信頼性が高く、コストパフォーマンスの良い体制へ移行したい。</p>
-        
-        <h3>現状の課題</h3>
-        <ul>
-            <li>現行ベンダーのコスト値上げ（QCD全般に課題）</li>
-            <li>指示待ちの受け身な姿勢で、能動的な提案力が不足</li>
-            <li>品質面での課題が顕在化</li>
-            <li>既存システムのドキュメント（設計書等）が半分程度しか存在しない状況</li>
-        </ul>
-        
-        <h3>依頼範囲</h3>
-        <ul>
-            <li>既存LINEミニアプリのシステム移管（ドキュメント整備含む）</li>
-            <li>AWSインフラ運用</li>
-            <li>追加機能開発</li>
-        </ul>
-        
-        <h3>システム概要</h3>
-        <p>LINEミニアプリを活用した「ポイ活」サービス</p>
-        <ul>
-            <li>商品購入時のポイント付与機能</li>
-            <li>ログインポイント付与機能</li>
-            <li>その他ポイント関連機能</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>■ エントリー条件（必須要件）</h2>
-        
-        <div class="requirements-list">
-            <ol>
-                <li><strong class="emphasis">LINEミニアプリの開発、運用実績がある企業様限定</strong><br>
-                （必ず回答欄および自己推薦文に実績について記載ください）</li>
-                
-                <li><strong class="emphasis">AWSの構築・運用実績がある企業様限定</strong><br>
-                （必ず回答欄および自己推薦文に実績について記載ください）</li>
-                
-                <li><strong class="emphasis">過去5年以内でRuby on Railsでの開発実績がある企業様限定</strong><br>
-                （必ず回答欄および自己推薦文に実績について記載ください）<br>
-                ※実績がない場合は代替案があればOK</li>
-                
-                <li><strong class="emphasis">他社が開発したシステムの引き継ぎ実績がある企業様限定</strong><br>
-                （必ず回答欄および自己推薦文に実績について記載ください）</li>
-                
-                <li><strong class="emphasis">指示待ちではなく、プロジェクトを前進させるための能動的な提案力がある企業様限定</strong></li>
-            </ol>
-        </div>
-        
-        <div class="note">
-            <strong>重要:</strong> 各必須要件について、具体的な実績を回答欄および自己推薦文に必ず記載してください。実績の記載がない場合は選考対象外となります。
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>■ 対象地域</h2>
-        <div class="location-tags">
-            <span class="location-tag">関東</span>
-            <span class="location-tag">中部</span>
-            <span class="location-tag">関西</span>
-            <span class="location-tag">中国</span>
-            <span class="location-tag">四国</span>
-            <span class="location-tag">福岡県</span>
-            <span class="location-tag">佐賀県</span>
-            <span class="location-tag">長崎県</span>
-            <span class="location-tag">熊本県</span>
-            <span class="location-tag">大分県</span>
-            <span class="location-tag">宮崎県</span>
-            <span class="location-tag">鹿児島県</span>
-        </div>
-        <p style="font-size: 9.5pt; margin-top: 10px;">※原則Webミーティングを想定しておりますが、来社のご希望があればお越しいただくことも可能です。</p>
-    </div>
-
-    <div class="section">
-        <h2>■ 予算・スケジュール</h2>
-        
-        <div class="budget-section">
-            <h3 style="margin-top: 0;">予算</h3>
-            <p style="font-size: 12pt; font-weight: bold; margin: 5px 0;">月額100万円未満</p>
-            <p style="margin: 5px 0;">人日単価5万円以下 × 20日稼働想定</p>
-            <div class="note" style="margin-top: 10px;">
-                現状のコストからの削減も目的の一つであるため、100万円以上になる場合は切り替えるメリットがないと判断されます。
-            </div>
-        </div>
-        
-        <div class="deadline-section">
-            <h3 style="margin-top: 0; color: #d32f2f;">納期</h3>
-            <p style="font-size: 12pt; font-weight: bold; margin: 5px 0; color: #d32f2f;">2026年5月を目処にベンダーの完全切り替えを完了</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>■ 技術要件</h2>
-        <table class="info-table">
+        <h2>発注会社の情報</h2>
+        <table>
             <tr>
-                <th>項目</th>
-                <th>内容</th>
+                <th>会社名</th>
+                <td>サロン ディセ</td>
             </tr>
             <tr>
-                <td>フロントエンド</td>
-                <td>LINEミニアプリ</td>
+                <th>発注者名</th>
+                <td>山下 松江</td>
             </tr>
             <tr>
-                <td>バックエンド</td>
-                <td>Ruby on Rails（代替案提案可）</td>
+                <th>電話番号</th>
+                <td>070-3841-7000</td>
             </tr>
             <tr>
-                <td>インフラ</td>
-                <td>AWS（構築・運用含む）</td>
-            </tr>
-            <tr>
-                <td>ドキュメント状況</td>
-                <td>設計書等が半分程度しか存在しない<br>→ 引継ぎ時のドキュメント整備が必要</td>
+                <th>カテゴリ</th>
+                <td>Webシステム</td>
             </tr>
         </table>
     </div>
 
     <div class="section">
-        <h2>■ 求める企業像</h2>
-        <div class="highlight-box">
-            <h3>重視するポイント</h3>
-            <ul style="margin-bottom: 0;">
-                <li><strong>安全な引き継ぎ実績:</strong> 他社開発システムを確実に引き継いだ経験</li>
-                <li><strong>能動的な提案力:</strong> 指示待ちではなく、プロジェクトを前進させる姿勢</li>
-                <li><strong>コストパフォーマンス:</strong> 品質を担保しながら適正価格で対応可能</li>
-                <li><strong>技術力:</strong> LINEミニアプリ × AWS × Ruby on Railsの実績</li>
-                <li><strong>信頼性:</strong> 長期的なパートナーシップを構築できる企業</li>
-            </ul>
+        <h2>エントリー条件</h2>
+        <div class="info-box">
+            <p><strong>スキル・その他</strong></p>
+            <p>発注主様はIT知識に詳しくないため、システムの開発だけでなく、開発後の不具合対応や技術的なサポートなど、アフターフォローをしっかり行っていただける企業様をご希望です。ご対応いただける企業様限定。</p>
         </div>
     </div>
 
     <div class="section">
-        <h2>■ 打ち合わせについて</h2>
-        <p><strong>初回打ち合わせ:</strong> メールをいただく際に日程調整させていただきます。</p>
-        <p><strong>方法:</strong> 原則Webミーティング（ご希望があれば来社も可能）</p>
+        <h2>お問い合わせ時の内容</h2>
+        <p><strong>発注内容</strong></p>
+        <p>簡単な業者向けのサービス業などの予約管理システムの作成</p>
     </div>
 
     <div class="section">
-        <h2>■ 補足事項</h2>
+        <h2>発注ナビ担当者のヒアリング内容</h2>
+        
+        <h3>打ち合わせ方法について</h3>
         <ul>
-            <li>現在、他のシステム会社の紹介にて検討も進めておりますが、結論に至っておりません。</li>
-            <li>今後は運用保守だけでなく、追加機能開発も発生する見込みです。</li>
-            <li>サーバーも含めた規模感はそれなりにあります。</li>
+            <li>Webミーティングを想定しております。</li>
+        </ul>
+
+        <h3>初回打ち合わせの候補日目安について</h3>
+        <ul>
+            <li>メールをいただく際に調整させていただきたいです。</li>
+        </ul>
+
+        <h3>現状</h3>
+        <ul>
+            <li>発注主様はエステサロンを営む個人事業主様です。</li>
+            <li>自社だけでなく他の業者（歯科や飲食店など）などにも提供・販売できるような簡易的な予約管理システムを開発したく、お問い合わせいただきました。</li>
+            <li>以前利用していた大手予約サイトは費用が高く操作も複雑だったため、より安価でシンプルで使いやすいシステムを独自に開発し、低コストで運用したいという背景がございます。</li>
+            <li>現状は詳細までつめておらず、ご依頼内容もふわっとしておりますが、どのくらいの金額でどこまで出来るのかも知りたいという段階です。</li>
+        </ul>
+
+        <h3>要望</h3>
+        <p>下記のような運用フロー・機能面を想定しております。</p>
+        
+        <div class="flow-chart">
+            <div class="flow-step">
+                ユーザー（歯医者や飲食店を利用するお客様）がQRコードを読み込んでLINE登録を行う。
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+                LINEプラットフォーム上で日時やメニューを選択して予約する。予約時に決済まで完了させる仕様を想定。<br>
+                （決済方法は、クレジットカード決済やQRコード決済（PayPayなど）など複数の支払い方法を選べるようにしたいと考えている。）
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+                予約完了の通知もLINE上で行う。すべてLINEで完結する仕組みを想定。<br>
+                店舗側への予約が入った際の通知はの仕方は、ご相談されたいそうです。
+            </div>
+        </div>
+
+        <p><strong>＜上記以外に想定している機能面＞</strong></p>
+        <ul>
+            <li>予約のキャンセル機能</li>
+            <li>来店・サービス利用完了後にポイントを付与する仕組み（付与のタイミングなどをご相談したい。）など</li>
+        </ul>
+
+        <ul>
+            <li>発注主様はIT知識に詳しくないため、システムの開発だけでなく、開発後の不具合対応や技術的なサポートなど含め、アフターフォローをしっかりと行っていただける企業様をご希望です。</li>
+        </ul>
+
+        <h3>予算について</h3>
+        <ul>
+            <li>相場観が分からないため、ご提案いただき検討されたいそうです。</li>
+            <li>ただし、安く提供したいため、開発費もなるべく安く抑えたいご意向です。</li>
+        </ul>
+
+        <h3>納期について</h3>
+        <ul>
+            <li>特に急いではいませんが、開発期間として2～3ヶ月程度を想定しており、5月中くらいまでの納品をご希望です。</li>
         </ul>
     </div>
 
-    <div class="note" style="margin-top: 30px;">
-        <strong>応募に際してのお願い:</strong><br>
-        必須要件に記載された各項目について、具体的な実績を必ず回答欄および自己推薦文に記載してください。実績の記載がない場合は選考対象外となりますので、ご注意ください。
+    <div class="section">
+        <h2>予算</h2>
+        <p>相場観が分からないため、ご提案いただき検討されたいそうです。ただし、安く提供したいため、開発費もなるべく安く抑えたいご意向です。</p>
     </div>
+
+    <div class="section">
+        <h2>納期</h2>
+        <table>
+            <tr>
+                <th>開発期間</th>
+                <td>2～3ヶ月</td>
+            </tr>
+            <tr>
+                <th>納品希望時期</th>
+                <td>2025年5月中</td>
+            </tr>
+            <tr>
+                <th>備考</th>
+                <td>特に急いではいません</td>
+            </tr>
+        </table>
+    </div>
+
 </body>
 </html>
