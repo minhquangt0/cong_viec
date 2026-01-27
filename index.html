@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINEを活用した簡易的な予約管理システム開発の検討</title>
+    <title>eラーニングシステムの新規開発 - 案件概要</title>
     <style>
         @page {
             size: A4;
@@ -12,137 +11,274 @@
         }
         
         body {
-            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             line-height: 1.8;
             color: #333;
             max-width: 210mm;
             margin: 0 auto;
-            padding: 20mm;
-            background: white;
+            padding: 20px;
+            background-color: #fff;
         }
         
         .header {
             text-align: center;
             margin-bottom: 30px;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
             border-bottom: 3px solid #2c5aa0;
         }
         
-        .header h1 {
-            font-size: 18px;
-            margin-bottom: 10px;
+        h1 {
+            font-size: 24px;
             color: #2c5aa0;
-        }
-        
-        .header .date {
-            font-size: 14px;
-            text-align: right;
-            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
         
         .section {
             margin-bottom: 25px;
         }
         
-        .section h2 {
-            font-size: 16px;
-            background-color: #2c5aa0;
-            color: white;
-            padding: 8px 15px;
-            margin-bottom: 15px;
-        }
-        
-        .section h3 {
-            font-size: 14px;
+        h2 {
+            font-size: 18px;
             color: #2c5aa0;
-            margin: 15px 0 10px 0;
+            border-left: 5px solid #2c5aa0;
             padding-left: 10px;
-            border-left: 3px solid #2c5aa0;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
         
-        .section p {
-            font-size: 13px;
-            margin: 10px 0;
+        h3 {
+            font-size: 16px;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
         
-        .section ul {
-            font-size: 13px;
-            padding-left: 25px;
-            margin: 10px 0;
-        }
-        
-        .section li {
-            margin: 8px 0;
-        }
-        
-        table {
+        .info-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 13px;
+            margin-bottom: 20px;
         }
         
-        table th {
-            background-color: #f0f0f0;
+        .info-table th {
+            background-color: #2c5aa0;
+            color: white;
             padding: 10px;
             text-align: left;
+            font-weight: bold;
             width: 30%;
-            border: 1px solid #ddd;
         }
         
-        table td {
+        .info-table td {
             padding: 10px;
             border: 1px solid #ddd;
         }
         
-        .flow-chart {
+        .info-table tr:nth-child(even) {
             background-color: #f9f9f9;
-            padding: 15px;
-            margin: 15px 0;
+        }
+        
+        .requirement-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .requirement-list li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f5f8fc;
             border-left: 4px solid #2c5aa0;
+            position: relative;
+            padding-left: 40px;
         }
         
-        .flow-step {
-            margin: 10px 0;
-            padding-left: 20px;
+        .requirement-list li:before {
+            content: attr(data-number);
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: #2c5aa0;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
         }
         
-        .flow-arrow {
-            text-align: center;
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 8px 8px 25px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "●";
+            position: absolute;
+            left: 5px;
             color: #2c5aa0;
             font-weight: bold;
-            margin: 5px 0;
         }
         
-        .info-box {
-            background-color: #fff8dc;
-            border: 2px solid #ffcc00;
+        .sub-item {
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .sub-item:before {
+            content: "⇒";
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
+        
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 2px solid #ffd700;
             padding: 15px;
             margin: 15px 0;
             border-radius: 5px;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            background-color: #2c5aa0;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>LINEを活用した簡易的な予約管理システム開発の検討</h1>
-        <div class="date">2025年1月27日</div>
+        <h1>eラーニングシステムの新規開発</h1>
     </div>
 
     <div class="section">
         <h2>発注会社の情報</h2>
-        <table>
+        <table class="info-table">
             <tr>
                 <th>会社名</th>
-                <td>サロン ディセ</td>
+                <td>合同会社ICコンサルファーム</td>
             </tr>
             <tr>
                 <th>発注者名</th>
-                <td>山下 松江</td>
+                <td>本多 正樹</td>
             </tr>
             <tr>
                 <th>電話番号</th>
-                <td>070-3841-7000</td>
+                <td>08054994779</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>エントリー条件</h2>
+        <h3>スキル・その他</h3>
+        <ul class="requirement-list">
+            <li data-number="1">「eラーニングシステムの開発実績があり、その流用」あるいは「eラーニングシステムのパッケージを保有しそれを使って開発可能」な企業様限定(回答欄にどちらのパターンで提案する想定かご記載ください)</li>
+            <li data-number="2">「ZoomやMeatなどの既存ツールを使って要件を実現」あるいは「自社パッケージとしてウェブ会議ツールなどを持っており、それを使って開発可能」な企業様限定(回答欄にどちらのパターンで提案する想定かご記載ください)</li>
+            <li data-number="3">納期2か月以内に開発可能な企業様限定(必須となります)</li>
+            <li data-number="4">予算300万以内で開発可能な企業様限定(必須となります)</li>
+            <li data-number="5">最初の締結した契約書内の金額で納品までお約束できる企業様限定(見積もり精度が高い企業様)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>お問い合わせ時の内容</h2>
+        <p>eランニングシステムをつくりたい</p>
+        <ul class="feature-list">
+            <li>なりすまし防止機能</li>
+            <li>決済機能</li>
+            <li>講習を1対50で開催</li>
+            <li>居眠り防止</li>
+            <li>事前申請機能</li>
+            <li>講習の効果測定試験機能</li>
+            <li>講習の受講者、合否結果、修了者などのデータ保存</li>
+            <li>修了証発行(偽造防止)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>発注ナビ担当者のヒアリング内容</h2>
+        
+        <h3>【現状】</h3>
+        <ul class="feature-list">
+            <li>国土交通省の認定機関になる上で、eラーニングシステムが必須とのことで開発を検討している。</li>
+            <li>予算や納期はマストとなります。
+その場合、コストや開発期間を短縮するために、eラーニングシステムとウェブ会議ツールを既製品あるいはパッケージを使って
+開発できる企業様を探しております。</li>
+            <li>またこれまでの開発経験から、最初に締結した金額から上振れ手請求されることが多く、
+最初の見積もり(契約書内の金額)の精度を高く求められております。ご了承ください。</li>
+        </ul>
+
+        <h3>【要望】</h3>
+        <ul class="feature-list">
+            <li>基本的な内容はお問い合わせ時の内容をご確認ください。</li>
+            <li>ポイントとしては
+                <ul class="feature-list">
+                    <li>納期</li>
+                    <li>予算</li>
+                    <li>eラーニング及びウェブMTG(テレビ電話)ツールがパッケージ利用あるいは実績の流用で安く早く行えるか</li>
+                </ul>
+                となります。ご了承ください。
+            </li>
+        </ul>
+
+        <h3>【補足】</h3>
+        <ul class="feature-list">
+            <li>受講者に事前登録をしてもらう
+                <div class="sub-item">事前登録時に免許証などの登録を行う</div>
+                <div class="sub-item">実際の講習時に免許証情報などの情報からシステム上で本人認証を行い、なりすまし防止を行う</div>
+            </li>
+            <li>講習は講師1人対50名で実施
+                <div class="sub-item">講師はサブでもう1人つく様な想定もある</div>
+            </li>
+            <li>講習時に居眠りをしている受講者を検知する
+                <div class="sub-item">検知した際には、講師(サブ講師)と本人に何かしらのアラート通知を行う</div>
+            </li>
+            <li>受講後の機能として、テストを実施する必要有。
+                <div class="sub-item">テストデータ等を含めて管理システムでデータ管理</div>
+            </li>
+            <li>修了証発行
+                <div class="sub-item">システム上で修了証を発行する</div>
+                <div class="sub-item" style="padding-left: 40px;">修了証は偽造できないように、QRコードを埋め込み、そこから読み込むと偽造ではないという証明が行えるようにする。</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>予算・納期・カテゴリ</h2>
+        <table class="info-table">
+            <tr>
+                <th>予算</th>
+                <td>〜300万円<br>300万以下</td>
+            </tr>
+            <tr>
+                <th>納期</th>
+                <td>2ヶ月<br>早ければ早い方が良いが、遅くても2か月以内</td>
             </tr>
             <tr>
                 <th>カテゴリ</th>
@@ -151,103 +287,8 @@
         </table>
     </div>
 
-    <div class="section">
-        <h2>エントリー条件</h2>
-        <div class="info-box">
-            <p><strong>スキル・その他</strong></p>
-            <p>発注主様はIT知識に詳しくないため、システムの開発だけでなく、開発後の不具合対応や技術的なサポートなど、アフターフォローをしっかり行っていただける企業様をご希望です。ご対応いただける企業様限定。</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>お問い合わせ時の内容</h2>
-        <p><strong>発注内容</strong></p>
-        <p>簡単な業者向けのサービス業などの予約管理システムの作成</p>
-    </div>
-
-    <div class="section">
-        <h2>発注ナビ担当者のヒアリング内容</h2>
-        
-        <h3>打ち合わせ方法について</h3>
-        <ul>
-            <li>Webミーティングを想定しております。</li>
-        </ul>
-
-        <h3>初回打ち合わせの候補日目安について</h3>
-        <ul>
-            <li>メールをいただく際に調整させていただきたいです。</li>
-        </ul>
-
-        <h3>現状</h3>
-        <ul>
-            <li>発注主様はエステサロンを営む個人事業主様です。</li>
-            <li>自社だけでなく他の業者（歯科や飲食店など）などにも提供・販売できるような簡易的な予約管理システムを開発したく、お問い合わせいただきました。</li>
-            <li>以前利用していた大手予約サイトは費用が高く操作も複雑だったため、より安価でシンプルで使いやすいシステムを独自に開発し、低コストで運用したいという背景がございます。</li>
-            <li>現状は詳細までつめておらず、ご依頼内容もふわっとしておりますが、どのくらいの金額でどこまで出来るのかも知りたいという段階です。</li>
-        </ul>
-
-        <h3>要望</h3>
-        <p>下記のような運用フロー・機能面を想定しております。</p>
-        
-        <div class="flow-chart">
-            <div class="flow-step">
-                ユーザー（歯医者や飲食店を利用するお客様）がQRコードを読み込んでLINE登録を行う。
-            </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">
-                LINEプラットフォーム上で日時やメニューを選択して予約する。予約時に決済まで完了させる仕様を想定。<br>
-                （決済方法は、クレジットカード決済やQRコード決済（PayPayなど）など複数の支払い方法を選べるようにしたいと考えている。）
-            </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-step">
-                予約完了の通知もLINE上で行う。すべてLINEで完結する仕組みを想定。<br>
-                店舗側への予約が入った際の通知はの仕方は、ご相談されたいそうです。
-            </div>
-        </div>
-
-        <p><strong>＜上記以外に想定している機能面＞</strong></p>
-        <ul>
-            <li>予約のキャンセル機能</li>
-            <li>来店・サービス利用完了後にポイントを付与する仕組み（付与のタイミングなどをご相談したい。）など</li>
-        </ul>
-
-        <ul>
-            <li>発注主様はIT知識に詳しくないため、システムの開発だけでなく、開発後の不具合対応や技術的なサポートなど含め、アフターフォローをしっかりと行っていただける企業様をご希望です。</li>
-        </ul>
-
-        <h3>予算について</h3>
-        <ul>
-            <li>相場観が分からないため、ご提案いただき検討されたいそうです。</li>
-            <li>ただし、安く提供したいため、開発費もなるべく安く抑えたいご意向です。</li>
-        </ul>
-
-        <h3>納期について</h3>
-        <ul>
-            <li>特に急いではいませんが、開発期間として2～3ヶ月程度を想定しており、5月中くらいまでの納品をご希望です。</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>予算</h2>
-        <p>相場観が分からないため、ご提案いただき検討されたいそうです。ただし、安く提供したいため、開発費もなるべく安く抑えたいご意向です。</p>
-    </div>
-
-    <div class="section">
-        <h2>納期</h2>
-        <table>
-            <tr>
-                <th>開発期間</th>
-                <td>2～3ヶ月</td>
-            </tr>
-            <tr>
-                <th>納品希望時期</th>
-                <td>2025年5月中</td>
-            </tr>
-            <tr>
-                <th>備考</th>
-                <td>特に急いではいません</td>
-            </tr>
-        </table>
+    <div class="highlight-box">
+        <strong>重要事項:</strong> 予算300万円以内、納期2ヶ月以内は必須条件となります。また、最初に締結した契約書内の金額で納品までお約束できることが求められます。
     </div>
 
 </body>
