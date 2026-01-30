@@ -1,319 +1,782 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>見積書 - MooM 4.0 開発</title>
-    <style>
-        @page {
-            size: A4 portrait;
-            margin: 20mm 15mm;
-        }
-        
-        body {
-            font-family: "MS PMincho", "MS Mincho", "Hiragino Mincho ProN", serif;
-            font-size: 10.5pt;
-            line-height: 1.6;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            max-width: 210mm;
-            margin: 0 auto;
-            padding: 0;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #2c5aa0;
-            padding-bottom: 15px;
-        }
-        
-        .header h1 {
-            font-size: 20pt;
-            margin: 0 0 10px 0;
-            color: #2c5aa0;
-            font-weight: bold;
-        }
-        
-        .document-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-            font-size: 10pt;
-        }
-        
-        .client-info {
-            flex: 1;
-        }
-        
-        .client-info p {
-            margin: 3px 0;
-        }
-        
-        .company-info {
-            text-align: right;
-            flex: 1;
-            font-size: 9pt;
-        }
-        
-        .company-info p {
-            margin: 2px 0;
-        }
-        
-        .total-amount {
-            background-color: #f0f4f8;
-            border: 2px solid #2c5aa0;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .total-amount p {
-            margin: 5px 0;
-            font-size: 11pt;
-        }
-        
-        .total-amount .amount {
-            font-size: 18pt;
-            font-weight: bold;
-            color: #2c5aa0;
-            margin: 10px 0;
-        }
-        
-        .section {
-            margin: 25px 0;
-        }
-        
-        .section-title {
-            background-color: #2c5aa0;
-            color: white;
-            padding: 8px 12px;
-            font-size: 11pt;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-        
-        .section-content {
-            padding: 0 10px;
-        }
-        
-        .phase-box {
-            border: 1px solid #ccc;
-            margin: 15px 0;
-            padding: 12px;
-            background-color: #fafafa;
-        }
-        
-        .phase-header {
-            font-size: 11pt;
-            font-weight: bold;
-            color: #2c5aa0;
-            margin-bottom: 8px;
-            border-bottom: 1px solid #2c5aa0;
-            padding-bottom: 5px;
-        }
-        
-        .phase-detail {
-            margin: 5px 0;
-            font-size: 10pt;
-        }
-        
-        .phase-detail .label {
-            display: inline-block;
-            width: 80px;
-            font-weight: bold;
-        }
-        
-        .phase-amount {
-            text-align: right;
-            font-size: 13pt;
-            font-weight: bold;
-            color: #d9534f;
-            margin-top: 8px;
-        }
-        
-        ul {
-            margin: 8px 0;
-            padding-left: 25px;
-        }
-        
-        ul li {
-            margin: 4px 0;
-            line-height: 1.5;
-        }
-        
-        .note-box {
-            background-color: #fff9e6;
-            border-left: 4px solid #ffc107;
-            padding: 12px;
-            margin: 15px 0;
-            font-size: 10pt;
-        }
-        
-        .note-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #ccc;
-            font-size: 9pt;
-            color: #666;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-        }
-        
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-        
-        th {
-            background-color: #e8f0f8;
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        .text-right {
-            text-align: right;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        @media print {
-            body {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-        }
-    </style>
+
+<!-- saved from url=(0151)file:///private/var/folders/wh/5s1nrlwn7qx57czw7z85t7x40000gn/T/remote-file-preview-6ADA5E5A-81AB-41E5-96B0-C8A43C538940/estimation_moom_v4_phases.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MooM v4.0 Estimation | MediaBirth × AMCOLAB</title>
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; line-height: 1.5; color: #111; margin: 24px; }
+  h1 { margin-bottom: 6px; }
+  .meta { color: #555; margin-bottom: 18px; }
+  .badge { display:inline-block; padding:2px 8px; border-radius: 999px; background:#eee; font-size: 12px; margin-left: 8px; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0 22px; }
+  th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+  th { background: #f6f6f6; text-align: left; }
+  .right { text-align: right; white-space: nowrap; }
+  details { margin: 10px 0 16px; padding: 10px 12px; border: 1px solid #e5e5e5; border-radius: 10px; background: #fff; }
+  summary { cursor: pointer; font-weight: 700; }
+  .small { font-size: 12px; color: #666; }
+  .total { font-weight: 800; background: #eef; }
+  .count { color:#444; font-weight: 600; }
+  ul { margin: 8px 0 0 18px; }
+  code { background:#f3f3f3; padding: 1px 6px; border-radius: 6px; }
+  .phase-summary {
+  margin: 24px 0;
+  padding: 14px 18px;
+  background: #f9fafb;          /* nền xám rất nhạt */
+  border-left: 4px solid #2563eb;/* vạch màu làm điểm nhấn */
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.phase-summary b {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.phase-summary ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.phase-summary li {
+  margin: 2px 0;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>見　積　書</h1>
-        </div>
-        
-        
-        <div class="total-amount">
-            <p><strong>MooM 4.0 開発プロジェクト</strong></p>
-            <div class="amount">合計金額：¥11,960,000（非課税）</div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">1. Phase別の構成と概算費用</div>
-            <div class="section-content">
-                <p>今回のバージョンでは、以下の内容を反映しています：</p>
-                <ul>
-                    <li>現行 MooM から MooM 4.0 への データ移行（カメラマン・動画・物件・報酬履歴など）</li>
-                    <li>開発スケジュールを 3 Phase に分割</li>
-                </ul>
-                
-                <div class="phase-box">
-                    <div class="phase-header">▲ Phase 1（2026年2〜3月：2ヶ月）</div>
-                    <p><strong>内容：</strong>Platform Core ＋ 画面構成整理・要件定義・UIデザイン</p>
-                    <div class="phase-detail">
-                        <span class="label">開発工数：</span>1,550時間
-                    </div>
-                    <div class="phase-detail">
-                        <span class="label">デザイン：</span>250時間
-                    </div>
-                    <div class="phase-detail">
-                        <span class="label">合計工数：</span>1,800時間
-                    </div>
-                    <div class="phase-amount">⇒ ¥3,600,000</div>
-                </div>
-                
-                <div class="phase-box">
-                    <div class="phase-header">▲ Phase 2（2026年4〜8月：5ヶ月）</div>
-                    <p><strong>内容：</strong>賃貸コアフロー実装 ＋ 現行 MooM からのデータ移行</p>
-                    <div class="phase-detail">
-                        <span class="label">開発工数：</span>3,189時間（うち データ移行 80時間を含む）
-                    </div>
-                    <div class="phase-amount">⇒ ¥6,378,000</div>
-                </div>
-                
-                <div class="phase-box">
-                    <div class="phase-header">▲ Phase 3（約2ヶ月）</div>
-                    <p><strong>内容：</strong>AI・SNS・分析まわりの拡張機能</p>
-                    <div class="phase-detail">
-                        <span class="label">開発工数：</span>991時間
-                    </div>
-                    <div class="phase-amount">⇒ ¥1,982,000</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">2. デザイン工数（250h）の内訳イメージ</div>
-            <div class="section-content">
-                <p>Phase 1 の デザイン 250時間は、以下のように分解して考えています：</p>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 60%;">作業内容</th>
-                            <th style="width: 20%;">工数</th>
-                            <th style="width: 20%;">担当</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <strong>画面構成整理・ワイヤーフレーム・画面要件定義</strong>
-                                <ul style="margin: 5px 0; padding-left: 20px; font-size: 9.5pt;">
-                                    <li>サイト全体の画面一覧・メニュー構成の整理</li>
-                                    <li>画面のワイヤーフレーム作成・画面遷移</li>
-                                    <li>業務フローと画面フローの突き合わせ</li>
-                                    <li>画面単位の説明コメント</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">250h</td>
-                            <td class="text-center">AMCOLAB</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong>Visualデザイン（色・余白・コンポーネント整え）</strong>
-                                <ul style="margin: 5px 0; padding-left: 20px; font-size: 9.5pt;">
-                                    <li>トンマナ統一</li>
-                                    <li>UIパーツのスタイル定義 など</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">150h<br/><span style="font-size: 8pt;">(想定)</span></td>
-                            <td class="text-center">お客様<br/>ご担当</td>
-                        </tr>
-                    </tbody>
-                </table>
-               <div class="note-box">
-                    <div class="note-title">※ ご注意</div>
-                    <p>もし Visual デザインをご担当される場合は、弊社側は「画面構成整理・要件定義（250h）」のみを実施する形でも対応可能です。</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">3. Phase 2 の分割について</div>
-            <div class="section-content">
-                <p>現状では、Phase 2 を「賃貸コアフロー実装＋既存 MooM からの移行」として 4〜8 月にまとめておりますが、ご希望があれば Phase 2 の中を 2 つ程度のマイルストーンに分けて進めることも可能です。</p>
-                
-                <p style="margin-top: 12px;">Phase 1 で Platform Core と画面要件をしっかり固めておくことで、Phase 2 以降は「どの画面から実装するか」をある程度自由に入れ替えても、全体アーキテクチャへの影響は最小限に抑えられる想定です。</p>
-                
-                <p style="margin-top: 12px;">そのため、Phase 1 完了時に「先にリリースしたい画面（例：ユーザー側／CS側の主要画面）」を一緒に整理し、優先度の高いものから Phase 2 前半に実装し、優先度の低いものは Phase 2 後半〜Phase 3 に回す、といった進め方も取りやすくなります。</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+
+
+<div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:12px;">
+  <div>
+    <div style="font-size:12px; color:#666;">会社情報（発注元）</div>
+    <div style="font-size:22px; font-weight:800; letter-spacing:0.2px;">株式会社MediaBirth</div>
+  </div>
+  <div style="text-align:right;">
+    <div style="font-size:12px; color:#666;">会社情報（見積提出）</div>
+    <div style="font-size:22px; font-weight:800; letter-spacing:0.2px;">AMCOLAB TECHNOLOGY Co., ltd</div>
+  </div>
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+  <div style="font-size:12px; color:#666;">Estimation date: <span style="font-weight:700; color:#111;">2026-01-21</span></div>
+  <div style="font-size:12px; color:#666;">Valid until: <span style="font-weight:700; color:#111;">2026-01-31</span></div>
+</div>
+
+
+<h1>MooM v4.0 Estimation</h1>
+
+<h2>1) 料金（Rate: 2000/h）</h2>
+<table>
+  <tbody><tr><th style="width:260px;">項目</th><th class="right">h</th><th class="right">単価</th><th class="right">金額</th></tr>
+  <tr><td>開発（共通化後 Effort）</td><td class="right">5730</td><td class="right">2000</td><td class="right">11,460,000</td></tr>
+  <tr><td>既存 MooM からのデータ移行</td><td class="right">80</td><td class="right">2000</td><td class="right">160,000</td></tr>
+  <tr><td>デザイン（追加）</td><td class="right">250</td><td class="right">2000</td><td class="right">500,000</td></tr>
+  <tr class="total"><td>Total</td><td class="right">5,980</td><td class="right">-</td><td class="right">11,960,000</td></tr>
+</tbody></table>
+<div class="small">
+※ 上記は人月換算ではなく、工数ベース（h）での金額です。<br>
+※ Running cost / 外部サービス利用料（Atena/MediaConvert/SNS等）は別途（契約・利用量により変動）。
+</div>
+
+
+
+<h2>2) 工数サマリー（Work Packages）</h2>
+<table>
+  <tbody><tr><th>パッケージ</th><th class="right">h</th></tr>
+  <tr><td>Platform/Foundation（非画面）</td><td class="right">1550</td></tr>
+  <tr><td>Partner 共通UI（非画面：共通コンポーネント/権限/共通API）</td><td class="right">850</td></tr>
+  <tr><td>CM ワークフロー（撮影/予約/動画）</td><td class="right">450</td></tr>
+  <tr><td>VP ワークフロー（内覧）</td><td class="right">400</td></tr>
+  <tr><td>CP ワークフロー（契約〜入居）</td><td class="right">550</td></tr>
+  <tr><td>User ワークフロー（検索〜内覧〜申込〜契約〜入居）</td><td class="right">1100</td></tr>
+  <tr><td>Admin/Ops（運用/例外対応/連携管理）</td><td class="right">750</td></tr>
+  <tr><td>データ移行（既存 MooM → MooM 4.0）</td><td class="right">80</td></tr>
+
+  <tr class="total"><td>Grand Total</td><td class="right">6130</td></tr>
+</tbody></table>
+<div class="small">注記：画面単位で個別見積した場合（重複込み）は 5,980.0h。既存MooMの活用と共通化で開発ベースを圧縮しつつ、、開発5,650h＋データ移行80h＋デザイン250h（合計5,980h）として管理します。</div>
+<div class="small">略語：CM（Cameraman）、CP（契約パートナー）、VP（内覧パートナー）、US（入居者）、AD（管理者）</div>
+
+
+<h2>3) 開発フェーズとスケジュール（3フェーズ案）</h2>
+<table>
+  <tbody><tr><th style="width:180px;">期間</th><th>フェーズ</th><th>主な成果物</th></tr>
+  <tr>
+    <td>2026年2〜3月</td>
+    <td>Phase 1：Platform Core ＋ 画面構成整理</td>
+ <td>
+  ・共通プラットフォーム基盤の整備（約250h）<br>
+   ・現行MooMのシステムをベースに、MooM 4.0向けのプロジェクト構成・共通コンポーネントを再整理<br>
+   ・スマートフォン／PC 共通で使えるレイアウト・UIパーツを整備<br>
+  <br>
+
+  ・認証・権限（マルチロール対応）（約250h）<br>
+   ・ユーザー／カメラマン／内覧パートナー／契約パートナー／Admin・CS など複数ロールのログイン・権限設計<br>
+   ・Magic Link ログイン（メール／LINE前提）の土台実装<br>
+  <br>
+
+  ・MYROOM / 案件の共通モデル設計（約220h）<br>
+   ・「1案件＝1つの進行ストーリー」として扱うための案件モデル設計<br>
+   ・申込〜審査〜契約〜鍵渡しまでを一貫して管理できるイベント設計<br>
+  <br>
+
+  ・Itandi 連携ベース（RPA/スクレイピング側の土台）（約280h）<br>
+   ・物件情報・申込／審査ステータスなどを取り込むための共通アダプタ層<br>
+   ・リトライ・ログ・エラー監視など、安定運用のための基本仕組み<br>
+  <br>
+
+  ・通知まわりのベース実装（約180h）<br>
+   ・MYROOM内の「次にやること」表示の共通ロジック<br>
+   ・メール通知・SMS／LINE 通知に共通で使える通知キューの仕組み<br>
+  <br>
+
+  ・管理画面基盤（Admin/CS 共通フレーム）（約220h）<br>
+   ・物件管理／撮影案件管理／申込案件管理 など、Admin画面の共通レイアウト・フィルタ・一覧コンポーネント<br>
+   ・ロールごとのメニュー構成のたたき台作成<br>
+  <br>
+
+  ・ログ・モニタリング／基本テスト（約150h）<br>
+   ・主要フローのログ出力・エラーハンドリング方針の統一<br>
+   ・今後のPhase 2, 3で追加する機能に耐えられるよう、基本的なテスト・品質基盤を準備<br>
+  <br>
+</td>
+  </tr>
+  <tr>
+    <td>2026年4〜8月</td>
+    <td>Phase 2：賃貸コアフロー実装＋既存 MooM からの移行</td>
+    <td>
+      ・User Site（検索〜内覧予約〜申込〜契約〜鍵受け渡し）のコアフロー実装<br>
+      ・Cameraman／内覧パートナー／契約パートナー／Admin/CS 向け画面と業務フロー実装<br>
+      ・Itandi RPA 連携の本格実装・安定化<br>
+      ・既存 MooM からのデータ移行（カメラマン・動画・報酬履歴・物件などの基本データ）<br>
+      ・MooM 4.0 β リリース
+    </td>
+  </tr>
+  <tr>
+    <td>2026年9〜10月</td>
+    <td>Phase 3：Atena・AI・SNS・分析まわりの拡張機能</td>
+    <td>
+      ・Mailroom / Atena 連携（紙契約・鍵配送まわりの自動化の土台）<br>
+      ・AI チャットボット／FAQ 補助機能<br>
+      ・SNS 自動投稿・効果測定（Instagram / YouTube / TikTok）の実装<br>
+      ・SNSダッシュボード・分析機能の拡張、運用改善
+    </td>
+  </tr>
+
+</tbody></table>
+
+ <div class="phase-summary">
+  <b>Phase別 工数・費用イメージ（Rate: 2,000円/h）</b>
+  <ul>
+    <li>Phase 1：開発1,550h ＋ 画面構成250h（計1,800h）⇒ 3,600,000円</li>
+    <li>Phase 2：開発3,189h（うちデータ移行80h を含む）⇒ 6,378,000円</li>
+    <li>Phase 3：開発991h ⇒ 1,982,000円</li>
+  </ul>
+</div>
+
+
+<h2>4) 推奨チーム体制（Phaseによって変動）</h2>
+<ul>
+  <li>PM/PO：1名（要件・優先度・対外調整）</li>
+  <li>Tech Lead：1名（アーキテクチャ/品質/レビュー）</li>
+  <li>Backend（Rails）：2〜3名</li>
+  <li>RPA（Playwright）：1名</li>
+  <li>Frontend（Next.js/React）：2名</li>
+  <li>QA：1〜2名（回帰・E2E・UAT支援）</li>
+  <li>Infra/DevOps：0.5〜1名（構築/監視/リリース）</li>
+</ul>
+
+
+<h2>5) 推奨技術スタック（提案）</h2>
+<ul>
+  <li>Backend：Ruby on Rails（API + Admin/Ops）</li>
+  <li>Crawl：RPA（Playwright）</li>
+  <li>Worker：Fargate（ECS）でジョブ/RPAを実行</li>
+  <li>Frontend：Next.js + React（Partner/User/Admin）</li>
+  <li>DB：PostgreSQL（必要に応じてRedis）</li>
+  <li>Video：AWS MediaConvert（HLS生成・トランスコード）、S3保管、CloudFront配信</li>
+  <li>SMS送信：Firebase</li>
+  <li>Mailroom：Atena（紙契約の配送/受領・運用連携）</li>
+  <li>Jobs：SQS（キュー） / Sidekiq（Railsジョブ実行）（もしくはRails ActiveJob + Queue）</li>
+  <li>Auth：LINEログイン + JWT / セッション、RBAC（Role-Based Access Control）必須</li>
+</ul>
+
+
+<h2>6) Production向けInfra提案（必須構成）</h2>
+<table>
+  <tbody><tr><th style="width:220px;">カテゴリ</th><th>推奨サービス</th><th>目的</th></tr>
+  <tr><td>Compute</td><td>ECS/Fargate（Web/Worker/RPA）</td><td>API/Frontend/Workerのスケール、RPAの分離実行</td></tr>
+  <tr><td>Load Balancer</td><td>ALB</td><td>HTTPS終端・ルーティング</td></tr>
+  <tr><td>Database</td><td>RDS（PostgreSQL）</td><td>トランザクション/監査ログ/業務データ</td></tr>
+  <tr><td>Cache</td><td>ElastiCache（Redis）</td><td>セッション/キャッシュ/レート制御（必要に応じて）</td></tr>
+  <tr><td>Queue</td><td>SQS（＋DLQ）</td><td>非同期処理、RPA/連携の再試行、失敗隔離</td></tr>
+  <tr><td>Storage</td><td>S3</td><td>動画/録画/契約書類/ログアーカイブ</td></tr>
+  <tr><td>CDN</td><td>CloudFront</td><td>動画配信、静的配信</td></tr>
+  <tr><td>Transcode</td><td>MediaConvert</td><td>HLS生成/解像度別トランスコード</td></tr>
+  <tr><td>Observability</td><td>CloudWatch（Logs/Metrics/Alarm）</td><td>監視・アラート・運用可視化</td></tr>
+  <tr><td>Error Tracking</td><td>Sentry</td><td>フロント/バックの例外追跡、再現性向上</td></tr>
+  <tr><td>Secrets</td><td>Secrets Manager / Parameter Store</td><td>APIキー・DB資格情報の安全管理</td></tr>
+  <tr><td>Security</td><td>WAF / Security Group / IAM</td><td>攻撃対策・最小権限・ネットワーク分離</td></tr>
+</tbody></table>
+<div class="small">※ RPAの安定運用のため、Worker/RPAはWebと分離したECSサービス（別タスク定義）を推奨。</div>
+
+
+<h2>7) Running Cost（概算・追加）</h2>
+<table>
+  <tbody><tr><th style="width:220px;">カテゴリ</th><th>内容（概算の考え方）</th></tr>
+  <tr><td>Compute</td><td>API/Frontendの稼働（ECS/Fargate など）。環境数（dev/stg/prod）で増減。</td></tr>
+  <tr><td>DB</td><td>RDS（PostgreSQL）。IOPS/バックアップ保持期間で増減。</td></tr>
+  <tr><td>Storage</td><td>S3（動画/録画/契約書類）。容量＋転送量が支配的。</td></tr>
+  <tr><td>CDN</td><td>CloudFront（動画配信）。再生数に比例して増減。</td></tr>
+  <tr><td>MediaConvert</td><td>トランスコード分課金（解像度・本数・長さで増減）。</td></tr>
+  <tr><td>Monitoring</td><td>CloudWatch/Datadog等（ログ量・メトリクス量で増減）。</td></tr>
+  <tr><td>3rd Party</td><td>Firebase、SNS API連携、Atena、地図/周辺情報API等（契約により変動）。</td></tr>
+</tbody></table>
+<div class="small">
+※ 正確な金額算出には、月間動画本数・平均尺・想定視聴回数・環境数・ログ保持期間が必要です。
+</div>
+
+<h2>8) Assumptions（前提条件）</h2>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">8.1 アーキテクチャ/技術基盤</h3>
+<ul>
+  <li>既存MooMの共通コンポーネント/画面資産を活用できる（再利用率が一定以上）。</li>
+  <li>CM/VP/CPは「1つのPartnerアプリ」でRBAC（Role-Based Access Control）により表示/権限を切り替える。</li>
+  <li>本システムはWebアプリケーションとして提供し、iOS/Androidネイティブアプリは対象外。</li>
+  <li>レスポンシブ対応はUser（入居者）画面のみ。Admin/Partner画面はPC（デスクトップ）前提。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">8.2 外部連携/RPA</h3>
+<ul>
+  <li>Itandi連携はRPA/スクレイピング前提。画面変更に伴う修正は都度発生しうる。</li>
+  <li>Itandiからのデータ同期はリアルタイム保証なし（バッチ/ポーリング前提）で、更新反映に5分以上の遅延が発生する場合がある。</li>
+  <li>Itandi RPA用アカウント（ID/パスワード）は貴社側で準備・管理する。</li>
+  <li>SNS投稿/指標取得は、各プラットフォームの審査・利用制限・仕様変更の影響を受ける。</li>
+  <li>SNS API の利用申請・審査は貴社名義で実施される（開発者アカウントを提供いただく）。</li>
+  <li>外部API（Itandi/SNS/Atena等）のレート制限・ダウンタイムによるシステム影響は免責とする。</li>
+  <li>外部サービス（Atena、周辺情報API等）の契約/アカウント準備は貴社側で実施。</li>
+  <li>Atena連携は「配送/受領ステータス同期・追跡番号管理・書類アップロード/閲覧」まで（OCR自動判定・自動紐付け・運用代行は対象外）。</li>
+  <li>Atena API 仕様書・認証情報は開発開始前に提供される。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">8.3 動画/メディア</h3>
+<ul>
+  <li>録画データは、運用上の保管期間/容量上限/削除ポリシーを別途定義する。</li>
+  <li>動画フォーマットは MP4/MOV を想定。その他の形式は事前変換が必要。</li>
+  <li>1動画あたりの最大ファイルサイズは 150MBとする（超過時は分割が必要）。</li>
+  <li>月間想定：物件登録500件、内覧予約2,000件、動画アップロード500本。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">8.4 AI Chat Support</h3>
+<ul>
+  <li>AI Chat Supportは「FAQ + RAG + ルーティング + 人手引継ぎ」まで。業務判断の自動化やAIエージェント化（予約/申込/契約操作）は対象外。</li>
+  <li>FAQ データ（Q&amp;Aセット）は貴社側で初期データを提供する。</li>
+  <li>RAG 用の学習データ（過去チャットログ/マニュアル等）は貴社側で準備する。</li>
+  <li>AI の回答精度は80%程度を目標とし、100%保証はしない。</li>
+  <li>不適切な回答が発生した場合の改善は別途チューニング作業が必要。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">8.5 開発体制/プロセス</h3>
+<ul>
+  <li>週次の定例MTG（1時間）を実施し、進捗報告・課題共有・仕様確認を行う。</li>
+  <li>仕様変更はMonth 4 までに確定し、それ以降の大幅変更は別途見積・工期調整が必要。</li>
+  <li>UAT は Month 7 に実施し、貴社側でテストケース作成・実施リソース（1-2名/2週間）を確保する。</li>
+  <li>本番リリースは Month 8 末を想定するが、UAT結果により延期の可能性がある。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">8.6 データ/環境</h3>
+<ul>
+  <li>本番環境/ステージング環境/開発環境の AWS アカウントは貴社側で事前に準備済み。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">8.7 パフォーマンス/スケール</h3>
+<ul>
+  <li>同時接続ユーザー数は参考値として最大100名を想定（保証なし）。</li>
+  <li>性能（応答速度/処理能力）は定量保証・SLAなし。性能試験（Load/Stress/Soak）は対象外。</li>
+  <li>マーケット拡大等により想定（同時接続100名/トラフィック）を超える場合の性能試験実施およびインフラ増強（スケール設計/チューニング）&gt;は、別途見積・別途費用で対応する。</li>
+</ul>
+
+
+<h2>9) Out of Scope</h2>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">9.1 モバイルアプリ</h3>
+<ul>
+  <li>iOS/Android ネイティブアプリの開発（本見積はWebアプリケーションのみ対象）。</li>
+  <li>オフライン動作モード対応。</li>
+  <li>プッシュ通知（ネイティブアプリ向け）。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">9.2 データ移行/移行支援</h3>
+<ul>
+  <li>現行MooMのカメラマン以外のデータの移行・変換作業。</li>
+  <li>既存ユーザーへの新バージョン移行の通知・サポート業務。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">9.3 ドキュメント/トレーニング</h3>
+<ul>
+  <li>エンドユーザー向けマニュアル作成（CM/VP/CP/User向け操作ガイド等）。</li>
+  <li>管理者向け運用マニュアル（障害対応手順/エスカレーションフロー等）。</li>
+  <li>パートナー向けオンボーディング研修の実施。</li>
+  <li>動画撮影・編集に関するレギュレーション策定・教育。</li>
+  <li>実運用におけるコンテンツ制作（例：デモ/投稿用の動画撮影・編集・台本作成）。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">9.4 運用設計/保守</h3>
+<ul>
+  <li>本番運用の24/7監視・一次対応（別途運用体制/契約が必要）。</li>
+  <li>運用監視ルール策定（アラート閾値/エスカレーション基準等）。</li>
+  <li>バックアップ/リストア運用手順の策定・テスト。</li>
+  <li>障害時の BCP（事業継続計画）策定。</li>
+  <li>SLA（サービスレベル合意）の定義・合意。</li>
+  <li>RPA対象画面の大幅改修に伴う継続的な保守（別途保守契約が必要）。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">9.5 外部サービス関連</h3>
+<ul>
+  <li>外部サービスのアカウント作成・審査申請の提出作業（例：SNS Developer Portalの申請業務）。</li>
+  <li>ALEX（アレックス）対応。</li>
+  <li>管理会社/保証会社等との業務交渉、契約締結、紙書類の実務処理（郵送/押印作業そのもの）。</li>
+</ul>
+
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">9.6 セキュリティ/品質保証</h3>
+<ul>
+  <li>セキュリティは基本対応（OWASP相当の一般的対策）まで。高度なセキュリティ要件（脆弱性診断/ペネトレーションテスト/ゼロトラスト設計等）は対象外。</li>
+  <li>セキュリティ監査対応（ISMS/SOC2等）に必要な文書整備・証跡作成は対象外（別途）。</li>
+  <li>性能試験（Performance Test / Load Test / Stress Test）は対象外。必要な場合は別途計画・見積。</li>
+  <li>DR（災害復旧）/ マルチリージョン構成 / 厳格な高可用性SLA（99.9%超など）の設計・実装は対象外（別途）。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">9.7 マーケティング/営業支援</h3>
+<ul>
+  <li>ランディングページ制作・SEO対策。</li>
+  <li>プロモーション動画制作・広告運用。</li>
+  <li>パートナー募集サイト構築。</li>
+  <li>ユーザー獲得キャンペーンの企画・実施。</li>
+</ul>
+
+<h3 style="margin-top:16px; margin-bottom:8px; font-size:16px;">9.8 その他</h3>
+<ul>
+  <li>多言語対応（日本語以外のUI/通知）。</li>
+  <li>アクセシビリティ対応（WCAG 2.1 準拠等）。</li>
+  <li>ダークモード対応。</li>
+  <li>ホワイトラベル/マルチテナント機能。</li>
+  <li>全画面の詳細なビジュアルデザイン（色・余白・コンポーネントスタイルの最終調整）。</li>
+  <li>紹介パートナー</li>
+
+</ul>
+
+<h2>10.1) Work Package 内訳（詳細）</h2>
+<div class="small" style="margin:6px 0 10px;">Platform/Foundation (1,550h)</div>
+<pre style="background:#f7f7f7; padding:10px; border-radius:10px; overflow:auto; border:1px solid #eee; margin-top:0;">Platform Core（開発 1,550h）
+├─ 共通プラットフォーム基盤の整備（約250h）
+│   ・現行 MooM をベースに、MooM 4.0 向けのプロジェクト構成・共通コンポーネントを再整理
+│   ・スマホ／PC 共通で使えるレイアウト・UI パーツの土台を整備
+├─ 認証・権限（マルチロール対応）（約250h）
+│   ・ユーザー／カメラマン／内覧パートナー／契約パートナー／Admin・CS など複数ロールのログイン・権限設計
+│   ・Magic Link ログイン（メール／LINE 前提）の基盤実装
+├─ MYROOM／案件共通モデル設計（約220h）
+│   ・「1案件＝1つの進行ストーリー」として扱うための案件モデル設計
+│   ・申込〜審査〜契約〜鍵渡しまでを一貫して管理できるイベント設計
+├─ Itandi 連携ベース（RPA／スクレイピング土台）（約280h）
+│   ・物件情報・申込／審査ステータスなどを取り込むための共通アダプタ層
+│   ・リトライ・ログ・エラー監視など安定運用のための仕組み
+├─ 通知まわりのベース実装（約180h）
+│   ・MYROOM 内の「次にやること」を出す共通ロジック
+│   ・メール通知・将来的な SMS／LINE 通知に共通で使える通知キュー
+├─ 管理画面基盤（Admin／CS 共通フレーム）（約220h）
+│   ・物件管理／撮影案件管理／申込案件管理 などの一覧・フィルタ・詳細レイアウトの共通化
+│   ・ロールごとのメニュー構成のたたき台作成
+└─ ログ・モニタリング／基本テスト（約150h）
+    ・主要フローのログ出力・エラーハンドリング方針の統一
+    ・今後の Phase 2／3 を見据えた基本的なテスト・品質基盤の準備
+
+</pre>
+
+<div class="small" style="margin:6px 0 10px;">Partner 共通UI (850h)</div>
+<pre style="background:#f7f7f7; padding:10px; border-radius:10px; overflow:auto; border:1px solid #eee; margin-top:0;">Partner 共通機能基盤（約 850h）
+├─ 共通コンポーネント実装（約200h）
+│   ・カード／一覧／検索フィルタ／モーダルなど、
+│     カメラマン・内覧・契約パートナーで共通利用する UI 部品の実装
+├─ 共通APIレイヤー（約150h）
+│   ・案件一覧取得／詳細取得／ステータス更新など、
+│     パートナー向けの共通 API を整理・実装
+├─ ロール別 UI 出し分け（約100h）
+│   ・ロールごとにメニュー構成や表示項目を切り替える仕組みの実装
+├─ ダッシュボード基盤（約100h）
+│   ・「今日やること」「進行中案件」「重要なお知らせ」などを
+│     一覧できるトップ画面の枠組み作成（レイアウト土台）
+├─ 通知機能ベース（約80h）
+│   ・新規案件／ステータス変更／メッセージ到着などを
+│     バナー表示・バッジなどで知らせるための共通ロジック
+├─ メッセージ機能ベース（約70h）
+│   ・ユーザー／CS とのチャット履歴を案件単位で管理するための機能
+│     （送受信・既読管理など、最低限のメッセージ基盤）
+├─ プロフィール／本人確認機能（約100h）
+│   ・パートナーの基本情報・銀行口座情報・本人確認書類の
+│     登録／更新機能の実装
+└─ スケジュール管理ベース（約50h）
+    ・稼働可能時間の登録、カレンダー連携の土台実装
+    （詳細な UI／自動マッチングは Phase 2 で拡張予定）
+</pre>
+
+<h2>10) 画面一覧（機能グルーピング） <span class="badge">Total screen codes: 160</span></h2>
+<div class="small">※ 各グループ内に、該当する画面コードをすべて列挙しています（コードの抜け無し）。</div>
+<details open="">
+<summary>Partner 共通：ログイン/認証 <span class="badge">6 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CM-01</code></td><td>(初期ログイン） 各パートナーがログインできる</td></tr>
+<tr><td><code>CM-02</code></td><td>初期ログイン LINEでログイン ログインする際に管理者のLINEを友達追加できる</td></tr>
+<tr><td><code>CP-01</code></td><td>(初期ログイン）</td></tr>
+<tr><td><code>CP-02</code></td><td>LINEでログイン</td></tr>
+<tr><td><code>VP-01</code></td><td>(初期ログイン）</td></tr>
+<tr><td><code>VP-02</code></td><td>LINEでログイン</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Partner 共通：プロフィール/KYC/名刺 <span class="badge">6 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CM-32</code></td><td>プロフィール設定 各パートナーがプロフィール設定</td></tr>
+<tr><td><code>CM-33</code></td><td>本人確認書類の提出 本人確認書類を提出・アップロードできる</td></tr>
+<tr><td><code>CM-34</code></td><td>電子名刺 電子名刺を作成・表示できる</td></tr>
+<tr><td><code>VP-26</code></td><td>プロフィール設定</td></tr>
+<tr><td><code>VP-27</code></td><td>本人確認書類の提出</td></tr>
+<tr><td><code>VP-28</code></td><td>電子名刺</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Partner 共通：スケジュール <span class="badge">9 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CM-12</code></td><td>間取り区ごとに予約 間取りタイプごとに個別の撮影スケジュールを選択できる</td></tr>
+<tr><td><code>CM-26</code></td><td>スケジュール閲覧 撮影スケジュールを閲覧・確認できる</td></tr>
+<tr><td><code>CM-27</code></td><td>スケジュールにある撮影詳細 スケジュールの詳細を確認できる</td></tr>
+<tr><td><code>CM-31</code></td><td>稼働スケジュール設定 自動アサイン条件を設定・管理できる</td></tr>
+<tr><td><code>CP-16</code></td><td>スケジュール設定</td></tr>
+<tr><td><code>CP-17</code></td><td>スケジュール閲覧</td></tr>
+<tr><td><code>VP-09</code></td><td>ユーザーが「調整希望」を選択 スケジュールを調整・変更できる</td></tr>
+<tr><td><code>VP-18</code></td><td>スケジュール確認 スケジュールを閲覧・確認できる</td></tr>
+<tr><td><code>VP-19</code></td><td>稼働スケジュール設定 自動アサイン設定を管理・設定できる</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Partner 共通：通知 <span class="badge">7 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CM-23</code></td><td>管理者からの通知一覧 管理者からのお知らせを閲覧できる</td></tr>
+<tr><td><code>CM-29</code></td><td>管理者からの通知一覧 管理者からの通知を受信・確認できる</td></tr>
+<tr><td><code>CM-30</code></td><td>お知らせ詳細 お知らせの詳細内容を閲覧できる</td></tr>
+<tr><td><code>CP-20</code></td><td>通知一覧</td></tr>
+<tr><td><code>VP-16</code></td><td>管理者からのお知らせ</td></tr>
+<tr><td><code>VP-20</code></td><td>管理者からのお知らせ</td></tr>
+<tr><td><code>VP-21</code></td><td>お知らせ詳細</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Partner 共通：メッセージ <span class="badge">2 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CP-18</code></td><td>ユーザーとのメッセージ</td></tr>
+<tr><td><code>VP-22</code></td><td>ユーザとのメッセージ</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Partner 共通：ヘルプ/サポート <span class="badge">5 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CM-36</code></td><td>Step 1: FAQ（よくある質問）を閲覧・確認できる</td></tr>
+<tr><td><code>CM-37</code></td><td>Step 2: AI Chat Support AIがサンプルデータ（LangChainを利用してQ&amp;Aへの回答を行う)</td></tr>
+<tr><td><code>CM-38</code></td><td>Step 3: 問い合わせフォーム お問い合わせ内容を送信できる</td></tr>
+<tr><td><code>CP-21</code></td><td>ヘルプ・お問い合わせ</td></tr>
+<tr><td><code>VP-25</code></td><td>ヘルプセンター</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>CM：案件管理 <span class="badge">4 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CM-03</code></td><td>ダッシュボード (Dashboard) アカウントの状態および各種アラートを閲覧・確認できる</td></tr>
+<tr><td><code>CM-13</code></td><td>アップデート待ち案件一覧</td></tr>
+<tr><td><code>CM-16</code></td><td>アップデート待ち案件一覧 検索およびマップ表示により案件を探すことができる</td></tr>
+<tr><td><code>CM-21</code></td><td>緊急報告 緊急報告を行うことができる</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>CM：撮影/予約/動画アップロード <span class="badge">15 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CM-04</code></td><td>撮影案件一覧 撮影プロジェクト一覧を閲覧・確認できる</td></tr>
+<tr><td><code>CM-07</code></td><td>物件の間取り区写真表示 CM 07 - 物件の間取り区写真表示できる</td></tr>
+<tr><td><code>CM-08</code></td><td>撮影レギュレーションを確認 撮影に関する規定を確認できる</td></tr>
+<tr><td><code>CM-09</code></td><td>撮影プラン確認 撮影計画を確認・承認できる</td></tr>
+<tr><td><code>CM-10</code></td><td>予約処理 予約処理を実行し、RPAへ業務指示・連携できる</td></tr>
+<tr><td><code>CM-11</code></td><td>予約失敗 予約が成立しなかった場合に、別の日時・枠を再選択できる</td></tr>
+<tr><td><code>CM-14</code></td><td>フィルター（タブ：受注済） 撮影対応を受注済みの物件一覧を確認できる</td></tr>
+<tr><td><code>CM-15</code></td><td>撮影予約</td></tr>
+<tr><td><code>CM-17</code></td><td>動画アップロード待ちの物件一覧を確認できる</td></tr>
+<tr><td><code>CM-18</code></td><td>撮影動画アップロード 物件タイプ（間取り）ごとに動画をアップロード可能</td></tr>
+<tr><td><code>CM-19</code></td><td>撮影完了案件一覧 できる</td></tr>
+<tr><td><code>CM-20</code></td><td>フィルター（タブ：完了） 撮影完了済みの物件一覧を確認でき、報酬金額および契約プランを表示できる</td></tr>
+<tr><td><code>CM-22</code></td><td>アップロードした動画閲覧 動画を再生・確認できる</td></tr>
+<tr><td><code>CM-24</code></td><td>フィルター（タブ：却下済） 差し戻し（却下）された動画を閲覧できる</td></tr>
+<tr><td><code>CM-25</code></td><td>撮影差戻案件詳細 差し戻し（却下）された動画を再アップロード・更新できる</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>CM：報酬/評価 <span class="badge">2 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CM-28</code></td><td>報酬管理 ボーナス（報酬）を管理・確認できる</td></tr>
+<tr><td><code>CM-35</code></td><td>ランキング詳細 Rank A 評価・ランキングの詳細を確認できる</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>VP：案件管理 <span class="badge">5 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>VP-03</code></td><td>ダッシュボード ダッシュボードを表示し、全体状況を把握できる</td></tr>
+<tr><td><code>VP-04</code></td><td>内容案件一覧 物件一覧を閲覧・管理できる</td></tr>
+<tr><td><code>VP-05</code></td><td>内容案件詳細 物件の詳細情報を閲覧・確認できる</td></tr>
+<tr><td><code>VP-06</code></td><td>内容案件一覧</td></tr>
+<tr><td><code>VP-08</code></td><td>ユーザーが「予定通り」を選択 ユーザーが「予定通り」を選択できる</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>VP：内覧対応 <span class="badge">7 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>VP-07</code></td><td>内覧1時間前｜ユーザー未到着 内覧1時間前｜ユーザー未到着 | ユーザーが「予定通り」を選択</td></tr>
+<tr><td><code>VP-10</code></td><td>ユーザーが「見送り」を選択できる</td></tr>
+<tr><td><code>VP-11</code></td><td>内見中に現在位置を報告・共有できる</td></tr>
+<tr><td><code>VP-12</code></td><td>位置情報を共有した後 位置情報共有後のステータスを確認できる</td></tr>
+<tr><td><code>VP-13</code></td><td>内覧実施中 既存のプレビュー画面を表示・確認できる</td></tr>
+<tr><td><code>VP-14</code></td><td>内覧行けない報告 報告または辞退の処理を行うことができる</td></tr>
+<tr><td><code>VP-15</code></td><td>内覧完了一覧 </td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>VP：類似物件紹介 <span class="badge">2 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>VP-23</code></td><td>類似物件を紹介</td></tr>
+<tr><td><code>VP-24</code></td><td>類似物件を選択</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>VP：報酬/評価 <span class="badge">2 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>VP-17</code></td><td>報酬管理 ボーナス（報酬）を管理・確認できる</td></tr>
+<tr><td><code>VP-29</code></td><td>ランキング詳細</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>CP：案件管理 <span class="badge">1 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CP-03</code></td><td>ダッシュボード</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>CP：契約フロー（重要事項/契約/入金/入居） <span class="badge">12 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CP-04</code></td><td>重要事項説案件一覧</td></tr>
+<tr><td><code>CP-05</code></td><td>日程調整</td></tr>
+<tr><td><code>CP-06</code></td><td>重要事項案件詳細（step3. 契約準備）</td></tr>
+<tr><td><code>CP-07</code></td><td>重要事項案件詳細（step4. 重説）</td></tr>
+<tr><td><code>CP-08</code></td><td>step4. 重説/ 録画データの追加アップロード </td></tr>
+<tr><td><code>CP-09</code></td><td>重要事項案件詳細（step5. 契約）</td></tr>
+<tr><td><code>CP-10</code></td><td>step5. 契約/ 管理会社署名待ち</td></tr>
+<tr><td><code>CP-11</code></td><td>重要事項案件詳細（step6. 入金・鍵準備中/ 入金待ち）</td></tr>
+<tr><td><code>CP-12</code></td><td>step6. 入金・鍵準備中/ 支払い確認済み</td></tr>
+<tr><td><code>CP-13</code></td><td>重要事項案件詳細（step7. 入居）</td></tr>
+<tr><td><code>CP-14</code></td><td>step8. 補修確定/ 振り込み準備中</td></tr>
+<tr><td><code>CP-15</code></td><td>step8. 補修確定/ 支払済</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>CP：報酬/評価 <span class="badge">1 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>CP-19</code></td><td>報酬管理</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>User：ログイン/アカウント <span class="badge">3 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>US-01</code></td><td>ユーザーログイン / アカウント作成</td></tr>
+<tr><td><code>US-04</code></td><td>アカウント初期設定 / プロフィール</td></tr>
+<tr><td><code>US-21</code></td><td>LINE友達追加</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>User：検索/閲覧 <span class="badge">5 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>US-05</code></td><td>ホーム</td></tr>
+<tr><td><code>US-07</code></td><td>絞り込み条件を選択</td></tr>
+<tr><td><code>US-08</code></td><td>検索結果のホーム</td></tr>
+<tr><td><code>US-09</code></td><td>物件詳細</td></tr>
+<tr><td><code>US-10</code></td><td>初期費用の内訳</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>User：内覧予約/履歴 <span class="badge">6 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>US-11</code></td><td>内覧予約</td></tr>
+<tr><td><code>US-12</code></td><td>内覧予約を処理</td></tr>
+<tr><td><code>US-13</code></td><td>内覧予約の完了</td></tr>
+<tr><td><code>US-14</code></td><td>内覧予約に失敗</td></tr>
+<tr><td><code>US-15</code></td><td>内覧履歴</td></tr>
+<tr><td><code>US-16</code></td><td>内覧詳細</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>User：申込/審査 <span class="badge">8 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>US-19</code></td><td>入居申込</td></tr>
+<tr><td><code>US-20</code></td><td>入居申込を入力</td></tr>
+<tr><td><code>US-22</code></td><td>申込内容の確認</td></tr>
+<tr><td><code>US-23</code></td><td>ルームのステータス：申込中</td></tr>
+<tr><td><code>US-25</code></td><td>ルームのステータス：申込中 部屋の状況／ステータスを確認</td></tr>
+<tr><td><code>US-26</code></td><td>入居申込の進行状況 申込の進捗状況</td></tr>
+<tr><td><code>US-27</code></td><td>ルームのステータス：審査中</td></tr>
+<tr><td><code>US-28</code></td><td>ルームのステータス：審査落ち</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>User：契約（Meet/案内） <span class="badge">7 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>US-29</code></td><td>契約日時を調整中</td></tr>
+<tr><td><code>US-30</code></td><td>日時を選択 Google Meetの予定を予約</td></tr>
+<tr><td><code>US-31</code></td><td>契約日時の表示</td></tr>
+<tr><td><code>US-32</code></td><td>参加前ガイド 参加方法の案内</td></tr>
+<tr><td><code>US-33</code></td><td>紙契約書類を郵送中</td></tr>
+<tr><td><code>US-34</code></td><td>電子契約のメールを送信</td></tr>
+<tr><td><code>US-35</code></td><td>契約締結済み</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>User：決済/鍵/入居 <span class="badge">4 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>US-36</code></td><td>請求書詳細 詳細なご要望</td></tr>
+<tr><td><code>US-37</code></td><td>入金確認済・鍵準備中</td></tr>
+<tr><td><code>US-38</code></td><td>鍵の受け渡し完了</td></tr>
+<tr><td><code>US-39</code></td><td>入居完了 手続き完了までの進捗状況</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>User：通知 <span class="badge">1 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>US-43</code></td><td>お知らせ一覧</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>User：その他（My page/About） <span class="badge">4 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>US-06</code></td><td>MOOM内に該当物件がない場合</td></tr>
+<tr><td><code>US-24</code></td><td>MOOMとのチャット MOOMにメッセージする</td></tr>
+<tr><td><code>US-40</code></td><td>My page</td></tr>
+<tr><td><code>US-41</code></td><td>About</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Admin/Ops：ダッシュボード/進捗 <span class="badge">1 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>AD-01</code></td><td>ダッシュボード</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Admin/Ops：物件取り込み/Policy/RPA <span class="badge">8 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>AD-02</code></td><td>Itandi RPA エラー一覧</td></tr>
+<tr><td><code>AD-03</code></td><td>物件一覧</td></tr>
+<tr><td><code>AD-04</code></td><td>物件詳細</td></tr>
+<tr><td><code>AD-06</code></td><td>Itandi取り込条件の設定</td></tr>
+<tr><td><code>AD-33</code></td><td>ポリシー設定</td></tr>
+<tr><td><code>AD-34</code></td><td>ポリシー設定の不整合</td></tr>
+<tr><td><code>AD-35</code></td><td>ポリシーリゾルバー</td></tr>
+<tr><td><code>AD-36</code></td><td>ロール別ポリシー概要</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Admin/Ops：メディア審査/マスター <span class="badge">2 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>AD-39</code></td><td>動画投稿作成(SNS) 動画投稿の作成</td></tr>
+<tr><td><code>AD-40</code></td><td>動画投稿一覧 動画投稿一覧</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Admin/Ops：Growth/SNS <span class="badge">4 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>AD-37</code></td><td>SNS自動投稿設定</td></tr>
+<tr><td><code>AD-38</code></td><td>SNSアカウント管理</td></tr>
+<tr><td><code>AD-41</code></td><td>新しいルールを追加 投稿ルール管理（アカウント別の投稿ルール）</td></tr>
+<tr><td><code>AD-42</code></td><td>SNS指標アナリティクス Webアプリ／UI・UX／チャート表示／フィルタ</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Admin/Ops：申込/審査 <span class="badge">4 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>AD-12</code></td><td>申込案件一覧</td></tr>
+<tr><td><code>AD-13</code></td><td>申込案件step２：審査エラー</td></tr>
+<tr><td><code>AD-20</code></td><td>申込案件step6：入金</td></tr>
+<tr><td><code>AD-28</code></td><td>書類審査</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Admin/Ops：パートナー管理/評価 <span class="badge">4 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>AD-23</code></td><td>パートナー一覧</td></tr>
+<tr><td><code>AD-24</code></td><td>パートナー詳細</td></tr>
+<tr><td><code>AD-27</code></td><td>新規パートナー作成</td></tr>
+<tr><td><code>AD-31</code></td><td>パートナー支払い管理</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Admin/Ops：ログ/監査 <span class="badge">1 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>AD-26</code></td><td>イベントログ</td></tr>
+</tbody></table>
+</details>
+<details open="">
+<summary>Admin/Ops：その他 <span class="badge">12 codes</span></summary>
+<table>
+<tbody><tr><th style="width:120px;">画面コード</th><th>画面名/概要（リンク削除済）</th></tr>
+<tr><td><code>AD-05</code></td><td>撮影募集を設定</td></tr>
+<tr><td><code>AD-07</code></td><td>撮影案件一覧</td></tr>
+<tr><td><code>AD-08</code></td><td>撮影案件詳細</td></tr>
+<tr><td><code>AD-09</code></td><td>カメラマン変更</td></tr>
+<tr><td><code>AD-10</code></td><td>内覧案件一覧</td></tr>
+<tr><td><code>AD-11</code></td><td>内覧案件詳細</td></tr>
+<tr><td><code>AD-21</code></td><td>ユーザー一覧</td></tr>
+<tr><td><code>AD-22</code></td><td>ユーザー詳細</td></tr>
+<tr><td><code>AD-25</code></td><td>パートナ報酬·詳細</td></tr>
+<tr><td><code>AD-29</code></td><td>収支サマリー</td></tr>
+<tr><td><code>AD-30</code></td><td>案件収支詳細</td></tr>
+<tr><td><code>AD-32</code></td><td>支払詳細</td></tr>
+</tbody></table>
+</details>
+<hr>
+<div class="small">
+注記：本HTMLは「画面コードの網羅」と「工数 6050h（開発5650h＋デザイン400h）への調整」を主目的にしています。画面ごとの個別h配賦ではなく、Work Package 単位で工数を管理します。
+</div>
+</body></html>
