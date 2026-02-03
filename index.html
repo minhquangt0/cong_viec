@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>業務委託契約書 - MooM 4.0開発</title>
+    <title>プロジェクト詳細説明 - 行政機関関連プロジェクトのWebサイト制作</title>
     <style>
         @page {
             size: A4;
@@ -11,96 +11,129 @@
         }
         
         body {
-            font-family: "MS Mincho", "游明朝", "Yu Mincho", serif;
-            font-size: 10.5pt;
-            line-height: 1.8;
-            color: #000;
-            background: #fff;
-            margin: 0;
-            padding: 20mm;
+            font-family: 'Yu Gothic', 'Meiryo', 'MS Gothic', sans-serif;
+            line-height: 1.9;
+            color: #333;
             max-width: 210mm;
             margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            font-size: 11pt;
         }
         
         h1 {
-            font-size: 18pt;
-            text-align: center;
-            margin: 0 0 30px 0;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 12px;
+            margin-top: 30px;
+            font-size: 22pt;
             font-weight: bold;
         }
         
         h2 {
-            font-size: 12pt;
+            color: #34495e;
+            border-left: 6px solid #3498db;
+            padding-left: 15px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 16pt;
             font-weight: bold;
-            margin: 25px 0 15px 0;
-            border-bottom: 2px solid #000;
-            padding-bottom: 5px;
         }
         
         h3 {
-            font-size: 11pt;
-            font-weight: bold;
-            margin: 20px 0 10px 0;
-        }
-        
-        .article {
-            margin: 20px 0;
-        }
-        
-        .article-title {
-            font-weight: bold;
+            color: #555;
+            margin-top: 20px;
             margin-bottom: 10px;
+            font-size: 13pt;
+            font-weight: bold;
         }
         
-        .clause {
-            margin: 10px 0 10px 20px;
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
         }
         
-        .sub-clause {
-            margin: 5px 0 5px 40px;
+        .client-info {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .budget-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .important {
+            background-color: #ffe6e6;
+            border: 2px solid #dc3545;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .requirement-list {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.8;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .timeline {
+            background-color: #f1f8ff;
+            border-left: 4px solid #0366d6;
+            padding: 15px;
+            margin: 15px 0;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 15px 0;
-            font-size: 10pt;
         }
         
-        table th, table td {
-            border: 1px solid #000;
-            padding: 8px;
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
             text-align: left;
         }
         
-        table th {
-            background-color: #f0f0f0;
+        th {
+            background-color: #3498db;
+            color: white;
             font-weight: bold;
         }
         
-        .signature-section {
-            margin-top: 50px;
-            page-break-inside: avoid;
-        }
-        
-        .signature-block {
-            margin: 30px 0;
-        }
-        
-        .indent {
-            margin-left: 1em;
-        }
-        
-        .note {
-            background-color: #f9f9f9;
-            border-left: 3px solid #666;
-            padding: 10px;
-            margin: 15px 0;
-            font-size: 9.5pt;
-        }
-        
-        .page-break {
-            page-break-after: always;
+        .highlight {
+            background-color: #ffffcc;
+            padding: 2px 5px;
+            font-weight: bold;
         }
         
         @media print {
@@ -108,458 +141,312 @@
                 padding: 0;
             }
             .page-break {
-                page-break-after: always;
+                page-break-before: always;
             }
         }
     </style>
 </head>
 <body>
-
-<h1>業務委託契約書</h1>
-
-<p>MediaBirth株式会社（以下「委託者」という。）とAMCOLAB TECHNOLOGY Co., Ltd（以下「受託者」という。）とは、委託者が受託者に委託するMooM 4.0システムの開発に関して、次のとおり契約（以下「本契約」という。）を締結する。</p>
-
-<h2>第1章 目的及び定義</h2>
-
-<div class="article">
-    <div class="article-title">第1条（契約の目的）</div>
-    <div class="clause">1. 委託者は、本契約の定めるところにより、第3条に定めるシステムの開発業務（以下「本件開発業務」という。）を受託者に委託し、受託者はこれを受託する。</div>
-    <div class="clause">2. 委託者は受託者に対し、本契約の定めるところにより、本件開発業務の対価として委託料を支払う。</div>
-    <div class="clause">3. 本契約は、本件開発業務の委託に関する詳細を定めることを目的とする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第2条（定義）</div>
-    <p>本契約で用いる次の各号に掲げる用語の意義は、当該各号に定めるところによる。</p>
-    <div class="clause">1. 本件システム<br>
-    本件開発業務に基づいて開発される成果であり、プログラム、データベース類及び関連資料等を含む「MooM 4.0」システム及び関連資料等
-        <div class="sub-clause">1) 別途合意される画面構成・要件定義・仕様に基づき開発される</div>
-        <div class="sub-clause">2) 上記に関する稼働環境</div>
-    </div>
-    <div class="clause">2. 本件プログラム<br>
-    本件システムのうちの稼働するプログラム部分</div>
-    <div class="clause">3. 要件定義・画面構成整理<br>
-    委託者が要求する事項を実現する方法や条件等を分析し、本件システムの開発に必要な要件を定義するとともに、画面構成・ワイヤーフレーム・画面遷移等を日本語で記載した文書、またはFigma等により作成した画面モックを成果物として提出するものとする。</div>
-    <div class="clause">4. 成果物<br>
-    本契約に基づいて作成される別紙成果物目録記載のもの</div>
-    <div class="clause">5. データ移行<br>
-    現行MooMシステムから本件システムへのデータ移行作業</div>
-</div>
-
-<h2>第2章 本件開発業務</h2>
-
-<div class="article">
-    <div class="article-title">第3条（本件開発業務の内容）</div>
-    <p>本件開発業務の内容は、次のとおりとする。</p>
+    <h1>行政機関関連プロジェクトのWebサイト制作パートナー募集</h1>
     
-    <h3>【Phase 1】Platform Core + 画面構成整理・要件定義（2026年2月～3月：2ヶ月間）</h3>
-    <div class="clause">1. 画面構成整理・要件定義・ワイヤーフレーム作成業務（250時間）
-        <div class="sub-clause">① 受託者は、本件システムに関して委託者が要求する事項に基づいて、委託者の業務内容等を精査した上で、その実現方法・条件等の要件の分析と定義を行う。</div>
-        <div class="sub-clause">② サイト全体の画面一覧・メニュー構成の整理</div>
-        <div class="sub-clause">③ 画面のワイヤーフレーム作成・画面遷移図の作成</div>
-        <div class="sub-clause">④ 業務フローと画面フローの突き合わせ</div>
-    </div>
-    <div class="clause">2. Platform Core開発業務（1,550時間）
-        <div class="sub-clause">① システム基盤の構築</div>
-        <div class="sub-clause">② コアモジュールの実装</div>
-    </div>
-    <div class="clause">3. Visual デザイン業務（150時間）は委託者が実施するものとし、受託者の作業範囲には含まれない。</div>
-    
-    <h3>【Phase 2】賃貸コアフロー実装 + データ移行（2026年4月～8月：5ヶ月間）</h3>
-    <div class="clause">4. 賃貸コアフロー実装業務（3,109時間）
-        <div class="sub-clause">① Phase 1で確定した要件定義・画面仕様に基づき、賃貸コアフローを実装する。</div>
-        <div class="sub-clause">② 委託者と協議の上、優先度の高い画面から順次実装を進める。</div>
-    </div>
-    <div class="clause">5. データ移行業務（80時間）
-        <div class="sub-clause">① 現行MooMシステムから本件システムへのデータ移行を実施する。</div>
-        <div class="sub-clause">② データ移行の対象は、カメラマン情報、動画情報、物件情報、報酬履歴等とする。</div>
-        <div class="sub-clause">③ データ移行は、委託者の協力の下で実施するものとし、移行元データの品質・完全性については委託者の責任とする。</div>
+    <div class="section">
+        <h2>基本情報</h2>
+ 
+        <div class="client-info">
+            <h3>発注企業情報</h3>
+            <table>
+                <tr>
+                    <th>会社名</th>
+                    <td>立正大学</td>
+                </tr>
+                <tr>
+                    <th>発注者名</th>
+                    <td>中上 淳貴</td>
+                </tr>
+                <tr>
+                    <th>会社住所</th>
+                    <td>東京都品川区大崎４丁目２−１６</td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td>090-8045-2260</td>
+                </tr>
+            </table>
+        </div>
     </div>
     
-    <h3>【Phase 3】AI・SNS・分析機能拡張（Phase 2完了後約2ヶ月間）</h3>
-    <div class="clause">6. 拡張機能実装業務（991時間）
-        <div class="sub-clause">① AI機能の実装</div>
-        <div class="sub-clause">② SNS連携機能の実装</div>
-        <div class="sub-clause">③ 分析機能の実装</div>
+    <div class="section">
+        <h2>プロジェクト背景</h2>
+        
+        <div class="info-box">
+            <p>本プロジェクトは、内閣府管轄のムーンショットプロジェクトの一環として実施されており、JST（Japan Science and Technology Agency）を通じて管理されています。現在小規模な制作会社にて進行中ですが、監査に耐えうるコミュニケーションレベルと管理体制を備えた新しいパートナー企業を探しています。</p>
+        </div>
     </div>
     
-    <div class="clause">7. 開発期間
-        <div class="sub-clause">① 本件開発業務の実施期間は、2026年2月1日から2026年10月31日までとする。</div>
-        <div class="sub-clause">② ただし、Phase 1における仕様確定の遅延、委託者からの資料提供の遅れ、委託者による仕様変更、または不可抗力（第31条に定める事由を含む）等により、開発期間の延長が必要となる場合、受託者は委託者に対し書面又は電子メールにて速やかに通知し、双方協議の上、合理的な範囲で期間を変更できるものとする。</div>
+    <div class="section">
+        <h2>業務内容</h2>
+        
+        <h3>主要業務</h3>
+        <ul>
+            <li>既存ウェブサイトの引継ぎと継続開発</li>
+            <li>古典テキストアーカイブサイトの構築</li>
+            <li>現代と古典を繋ぐ公共性の高い無償公開サイトの制作（商用目的ではない）</li>
+        </ul>
+        
+        <h3>具体的な作業内容</h3>
+        <div class="requirement-list">
+            <ul>
+                <li>Webデザイン</li>
+                <li>フロントエンドコーディング</li>
+                <li>WordPress基盤でのウェブサイト構築・管理</li>
+                <li>生成AI（Midjourneyなど）を活用したデザイン制作</li>
+            </ul>
+        </div>
+        
+        <div class="important">
+            <h3>特別な作業形態</h3>
+            <p><strong>2026年2月中の作業方式：</strong></p>
+            <ul>
+                <li><span class="highlight">頻度：</span>週2回</li>
+                <li><span class="highlight">時間：</span>1回あたり3〜4時間</li>
+                <li><span class="highlight">方法：</span>オンライン接続、画面共有、発注者様との共同作業</li>
+            </ul>
+        </div>
     </div>
     
-    <div class="clause">8. 開発工数の性質
-        <div class="sub-clause">① 本契約における各Phase の見積工数は、現時点で想定される概要要件に基づいた暫定的な工数である。</div>
-        <div class="sub-clause">② Phase 1の要件定義工程において各機能の詳細仕様を精査した結果、当初見積時の前提条件から大きく乖離する場合、受託者は委託者に対し追加見積を提示し、両者協議の上で費用および納期を改定するものとする。</div>
-        <div class="sub-clause">③ Phase 2以降において、委託者の要望により実装優先順位を変更する場合であっても、当該変更が全体工数・開発委託料に影響を与えない限り、追加費用は発生しないものとする。ただし、新規機能の追加や仕様の大幅な変更により追加工数が発生する場合は、第4条の定めに従う。</div>
-    </div>
-</div>
-
-<div class="article">
-    <div class="article-title">第4条（仕様変更）</div>
-    <div class="clause">1. 委託者が、本件業務の内容、仕様、スコープ、優先順位、成果物、納期、作業方法等の変更または追加（以下「仕様変更等」という）を希望する場合、委託者はその内容を受託者に書面（メール可）で提示し、両者で協議する。</div>
-    <div class="clause">2. 受託者は、仕様変更等による影響（追加費用、納期、工数、体制、リスク等）を見積書または変更指示書として提示し、委託者が書面（メール可）で承認した場合に限り、当該仕様変更等を実施する。</div>
-    <div class="clause">3. 前項の承認がない限り、受託者は仕様変更等に対応する義務を負わず、従前の合意仕様に基づき作業を継続できるものとする。</div>
-    <div class="clause">4. 仕様変更等により、追加工数が当初見積工数の5％以上、又は50時間以上となる場合には、受託者は委託者に対し、追加見積を提示のうえ、両当事者の協議により開発委託料および納期を改定できるものとする。</div>
-    <div class="clause">5. 仕様変更等により納期・検収日・支払条件等に影響が生じる場合、当該条件は協議の上、合理的に変更されるものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第5条（資料等の提供、管理及び返還）</div>
-    <div class="clause">1. 委託者は、受託者に対して現行MooMシステムへのアクセス環境、原始資料その他必要な資料・情報・機器等（以下「提供資料等」という。）を無償で提供する。</div>
-    <div class="clause">2. データ移行に必要なデータベースアクセス情報、API情報、データ仕様書等は、委託者が受託者に提供するものとする。</div>
-    <div class="clause">3. 受託者が本件システムのテスト・検証を実施するにあたり、必要となるアカウント情報やログイン環境等がある場合、委託者はそれらを受託者に提供するものとする。</div>
-    <div class="clause">4. 受託者は、提供資料等を複製若しくは改変する場合又は第三者に提供する場合は、委託者の事前承諾のもとに、本件開発業務の遂行に必要な範囲に限り行うものとする。</div>
-    <div class="clause">5. 受託者は、提供資料等（その複製物及び改変物を含む。）を善良なる管理者の注意をもって管理するものとし、本件開発業務遂行以外の用途に使用してはならない。また、委託者の事前承諾なく本件開発業務の作業実施場所から持ち出してはならない。</div>
-    <div class="clause">6. 委託者は、受託者の立ち会いの下に、受託者の事務所・作業実施場所等に立ち入り、提供資料等の使用状況及び保管状況を検査することができる。</div>
-    <div class="clause">7. 提供資料等が本件開発業務の遂行上不要となった場合、受託者は、遅滞なく委託者に返還し、又は委託者の指示に従い、安全に消去その他の処分を行い、その旨を証明する書面を委託者に提出しなければならない。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第6条（協議会）</div>
-    <div class="clause">1. 委託者及び受託者は、本件開発業務が終了するまでの間、その進捗状況の報告・確認、問題点の協議・解決その他本件開発業務の推進のために必要な事項を協議するため、毎週1回の定期協議会を開催する。</div>
-    <div class="clause">2. 協議会には、委託者・受託者双方が出席するものとする。</div>
-    <div class="clause">3. 第1項の定期協議会のほか、委託者及び受託者は必要と認める場合に随時協議会の開催を相手方に求めることができる。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第7条（中間成果物・進捗確認）</div>
-    <div class="clause">1. 委託者は、受託者に対し、各Phaseの開発業務において生じた中間成果物の提示又は報告を随時求めることができる。</div>
-    <div class="clause">2. 受託者は、各Phaseの開発期間中、委託者が進捗を確認できるよう、ステージング環境を適宜更新し、委託者がアクセス可能な状態を維持するよう努めるものとする。</div>
-    <div class="clause">3. 委託者は、当該ステージング環境を通じて、開発中のシステムの動作状況、進捗及び中間成果物を随時確認できるものとする。</div>
-    <div class="clause">4. 各Phaseの完了時には、受託者は委託者に対してデモンストレーションを実施し、当該Phaseの成果を確認するものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第8条（作業実施場所）</div>
-    <div class="clause">1. 受託者は、本契約に基づく業務を実施するための作業場所を自ら用意し、責任を持って確保するものとする。</div>
-    <div class="clause">2. 受託者は、通常の業務場所以外で業務を実施する場合でも、秘密保持義務および納期等に支障がない限り、委託者の事前承諾を得る必要はない。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第9条（納入）</div>
-    <div class="clause">1. 受託者は、別紙成果物目録記載の成果物を、下記の納入期限までに委託者の指定する場所に納入する。
-        <div class="sub-clause">Phase 1：2026年3月31日</div>
-        <div class="sub-clause">Phase 2：2026年8月31日</div>
-        <div class="sub-clause">Phase 3：2026年10月31日</div>
-    </div>
-    <div class="clause">2. ただし、委託者及び受託者は、別途協議を行い、書面又は電子メールによる合意の上、納入期限を変更できるものとする。</div>
-    <div class="clause">3. 受託者は、納入期限に遅延するおそれが生じた場合、遅くとも納入期限の2週間前までに委託者に対し書面又は電子メールにて遅延の可能性、理由及び新たな納入予定日を通知しなければならない。</div>
-    <div class="clause">4. 前項の遅延が、委託者の事由（仕様確定の遅延、資料提供の遅れ、仕様変更等）に起因する場合、受託者は遅延の責任を負わないものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第10条（危険負担）</div>
-    <div class="clause">成果物（電子データを含む。）に滅失又は毀損が生じた場合、納入前においては受託者が、納入後においては委託者が、それぞれ危険を負担するものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第11条（検収）</div>
-    
-    <h3>【Phase 1：中間確認】</h3>
-    <div class="clause">1. Phase 1の成果物は中間確認の対象とし、委託者は成果物受領後5営業日以内に確認結果（承認又は修正要望）を書面（メール可）で受託者に通知する。</div>
-    <div class="clause">2. 前項の期間内に委託者から通知がない場合、Phase 1の中間確認は完了したものとみなす。</div>
-    <div class="clause">3. Phase 1の中間確認完了をもって、第17条に定めるPhase 1の残金50%の支払条件が成就する。</div>
-   
-    <h3>【Phase 2：正式検収（UAT）】</h3>
-    <div class="clause">4. Phase 2の成果物（本番リリース対象）は正式検収（UAT）の対象とし、委託者は当該成果物の納入を受けた日から起算して30日間を検収期間としてUATを実施する。</div>
-    <div class="clause">5. 委託者は検収期間内に、契約不適合（仕様不適合、重大な不具合等）に該当する事項を発見した場合、当該事項の内容、再現手順、期待結果を具体的に記載した書面（メール可）で受託者に通知する。</div>
-    <div class="clause">6. 受託者は、前項の通知に基づき修正を行い、成果物を再提出する。委託者は再提出日から10営業日以内に再検査を実施し、合格又は不合格を書面（メール可）で通知する。</div>
-    <div class="clause">7. 再検査において合格の通知があった場合、又は委託者が10営業日以内に通知を行わなかった場合、Phase 2の検収は完了したものとみなす（みなし検収）。</div>
-    <div class="clause">8. 委託者が第4項に定める検収期間（30日間）内に第5項の通知を行わない場合、当該期間の経過日の翌日をもってPhase 2の成果物は検査合格とし、検収完了とみなす。</div>
-    <div class="clause">9. 再検査は原則として3回を限度とする。4回目以降において合意された要件定義・仕様に記載されていない修正や仕様調整が必要な場合、受託者は別途費用を請求できるものとする。</div>
-    <div class="clause">10. 受託者による修正・再提出準備期間中は検収期間の進行を停止し、再提出がなされた日から検収期間を再起算する。</div>
-    <div class="clause">11. Phase 2の検収完了をもって、第17条に定めるPhase 2の残金50%の支払条件が成就する。</div>
-    
-    <h3>【Phase 3：追加成果物の検収】</h3>
-    <div class="clause">12. Phase 3の成果物は、当該成果物の納入ごとに前各項（第4項～第10項）を準用して検収を行う。ただし、検収期間その他の条件については、当事者間で別途合意することができる。</div>
-    <div class="clause">13. Phase 3の各成果物の検収完了をもって、第17条に定める当該成果物に対応する支払条件が成就する。</div>
-</div>
-  
-<div class="article">
-    <div class="article-title">第12条（本番環境へのリリース）</div>
-    <div class="clause">1. 委託者は、第11条に定める検収が完了した成果物について、受託者に対し、本番環境への移行作業又は切り替え作業（以下「リリース」という。）を指示することができる。</div>
-    <div class="clause">2. 受託者は、委託者の指示に従い、リリースに必要な移行作業又は切り替え作業を実施するものとする。</div>
-    <div class="clause">3. リリースは、委託者と受託者が協議のうえ日程を決定し、文書により確認するものとする。</div>
-    <div class="clause">4. 受託者は、リリース完了後、当該システムが本番環境で正常に稼働することを確認し、その結果を委託者に報告するものとする。</div>
-    <div class="clause">5. 本契約における「納品完了」とは、第11条に基づく検収合格および本条に基づく本番環境へのリリース完了をもって成立するものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第13条（データ移行の責任範囲）</div>
-    <div class="clause">1. Phase 2におけるデータ移行業務は、以下の範囲で実施するものとする。
-        <div class="sub-clause">① 現行MooMシステムからのデータ抽出</div>
-        <div class="sub-clause">② データフォーマットの変換</div>
-        <div class="sub-clause">③ 本件システムへのデータ投入</div>
-        <div class="sub-clause">④ 移行後の基本的な整合性確認</div>
-    </div>
-    <div class="clause">2. 移行元データ（現行MooMシステムのデータ）の品質、完全性、正確性については、委託者の責任とする。受託者は、提供されたデータをそのまま移行するものとし、移行元データに起因する不具合、データ欠損、データ不整合等については責任を負わないものとする。</div>
-    <div class="clause">3. データ移行に際し、移行元データに技術的な問題（文字化け、データ形式の不整合、データベーススキーマの不明確さ等）が発見された場合、受託者は委託者に報告し、委託者と協議の上で対応方法を決定するものとする。当該問題の解決に追加工数が必要な場合は、第4条の定めに従う。</div>
-    <div class="clause">4. 委託者は、データ移行前に移行対象データのバックアップを取得し、移行後の検証に必要な期間、バックアップを保持する責任を負うものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第14条（保証）</div>
-    <div class="clause">1. 受託者は、第12条に定める本番環境へのリリース日から起算して6ヶ月間（以下「本件保証期間」という。）、受入検査において検出できなかった重大な不具合（例：システムのクラッシュ、主要機能の停止、業務に著しい支障を与える障害）又は実装ミスが納品後に発覚した場合、無償で修正対応を行うものとする。なお、本件保証期間経過後においても、軽微な修正又は調整については、受託者の裁量により可能な範囲で誠実に対応するものとする。</div>
-    <div class="clause">2. 前項の保証は、受託者が納品したソースコードに対し、第三者による変更・修正が一切行われていないことを条件とする。委託者又は第三者がソースコードに何らかの変更・修正を加えた場合、当該変更・修正に起因する不具合については、本件保証の対象外とする。</div>
-    <div class="clause">3. 以下の事由に起因する不具合は、本件保証の対象外とする。
-        <div class="sub-clause">① 委託者の指示又は提供資料等の誤りに起因する不具合</div>
-        <div class="sub-clause">② 委託者又は第三者による不適切な使用、改変、修正</div>
-        <div class="sub-clause">③ 合意された動作環境外での使用</div>
-        <div class="sub-clause">④ 外部サービス、OS、ブラウザ等の第三者ソフトウェアの仕様変更</div>
-        <div class="sub-clause">⑤ 不可抗力による不具合</div>
-    </div>
-</div>
-
-<div class="article">
-    <div class="article-title">第15条（契約不適合責任）</div>
-    <div class="clause">1. 成果物に本契約の内容との不適合があった場合、受託者は、委託者の請求により、委託者の選択に従って、当該成果物の無償による修補、代替品の納入若しくは不足分の納入等の方法による履行の追完、代金の全部又は一部の減額若しくは返還その他の必要な措置を講じなければならない。ただし、当該不適合が受託者の責めに帰すべき事由によらない場合は、この限りではない。</div>
-    <div class="clause">2. 受託者が本契約の内容との不適合のある成果物を委託者に引き渡した場合において、委託者が本件保証期間内にその旨を受託者に通知しないときは、委託者は、その不適合を理由として、前項に規定する権利を行使することができない。ただし、受託者が検収の時にその不適合を知っていたとき又は受託者の故意若しくは重過失による不適合であったときは、この限りではない。</div>
-    <div class="clause">3. 第1項に基づく請求は、損害賠償の請求及び解除権の行使を妨げない。</div>
-    <div class="clause">4. 本契約における受託者の契約不適合に関する履行の追完義務は、委託者が受託者に対して代金の減額のみを請求することを理由として免れることはない。ただし、受託者の契約不適合に関する責任は、契約金額の総額を上限とするものとする。</div>
-</div>
-
-<h2>第3章 委託料及び支払条件</h2>
-
-<div class="article">
-    <div class="article-title">第16条（開発委託料）</div>
-    <div class="clause">1. 本件開発業務に係る報酬総額は、金11,960,000円（非課税）とする。受託者は外国法人であるため、日本国内における税務上の義務は原則として発生しない。万一、本契約に関連して日本国内で何らかの税務上の義務が発生した場合、当該税務上の義務は委託者が負担するものとする。</div>
-    <div class="clause">2. 各Phaseの報酬内訳は以下のとおりとする。
-        <table>
-            <tr>
-                <th>Phase</th>
-                <th>期間</th>
-                <th>工数</th>
-                <th>報酬金額（非課税）</th>
-            </tr>
-            <tr>
-                <td>Phase 1</td>
-                <td>2026年2月～3月（2ヶ月）</td>
-                <td>開発1,550h + デザイン250h<br>（計1,800h）</td>
-                <td>3,600,000円</td>
-            </tr>
-            <tr>
-                <td>Phase 2</td>
-                <td>2026年4月～8月（5ヶ月）</td>
-                <td>開発3,189h<br>（データ移行80h含む）</td>
-                <td>6,378,000円</td>
-            </tr>
-            <tr>
-                <td>Phase 3</td>
-                <td>約2ヶ月</td>
-                <td>開発991h</td>
-                <td>1,982,000円</td>
-            </tr>
-            <tr>
-                <th colspan="3">合計</th>
-                <th>11,960,000円</th>
-            </tr>
-        </table>
-    </div>
-    <div class="clause">3. 上記報酬には、Visual デザイン業務（150時間相当）は含まれない。当該業務は委託者が実施するものとする。</div>
-  <div class="clause">4. 前項のPhaseごとの期間は現時点での目安であり、各Phaseの具体的な開始日および終了日は、直前Phaseの成果物の検収状況や要件の確定状況等を踏まえ、当該Phase開始時点で委託者・受託者間にて協議のうえ決定するものとする。この場合の変更内容は、メール等の書面により確認するものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第17条（支払条件）</div>
-       <div class="clause">1. 委託者は、各Phaseの開発委託料を、当該Phaseごとに、次の各号に従い支払うものとする。
-         <p>(1) 当該Phaseの作業開始前までに、当該Phaseに係る委託料の 50％</p>
-         <p>(2) 当該Phaseに係る成果物について、第11条に基づく検収が完了した日 の属する月の翌月末日までに、当該Phaseに係る委託料の 残額50％</p></div>
-       <div class="clause">2. 前項にかかわらず、Phase 2 の委託料の支払条件については、当事者間で協議のうえ、メールその他書面により確認するものとし、30％・30％・40％ のように複数回に分割して支払うことができる。
-ただし、Phase 2開始前までに 前文の合意が成立しない場合、Phase 2の委託料についても 前項（50％・50％） を適用する。</div>
-    <div class="clause">3. 支払方法は、受託者が指定する銀行口座への銀行振込とし、振込手数料は委託者の負担とする。</div>
-    <div class="clause">4. 委託者が前項に定める支払期日に遅滞した場合、委託者は受託者に対し、支払期日の翌日から支払完了の日まで、未払金額に対し年率14.6%の遅延損害金を支払うものとする。</div>
-    <div class="clause">5. 前各項に定める開発委託料とは別に、以下の費用については委託者の負担とする。
-        <div class="sub-clause">① サーバーホスティング費用・クラウドサービス利用料</div>
-        <div class="sub-clause">② 商用ソフトウェアライセンス費用（第20条第1項で承諾したもの）</div>
-        <div class="sub-clause">③ 外部サービス利用料（API、決済ゲートウェイ、通信サービス等）</div>
-        <div class="sub-clause">④ ドメイン取得・更新費用、SSL証明書費用</div>
-        <div class="sub-clause">⑤ インフラ維持管理に関わる費用</div>
-        <div class="sub-clause">⑥ その他システム運用に必要な第三者サービス費用</div>
-    </div>
-    <div class="clause">6. 前項の費用は、受託者が委託者に事前に見積を提示し、委託者の承認を得た上で、受託者が立て替えて支払い、後日委託者に請求するものとする。</div>
-</div>
-
-<h2>第4章 所有権及び知的財産権等</h2>
-
-<div class="article">
-    <div class="article-title">第18条（成果物の所有権）</div>
-    <div class="clause">成果物のうち、プログラム本体を除く有体物（例：記録媒体、マニュアル、設計書など）の所有権は、開発委託料の完済時に受託者から委託者へ移転する。プログラム本体については、第19条の定めに従い、その著作権を含む必要な権利が移転するものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第19条（成果物等の著作権）</div>
-    <div class="clause">1. 本件プログラムその他の成果物に関する著作権（著作権法第27条及び第28条に定める権利を含む。）は、開発委託料完済と同時に委託者に移転する。また、本件保証期間において作成又は修正された成果物等に関する著作権は、本件保証期間完了と同時に委託者に移転する。ただし、受託者が従前より保有するノウハウ、技術情報、汎用的なプログラムモジュール、開発ツール、テンプレート等（以下「受託者ノウハウ」という。）に関する著作権およびその他の権利は、受託者に帰属するものとし、受託者は当該受託者ノウハウを本件開発業務以外にも自由に利用できるものとする。</div>
-    <div class="clause">2. 現行MooMシステムから流用されるコード、モジュール、設計思想等についても、受託者ノウハウに含まれるものとし、受託者は今後の他プロジェクトにおいて自由に利用できるものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第20条（第三者ソフトウェアの利用）</div>
-    <div class="clause">1. 受託者は、本件開発業務遂行の過程において、システム機能の実現のために、第三者ソフトウェア（フリーソフトウェア及びオープンソースソフトウェアを含む。）を利用するには、委託者の承諾を得なければならない。ただし、MITライセンスその他商用利用に制限のないオープンソースソフトウェアについては、事前承諾を要せず、受託者は利用状況を委託者に報告することで足りるものとする。</div>
-    <div class="clause">2. 前項に基づき委託者が第三者ソフトウェアの利用を承諾した場合、受託者は、受託者の費用と責任において、受託者と当該第三者との間で当該第三者ソフトウェアのライセンス契約及び保守契約の締結等、必要な措置を講じる。</div>
-    <div class="clause">3. 受託者は、第三者ソフトウェアのライセンス条件遵守、第三者権利不侵害、及び本件目的に照らした性能適合性について、商業的に合理的な範囲で調査し、その結果を委託者に報告するものとする。万一、当該第三者ソフトウェアが契約不適合又は権利侵害の原因となった場合は、受託者の責任と負担において、代替手段の提供、権利処理、修正その他必要な措置を講じなければならない。</div>
-    <div class="clause">4. 受託者は、オープンソースソフトウェアを利用する場合、そのライセンス条項に基づき必要な表示・通知・ソースコード提供方法に関する情報を、技術ドキュメントに含めて委託者に提供する。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第21条（第三者の権利侵害）</div>
-    <div class="clause">1. 委託者が成果物等に関し第三者から著作権又は特許権等の侵害の申立を受けたときは、速やかに受託者に対し申立の事実及び内容を通知する。</div>
-    <div class="clause">2. 前項の申立がなされた場合、受託者は、かかる申立によって委託者が支払うべきとされた損害賠償額（逸失利益に関する損害及び弁護士費用を含むが、これに限られない。）その他委託者が被った損害を賠償する。ただし、本条に基づく受託者の賠償責任の総額は、第30条に定める責任上限額を超えないものとする。</div>
-    <div class="clause">3. 受託者の帰責事由によって第三者の知的財産権が侵害されたことを理由として、委託者が成果物等を将来に向けて使用できなくなるおそれがある場合、受託者は、受託者の費用負担で、委託者の判断により、権利侵害のない他の成果物等との交換、権利侵害している部分の変更、継続使用のための権利取得、又は損害賠償等の措置を講じる。</div>
-</div>
-
-<h2>第5章 一般条項</h2>
-
-<div class="article">
-    <div class="article-title">第22条（秘密情報）</div>
-    <div class="clause">1. 本契約における秘密情報とは、文書、口頭、電磁的記録媒体その他開示の方法及び媒体並びに本契約締結の前後を問わず、委託者及び受託者が相手方から開示される、本件開発業務に関する商品企画・技術・技能・営業等に関する一切の情報をいう。</div>
-    <div class="clause">2. 委託者及び受託者は、事前に相手方の書面による承諾を得ることなく、本契約締結の事実、その内容及び秘密情報を、故意又は過失を問わず、第三者に開示してはならない。</div>
-    <div class="clause">3. 前項の規定は、本契約終了後も3年間有効とする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第23条（個人情報）</div>
-    <div class="clause">1. 受託者は、本件開発業務に関連して委託者から受託者に開示される個人情報（個人情報保護法第2条1項に定められたものをいう。以下、単に「個人情報」という）について、本契約の趣旨及び個人情報保護法の規定に従って、これを取り扱う。</div>
-    <div class="clause">2. 個人情報の内容の訂正、修正、削除等の権利は全て委託者に帰属するものとし、受託者は一切の権利を持たないものとする。</div>
-    <div class="clause">3. 受託者は、個人情報の保持ないし開示について、前条第2項の例に倣う。</div>
-    <div class="clause">4. 受託者は、次の事項を遵守する。
-        <div class="sub-clause">① 個人情報は本件開発業務の目的のみに使用する。</div>
-        <div class="sub-clause">② 個人情報を事前に定められた役員及び従業員に限って取り扱わせる。</div>
-        <div class="sub-clause">③ 個人情報の取扱場所を特定し、第三者の個人情報への接触を防止する。</div>
-        <div class="sub-clause">④ 委託者から説明を求められた場合は、個人情報の管理状況を口頭又は書面にて委託者に報告する。</div>
-    </div>
-    <div class="clause">5. 受託者は、原則として個人情報の複製・複写を行わず、やむを得ず必要な場合は委託者の事前承諾を得るものとする。ただし、緊急を要する場合は複製・複写後速やかに委託者の承認を得るものとする。また、複製・複写物は本件開発業務終了後速やかに廃棄又は委託者に返却するものとする。</div>
-    <div class="clause">6. 受託者は、委託者の事前承諾なく、個人情報の取扱業務の再委託を行ってはならない。委託者の承認を得て再委託を行う場合であっても、受託者は、再委託先に本契約における受託者と同等の義務を負わせなければならない。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第24条（再委託に関する取扱い）</div>
-    <div class="clause">1. 本契約に基づく業務の全部または一部を第三者に再委託するか否かについては、受託者の裁量により判断・決定するものとする。</div>
-    <div class="clause">2. ただし、受託者は再委託の有無にかかわらず、成果物の品質、納期の遵守、本契約に基づく情報管理および秘密保持等に関して、自己が業務を遂行する場合と同等の責任を負うものとする。</div>
-    <div class="clause">3. 委託者が合理的な理由に基づき情報開示を求めた場合、受託者は、受託者の業務運営に支障を来さない範囲で、再委託の内容や委託先に関する情報を提供するよう努める。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第25条（委託者の協力義務）</div>
-    <div class="clause">1. 委託者は、本件開発業務の円滑な遂行のため、以下の協力義務を負うものとする。
-        <div class="sub-clause">① Phase 1における要件定義・仕様確定への積極的な参加</div>
-        <div class="sub-clause">② 必要な資料・情報の適時提供</div>
-        <div class="sub-clause">③ 質問事項への迅速な回答（原則3営業日以内）</div>
-        <div class="sub-clause">④ 中間成果物の確認・承認の迅速な実施</div>
-        <div class="sub-clause">⑤ Visual デザイン業務の適時実施</div>
-    </div>
-    <div class="clause">2. 委託者が前項の協力義務を履行せず、又は履行が遅延したことにより、本件開発業務の遅延、追加工数の発生等の影響が生じた場合、受託者はその責任を負わないものとし、必要に応じて納期の延長又は追加費用を請求できるものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第26条（契約の解除）</div>
-    <div class="clause">1. 委託者及び受託者は、相手方が本契約の各条項に違反したと認めた場合において、相手方に対し相当の期間を定めて催告をしたにもかかわらず当該期間内に是正されないときは、本契約の全部又は一部を解除することができるものとする。</div>
-    <div class="clause">2. 委託者及び受託者は、相手方に次の各号の一つに該当する事由が生じたと認めたときは、相手方に対し催告その他の手続きを要せず、直ちに本契約の全部又は一部を解除することができるものとする。
-        <div class="sub-clause">① 本契約に関し、相手方による重大な違反又は背信行為があったとき。</div>
-        <div class="sub-clause">② 債務の全部又は一部の履行が不能であるとき又は相手方がその債務の全部又は一部の履行を拒絶する意思を明確に表示したとき。</div>
-        <div class="sub-clause">③ 支払の停止があった場合、又は仮差押、差押、競売、破産手続開始、民事再生手続開始、会社更生手続開始、特別清算開始の申立があったとき。</div>
-        <div class="sub-clause">④ その他前各号に準ずるような本契約を継続し難い重大な事由又は債権保全を必要とする相当の事由が発生したとき。</div>
-    </div>
-    <div class="clause">3. 前各項に基づく本契約を解除した場合、受託者は、既に委託者から受領した金銭のうち、履行が完了していない部分に相当する額を、解除日から10営業日以内に返還しなければならない。</div>
-    <div class="clause">4. 受託者の責に帰すべき事由により解除となった場合、受託者は、委託者から既に受領した金銭があるときはこれを全額返還するものとする。ただし、既に完了し、委託者に納入済みの作業部分に相当する金額については、返還義務を負わないものとする。</div>
-    <div class="clause">5. 委託者の責に帰すべき事由により解除となった場合、委託者は、受託者が既に実施した作業に対する報酬を支払うものとし、加えて残存業務に対する報酬の50%を違約金として支払うものとする。</div>
-    <div class="clause">6. 第1項及び第2項の解除権の行使は、損害賠償請求を妨げない。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第27条（反社会的勢力の排除）</div>
-    <div class="clause">1. 委託者及び受託者は、現在、暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業、総会屋等、社会運動等標榜ゴロ又は特殊知能暴力集団等、その他これらに準ずる者（以下「反社会的勢力」という。）に該当しないこと、及び将来にわたっても該当しないことを表明し、かつ確約する。</div>
-    <div class="clause">2. 委託者及び受託者は、自ら又は第三者を利用して暴力的な要求行為、法的な責任を超えた不当な要求行為、取引に関して脅迫的な言動をし又は暴力を用いる行為その他これらに準ずる行為を行わないことを確約する。</div>
-    <div class="clause">3. 委託者又は受託者は、相手方が反社会的勢力に該当し、又は前項各号のいずれかに該当する行為をした場合には、相手方に対して何らの催告をすることなく本契約を解除することができる。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第28条（委託者の遅延による影響）</div>
-    <div class="clause">1. 委託者の事由により、本件開発業務の進行が遅延した場合、受託者は以下の措置を取ることができる。
-        <div class="sub-clause">① 納期の延長（遅延日数に相当する期間）</div>
-        <div class="sub-clause">② 追加工数が発生した場合の追加費用請求</div>
-        <div class="sub-clause">③ 受託者のリソースを他プロジェクトに振り替える権利</div>
-    </div>
-    <div class="clause">2. 前項における「委託者の事由」には、以下が含まれるが、これに限定されない。
-        <div class="sub-clause">① 要件定義・仕様確定の遅延</div>
-        <div class="sub-clause">② 必要資料・情報の提供遅延</div>
-        <div class="sub-clause">③ 質問事項への回答遅延（3営業日超過）</div>
-        <div class="sub-clause">④ 中間成果物の確認・承認の遅延</div>
-        <div class="sub-clause">⑤ Visual デザイン業務の遅延</div>
-        <div class="sub-clause">⑥ 委託者都合による仕様変更</div>
-    </div>
-    <div class="clause">3. 委託者の事由による遅延が30日を超える場合、受託者は本契約を解除することができ、この場合、第26条第5項を準用する。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第29条（Phase 2の柔軟な実装優先順位）</div>
-    <div class="clause">1. Phase 2の実装においては、Phase 1で確定した要件定義・画面仕様の範囲内で、委託者と受託者が協議の上、実装優先順位を柔軟に決定できるものとする。</div>
-    <div class="clause">2. 実装優先順位の変更は、Phase 2全体の工数・開発委託料に影響を与えない範囲で、書面（メール可）による合意により実施できるものとする。</div>
-    <div class="clause">3. 優先順位の変更により、一部機能の実装がPhase 3に移動する場合であっても、Phase 2とPhase 3の報酬総額に変更はないものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第30条（損害賠償）</div>
-    <div class="clause">委託者及び受託者は、本契約の履行に関し、相手方の責に帰すべき事由により損害を被った場合、相当因果関係の範囲内で、現実に発生した直接損害に限り、その賠償を請求することができるものとする。ただし、各当事者の損害賠償責任の上限は、本契約の報酬総額を限度とし、逸失利益、間接損害、特別損害、二次的損害、またはデータ消失・業務機会損失に関する損害については、一切の責任を負わないものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第31条（不可抗力）</div>
-    <div class="clause">天災地変、戦争、暴動、内乱、パンデミック等の伝染病の蔓延、その他不測の事態の発生等、委託者と受託者双方の責に帰することができない事由により、本契約に基づく義務の全部又は一部の履行が遅延又は不可能となったときは、本契約の違反とせず、委託者及び受託者はその責を負わないものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第32条（権利義務譲渡の禁止）</div>
-    <div class="clause">委託者及び受託者は、事前に相手方の書面による承諾を得ることなく、本契約上の地位及び権利義務の全部若しくは一部を、第三者に譲渡し、承継させ、又は担保に供することができないものとする。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第33条（分離可能性）</div>
-    <div class="clause">本契約のいずれかの条項の無効又は違法は、他の条項の効力に影響を及ぼさない。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第34条（残存条項）</div>
-    <div class="clause">委託者及び受託者は、本契約の終了後においても、第7条、第11条、第13条、第14条、第15条、第17条、第18条乃至第21条、第22条、第23条、第24条、第26条第3項乃至第6項並びに第30条乃至第36条の効力が残存することを確認する。</div>
-</div>
-
-<div class="article">
-    <div class="article-title">第35条（準拠法・紛争解決）</div>
-    <div class="clause">1. 本契約は日本法を準拠法とする。</div>
-    <div class="clause">2. 本契約に関する紛争は、まず両当事者が誠意をもって協議し、解決に努めるものとする。</div>
-    <div class="clause">3. 協議開始後30日以内に解決に至らない場合、以下の方法により解決する。
-        <div class="sub-clause">① 委託者の選択により、東京地方裁判所、又はベトナム社会主義共和国の管轄裁判所、若しくはシンガポール国際仲裁センター（SIAC）における仲裁とする。</div>
-        <div class="sub-clause">② 仲裁は、仲裁規則に従い、仲裁地をシンガポール、仲裁言語を日本語又は英語とする。</div>
-        <div class="sub-clause">③ 仲裁判断は最終的かつ両当事者を拘束し、ニューヨーク条約に基づく執行可能とする。</div>
-    </div>
-</div>
-
-<div class="article">
-    <div class="article-title">第36条（誠実協議）</div>
-    <div class="clause">本契約に規定しない事項が発生した場合、委託者と受託者が協議の上、誠意をもって解決することとする。</div>
-</div>
-
-<div class="signature-section">
-    <p>以上、本契約の証として、本契約書データを作成し、委託者及び受託者の双方が電子署名又は電子的同意の方法により締結し、各自その控えを保有するものとする。</p>
-    
-    <p style="text-align: center; margin: 30px 0;">2026年1月30日</p>
-    
-    <div class="signature-block">
-        <p><strong>委託者</strong></p>
-        <p>東京都渋谷区神宮前1-19-13 ドミシール平野303</p>
-        <p>MediaBirth株式会社</p>
-        <p>代表取締役　神原勝彦　㊞</p>
+    <div class="section">
+        <h2>技術要件</h2>
+        
+        <div class="requirement-list">
+            <ol>
+                <li><strong>WordPress必須：</strong>全プロジェクトをWordPressで実装</li>
+                <li><strong>生成AI活用：</strong>Webデザイン・開発における生成AI技術の活用必須</li>
+                <li><strong>標準遵守：</strong>
+                    <ul>
+                        <li>WordPressコーディング規約</li>
+                        <li>セキュリティ配慮</li>
+                        <li>マルチデバイス対応（PC・スマートフォン）</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
     </div>
     
-    <div class="signature-block">
-        <p><strong>受託者</strong></p>
-        <p>3rd Floor, Audi Building, No. 8 Pham Hung Street,</p>
-        <p>Yen Hoa Ward, Hanoi City, Vietnam</p>
-        <p>AMCOLAB TECHNOLOGY Co., Ltd</p>
-        <p>代表取締役　NGUYEN THI QUY　㊞</p>
+    <div class="section">
+        <h2>管理・運用要件</h2>
+        
+        <h3>プロジェクト管理体制</h3>
+        <div class="info-box">
+            <ul>
+                <li>作業履歴の管理</li>
+                <li>仕様変更履歴の管理</li>
+                <li>日本企業様向けのレビュー・修正フロー遵守</li>
+            </ul>
+        </div>
+        
+        <h3>監査対応</h3>
+        <div class="important">
+            <p>内閣府（JST）管轄プロジェクトのため、以下の要件が必須となります：</p>
+            <ul>
+                <li>公的監査に耐えうる管理体制</li>
+                <li>公的基準を満たす事務処理能力</li>
+                <li>監査担当者との適切なコミュニケーション品質</li>
+            </ul>
+        </div>
     </div>
-</div>
-
-<div class="page-break"></div>
+    
+    <div class="section">
+        <h2>エントリー条件</h2>
+        
+        <h3>拠点指定</h3>
+        <div class="info-box">
+            <p>以下の地域に拠点を持つ企業様を優先：</p>
+            <ul>
+                <li>東京都</li>
+                <li>大阪府</li>
+                <li>奈良県</li>
+                <li>和歌山県</li>
+            </ul>
+        </div>
+        
+        <h3>スキル・その他条件</h3>
+        <div class="requirement-list">
+            <ol>
+                <li>WordPressでご対応いただける企業様限定</li>
+                <li>2026年3月第2週目までの短期間で一定の成果（100万円規模）を出す必要があり、急ぎでご対応いただける企業様限定</li>
+                <li>Webサイト制作やデザインにおいて、生成AI（Midjourney等）などの先端技術を活用できる企業様限定</li>
+                <li>ご契約後、2026年2月中は週に2回程度、1回3～4時間ほどオンラインで接続し、画面共有等を行いながら問い合わせ主様と一緒に実作業を行う（共同作業）ことが可能な企業様限定</li>
+                <li>公的な監査に対応できる管理体制を有する企業様限定</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>予算・納期</h2>
+        
+        <h3>今年度（2026年3月終了）</h3>
+        <div class="budget-box">
+            <table>
+                <tr>
+                    <th>予算</th>
+                    <td>〜100万円</td>
+                </tr>
+                <tr>
+                    <th>納期</th>
+                    <td>2ヶ月
+                        <ul>
+                            <li>2026年2月中：主要作業期間</li>
+                            <li>2026年3月第2週まで：成果物納品</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>次年度以降</h3>
+        <div class="info-box">
+            <table>
+                <tr>
+                    <th>予算見込み</th>
+                    <td>年間100万円前後</td>
+                </tr>
+                <tr>
+                    <th>契約形態</th>
+                    <td>年度ごとの契約更新</td>
+                </tr>
+                <tr>
+                    <th>期待</th>
+                    <td>複数年にわたる長期的なパートナーシップ</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>スケジュール</h2>
+        
+        <div class="timeline">
+            <table>
+                <tr>
+                    <th>初回商談</th>
+                    <td>2026年2月3日（火）以降、最短日程</td>
+                </tr>
+                <tr>
+                    <th>作業開始</th>
+                    <td>2026年2月第1週</td>
+                </tr>
+                <tr>
+                    <th>主要作業期間</th>
+                    <td>2026年2月中</td>
+                </tr>
+                <tr>
+                    <th>納品期限</th>
+                    <td>2026年3月第2週まで</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>打ち合わせ・コミュニケーション</h2>
+        
+        <div class="info-box">
+            <ul>
+                <li><strong>形式：</strong>主にWebミーティング（オンライン）</li>
+                <li><strong>言語：</strong>日本語</li>
+                <li><strong>頻度：</strong>2月中は高頻度（週2回の共同作業）、その後はプロジェクト進捗に応じて</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>プロジェクトの重要特性</h2>
+        
+        <div class="requirement-list">
+            <ol>
+                <li><strong>高い公共性：</strong>商用目的ではない、無償公開の公共リソースとしてのウェブサイト</li>
+                <li><strong>スピード重視：</strong>短期間（2ヶ月）で具体的な成果が必要</li>
+                <li><strong>専門性：</strong>国の監査基準を満たす技術力とプロジェクト管理能力</li>
+                <li><strong>先端技術：</strong>デザイン・開発プロセスへのAI統合必須</li>
+                <li><strong>密接な協力：</strong>オンライン共同作業による発注者様との直接的な協業</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>プロジェクト区分</h2>
+        
+        <div class="info-box">
+            <p><strong>カテゴリ：</strong>Webシステム</p>
+        </div>
+    </div>
+    
+    <div class="section page-break">
+        <h2>発注ナビ担当者のヒアリング内容</h2>
+        
+        <div class="info-box">
+            <h3>打ち合わせ方法について</h3>
+            <p>基本的にはWebミーティングでのお打ち合わせを希望されています。</p>
+            
+            <h3>要望詳細</h3>
+            <ul>
+                <li>現在進行中の内閣府管轄プロジェクト（ムーンショットプロジェクト）におけるWebサイトの引継ぎ先を探されています。</li>
+                <li>前任の制作会社が監査に耐えうるコミュニケーションレベルではなかったため、体制の変更を希望されています。</li>
+                <li>2026年3月第2週目（今年度末）までの短期間で一定の成果を出す必要があり、急ぎで動ける企業様を希望されています。</li>
+                <li>Webサイトの構築基盤としてWordPressを使用し、既存プロジェクトの引継ぎおよび新規構築を行っていただきます。Webデザインとコーディングを行っていただくことになります。</li>
+                <li>ムーンショットプロジェクトの一環として、古典テキストを集めたアーカイブサイトを制作します。商品販売等の商用目的ではなく、現代と古典を繋ぐ公共性の高い無償公開サイトとなります。</li>
+                <li>Webサイト制作やデザインにおいて、生成AI（Midjourney等）などの先端技術を活用できることが必須となります。</li>
+                <li>ご契約後、2026年2月中は週に2回程度、1回3～4時間ほどオンラインで接続し、画面共有等を行いながら問い合わせ主様と一緒に実作業を行う（共同作業）ことが可能な企業様限定となります。</li>
+                <li>内閣府（JST）の管轄プロジェクトであるため、監査が入る可能性があります。そのため、公的な監査に耐えうる事務処理能力や管理体制が必要となります。予めご了承ください。</li>
+                <li>予算執行は年度単位のため、年度ごとのご契約・お支払いになるとのことです。</li>
+                <li>今年度分（2026年度）に関しては、2月中に作業を進め、3月の第2週までに成果物を納品する必要があります。プロジェクト自体は複数年続く予定であり、年度ごとの契約更新で長期的なパートナーシップを希望されています。</li>
+                <li>初回商談は2月3日(火)以降の最短の日程をご希望です。2月第1週目から商談・実作業を開始できるスピード感がある企業様を希望されています。</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>AMCOLAB株式会社の自己推薦文</h2>
+        
+        <div class="info-box">
+            <p>はじめまして。AMCOLAB Technology（ベトナム）と申します。</p>
+            <p>今回の案件は、弊社の経験領域と非常に親和性が高く、ぜひ一度詳細をお伺いする機会をいただければと考えております。</p>
+            
+            <h3>自己紹介</h3>
+            <p>AMCOLAB Technologyは、日本企業様向けのWeb／業務システム開発を中心に20年以上の開発経験を持つエンジニア陣で構成された開発会社です。代表のクィはCEO兼CTOとして、日本側の要件整理・技術判断・品質管理を一貫して担当しており、日本語での技術的な議論・ドキュメント対応にも問題なく対応可能です。</p>
+            
+            <h3>関連する実績</h3>
+            <ul>
+                <li>企業向けコーポレート／公共性の高い情報発信サイト<br>
+                https://www.wellenetz.co.jp/<br>
+                （情報設計、デザイン、CMS運用を考慮した構築）</li>
+                
+                <li>企業検索・情報アーカイブ系サイト<br>
+                https://list-collection.com/<br>
+                （情報整理・検索性を重視した構成設計）</li>
+                
+                <li>コーポレートサイト制作（WordPress）<br>
+                https://hellointerior.jp/</li>
+            </ul>
+            
+            <h3>概算工数・費用感</h3>
+            <p>時間単価：2,500円／h（税別）</p>
+            <p>引継ぎ範囲・ページ数・アーカイブ規模を確認後、正式なお見積りをご提示いたします。</p>
+            
+            <h3>品質・監査対応について</h3>
+            <ul>
+                <li>作業履歴、仕様変更履歴の管理</li>
+                <li>最低限のテスト／表示確認（PC・SP）</li>
+                <li>WordPressのコーディング規約・セキュリティ配慮</li>
+                <li>日本企業様向けのレビュー・修正フローに準拠</li>
+            </ul>
+            <p>「作って終わり」ではなく、監査・運用を見据えた制作を前提としています。</p>
+            
+            <p>2月3日以降で、貴社のご都合のよい日時をいくつかご提示いただけましたら、最短日程でお打ち合わせ可能です。まずは一度、プロジェクトの背景やお考えを詳しくお聞かせください。</p>
+            
+            <p>何卒ご検討のほど、よろしくお願いいたします。</p>
+        </div>
+    </div>
+    
 </body>
 </html>
