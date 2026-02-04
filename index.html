@@ -3,497 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プロジェクト詳細説明 - 韓国コスメのYahoo!ショッピング店舗ページ新規制作</title>
+    <title>秘密保持契約書 - KOKONE開発プロジェクト</title>
     <style>
-        @page {
-            size: A4;
-            margin: 20mm;
-        }
-        
         body {
-            font-family: 'Yu Gothic', 'Meiryo', 'MS Gothic', sans-serif;
-            line-height: 1.9;
-            color: #333;
-            max-width: 210mm;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            font-size: 11pt;
-        }
-        
-        h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #e91e63;
-            padding-bottom: 12px;
-            margin-top: 30px;
-            font-size: 22pt;
-            font-weight: bold;
-        }
-        
-        h2 {
-            color: #34495e;
-            border-left: 6px solid #e91e63;
-            padding-left: 15px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 16pt;
-            font-weight: bold;
-        }
-        
-        h3 {
-            color: #555;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 13pt;
-            font-weight: bold;
-        }
-        
-        .info-box {
-            background-color: #f8f9fa;
-            border-left: 4px solid #e91e63;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .client-info {
-            background-color: #fce4ec;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        
-        .budget-box {
-            background-color: #fff3cd;
-            border: 2px solid #ffc107;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            font-weight: bold;
-        }
-        
-        .important {
-            background-color: #ffe6e6;
-            border: 2px solid #dc3545;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        
-        .requirement-list {
-            background-color: #f3e5f5;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        
-        .ec-feature {
-            background-color: #e8f5e9;
-            border-left: 4px solid #4caf50;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        ul {
-            margin: 10px 0;
-            padding-left: 25px;
-        }
-        
-        li {
-            margin: 8px 0;
+            font-family: "MS Mincho", "游明朝", "Yu Mincho", serif;
             line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
         }
-        
-        .section {
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .preamble {
+            margin-bottom: 30px;
+            text-indent: 1em;
+        }
+        .article {
             margin-bottom: 25px;
         }
-        
-        strong {
-            color: #2c3e50;
+        .article-title {
             font-weight: bold;
+            margin-bottom: 10px;
         }
-        
-        .timeline {
-            background-color: #fff9e6;
-            border-left: 4px solid #ff9800;
-            padding: 15px;
-            margin: 15px 0;
+        .article-content {
+            margin-left: 2em;
         }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
+        .clause {
+            margin-bottom: 10px;
         }
-        
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
+        .sub-clause {
+            margin-left: 2em;
+            margin-bottom: 8px;
         }
-        
-        th {
-            background-color: #e91e63;
-            color: white;
-            font-weight: bold;
+        .signature-section {
+            margin-top: 50px;
+            page-break-inside: avoid;
         }
-        
-        .highlight {
-            background-color: #ffeb3b;
-            padding: 2px 5px;
-            font-weight: bold;
+        .signature-block {
+            margin-bottom: 40px;
         }
-        
-        .target-box {
-            background-color: #e1f5fe;
-            border: 2px solid #03a9f4;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
+        .signature-line {
+            margin-bottom: 8px;
         }
-        
-        @media print {
-            body {
-                padding: 0;
-            }
-            .page-break {
-                page-break-before: always;
-            }
+        .date {
+            text-align: center;
+            font-size: 16px;
+            margin: 40px 0;
+        }
+        .conclusion {
+            margin: 30px 0;
+            text-indent: 1em;
         }
     </style>
 </head>
 <body>
-    <h1>韓国コスメのYahoo!ショッピング店舗ページの新規制作</h1>
+    <h1>秘密保持契約書</h1>
     
-    <div class="section">
-        <h2>基本情報</h2>
-        
-        <div class="client-info">
-            <h3>発注企業情報</h3>
-            <table>
-                <tr>
-                    <th>会社名</th>
-                    <td>BEENOS株式会社</td>
-                </tr>
-                <tr>
-                    <th>発注者名</th>
-                    <td>金 友根</td>
-                </tr>
-                <tr>
-                    <th>会社住所</th>
-                    <td>東京都品川区西五反田8-4-13 五反田JPビルディング７F</td>
-                </tr>
-                <tr>
-                    <th>電話番号</th>
-                    <td>090-3625-0956</td>
-                </tr>
-            </table>
+    <div class="preamble">
+        AMCOLAB TECHNOLOGY CO., LTD（以下「甲」という）と株式会社ホイミー（以下「乙」という）は、既婚者向け食事マッチングWebサービス「KOKONE」β版開発業務（以下「本業務」という）に関して相互に提供する取引上の秘密情報につき、次のとおり契約を締結する。
+    </div>
+
+    <div class="article">
+        <div class="article-title">第1条（目的）</div>
+        <div class="article-content">
+            甲および乙は、甲乙間の取引が相互の信頼に基づくものであることを認識し、本業務を履行するにあたり、本契約に定められた各条項を遵守し、相手方の秘密情報の守秘を徹底し、公正な取引関係を維持することを目的（以下「本目的」という）とする。
         </div>
     </div>
-    
-    <div class="section">
-        <h2>プロジェクト背景</h2>
-        
-        <div class="info-box">
-            <p>発注主様は越境ECの事業を展開されており、韓国にある子会社が仕入れたコスメを日本へ直輸入・直配送するためのYahoo!ショッピング出店ページを新規制作されます。</p>
-            <p>Yahoo!ショッピングは海外法人が運営できないため、日本法人であるBEENOS株式会社様が運営を行う想定です。</p>
+
+    <div class="article">
+        <div class="article-title">第2条（秘密情報）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本契約において秘密情報とは、本目的のために開示又は知得された次の各号の情報をいう。
+                <div class="sub-clause">
+                    （1）開示者が相手方に固定媒体（紙、電子媒体、磁気媒体等）によって開示する情報
+                </div>
+                <div class="sub-clause">
+                    （2）開示者が相手方に口頭、映像、電気通信回線を通じて提供された電子データ、その他前号に定める以外の方法により開示する情報
+                </div>
+                <div class="sub-clause">
+                    （3）開示者の顧客情報並びに開示者の営業上、技術上および財務上の情報
+                </div>
+                <div class="sub-clause">
+                    （4）本目的のために、甲および乙が協議した経緯、結果等を記した議事録又は記録
+                </div>
+                <div class="sub-clause">
+                    （5）本業務に関連する「KOKONE」サービスの仕様、設計、ソースコード、アルゴリズム、ビジネスモデル、ユーザーデータ、マーケティング戦略等の一切の情報
+                </div>
+            </div>
+            <div class="clause">
+                2. 前項にかかわらず、次の各号のいずれかに該当する情報は秘密情報に含まれないものとする。
+                <div class="sub-clause">
+                    （1）知得した時点ですでに公知の情報
+                </div>
+                <div class="sub-clause">
+                    （2）知得した時点ですでに受領者が保有していたことを証明できる情報
+                </div>
+                <div class="sub-clause">
+                    （3）知得した後、受領者の責によらずして公知となった情報
+                </div>
+                <div class="sub-clause">
+                    （4）知得した後、正当な権原を有する第三者から秘密保持義務を負うことなく受領者が適法に入手したことを証明できる情報
+                </div>
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>業務内容</h2>
-        
-        <h3>主要業務</h3>
-        <ul>
-            <li>Yahoo!ショッピング新規出店ページの制作</li>
-            <li>バナー制作（必須）</li>
-            <li>ロゴ制作（可能であれば）</li>
-            <li>ストア全般のデザイン・制作</li>
-        </ul>
-        
-        <div class="important">
-            <p><strong>※注意事項：</strong></p>
-            <ul>
-                <li>LP（ランディングページ）の制作は<strong>不要</strong></li>
-                <li>ECページ制作は発注主様にとって初めての経験のため、初回オンラインMTGでの丁寧な説明が必要</li>
-            </ul>
+
+    <div class="article">
+        <div class="article-title">第3条（情報の管理）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、相手方の秘密情報を厳重に管理するものとし、相手方の書面による事前承諾または指示のある場合を除き、複写、複製、改変等を行わないものとする。
+            </div>
+            <div class="clause">
+                2. 甲および乙は、秘密情報へのアクセス権限を必要最小限の従業員に限定し、当該従業員に対して本契約と同等の秘密保持義務を課すものとする。
+            </div>
+            <div class="clause">
+                3. 甲および乙は、秘密情報の電子データについて、適切な暗号化、アクセス制御、バックアップ等のセキュリティ対策を講じるものとする。
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>機能要件</h2>
-        
-        <h3>基本機能</h3>
-        <div class="ec-feature">
-            <ul>
-                <li>カート機能</li>
-                <li>決済機能</li>
-                <li>会員機能</li>
-            </ul>
-        </div>
-        
-        <h3>追加検討機能</h3>
-        <div class="requirement-list">
-            <ul>
-                <li>ストア内検索機能</li>
-                <li>その他の機能については、制作会社様とご相談しながら決定予定</li>
-            </ul>
+
+    <div class="article">
+        <div class="article-title">第4条（流用の禁止）</div>
+        <div class="article-content">
+            甲および乙は、取引上知り得た相手方の秘密情報を事前に相手方の書面による承諾を得ることなく、甲と乙との間で明示的または黙示的に合意された目的以外の目的に使用してはならない。特に、乙の秘密情報を甲が他の競合プロジェクトや類似サービスの開発に流用すること、および甲の技術情報やノウハウを乙が無断で他の開発会社との取引に利用することを禁止する。
         </div>
     </div>
-    
-    <div class="section">
-        <h2>商品・コンテンツ情報</h2>
-        
-        <h3>取扱商品</h3>
-        <div class="info-box">
-            <table>
-                <tr>
-                    <th>商品カテゴリー</th>
-                    <td>コスメ用品（韓国コスメ）</td>
-                </tr>
-                <tr>
-                    <th>商品数</th>
-                    <td>現時点では未定</td>
-                </tr>
-                <tr>
-                    <th>商品画像・原稿</th>
-                    <td>発注主様でご準備予定</td>
-                </tr>
-            </table>
-        </div>
-        
-        <h3>ターゲット層</h3>
-        <div class="target-box">
-            <p><strong>メインターゲット：</strong>30代〜50代の女性</p>
-            <p>信頼感・清潔感を重視したデザインが求められます。</p>
+
+    <div class="article">
+        <div class="article-title">第5条（秘密の保持等）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、本契約締結の事実、内容および相手方から入手した秘密情報は、相手方の書面による事前承認を得ることなく、第三者に開示しないものとする。
+            </div>
+            <div class="clause">
+                2. 甲および乙は、個人情報の取扱いについては個人情報保護法その他関連法規等を遵守し、適切な保護を図るものとする。
+            </div>
+            <div class="clause">
+                3. 前2項の規定にかかわらず、法令に基づく開示義務がある場合、または裁判所、監督官庁その他の公的機関から法令に基づく開示要請を受けた場合は、当該開示義務の範囲内で秘密情報を開示することができる。ただし、当該開示を行う当事者は、事前に相手方に通知し、開示範囲を最小限に留めるよう努めるものとする。
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>デザイン要件</h2>
-        
-        <div class="requirement-list">
-            <h3>デザインの方向性</h3>
-            <p>制作会社様とご相談しながら進めていくことをご希望されております。</p>
-            
-            <h3>必須対応</h3>
-            <ul>
-                <li><strong>スマートフォン対応：</strong>必須</li>
-                <li><strong>デザイン制作物：</strong>
-                    <ul>
-                        <li>ストアページ全般のデザイン</li>
-                        <li>バナー制作（必須）</li>
-                        <li>ロゴ制作（可能であれば）</li>
-                    </ul>
-                </li>
-            </ul>
+
+    <div class="article">
+        <div class="article-title">第6条（第三者への開示）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、再委託等のために相手方の事前の書面承諾を得て秘密情報の全部または一部を第三者に開示する場合、当該第三者に対し本契約と同等以上の秘密保持義務を課し、適切かつ合理的に監督するものとする。
+            </div>
+            <div class="clause">
+                2. 開示当事者は、前項に基づき秘密情報を開示した第三者による秘密情報の取扱いについて、自己の行為と同様の責任を負うものとする。
+            </div>
+            <div class="clause">
+                3. 甲が本業務を再委託する場合、甲は乙に対し、再委託先の名称、所在地、再委託する業務内容を事前に書面で通知し、乙の承諾を得るものとする。
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>エントリー条件</h2>
-        
-        <div class="important">
-            <h3>必須条件</h3>
-            <p><strong>Yahoo!ショッピング出店ページの制作実績がある企業様限定</strong></p>
-            <p>※必ず回答欄および自己推薦文に実績について記載してください。</p>
+
+    <div class="article">
+        <div class="article-title">第7条（知的財産権）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本業務の遂行により甲が開発・作成する成果物に関する知的財産権は、別途締結される業務委託契約の定めに従うものとする。
+            </div>
+            <div class="clause">
+                2. 本契約は、いずれの当事者に対しても、相手方が本契約締結前から保有していた知的財産権、または本契約とは無関係に独自に開発した知的財産権について、何らの権利または利益を付与するものではない。
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>予算・納期</h2>
-        
-        <div class="budget-box">
-            <h3>予算</h3>
-            <table>
-                <tr>
-                    <th>上限金額</th>
-                    <td>〜30万円</td>
-                </tr>
-                <tr>
-                    <th>理由</th>
-                    <td>30万円を超えると取締役会の許可が必要となり、手続きが複雑化するため</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="timeline">
-            <h3>納期</h3>
-            <table>
-                <tr>
-                    <th>納品希望時期</th>
-                    <td>2026年3月中旬頃まで</td>
-                </tr>
-                <tr>
-                    <th>開店予定</th>
-                    <td>2026年4月</td>
-                </tr>
-                <tr>
-                    <th>期間</th>
-                    <td>約2ヶ月</td>
-                </tr>
-            </table>
+
+    <div class="article">
+        <div class="article-title">第8条（損害賠償）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲または甲が指名した従業員および代理人が乙の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、乙は甲に対して損害賠償および乙が必要と認める合理的な措置を請求できるものとする。
+            </div>
+            <div class="clause">
+                2. 乙または乙が指名した従業員および代理人が甲の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、甲は乙に対して損害賠償および甲が必要と認める合理的な措置を請求できるものとする。
+            </div>
+            <div class="clause">
+                3. 当事者の過失による本契約違反に起因して相手方に生じた損害について、当該当事者の損害賠償責任の総額は、違反が発生した日から遡って過去12か月間に相手方が当該当事者に支払った委託料等の総額を上限とする。ただし、当事者の故意または重大な過失（重過失）による場合はこの限りでない。
+            </div>
+            <div class="clause">
+                4. 秘密情報の漏洩または本契約違反が発生した場合、違反当事者は直ちに相手方に通知し、相手方と協議の上、被害拡大の防止、原因究明、再発防止策の策定等、必要な措置を講じるものとする。
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>スケジュール・打ち合わせ</h2>
-        
-        <h3>初回打ち合わせ候補日</h3>
-        <div class="info-box">
-            <p>メールをいただく際に調整させていただきます。</p>
-        </div>
-        
-        <h3>特記事項</h3>
-        <div class="important">
-            <p><strong>発注者様の海外駐在期間：</strong>2026年1月31日〜2月14日</p>
-            <ul>
-                <li>この期間中は電話対応不可</li>
-                <li>メールでの連絡をお願いします</li>
-                <li>Webミーティングは調整可能</li>
-            </ul>
-        </div>
-        
-        <h3>打ち合わせ方法</h3>
-        <div class="info-box">
-            <p><strong>基本形式：</strong>Webミーティング（オンライン）</p>
+
+    <div class="article">
+        <div class="article-title">第9条（秘密情報の返還・廃棄）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、相手方から要請があった場合、または本契約が終了した場合、遅滞なく相手方の秘密情報（複製物を含む）を相手方に返還し、または相手方の指示に従い安全に廃棄するものとする。
+            </div>
+            <div class="clause">
+                2. 前項に基づく廃棄を行った場合、廃棄を実施した当事者は、相手方の要請に応じて、廃棄を証明する書面を相手方に提出するものとする。
+            </div>
+            <div class="clause">
+                3. 第1項の規定にかかわらず、法令により保管が義務付けられている秘密情報については、当該法令に定める期間、適切に保管することができる。この場合においても、本契約に定める秘密保持義務は継続して適用されるものとする。
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>初回MTGで説明いただきたい内容</h2>
-        
-        <div class="requirement-list">
-            <p>ECページ制作は発注主様にとって初めての経験のため、以下の内容について丁寧な説明をご希望されています：</p>
-            <ul>
-                <li>Yahoo!ショッピング出店ページ制作の全体の流れ</li>
-                <li>発注主様側でご準備いただくべき情報・素材</li>
-                <li>制作会社様の役務内容・範囲</li>
-                <li>ストア構成の進め方</li>
-                <li>商品登録の方法</li>
-                <li>機能面（検索・カテゴリ設計等）の設計方針</li>
-            </ul>
+
+    <div class="article">
+        <div class="article-title">第10条（反社会的勢力の排除）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、現在および将来にわたって、自らが暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業、総会屋等、社会運動等標榜ゴロ、特殊知能暴力集団等、その他これらに準ずる者（以下「反社会的勢力」という）に該当しないこと、および反社会的勢力と以下の関係を有しないことを表明し、かつ確約する。
+                <div class="sub-clause">
+                    （1）反社会的勢力が経営を支配していると認められる関係
+                </div>
+                <div class="sub-clause">
+                    （2）反社会的勢力が経営に実質的に関与していると認められる関係
+                </div>
+                <div class="sub-clause">
+                    （3）自己、自社もしくは第三者の不正の利益を図る目的または第三者に損害を加える目的をもってするなど、不当に反社会的勢力を利用していると認められる関係
+                </div>
+                <div class="sub-clause">
+                    （4）反社会的勢力に対して資金等を提供し、または便宜を供与するなどの関与をしていると認められる関係
+                </div>
+                <div class="sub-clause">
+                    （5）その他役員等または経営に実質的に関与している者が反社会的勢力と社会的に非難されるべき関係を有していること
+                </div>
+            </div>
+            <div class="clause">
+                2. 甲および乙は、自らまたは第三者を利用して以下の行為を行わないことを確約する。
+                <div class="sub-clause">
+                    （1）暴力的な要求行為
+                </div>
+                <div class="sub-clause">
+                    （2）法的な責任を超えた不当な要求行為
+                </div>
+                <div class="sub-clause">
+                    （3）取引に関して脅迫的な言動をし、または暴力を用いる行為
+                </div>
+                <div class="sub-clause">
+                    （4）風説を流布し、偽計または威力を用いて相手方の信用を毀損し、または相手方の業務を妨害する行為
+                </div>
+                <div class="sub-clause">
+                    （5）その他前各号に準ずる行為
+                </div>
+            </div>
+            <div class="clause">
+                3. 甲または乙は、相手方が前2項のいずれかに違反し、または違反するおそれがあると認めた場合には、相手方に対して何らの催告をすることなく、直ちに本契約を解除することができる。
+            </div>
+            <div class="clause">
+                4. 前項の規定により本契約が解除された場合、解除された当事者は、相手方に対し、これにより生じた損害の賠償を請求することはできず、かつ解除により相手方に生じた損害を賠償する責任を負うものとする。
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>プロジェクト区分</h2>
-        
-        <div class="info-box">
-            <p><strong>カテゴリ：</strong>ホームページ（ECサイト）</p>
+
+    <div class="article">
+        <div class="article-title">第11条（合意管轄）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、本契約に関連して訴訟の必要が生じたときは、東京地方裁判所を第一審の専属的合意管轄裁判所とすることに合意する。
+            </div>
+            <div class="clause">
+                2. 本契約は日本法を準拠法とし、日本法に基づき解釈されるものとする。
+            </div>
         </div>
     </div>
-    
-    <div class="section page-break">
-        <h2>発注ナビ担当者のヒアリング内容（詳細）</h2>
-        
-        <div class="info-box">
-            <h3>打ち合わせ方法について</h3>
-            <p>Webミーティングを想定。</p>
-            
-            <h3>初回打ち合わせの候補日目安について</h3>
-            <p>メールをいただく際に調整させていただきたいです。</p>
-            <p>尚、1/31~2/14まで海外駐在のため、電話不可ですが、Webミーティングはご調整いただけるとのことです。</p>
-            
-            <h3>現状</h3>
-            <ul>
-                <li>発注主様は越境ECの事業をされております。</li>
-                <li>韓国にある子会社が仕入れたコスメを、日本へ直輸入、直配送するためのYahoo!ショッピングの出店ページを制作したく、お問い合わせをいただきました。</li>
-                <li>Yahoo!ショッピングは海外法人が運営できないため、運営を発注主様で行う想定です。</li>
-            </ul>
-            
-            <h3>要望</h3>
-            <ul>
-                <li>Yahoo!ショッピングにおける新規出店ページの制作のご依頼です。
-                    <ul>
-                        <li>上記と、バナー制作必須でご希望されております。</li>
-                        <li>ロゴ制作については、可能であればご依頼されたいそうです。</li>
-                    </ul>
-                </li>
-                <li>機能面については、カート・決済・会員機能に加え、ストア内検索機能などの導入を検討していますが、詳細は制作会社様とご相談されながら決めていきたいそうです。</li>
-                <li>デザインの方向性についても、ご相談しながら進めていくことをご希望されております。</li>
-                <li>掲載する商品のカテゴリーはコスメ用品になります。商品数は現時点では未定です。</li>
-                <li>掲載する商品画像や原稿については、発注主様でご準備いただける想定です。</li>
-                <li>ターゲット層は30代〜50代の女性を想定しております。</li>
-                <li>スマートフォン対応についてもご希望されております。</li>
-                <li>予算について：上限を30万円と考えております。（30万を超えると取締役会の許可が必要となり手続きが複雑化するため。）</li>
-                <li>納期について：2026年4月には開店したいので、3月中旬くらいまでの納品をご希望です。</li>
-                <li>Yahoo!ショッピング出店ページの制作実績がある企業様をご希望です。</li>
-            </ul>
+
+    <div class="article">
+        <div class="article-title">第12条（本契約失効後の取扱い）</div>
+        <div class="article-content">
+            本契約の第4条（流用の禁止）、第5条（秘密の保持等）、第7条（知的財産権）、第8条（損害賠償）および第9条（秘密情報の返還・廃棄）の規定は、本契約がその効力を失った後も3年間有効とする。ただし、本業務に関連して開示された乙の事業戦略、顧客情報、個人情報等の機密性の高い情報については、期間の定めなく秘密保持義務が継続するものとする。
         </div>
     </div>
-    
-    <div class="section">
-        <h2>お問い合わせ時の発注内容</h2>
-        
-        <div class="info-box">
-            <p><strong>発注内容：</strong>韓国のコスメをヤフーショッピング上に販売する予定。LPは不要。バナー、ロゴを含めたページ全般のデザイン・制作</p>
-            
-            <p><strong>予算：</strong>~30万円</p>
-            
-            <p><strong>スケジュール：</strong>3月中</p>
-            
-            <h3>その他</h3>
-            <ul>
-                <li>ECのページ制作は弊社の経験がないということもあり、一度オンラインMTGで流れやお伝えすべき情報、役務内容などをご教示いただけますと助かります。</li>
-                <li>1/31~2/14まで海外駐在のため、この期間中は何かありましたらメールでお願いします。</li>
-            </ul>
+
+    <div class="article">
+        <div class="article-title">第13条（協議解決）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本契約の修正は、両当事者の書面による合意によるもの以外無効とする。
+            </div>
+            <div class="clause">
+                2. 本契約に規定なき事項および解釈に疑義が生じた場合は、甲乙誠意をもって協議し、円満に解決するものとする。
+            </div>
         </div>
     </div>
-    
-    <div class="section">
-        <h2>AMCOLAB株式会社の自己推薦文</h2>
-        
-        <div class="info-box">
-            <p>はじめまして。</p>
-            <p>日本企業様向けにECサイト制作・運用支援を行っております、AMCOLAB Technology と申します。</p>
-            
-            <p>本件の「韓国コスメを日本向けに販売するYahoo!ショッピング新規出店ページ制作」というご依頼内容を拝見し、ぜひお力になれると考え応募いたしました。</p>
-            
-            <h3>当社が提供できること</h3>
-            <ul>
-                <li>Yahoo!ショッピング出店ページ制作の実務経験</li>
-                <li>コスメカテゴリに適した、信頼感・清潔感を重視したデザイン提案</li>
-                <li>ストア構成、商品登録、機能面（検索・カテゴリ設計等）の進め方サポート</li>
-                <li>バナー制作、簡易ロゴ制作のご対応</li>
-                <li>スマートフォンファーストの設計</li>
-            </ul>
-            
-            <h3>関連するEC制作実績</h3>
-            <ul>
-                <li>ブランドEC／ギフト向け<br>
-                https://www.juchheim.co.jp/en/</li>
-                
-                <li>フラワー・ライフスタイル系EC<br>
-                https://www.nicolaibergmann.com/</li>
-                
-                <li>Shopify公式EC（日本向け）<br>
-                https://jp.daisonet.com/<br>
-                https://www.bathlier.com/</li>
-            </ul>
-            
-            <h3>ご提案金額・スケジュール</h3>
-            <p><strong>費用：</strong>300,000円（税別）以内／一式</p>
-            <ul>
-                <li>※ストアページ制作、バナー制作含む</li>
-                <li>※ロゴ制作は内容により簡易対応を想定</li>
-            </ul>
-            
-            <h3>お打ち合わせについて</h3>
-            <p>1/31〜2/14の海外駐在中は、メールでのやり取り、またはWebミーティングでの打ち合わせに対応可能です。</p>
-            
-            <p>初回MTGでは、</p>
-            <ul>
-                <li>全体の流れ</li>
-                <li>発注主様側でご準備いただくもの</li>
-                <li>役務範囲</li>
-            </ul>
-            <p>を中心にご説明いたします。</p>
-            
-            <p>まずは一度オンラインにてお話できましたら幸いです。</p>
-            
-            <p>何卒ご検討のほど、よろしくお願いいたします。</p>
+
+    <div class="article">
+        <div class="article-title">第14条（契約有効期間と更新）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本契約の有効期間は、本契約締結日から2年間とする。
+            </div>
+            <div class="clause">
+                2. 前項の有効期間満了日の3ヶ月前までに、甲または乙いずれからも書面による別段の申入れがないときは、本契約の有効期間はさらに1年間延長されるものとし、その後も同様とする。
+            </div>
         </div>
     </div>
-    
+
+    <div class="article">
+        <div class="article-title">第15条（契約の解除）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、相手方が本契約の各条項に違反し、相当の期間を定めた書面による催告後も当該違反が是正されない場合、本契約を解除することができる。
+            </div>
+            <div class="clause">
+                2. 前項の規定にかかわらず、甲および乙は、相手方に以下の事由が生じた場合、何らの催告なく直ちに本契約を解除することができる。
+                <div class="sub-clause">
+                    （1）本契約に関し、重大な違反または背信行為があったとき
+                </div>
+                <div class="sub-clause">
+                    （2）支払の停止があった場合、または仮差押、差押、競売、破産手続開始、民事再生手続開始、会社更生手続開始、特別清算開始の申立があったとき
+                </div>
+                <div class="sub-clause">
+                    （3）第10条（反社会的勢力の排除）に違反したとき
+                </div>
+            </div>
+            <div class="clause">
+                3. 本契約が解除された場合であっても、第12条（本契約失効後の取扱い）に定める条項の効力は継続するものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        本契約締結の証として、本契約書2通を作成し、甲乙記名押印のうえ各自1通を保有する。
+    </div>
+
+    <div class="date">
+        2026年2月4日
+    </div>
+
+    <div class="signature-section">
+        <div class="signature-block">
+            <div class="signature-line"><strong>甲</strong></div>
+            <div class="signature-line">住所：3rd Floor, Audi Building, No. 8 Pham Hung Street,</div>
+            <div class="signature-line" style="margin-left: 3em;">Yen Hoa Ward, Hanoi City, Vietnam</div>
+            <div class="signature-line">会社名：AMCOLAB TECHNOLOGY CO., LTD</div>
+            <div class="signature-line">役職名：代表取締役</div>
+            <div class="signature-line">氏名：NGUYEN THI QUY　　　　　　　　㊞</div>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-line"><strong>乙</strong></div>
+            <div class="signature-line">住所：静岡県榛原郡</div>
+            <div class="signature-line">会社名：株式会社ホイミー</div>
+            <div class="signature-line">役職名：代表取締役</div>
+            <div class="signature-line">氏名：田中 佑季　　　　　　　　㊞</div>
+        </div>
+    </div>
+
 </body>
 </html>
