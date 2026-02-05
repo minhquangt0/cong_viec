@@ -1,188 +1,319 @@
 <!DOCTYPE html>
-<html lang="vi"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Giới thiệu Công ty AMCOLAB</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#20B2AA", // Light Sea Green / Teal from logo
-                        secondary: "#1A3C4D", // Dark Slate / Deep Teal for headers
-                        "background-light": "#F8FAFC", // Slate 50
-                        "background-dark": "#0F172A", // Slate 900
-                        "card-light": "#FFFFFF",
-                        "card-dark": "#1E293B",
-                        "text-light": "#334155",
-                        "text-dark": "#E2E8F0",
-                    },
-                    fontFamily: {
-                        display: ["'Noto Sans JP'", "sans-serif"],
-                        sans: ["'Inter'", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.5rem",
-                        xl: "1rem",
-                    },
-                },
-            },
-        };
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-<style>
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案件詳細・自己推薦資料</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #e53e3e;
+            --bg-gray: #f7fafc;
+            --text-main: #2d3748;
+            --border-color: #e2e8f0;
         }
-        .dotted-line {
-            background-image: linear-gradient(to right, #94a3b8 33%, rgba(255,255,255,0) 0%);
-            background-position: bottom;
-            background-size: 6px 1px;
-            background-repeat: repeat-x;
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: var(--text-main);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .content-padding {
+            padding: 40px;
+        }
+
+        /* Section Styling */
+        h2 {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 17px;
+            color: var(--secondary-color);
+            margin-top: 25px;
+            background: #ebf8ff;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8fafc;
+            width: 25%;
+            font-weight: 700;
+        }
+
+        /* Information Blocks */
+        .info-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            white-space: pre-wrap; /* Giữ định dạng văn bản gốc */
+        }
+
+        .highlight-box {
+            background: #fff5f5;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* Badge/Tags */
+        .tag-container {
+            margin: 15px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        /* AMCOLAB Section */
+        .amcolab-section {
+            background: #f0f7ff;
+            border: 2px solid var(--secondary-color);
+            border-radius: 12px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .amcolab-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 13px;
+            color: #718096;
+            background: #f8fafc;
+        }
+
+        .price-tag {
+            font-size: 24px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            th { width: 35%; }
+            .content-padding { padding: 20px; }
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 min-h-screen flex flex-col items-center py-10 px-4 sm:px-8">
-<main class="w-full max-w-7xl bg-card-light dark:bg-card-dark shadow-2xl rounded-xl overflow-hidden relative flex flex-col">
-<header class="flex justify-between items-start p-8 sm:p-12 pb-6">
-<div class="flex items-center gap-6">
-<div class="border-4 border-primary dark:border-primary text-primary dark:text-primary font-bold text-5xl sm:text-6xl px-4 py-2 rounded-lg flex items-center justify-center">
-                    01
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>プロジェクト概要書・提案資料</h1>
+    </div>
+
+    <div class="content-padding">
+        <h2>案件名</h2>
+        <div class="info-card" style="font-size: 1.2em; font-weight: bold; color: var(--primary-color);">
+            自社製品（企業向けソフトウェア）開発の外部委託
+        </div>
+
+        <h2>発注会社の情報</h2>
+        <table>
+            <tr>
+                <th>会社名</th>
+                <td>株式会社インサイトテクノロジー</td>
+            </tr>
+            <tr>
+                <th>発注者名</th>
+                <td>高橋 則行 様</td>
+            </tr>
+            <tr>
+                <th>会社住所</th>
+                <td>〒150-0013 東京都渋谷区恵比寿1-19-19 恵比寿ビジネスタワー12階</td>
+            </tr>
+            <tr>
+                <th>メールアドレス</th>
+                <td style="color: var(--secondary-color);">ntakahas@insight-tec.co.jp</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>090-4736-0406</td>
+            </tr>
+        </table>
+
+        <h2>エントリー条件</h2>
+        <div class="tag-container">
+            <span class="tag">C++</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Python</span>
+        </div>
+        <p style="font-size: 14px; color: #666;">※上記技術スタックを扱える企業様限定</p>
+
+        <h2>お問い合わせ時の内容</h2>
+        <div class="info-card">
+現在、企業向けのデータ管理製品、および、データ秘匿化製品を自社製品として開発しています。
+こちらの一部を外部委託しておりますが、価格高騰もあり、発注先の選択肢を増やしたいと考えております。
+利用技術はlaravelバックエンド、Vue.jsがフロント、内部でpythonを用いた機械学習やLLMへの問い合わせも行っています。
+人月13-16ほどの規模で、PM、テックリード、PG、テスターで構成されています。
+スケジュールは、最短2026/3からですが、切り替えもありますので、実際には検討期間や、一部切り替えなどステップを踏みなら評価させていただく必要があります。
+予算感は、一旦控えさせて下さい。市場価格と捉えていただいて構いません。
+まずは、技術的に対応が可能な企業様の中で、実績や、標準の単価感などが合うところで、具体的なお話ができればと考えております。
+        </div>
+
+        <h2>発注ナビ担当者のヒアリング内容</h2>
+        
+        <h3>打ち合わせ方法</h3>
+        <p>■ Webミーティングを希望</p>
+
+        <h3>現状</h3>
+        <div class="highlight-box">
+■ 既に一部委託している別ベンダーの切り替えを含め、外部委託を検討しています。
+■ 委託費用の高騰の他に、現委託先では<strong style="color: var(--accent-color);">「C++」のエンジニアの質が高くなく、成果が出ていない</strong>ため、その点も今後検討する委託先にて解決したくお考えです。
+        </div>
+
+        <h3>要望</h3>
+        <div class="info-card">
+■ 応募条件を合わせてご確認ください。
+■ 技術スタック：C++、Vue.js、Laravel、python
+■ 現チーム構成：PM、テックリード、プログラマー、テスター（1ヶ月あたり13～16人稼働）
+※同じ体制を求めているわけではありませんが、予め踏まえていただきご提案ください。
+■ 品質良く開発が可能であれば、開発拠点の指定なし（リモート可）。
+■ 言語：日本語または英語。
+        </div>
+
+        <table>
+            <tr>
+                <th>予算</th>
+                <td>適正予算をご提案ください。（市場価格目安）</td>
+            </tr>
+            <tr>
+                <th>納期</th>
+                <td>最短2026年3月〜（段階的な切り替え・評価を希望）</td>
+            </tr>
+            <tr>
+                <th>カテゴリ</th>
+                <td>業務システム, Webシステム</td>
+            </tr>
+        </table>
+
+        <div class="amcolab-section">
+            <div class="amcolab-badge">SELF-RECOMMENDATION</div>
+            <div class="content-padding">
+                <h2 style="margin-top: 10px; border-bottom-color: var(--secondary-color);">AMCOLAB株式会社の自己推薦文</h2>
+                
+                <div class="info-card" style="border: none; background: transparent;">
+貴社の課題に対し、技術力・体制・コストのバランスを重視した開発パートナーとして貢献できると考え、ご連絡いたしました。
+
+<strong>【会社紹介】</strong>
+AMCOLAB Technology（ベトナム）は、日本企業向けの業務系WebシステムおよびAI活用プロダクトを中心に開発しているソフトウェア会社です。
+現在、40名以上の経験豊富なエンジニアが在籍しており、日本語対応可能なBrSE／Comtorが参画することで、要件定義から開発・運用まで円滑なコミュニケーションを実現しています。
+これまで2年以上にわたり、日本企業向けに小規模から大規模まで100件以上の開発実績がございます。
+
+<strong>【技術スタックと対応可否】</strong>
+・バックエンド：Laravel / Python（機械学習、LLM連携、API設計）
+・フロントエンド：Vue.js（中〜大規模SPA、既存コードの引き継ぎ・改善）
+・その他：
+　C++：コアメンバーは限定的ですが、品質担保前提でアサイン可能
+　AI/LLM：Python経由でのモデル連携、業務データ活用の実績あり
+
+<strong>【実績】</strong>
+1. 調達・購買管理クラウドサービス（Laravel / Vue.js / Python）
+　 内容：見積依頼、受発注、取引先管理、不適合管理
+　 URL：https://newji.ai/
+2. 生成AIを活用した業務支援システム（Python / LLM連携）
+　 内容：AI問い合わせ、チャットボット開発
+　 参考：https://www.gokindler.com/sari/
+
+<strong>【単価感・概算】</strong>
+<span class="price-tag">時間単価：2,000円 / hour（税別）</span>
+
+まずは「技術的に対応可能か」「単価感が合うか」の観点で、一度具体的なお話ができれば幸いです。
+ご検討のほど、よろしくお願いいたします。
                 </div>
-<h1 class="text-4xl sm:text-5xl font-bold text-secondary dark:text-white tracking-wide">
-                    Giới thiệu công ty
-                </h1>
-</div>
-<div class="flex items-center gap-3">
-<div class="text-right">
-</div>
-<img alt="AMCOLAB Logo" class="h-12 sm:h-14 object-contain mb-1" src="./logo-amcolab.webp" />
-</div>
-</header>
-<div class="flex-grow grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 sm:px-12 pb-12">
-<div class="flex flex-col gap-6">
-<div class="bg-slate-50 dark:bg-slate-800/50 rounded-lg overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700">
-<div class="bg-secondary text-white py-3 px-6 font-bold text-lg flex items-center gap-2">
-<span class="material-icons-round text-primary">business</span>
-                        Thông tin công ty
-                    </div>
-<div class="p-6 space-y-4 text-sm sm:text-base">
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Tên công ty</span>
-<span class="text-slate-800 dark:text-slate-100 font-medium">AMCOLAB TECHNOLOGY</span>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Đại diện</span>
-<span class="text-slate-800 dark:text-slate-100">Nguyễn Thị Quý</span>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Số lượng nhân viên</span>
-<span class="text-slate-800 dark:text-slate-100">50 người (Nhân viên chính thức)</span>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Vốn điều lệ</span>
-<span class="text-slate-800 dark:text-slate-100">5 triệu Yên</span>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 pb-1">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Thành lập</span>
-<span class="text-slate-800 dark:text-slate-100">Tháng 01 năm 2023</span>
-</div>
-</div>
-</div>
-<div class="relative group rounded-lg overflow-hidden shadow-md h-64 border border-slate-200 dark:border-slate-700">
-<img
-  alt="Ngoại thất tòa nhà trụ sở AMCOLAB"
-  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-  src="./amcolab_hq.png"
-/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
-<div class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/40 px-2 py-1 rounded backdrop-blur-sm">
-                        Trụ sở chính
-                    </div>
-</div>
-</div>
-<div class="flex flex-col gap-6">
-<div class="bg-slate-50 dark:bg-slate-800/50 rounded-lg overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700">
-<div class="bg-secondary text-white py-3 px-6 font-bold text-lg flex items-center gap-2">
-<span class="material-icons-round text-primary">layers</span>
-                        Tổng quan dịch vụ
-                    </div>
-<div class="p-6 space-y-4 text-sm sm:text-base">
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0 pt-1">Lĩnh vực kinh doanh</span>
-<ul class="text-slate-800 dark:text-slate-100 space-y-1 list-none">
-<li class="flex items-center gap-2"><span class="text-primary font-bold">①</span> Phát triển hệ thống</li>
-<li class="flex items-center gap-2"><span class="text-primary font-bold">②</span> Bảo trì hệ thống</li>
-<li class="flex items-center gap-2"><span class="text-primary font-bold">③</span> Kiểm thử hệ thống</li>
-</ul>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 border-b border-dashed border-slate-300 dark:border-slate-600 pb-3 last:border-0 last:pb-0">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Trang web</span>
-<div class="flex flex-col">
-<a class="text-primary hover:text-teal-400 hover:underline transition-colors" href="https://amcolab.vn/">https://amcolab.vn/</a>
-<a class="text-primary hover:text-teal-400 hover:underline transition-colors" href="https://amcolab.jp/">https://amcolab.jp/</a>
-</div>
-</div>
-<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 pb-1">
-<span class="font-bold text-slate-600 dark:text-slate-300 w-32 shrink-0">Văn phòng</span>
-<span class="text-slate-800 dark:text-slate-100">Thủ đô Hà Nội, Việt Nam</span>
-</div>
-</div>
-</div>
-<div class="relative group rounded-lg overflow-hidden shadow-md h-64 border border-slate-200 dark:border-slate-700">
-<img
-  alt="Các thành viên đội ngũ AMCOLAB chụp ảnh tập thể"
-  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-  src="./amcolab_team.jpg"
-/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
-<div class="absolute bottom-3 left-3 text-white text-xs font-medium bg-black/40 px-2 py-1 rounded backdrop-blur-sm">
-                        Đội ngũ của chúng tôi
-                    </div>
-</div>
-</div>
-</div>
-<footer class="mt-auto bg-slate-100 dark:bg-slate-900 px-8 sm:px-12 py-4 border-t border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-4">
-<div class="text-primary font-medium italic text-lg sm:text-xl">
-                Amazing. Collaborate. Laboratory
             </div>
-<div class="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
-<div class="flex items-center gap-2">
-<span class="material-icons-round text-lg">public</span>
-<a class="hover:text-primary transition-colors" href="https://www.amcolab.vn/">https://www.amcolab.vn/</a>
-</div>
-</div>
-</footer>
-</main>
-<div class="fixed bottom-6 right-6 flex gap-3 z-50">
-  <button id="btnPrev" type="button" aria-label="Trang trước"
-    class="bg-card-light dark:bg-card-dark text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 p-3 rounded-full shadow-lg border border-slate-200 dark:border-slate-600 transition-all focus:outline-none focus:ring-2 focus:ring-primary group">
-    <span class="material-icons-round group-hover:-translate-x-1 transition-transform">arrow_back</span>
-  </button>
+        </div>
+    </div>
 
-  <button id="btnNext" type="button" aria-label="Trang tiếp theo"
-    class="bg-primary text-white hover:bg-teal-600 p-3 rounded-full shadow-lg shadow-teal-500/30 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary group">
-    <span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
-  </button>
+    <div class="footer">
+        © 2026 AMCOLAB Technology All Rights Reserved.
+    </div>
 </div>
 
-
-<div class="fixed bottom-6 left-6 z-50">
-<button class="bg-secondary text-white p-3 rounded-full shadow-lg hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" onclick="document.documentElement.classList.toggle('dark')">
-<span class="material-icons-round">dark_mode</span>
-</button>
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('btnPrev')?.addEventListener('click', () => {
-      window.location.href = './page0.html';
-    });
-    document.getElementById('btnNext')?.addEventListener('click', () => {
-      window.location.href = './page2.html';
-    });
-  });
-</script>
-</body></html>
+</body>
+</html>
