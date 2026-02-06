@@ -3,317 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>案件詳細・自己推薦資料</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>秘密保持契約書 - 既婚者向けの食事のマッチングと心理診断開発</title>
     <style>
-        :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-color: #e53e3e;
-            --bg-gray: #f7fafc;
-            --text-main: #2d3748;
-            --border-color: #e2e8f0;
-        }
-
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: "MS Mincho", "游明朝", "Yu Mincho", serif;
             line-height: 1.8;
-            color: var(--text-main);
-            background-color: var(--bg-gray);
-            margin: 0;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
+            padding: 40px 20px;
+            color: #333;
         }
-
-        /* Header */
-        .header {
-            background: var(--primary-color);
-            color: #ffffff;
-            padding: 40px;
+        h1 {
             text-align: center;
-        }
-
-        .header h1 {
-            margin: 0;
             font-size: 24px;
-            letter-spacing: 1px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
         }
-
-        .content-padding {
-            padding: 40px;
+        .preamble {
+            margin-bottom: 30px;
+            text-indent: 1em;
         }
-
-        /* Section Styling */
-        h2 {
-            display: flex;
-            align-items: center;
-            font-size: 20px;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 8px;
-            margin-top: 40px;
+        .article {
+            margin-bottom: 25px;
         }
-
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background: var(--secondary-color);
-            margin-right: 12px;
-            border-radius: 2px;
+        .article-title {
+            font-weight: bold;
+            margin-bottom: 10px;
         }
-
-        h3 {
-            font-size: 17px;
-            color: var(--secondary-color);
-            margin-top: 25px;
-            background: #ebf8ff;
-            padding: 8px 15px;
-            border-radius: 4px;
+        .article-content {
+            margin-left: 2em;
         }
-
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 15px;
+        .clause {
+            margin-bottom: 10px;
         }
-
-        th, td {
-            padding: 15px;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
-
-        th {
-            background-color: #f8fafc;
-            width: 25%;
-            font-weight: 700;
-        }
-
-        /* Information Blocks */
-        .info-card {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            white-space: pre-wrap; /* Giữ định dạng văn bản gốc */
-        }
-
-        .highlight-box {
-            background: #fff5f5;
-            border-left: 5px solid var(--accent-color);
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        /* Badge/Tags */
-        .tag-container {
-            margin: 15px 0;
-        }
-
-        .tag {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 4px 15px;
-            border-radius: 50px;
-            font-size: 14px;
-            margin-right: 8px;
+        .sub-clause {
+            margin-left: 2em;
             margin-bottom: 8px;
-            font-weight: 500;
         }
-
-        /* AMCOLAB Section */
-        .amcolab-section {
-            background: #f0f7ff;
-            border: 2px solid var(--secondary-color);
-            border-radius: 12px;
-            margin-top: 60px;
-            position: relative;
+        .signature-section {
+            margin-top: 50px;
+            page-break-inside: avoid;
         }
-
-        .amcolab-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--secondary-color);
-            color: white;
-            padding: 5px 25px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
+        .signature-block {
+            margin-bottom: 40px;
         }
-
-        .footer {
+        .signature-line {
+            margin-bottom: 8px;
+        }
+        .date {
             text-align: center;
-            padding: 30px;
-            font-size: 13px;
-            color: #718096;
-            background: #f8fafc;
+            font-size: 16px;
+            margin: 40px 0;
         }
-
-        .price-tag {
-            font-size: 24px;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            th { width: 35%; }
-            .content-padding { padding: 20px; }
+        .conclusion {
+            margin: 30px 0;
+            text-indent: 1em;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
-        <h1>プロジェクト概要書・提案資料</h1>
+    <h1>秘密保持契約書</h1>
+    
+    <div class="preamble">
+        AMCOLAB TECHNOLOGY CO., LTD（以下「甲」という）と株式会社ホイミー（以下「乙」という）は、既婚者向け食事マッチングWebサービスβ版開発業務（以下「本業務」という）に関して相互に提供する取引上の秘密情報につき、次のとおり契約を締結する。
     </div>
 
-    <div class="content-padding">
-        <h2>案件名</h2>
-        <div class="info-card" style="font-size: 1.2em; font-weight: bold; color: var(--primary-color);">
-            自社製品（企業向けソフトウェア）開発の外部委託
+    <div class="article">
+        <div class="article-title">第1条（目的）</div>
+        <div class="article-content">
+            甲および乙は、甲乙間の取引が相互の信頼に基づくものであることを認識し、本業務を履行するにあたり、本契約に定められた各条項を遵守し、相手方の秘密情報の守秘を徹底し、公正な取引関係を維持することを目的（以下「本目的」という）とする。
         </div>
+    </div>
 
-        <h2>発注会社の情報</h2>
-        <table>
-            <tr>
-                <th>会社名</th>
-                <td>株式会社インサイトテクノロジー</td>
-            </tr>
-            <tr>
-                <th>発注者名</th>
-                <td>高橋 則行 様</td>
-            </tr>
-            <tr>
-                <th>会社住所</th>
-                <td>〒150-0013 東京都渋谷区恵比寿1-19-19 恵比寿ビジネスタワー12階</td>
-            </tr>
-            <tr>
-                <th>メールアドレス</th>
-                <td style="color: var(--secondary-color);">ntakahas@insight-tec.co.jp</td>
-            </tr>
-            <tr>
-                <th>電話番号</th>
-                <td>090-4736-0406</td>
-            </tr>
-        </table>
-
-        <h2>エントリー条件</h2>
-        <div class="tag-container">
-            <span class="tag">C++</span>
-            <span class="tag">Vue.js</span>
-            <span class="tag">Laravel</span>
-            <span class="tag">Python</span>
-        </div>
-        <p style="font-size: 14px; color: #666;">※上記技術スタックを扱える企業様限定</p>
-
-        <h2>お問い合わせ時の内容</h2>
-        <div class="info-card">
-現在、企業向けのデータ管理製品、および、データ秘匿化製品を自社製品として開発しています。
-こちらの一部を外部委託しておりますが、価格高騰もあり、発注先の選択肢を増やしたいと考えております。
-利用技術はlaravelバックエンド、Vue.jsがフロント、内部でpythonを用いた機械学習やLLMへの問い合わせも行っています。
-人月13-16ほどの規模で、PM、テックリード、PG、テスターで構成されています。
-スケジュールは、最短2026/3からですが、切り替えもありますので、実際には検討期間や、一部切り替えなどステップを踏みなら評価させていただく必要があります。
-予算感は、一旦控えさせて下さい。市場価格と捉えていただいて構いません。
-まずは、技術的に対応が可能な企業様の中で、実績や、標準の単価感などが合うところで、具体的なお話ができればと考えております。
-        </div>
-
-        <h2>発注ナビ担当者のヒアリング内容</h2>
-        
-        <h3>打ち合わせ方法</h3>
-        <p>■ Webミーティングを希望</p>
-
-        <h3>現状</h3>
-        <div class="highlight-box">
-■ 既に一部委託している別ベンダーの切り替えを含め、外部委託を検討しています。
-■ 委託費用の高騰の他に、現委託先では<strong style="color: var(--accent-color);">「C++」のエンジニアの質が高くなく、成果が出ていない</strong>ため、その点も今後検討する委託先にて解決したくお考えです。
-        </div>
-
-        <h3>要望</h3>
-        <div class="info-card">
-■ 応募条件を合わせてご確認ください。
-■ 技術スタック：C++、Vue.js、Laravel、python
-■ 現チーム構成：PM、テックリード、プログラマー、テスター（1ヶ月あたり13～16人稼働）
-※同じ体制を求めているわけではありませんが、予め踏まえていただきご提案ください。
-■ 品質良く開発が可能であれば、開発拠点の指定なし（リモート可）。
-■ 言語：日本語または英語。
-        </div>
-
-        <table>
-            <tr>
-                <th>予算</th>
-                <td>適正予算をご提案ください。（市場価格目安）</td>
-            </tr>
-            <tr>
-                <th>納期</th>
-                <td>最短2026年3月〜（段階的な切り替え・評価を希望）</td>
-            </tr>
-            <tr>
-                <th>カテゴリ</th>
-                <td>業務システム, Webシステム</td>
-            </tr>
-        </table>
-
-        <div class="amcolab-section">
-            <div class="amcolab-badge">SELF-RECOMMENDATION</div>
-            <div class="content-padding">
-                <h2 style="margin-top: 10px; border-bottom-color: var(--secondary-color);">AMCOLAB株式会社の自己推薦文</h2>
-                
-                <div class="info-card" style="border: none; background: transparent;">
-貴社の課題に対し、技術力・体制・コストのバランスを重視した開発パートナーとして貢献できると考え、ご連絡いたしました。
-
-<strong>【会社紹介】</strong>
-AMCOLAB Technology（ベトナム）は、日本企業向けの業務系WebシステムおよびAI活用プロダクトを中心に開発しているソフトウェア会社です。
-現在、40名以上の経験豊富なエンジニアが在籍しており、日本語対応可能なBrSE／Comtorが参画することで、要件定義から開発・運用まで円滑なコミュニケーションを実現しています。
-これまで2年以上にわたり、日本企業向けに小規模から大規模まで100件以上の開発実績がございます。
-
-<strong>【技術スタックと対応可否】</strong>
-・バックエンド：Laravel / Python（機械学習、LLM連携、API設計）
-・フロントエンド：Vue.js（中〜大規模SPA、既存コードの引き継ぎ・改善）
-・その他：
-　C++：コアメンバーは限定的ですが、品質担保前提でアサイン可能
-　AI/LLM：Python経由でのモデル連携、業務データ活用の実績あり
-
-<strong>【実績】</strong>
-1. 調達・購買管理クラウドサービス（Laravel / Vue.js / Python）
-　 内容：見積依頼、受発注、取引先管理、不適合管理
-　 URL：https://newji.ai/
-2. 生成AIを活用した業務支援システム（Python / LLM連携）
-　 内容：AI問い合わせ、チャットボット開発
-　 参考：https://www.gokindler.com/sari/
-
-<strong>【単価感・概算】</strong>
-<span class="price-tag">時間単価：2,000円 / hour（税別）</span>
-
-まずは「技術的に対応可能か」「単価感が合うか」の観点で、一度具体的なお話ができれば幸いです。
-ご検討のほど、よろしくお願いいたします。
+    <div class="article">
+        <div class="article-title">第2条（秘密情報）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本契約において秘密情報とは、本目的のために開示又は知得された次の各号の情報をいう。
+                <div class="sub-clause">
+                    （1）開示者が相手方に固定媒体（紙、電子媒体、磁気媒体等）によって開示する情報
+                </div>
+                <div class="sub-clause">
+                    （2）開示者が相手方に口頭、映像、電気通信回線を通じて提供された電子データ、その他前号に定める以外の方法により開示する情報
+                </div>
+                <div class="sub-clause">
+                    （3）開示者の顧客情報並びに開示者の営業上、技術上および財務上の情報
+                </div>
+                <div class="sub-clause">
+                    （4）本目的のために、甲および乙が協議した経緯、結果等を記した議事録又は記録
+                </div>
+                <div class="sub-clause">
+                    （5）本業務に関連する既婚者向け食事マッチングWebサービスの仕様、設計、ソースコード、アルゴリズム、ビジネスモデル、ユーザーデータ、マーケティング戦略等の一切の情報
+                </div>
+            </div>
+            <div class="clause">
+                2. 前項にかかわらず、次の各号のいずれかに該当する情報は秘密情報に含まれないものとする。
+                <div class="sub-clause">
+                    （1）知得した時点ですでに公知の情報
+                </div>
+                <div class="sub-clause">
+                    （2）知得した時点ですでに受領者が保有していたことを証明できる情報
+                </div>
+                <div class="sub-clause">
+                    （3）知得した後、受領者の責によらずして公知となった情報
+                </div>
+                <div class="sub-clause">
+                    （4）知得した後、正当な権原を有する第三者から秘密保持義務を負うことなく受領者が適法に入手したことを証明できる情報
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="footer">
-        © 2026 AMCOLAB Technology All Rights Reserved.
+    <div class="article">
+        <div class="article-title">第3条（情報の管理）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、相手方の秘密情報を厳重に管理するものとし、相手方の書面による事前承諾または指示のある場合を除き、複写、複製、改変等を行わないものとする。
+            </div>
+            <div class="clause">
+                2. 甲および乙は、秘密情報へのアクセス権限を必要最小限の従業員に限定し、当該従業員に対して本契約と同等の秘密保持義務を課すものとする。
+            </div>
+            <div class="clause">
+                3. 甲および乙は、秘密情報の電子データについて、適切な暗号化、アクセス制御、バックアップ等のセキュリティ対策を講じるものとする。
+            </div>
+        </div>
     </div>
-</div>
 
+    <div class="article">
+        <div class="article-title">第4条（流用の禁止）</div>
+        <div class="article-content">
+            甲および乙は、取引上知り得た相手方の秘密情報を事前に相手方の書面による承諾を得ることなく、甲と乙との間で明示的または黙示的に合意された目的以外の目的に使用してはならない。特に、乙の秘密情報を甲が他の競合プロジェクトや類似サービスの開発に流用すること、および甲の技術情報やノウハウを乙が無断で他の開発会社との取引に利用することを禁止する。
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第5条（秘密の保持等）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、本契約締結の事実、内容および相手方から入手した秘密情報は、相手方の書面による事前承認を得ることなく、第三者に開示しないものとする。
+            </div>
+            <div class="clause">
+                2. 甲および乙は、個人情報の取扱いについては個人情報保護法その他関連法規等を遵守し、適切な保護を図るものとする。
+            </div>
+            <div class="clause">
+                3. 前2項の規定にかかわらず、法令に基づく開示義務がある場合、または裁判所、監督官庁その他の公的機関から法令に基づく開示要請を受けた場合は、当該開示義務の範囲内で秘密情報を開示することができる。ただし、当該開示を行う当事者は、事前に相手方に通知し、開示範囲を最小限に留めるよう努めるものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第6条（第三者への開示）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、再委託等のために相手方の事前の書面承諾を得て秘密情報の全部または一部を第三者に開示する場合、当該第三者に対し本契約と同等以上の秘密保持義務を課し、適切かつ合理的に監督するものとする。
+            </div>
+            <div class="clause">
+                2. 開示当事者は、前項に基づき秘密情報を開示した第三者による秘密情報の取扱いについて、自己の行為と同様の責任を負うものとする。
+            </div>
+            <div class="clause">
+                3. 甲が本業務を再委託する場合、甲は乙に対し、再委託先の名称、所在地、再委託する業務内容を事前に書面で通知し、乙の承諾を得るものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第7条（知的財産権）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本業務の遂行により甲が開発・作成する成果物に関する知的財産権は、別途締結される業務委託契約の定めに従うものとする。
+            </div>
+            <div class="clause">
+                2. 本契約は、いずれの当事者に対しても、相手方が本契約締結前から保有していた知的財産権、または本契約とは無関係に独自に開発した知的財産権について、何らの権利または利益を付与するものではない。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第8条（損害賠償）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲または甲が指名した従業員および代理人が乙の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、乙は甲に対して損害賠償および乙が必要と認める合理的な措置を請求できるものとする。
+            </div>
+            <div class="clause">
+                2. 乙または乙が指名した従業員および代理人が甲の秘密情報を漏洩し、もしくは本契約に定める条項に違反したとき、甲は乙に対して損害賠償および甲が必要と認める合理的な措置を請求できるものとする。
+            </div>
+            <div class="clause">
+                3. 当事者の過失による本契約違反に起因して相手方に生じた損害について、当該当事者の損害賠償責任の総額は、違反が発生した日から遡って過去12か月間に相手方が当該当事者に支払った委託料等の総額を上限とする。ただし、当事者の故意または重大な過失（重過失）による場合はこの限りでない。
+            </div>
+            <div class="clause">
+                4. 秘密情報の漏洩または本契約違反が発生した場合、違反当事者は直ちに相手方に通知し、相手方と協議の上、被害拡大の防止、原因究明、再発防止策の策定等、必要な措置を講じるものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第9条（秘密情報の返還・廃棄）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、相手方から要請があった場合、または本契約が終了した場合、遅滞なく相手方の秘密情報（複製物を含む）を相手方に返還し、または相手方の指示に従い安全に廃棄するものとする。
+            </div>
+            <div class="clause">
+                2. 前項に基づく廃棄を行った場合、廃棄を実施した当事者は、相手方の要請に応じて、廃棄を証明する書面を相手方に提出するものとする。
+            </div>
+            <div class="clause">
+                3. 第1項の規定にかかわらず、法令により保管が義務付けられている秘密情報については、当該法令に定める期間、適切に保管することができる。この場合においても、本契約に定める秘密保持義務は継続して適用されるものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第10条（反社会的勢力の排除）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、現在および将来にわたって、自らが暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業、総会屋等、社会運動等標榜ゴロ、特殊知能暴力集団等、その他これらに準ずる者（以下「反社会的勢力」という）に該当しないこと、および反社会的勢力と以下の関係を有しないことを表明し、かつ確約する。
+                <div class="sub-clause">
+                    （1）反社会的勢力が経営を支配していると認められる関係
+                </div>
+                <div class="sub-clause">
+                    （2）反社会的勢力が経営に実質的に関与していると認められる関係
+                </div>
+                <div class="sub-clause">
+                    （3）自己、自社もしくは第三者の不正の利益を図る目的または第三者に損害を加える目的をもってするなど、不当に反社会的勢力を利用していると認められる関係
+                </div>
+                <div class="sub-clause">
+                    （4）反社会的勢力に対して資金等を提供し、または便宜を供与するなどの関与をしていると認められる関係
+                </div>
+                <div class="sub-clause">
+                    （5）その他役員等または経営に実質的に関与している者が反社会的勢力と社会的に非難されるべき関係を有していること
+                </div>
+            </div>
+            <div class="clause">
+                2. 甲および乙は、自らまたは第三者を利用して以下の行為を行わないことを確約する。
+                <div class="sub-clause">
+                    （1）暴力的な要求行為
+                </div>
+                <div class="sub-clause">
+                    （2）法的な責任を超えた不当な要求行為
+                </div>
+                <div class="sub-clause">
+                    （3）取引に関して脅迫的な言動をし、または暴力を用いる行為
+                </div>
+                <div class="sub-clause">
+                    （4）風説を流布し、偽計または威力を用いて相手方の信用を毀損し、または相手方の業務を妨害する行為
+                </div>
+                <div class="sub-clause">
+                    （5）その他前各号に準ずる行為
+                </div>
+            </div>
+            <div class="clause">
+                3. 甲または乙は、相手方が前2項のいずれかに違反し、または違反するおそれがあると認めた場合には、相手方に対して何らの催告をすることなく、直ちに本契約を解除することができる。
+            </div>
+            <div class="clause">
+                4. 前項の規定により本契約が解除された場合、解除された当事者は、相手方に対し、これにより生じた損害の賠償を請求することはできず、かつ解除により相手方に生じた損害を賠償する責任を負うものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第11条（合意管轄）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、本契約に関連して訴訟の必要が生じたときは、東京地方裁判所を第一審の専属的合意管轄裁判所とすることに合意する。
+            </div>
+            <div class="clause">
+                2. 本契約は日本法を準拠法とし、日本法に基づき解釈されるものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第12条（本契約失効後の取扱い）</div>
+        <div class="article-content">
+            本契約の第4条（流用の禁止）、第5条（秘密の保持等）、第7条（知的財産権）、第8条（損害賠償）および第9条（秘密情報の返還・廃棄）の規定は、本契約がその効力を失った後も3年間有効とする。ただし、本業務に関連して開示された乙の事業戦略、顧客情報、個人情報等の機密性の高い情報については、期間の定めなく秘密保持義務が継続するものとする。
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第13条（協議解決）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本契約の修正は、両当事者の書面による合意によるもの以外無効とする。
+            </div>
+            <div class="clause">
+                2. 本契約に規定なき事項および解釈に疑義が生じた場合は、甲乙誠意をもって協議し、円満に解決するものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第14条（契約有効期間と更新）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 本契約の有効期間は、本契約締結日から2年間とする。
+            </div>
+            <div class="clause">
+                2. 前項の有効期間満了日の3ヶ月前までに、甲または乙いずれからも書面による別段の申入れがないときは、本契約の有効期間はさらに1年間延長されるものとし、その後も同様とする。
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-title">第15条（契約の解除）</div>
+        <div class="article-content">
+            <div class="clause">
+                1. 甲および乙は、相手方が本契約の各条項に違反し、相当の期間を定めた書面による催告後も当該違反が是正されない場合、本契約を解除することができる。
+            </div>
+            <div class="clause">
+                2. 前項の規定にかかわらず、甲および乙は、相手方に以下の事由が生じた場合、何らの催告なく直ちに本契約を解除することができる。
+                <div class="sub-clause">
+                    （1）本契約に関し、重大な違反または背信行為があったとき
+                </div>
+                <div class="sub-clause">
+                    （2）支払の停止があった場合、または仮差押、差押、競売、破産手続開始、民事再生手続開始、会社更生手続開始、特別清算開始の申立があったとき
+                </div>
+                <div class="sub-clause">
+                    （3）第10条（反社会的勢力の排除）に違反したとき
+                </div>
+            </div>
+            <div class="clause">
+                3. 本契約が解除された場合であっても、第12条（本契約失効後の取扱い）に定める条項の効力は継続するものとする。
+            </div>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        本契約締結の証として、本契約書2通を作成し、甲乙記名押印のうえ各自1通を保有する。
+    </div>
+
+    <div class="date">
+        2026年2月4日
+    </div>
+
+    <div class="signature-section">
+        <div class="signature-block">
+            <div class="signature-line"><strong>甲</strong></div>
+            <div class="signature-line">住所：3rd Floor, Audi Building, No. 8 Pham Hung Street,</div>
+            <div class="signature-line" style="margin-left: 3em;">Yen Hoa Ward, Hanoi City, Vietnam</div>
+            <div class="signature-line">会社名：AMCOLAB TECHNOLOGY CO., LTD</div>
+            <div class="signature-line">役職名：代表取締役</div>
+            <div class="signature-line">氏名：NGUYEN THI QUY　　　　　　　　㊞</div>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-line"><strong>乙</strong></div>
+            <div class="signature-line">住所：静岡県榛原郡</div>
+            <div class="signature-line">会社名：株式会社ホイミー</div>
+            <div class="signature-line">役職名：代表取締役</div>
+            <div class="signature-line">氏名：田中 佑季　　　　　　　　㊞</div>
+        </div>
+    </div>
 </body>
 </html>
